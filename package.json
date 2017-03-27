@@ -1,0 +1,23 @@
+{
+  "name": "tigermaps",
+  "version": "1.0.0",
+  "description": "TigerMaps is a web app that provides a live interactive campus map which integrates seamlessly with multiple dynamic data feeds primarily related to events occurring at Princeton University of interest to students, faculty, and visitors. Edit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MkdmOmar/TigerMaps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MkdmOmar/TigerMaps/issues"
+  },
+  "homepage": "https://github.com/MkdmOmar/TigerMaps#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
