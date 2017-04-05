@@ -22,14 +22,65 @@
     <div id="map"></div>
     <script>
       var map;
+      var placesService;
       var lastValidCenter;
+      var infoWindow;
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.34663, lng: -74.6565801},
-          zoom: 16
+          zoom: 16,
+          styles: [ {
+            "featureType": "all",
+            "elementType": "labels",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          }, {
+              "featureType": "road.local",
+              "elementType": "labels",
+              "stylers": [
+                { "visibility": "off" }
+              ]
+            }
+          ]
         });
+        placesService = new google.maps.places.PlacesService(map);
+        infowindow = new google.maps.InfoWindow();
 
-        // bounds of the desired area
+        var testPos = {lat: 40.348322, lng: -74.660621};
+        placesService.nearbySearch({
+          location: testPos,
+          radius: 50
+        }, callback);
+
+        /*var marker = new google.maps.Marker({
+          position: markerPos,
+          map: map
+        });*/
+
+        // Map bounds
         var allowedBounds = new google.maps.LatLngBounds(
           new google.maps.LatLng(40.329950, -74.670505),
           new google.maps.LatLng(40.356531, -74.639470)
@@ -38,17 +89,16 @@
 
         google.maps.event.addListener(map, 'center_changed', function() {
           if (allowedBounds.contains(map.getCenter())) {
-            // still within valid bounds, so save the last valid position
-            console.log("center change");
+            // Still within valid bounds, so save the last valid position
             lastValidCenter = map.getCenter();
             return;
           }
 
-          // not valid anymore => return to last valid position
+          // Not valid anymore, return to last valid position
           map.panTo(lastValidCenter);
         });
       }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
   </body>
 </html>
