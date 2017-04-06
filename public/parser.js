@@ -10,24 +10,34 @@ It adds to response 'Allow-Control-Allow-Origin: *' header
 This is just for development purposes only.
 */
 
+// This function retrieves an XML string from url
+function parse(webFeedURL, returnResult) {
+  console.log("loading parser!")
+  var xmlReq = new XMLHttpRequest();
+  xmlReq.open("GET", webFeedURL, true);
+  xmlReq.onreadystatechange = function () {
+    // If request was a success
+    if (xmlReq.readyState == 4 && xmlReq.status == 200)
+    {
+      // Parse XML as string
+      var xmlString = new XMLSerializer().serializeToString(xmlReq.responseXML)
+      console.log("parser success!")
 
-console.log("loading parser!")
+      // Pass result to callback function
+      returnResult(xmlString);
+
+    }
+    else {
+      console.log("parser failure!")
+    }
+  };
+  xmlReq.send(null);
+}
+
+
 
 publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
-var pubEventsReq = new XMLHttpRequest();
-pubEventsReq.open("GET", publicEventsURL, true);
-pubEventsReq.onreadystatechange = function () {
-  // If request was a success
-  if (pubEventsReq.readyState == 4 && pubEventsReq.status == 200)
-  {
-    // Parse XML as string
-    var pubEvents = new XMLSerializer().serializeToString(pubEventsReq.responseXML)
-    console.log("parser success!")
-    console.log(pubEvents);
 
-  }
-  else {
-    console.log("parser failure!")
-  }
-};
-pubEventsReq.send(null);
+parse(publicEventsURL, function(publicEventsXML){
+  console.log(publicEventsXML);
+});
