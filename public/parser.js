@@ -48,7 +48,7 @@ locationsURL = "https://etcweb.princeton.edu/webfeeds/map/"
 
 // Places: Provides XML streams of data about "places" on campus
 // (e.g. dining, printing, parking, etc.)
-placesURL = "http://etcweb.princeton.edu/webfeeds/places/"
+placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
 
 // Public Events: Provides near-real-time XML and JSON streams of event data
 // from the R25 public events scheduling system.
