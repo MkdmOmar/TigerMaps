@@ -1,28 +1,27 @@
 var map;
 var placesService;
 var infoWindow;
-polygonNames = []
-    /*
-    function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(place.name);
-            infowindow.open(map, this);
-        });
-    }
+/*
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+}
 
-    function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-            }
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
         }
     }
-    */
+}
+*/
 
 // The About adds a control to the map that links to the About page
 function About(controlDiv, map) {
@@ -217,8 +216,10 @@ function getBoundingBox(polygon) {
 
 function loadPolygons() {
 
+    // Iterate over all locations
     for (var i = 0; i < locations.length; i++) {
 
+        // Construct a polygon for each location
         var myPolygon = new google.maps.Polygon({
             paths: locations[i].coords,
             strokeColor: '#FF0000',
@@ -229,35 +230,20 @@ function loadPolygons() {
             name: locations[i].name
         });
 
-        // if (locations[i].coords.length == 1) {
-        //     myPolygon = new google.maps.Polygon({
-        //         paths: locations[i].coords[0],
-        //         strokeColor: '#FF0000',
-        //         strokeOpacity: 0.01,
-        //         strokeWeight: 3,
-        //         fillColor: '#FF0000',
-        //         fillOpacity: 0.01,
-        //         name: locations[i].name
-        //     });
-        // }
-
-
-
-        polygonNames.push(locations[i].name);
-        console.log(polygonNames);
-
-
-
-        var vertices = myPolygon.getPath();
+        // Ger center of polygon
         var center = getBoundingBox(myPolygon).getCenter();
 
+        // Create a marker object for each polygon
         var marker = new google.maps.Marker({
             position: center,
             map: map,
             name: locations[i].name
         });
 
+        // Insert the marker as a field in the polygon object
         myPolygon.marker = marker;
+
+        // Assign the polygon to the map
         myPolygon.setMap(map);
 
 
@@ -267,15 +253,17 @@ function loadPolygons() {
         https://forums.phpfreaks.com/topic/281402-google-maps-add-click-listener-to-each-polygon/
         */
 
+        // On-click marker listener
         marker.addListener('click', function(event) {
             showMarkerInfo(event, this);
         });
 
+        // On-click polygon listener
         myPolygon.addListener('click', function(event) {
             showPolygonInfo(event, this);
         });
 
-        // Add a listener for the click event.
+        // mouseover polygon listener
         myPolygon.addListener('mouseover', function(event) {
             this.setOptions({
                 strokeOpacity: 0.8,
@@ -283,13 +271,13 @@ function loadPolygons() {
             });
         });
 
+        // mouseout polygon listener
         myPolygon.addListener('mouseout', function(event) {
             this.setOptions({
                 strokeOpacity: 0.01,
                 fillOpacity: 0.01
             });
         });
-
 
     }
 
