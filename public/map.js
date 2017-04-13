@@ -140,7 +140,7 @@ function createMap(pos) {
 
 var infoWindow;
 
-function drawDillonPolygon() {
+function drawAllPolygons() {
 
     var DillonCoords = [
         new google.maps.LatLng(40.346222, -74.658846),
@@ -190,10 +190,10 @@ function drawDillonPolygon() {
     var DillonPolygon = new google.maps.Polygon({
         paths: DillonCoords,
         strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
+        strokeOpacity: 0.01,
         strokeWeight: 3,
         fillColor: '#FF0000',
-        fillOpacity: 0.35
+        fillOpacity: 0.01
     });
     DillonPolygon.setMap(map);
     console.log("finished drawing!")
@@ -201,7 +201,19 @@ function drawDillonPolygon() {
     var vertices = DillonPolygon.getPath();
 
     // Add a listener for the click event.
-    DillonPolygon.addListener('click', showDillonInfo);
+    DillonPolygon.addListener('mouseover', function() {
+        DillonPolygon.setOptions({
+            strokeOpacity: 0.8,
+            fillOpacity: 0.35
+        }); 
+    });
+
+    DillonPolygon.addListener('mouseout', function() {
+        DillonPolygon.setOptions({
+            strokeOpacity: 0.01,
+            fillOpacity: 0.01
+        }); 
+    });
 
     infoWindow = new google.maps.InfoWindow;
 }
