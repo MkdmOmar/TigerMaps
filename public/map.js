@@ -138,7 +138,6 @@ function createMap(pos) {
         loadPolygons();
 
     });
-
 }
 
 //Courtesy of http://moduscreate.com/placing-markers-inside-polygons-with-google-maps/

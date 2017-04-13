@@ -1,0 +1,2061 @@
+{
+  "events": {
+    "-xmlns": "http://as.oit.princeton.edu/xml/events-1_3",
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-version": "1.3",
+    "-xsi:schemaLocation": "http://as.oit.princeton.edu/xml/events-1_3    http://atsweb.princeton.edu/mobile/xsd/events-1_3.xsd",
+    "calendarName": "Public Events Calendar",
+    "event": [
+      {
+        "title": "The Great Gatsby : Princeton University Ballet",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-08",
+        "startTime": "19:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "20:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "2",
+            "categoryName": "Arts"
+          }
+        }
+      },
+      {
+        "title": "The Great Gatsby : Princeton University Ballet",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-07",
+        "startTime": "19:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "20:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "2",
+            "categoryName": "Arts"
+          }
+        }
+      },
+      {
+        "title": "Richardson Chamber Players : Looking Forward, Looking Back",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-09",
+        "startTime": "15:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "17:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "2",
+            "categoryName": "Arts"
+          }
+        }
+      },
+      {
+        "title": "Bela Fleck and Abigail Washburn : Presented by Princeton University Concerts",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-13",
+        "startTime": "19:30:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "21:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "2",
+            "categoryName": "Arts"
+          }
+        }
+      },
+      {
+        "title": "Comp Lit Lecture : Lecture Series",
+        "locationID": "0024",
+        "locationName": "McCosh Hall Lecture Hall 46",
+        "latitude": "40.348307",
+        "longitude": "-74.656521",
+        "startDate": "2017-04-13",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "18:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "MGO @ PRINCETON INVITATIONAL : Men&apos;s Golf @ Princeton Invitational",
+        "locationID": "5095",
+        "locationName": "Springdale Golf Course",
+        "latitude": "40.333485",
+        "longitude": "-74.659614",
+        "startDate": "2017-04-08",
+        "startTime": "08:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "14:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "MVB VS. HARVARD : Men&apos;s Volleyball vs. Harvard",
+        "locationID": "0067",
+        "locationName": "Dillon Basketball Center Courts",
+        "latitude": "40.345591",
+        "longitude": "-74.658685",
+        "startDate": "2017-04-14",
+        "startTime": "19:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "22:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "MVB VS. SACRED HEART : Men&apos;s Volleyball vs. Sacred Heart",
+        "locationID": "0067",
+        "locationName": "Dillon Basketball Center Courts",
+        "latitude": "40.345591",
+        "longitude": "-74.658685",
+        "startDate": "2017-04-15",
+        "startTime": "16:00:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "19:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "MTE VS. COLUMBIA : Men&apos;s Tennis vs. Columbia",
+        "locationName": "Jadwin Tennis / Lenz Tennis Center",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-09",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "16:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "OT @ SAM HOWELL INVITATIONAL : Outdoor Track @ Sam Howell Invitational",
+        "locationName": "Jadwin Track / Weaver Track Stadium",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-07",
+        "startTime": "15:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "22:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "OT @ SAM HOWELL INVITATIONAL : Outdoor Track @ Sam Howell Invitational",
+        "locationName": "Jadwin Track / Weaver Track Stadium",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-08",
+        "startTime": "09:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "The Stations of the Cross : The Stations of the Cross by Marcel Dupré with poetry by Paul Claudel, Ken Cowan, organist, Dean Alison Boden, reader",
+        "description": "Admission is free and everyone is welcome.",
+        "locationID": "0051",
+        "locationName": "University Chapel, Nave",
+        "latitude": "40.348786",
+        "longitude": "-74.657038",
+        "startDate": "2017-04-12",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-12",
+        "endTime": "21:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Softball vs. Lehigh (DH)",
+        "locationID": "5077",
+        "locationName": "1895 Field",
+        "latitude": "40.34239",
+        "longitude": "-74.655305",
+        "startDate": "2017-04-19",
+        "startTime": "15:00:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "19:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "WLA VS. HARVARD : Women&apos;s Lacrosse vs. Harvard",
+        "locationID": "0597",
+        "locationName": "1952 Stadium",
+        "latitude": "40.341478",
+        "longitude": "-74.651493",
+        "startDate": "2017-04-08",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "16:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "TigerLaunch Demo Day",
+        "description": "TigerLaunch Demo Day",
+        "locationID": "0616",
+        "locationName": "Friend Center Lecture Hall 101",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-07",
+        "startTime": "17:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "21:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "MBA VS. RIDER : Baseball vs. Rider",
+        "locationID": "5069",
+        "locationName": "Clarke Field",
+        "latitude": "40.346654",
+        "longitude": "-74.648192",
+        "startDate": "2017-04-19",
+        "startTime": "15:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "JUMMAH PRAYER : Join us for Friday Prayer in Murray-Dodge 104",
+        "description": "Part of Princeton University&apos;s Muslim Life Program with Imam Sohaib Sultan.  Please visit the Muslim Life Program website for more info  - www.princeton.edu/muslimlife/",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-07",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "15:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "JUMMAH PRAYER : Join us for Friday Prayer in Murray-Dodge 104",
+        "description": "Part of Princeton University&apos;s Muslim Life Program with Imam Sohaib Sultan.  Please visit the Muslim Life Program website for more info  - www.princeton.edu/muslimlife/",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-14",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "15:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "CARILLON CONCERT : Join us for a Carillon Concert in the Graduate School, 88 College Road West",
+        "description": "All are welcome to these performances which are held rain or shine in the Graduate School, 88 College Road West, Princeton, NJ 0854.  Admission is free.  The carillon is a program of Chapel Music made possible through an endowment established by the Class of 1892.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-09",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "14:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "CARILLON CONCERT : Join us for a Carillon Concert in the Graduate School, 88 College Road West",
+        "description": "All are welcome to these performances which are held rain or shine in the Graduate School, 88 College Road West, Princeton, NJ 0854.  Admission is free.  The carillon is a program of Chapel Music made possible through an endowment established by the Class of 1892.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-16",
+        "startTime": "13:00:00 EDT",
+        "endDate": "2017-04-16",
+        "endTime": "14:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "AFTER NOON CONCERT : Gavin Black, recitalist  Princeton Early Keyboard Center, Princeton, NJ",
+        "description": "Admission free.",
+        "locationID": "0051",
+        "locationName": "University Chapel, Nave",
+        "latitude": "40.348786",
+        "longitude": "-74.657038",
+        "startDate": "2017-04-06",
+        "startTime": "12:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "TAOIST MARTIAL ARTS : Taoist Martial Arts for Inner and Outer Peace",
+        "description": "Taoist internal martial arts are based on a philosophy of inner and outer peace, even in adversarial situations. Participants in this class can develop a skill-set¿and a mind-set¿for overcoming life¿s challenges through mutual understanding and peaceful resolution. Master Wonchull Park¿s teaching combines traditional knowledge of three lineages with scientific explanation, drawing upon his background as a physicist.",
+        "locationID": "0586",
+        "locationName": "Carl A. Fields Center Large Multipurpose Room, 104",
+        "latitude": "40.349123",
+        "longitude": "-74.651827",
+        "startDate": "2017-04-09",
+        "startTime": "10:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "11:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "7",
+            "categoryName": "Student Life"
+          }
+        }
+      },
+      {
+        "title": "TAOIST MARTIAL ARTS : Taoist Martial Arts for Inner and Outer Peace",
+        "description": "Taoist internal martial arts are based on a philosophy of inner and outer peace, even in adversarial situations. Participants in this class can develop a skill-set¿and a mind-set¿for overcoming life¿s challenges through mutual understanding and peaceful resolution. Master Wonchull Park¿s teaching combines traditional knowledge of three lineages with scientific explanation, drawing upon his background as a physicist.",
+        "locationID": "0586",
+        "locationName": "Carl A. Fields Center Large Multipurpose Room, 104",
+        "latitude": "40.349123",
+        "longitude": "-74.651827",
+        "startDate": "2017-04-16",
+        "startTime": "10:00:00 EDT",
+        "endDate": "2017-04-16",
+        "endTime": "11:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "7",
+            "categoryName": "Student Life"
+          }
+        }
+      },
+      {
+        "title": "2017 Middle East Retrospective",
+        "description": "The 2017 Middle East Retrospective will feature distinguished faculty from Princeton and neighboring universities who will lecture on current events and political movements in the following countries: Syria, Yemen, Saudi Arabia and the Gulf, Iraq, Iran, Egypt, and IsraelPalestine.",
+        "locationID": "0027",
+        "locationName": "Guyot Hall Lecture Hall 10",
+        "latitude": "40.345797",
+        "longitude": "-74.65456",
+        "startDate": "2017-04-07",
+        "startTime": "14:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "18:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "James Madison Program : Brexit and the Future of the European Union",
+        "description": "Harold James, Claude and Lore Kelly Professor in European Studies and Professor of History and International Affairs, Princeton University, delivers An Elizabeth M. Whelan Lecture on Brexit and the Future of the European Union",
+        "locationName": "Dodds Auditorium, Robertson Hall",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-11",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Robert Faulkner Lecture",
+        "description": "Robert K. Faulkner, Professor, Department of Political Science, Boston College.Alpheus T. Mason Lectures in Constitutional Law and Political Thought; Cosponsored by the Witherspoon Institute.",
+        "locationID": "0630",
+        "locationName": "Lewis Library Bowl 120",
+        "latitude": "40.34624",
+        "longitude": "-74.6528",
+        "startDate": "2017-04-06",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "WWP VS. GEORGE WASHINGTON : Women&apos;s Water Polo vs. George Washington",
+        "locationID": "0170",
+        "locationName": "DeNunzio Pool",
+        "latitude": "40.343862",
+        "longitude": "-74.647564",
+        "startDate": "2017-04-14",
+        "startTime": "07:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "09:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "WTE VS. YALE : Women&apos;s Tennis vs. Yale",
+        "locationName": "Jadwin Tennis / Lenz Tennis Center",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-14",
+        "startTime": "14:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "17:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "WTE VS. BROWN : Women&apos;s Tennis vs. Brown",
+        "locationName": "Jadwin Tennis / Lenz Tennis Center",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-15",
+        "startTime": "14:00:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "16:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "MLC VS. DARTMOUTH &amp; DELAWARE : Men&apos;s Lightweight Crew vs. Dartmouth &amp; Delaware",
+        "locationID": "0032",
+        "locationName": "Carnegie Lake / Shea Rowing Center",
+        "latitude": "40.33937",
+        "longitude": "-74.6509",
+        "startDate": "2017-04-08",
+        "startTime": "09:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "WLC VS. GEORGETOWN : Women&apos;s Lightweight Crew vs. Georgetown",
+        "locationID": "0032",
+        "locationName": "Carnegie Lake / Shea Rowing Center",
+        "latitude": "40.33937",
+        "longitude": "-74.6509",
+        "startDate": "2017-04-15",
+        "startTime": "09:00:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "12:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "MHC VS. HARVARD &amp; MIT : Men&apos;s Heavyweight Crew vs. Harvard &amp; MIT",
+        "locationID": "0032",
+        "locationName": "Carnegie Lake / Shea Rowing Center",
+        "latitude": "40.33937",
+        "longitude": "-74.6509",
+        "startDate": "2017-04-15",
+        "startTime": "09:00:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "WTE VS. CORNELL : Women&apos;s Tennis vs. Cornell",
+        "locationName": "Jadwin Tennis / Lenz Tennis Center",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-07",
+        "startTime": "14:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "17:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "3",
+            "categoryName": "Athletics"
+          }
+        }
+      },
+      {
+        "title": "Saul Griffith Lecture - POSTPONED : Andlinger Center for Energy and the Environment",
+        "description": "Saul Griffith  CEO and Energy/Concept inventor  Otherlab   Topic: Renewable Energy Entrepreneurship",
+        "locationName": "Maeder Hall, Andlinger Center for Energy and the Environment",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-10",
+        "startTime": "16:00:00 EDT",
+        "endDate": "2017-04-10",
+        "endTime": "17:15:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "GEN. HAYDEN",
+        "description": "Gen. Michael V. Hayden, (USAF, Ret.), Principal, The Chertoff Group; former Director of the Central Intelligence Agency; former Director of the National Security Agency",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Lecture Hall-Harold W. Dodds 100 / Robertson Hall Bowl 016",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-06",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "BETH COBERT : Beth F. Cobert 80, Director (Acting) United States Office of Personnel Management",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Lecture Hall-Harold W. Dodds 100 / Robertson Hall Bowl 016",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-19",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "LEARNING TO LOOK : Art for Families",
+        "description": "Join us on Saturday mornings for family fun in the Art Museum. Drop in anytime between 10:30 a.m. and 1 p.m. and enjoy an engaging gallery activity followed by a related art project. Each week has a different theme. Come for fifteen minutes or two hours-whatever your schedule allows! All ages are welcome; no tickets or reservations are needed.  This week in honor of Slow Art Day, we invite families to spend time looking at and discovering works of art. Create a masterpiece of your own inspired by the works you&apos;ve seen.",
+        "locationName": "Art Museum",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-08",
+        "startTime": "10:30:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "4",
+              "categoryName": "Exhibits"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "GeosciencesPEI Faculty Seminar Series",
+        "description": "will request 3/14 after midterm release and 5/9 after reading period release",
+        "locationID": "0027",
+        "locationName": "Guyot Hall Lecture Hall 10",
+        "latitude": "40.345797",
+        "longitude": "-74.65456",
+        "startDate": "2017-04-11",
+        "startTime": "12:30:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "GeosciencesPEI Faculty Seminar Series",
+        "description": "will request 3/14 after midterm release and 5/9 after reading period release",
+        "locationID": "0027",
+        "locationName": "Guyot Hall Lecture Hall 10",
+        "latitude": "40.345797",
+        "longitude": "-74.65456",
+        "startDate": "2017-04-18",
+        "startTime": "12:30:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Renting in New York: A Last Lectures Min : Renting in New York: A Last Lectures Minicourse on Finding an Apartment",
+        "description": "Real Estate firm Cooper &amp; Cooper will lead a presentation on Renting in New York. This is part of the Class of 2017 Last Lectures Minicourses.",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Lecture Hall 302",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-19",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Princeton Quant Trading Conference",
+        "description": "The Princeton Quant Trading Conference seeks to bring together a unique cross-section of the leading experts from academia, industry, and government in a relaxed intellectual environment to catalyze discussions and strengthen ties across traditional boundaries.  We will cover subjects ranging from high-frequency algorithmic trading and statistical arbitrage to model construction and validation.  This event also provides a unique opportunity for leaders and students in quant trading related fields to directly interact.",
+        "locationID": "0616",
+        "locationName": "Friend Center Convocation Room 113",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-08",
+        "startTime": "08:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Princeton-IAS Bahcall Lunch",
+        "locationID": "0616",
+        "locationName": "Friend Center Convocation Room 113",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-11",
+        "startTime": "11:45:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Princeton-IAS Bahcall Lunch",
+        "locationID": "0616",
+        "locationName": "Friend Center Convocation Room 113",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-18",
+        "startTime": "11:45:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "HOUR OF POWER : A mid-week worship service for students, faculty, &amp; staff in Murray-Dodge 104.",
+        "description": "Hour of Power is a mid-week worship service for students, faculty, and staff.  Join us to renew your mind, revive your spirit, and replenish your soul!  Join us for Hour of Power - an hour of praise, prayer, and proclamation.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-05",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-05",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "HOUR OF POWER : A mid-week worship service for students, faculty, &amp; staff in Murray-Dodge 104.",
+        "description": "Hour of Power is a mid-week worship service for students, faculty, and staff.  Join us to renew your mind, revive your spirit, and replenish your soul!  Join us for Hour of Power - an hour of praise, prayer, and proclamation.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-12",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-12",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "HOUR OF POWER : A mid-week worship service for students, faculty, &amp; staff in Murray-Dodge 104.",
+        "description": "Hour of Power is a mid-week worship service for students, faculty, and staff.  Join us to renew your mind, revive your spirit, and replenish your soul!  Join us for Hour of Power - an hour of praise, prayer, and proclamation.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-19",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "HALLELUJAH CHURCH AT PRINCETON : Join us for Hallelujah Church at Princeton in Murray-Dodge 104.",
+        "description": "Hallelujah Church at Princeton is an interdenominational worship service that includes lively music (hymns/praise/contemporary gospel), prayer, and an applicable message rooted in scripture. You will find a friendly, relaxed place where you can truly be yourself and be encouraged, challenged, and taught how to connect with God. You will enjoy worshiping, learning, and have fun meeting students just like you. Come expecting to find real people who are learning every day how to serve God by serving and loving each other.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-09",
+        "startTime": "13:30:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "14:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "HALLELUJAH CHURCH AT PRINCETON : Join us for Hallelujah Church at Princeton in Murray-Dodge 104.",
+        "description": "Hallelujah Church at Princeton is an interdenominational worship service that includes lively music (hymns/praise/contemporary gospel), prayer, and an applicable message rooted in scripture. You will find a friendly, relaxed place where you can truly be yourself and be encouraged, challenged, and taught how to connect with God. You will enjoy worshiping, learning, and have fun meeting students just like you. Come expecting to find real people who are learning every day how to serve God by serving and loving each other.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-16",
+        "startTime": "13:30:00 EDT",
+        "endDate": "2017-04-16",
+        "endTime": "14:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "MINDFULNESS MEDITATION : Join us for a one hour weekly meditation in Murray-Dodge 104.",
+        "description": "Join us for Mindfulness Meditation led by Dean Matt Weiner, Associate Dean of Religious Life.  A light lunch is provided.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-06",
+        "startTime": "12:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "MINDFULNESS MEDITATION : Join us for a one hour weekly meditation in Murray-Dodge 104.",
+        "description": "Join us for Mindfulness Meditation led by Dean Matt Weiner, Associate Dean of Religious Life.  A light lunch is provided.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-13",
+        "startTime": "12:30:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "CWP SPRING LECTURE SERIES : CWP, Guest Speaker Ryan Hass, U.S. Department of State",
+        "description": "Ryan Hass, U. S. Department of State, `On China¿",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Bowl 002",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-12",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-12",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Princeton Pianists Ensemble : ",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-15",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "22:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "2",
+            "categoryName": "Arts"
+          }
+        }
+      },
+      {
+        "title": "Flex-N-Princeton : featuring Reggie &quot;Regg Roc&quot; Gray and Peter Sellars",
+        "description": "Created by Reggie Roc and Peter Sellars, FLEX-N-PRINCETON is presented through the Wilson College Signature Lecture Series and the Lewis Center for the Arts Performance Central Series. This street dance performance uses movement to tell deeply human stories about some of the most troubling issues of our time. A discussion with Peter Sellars and Regg Roc will follow the performance.",
+        "locationID": "0015",
+        "locationName": "Richardson Auditorium in Alexander Hall",
+        "latitude": "40.348322",
+        "longitude": "-74.660621",
+        "startDate": "2017-04-18",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "21:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "JONATHAN RECKFORD, HABITAT FOR HUMANITY : Talk with CEO of Habitat for Humanity",
+        "description": "A talk with the CEO of Habitat for Humanity, Jonathan Reckford",
+        "locationID": "0130",
+        "locationName": "Robertson 001",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-11",
+        "startTime": "17:00:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            }
+          ]
+        }
+      },
+      {
+        "title": "CWP, Guest Speaker Chen Yali",
+        "description": "Chen Yali, CWP Postdoctoral Fellow -      &apos;The PLA in China: A Foreign and Security Policy-making&apos;",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Bowl 002",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-05",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-05",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "CWP SPRING 2017 LECTURE SERIES : CWP, Guest Speaker Jonathan Stromseth",
+        "description": "Jonathan Stromseth, U.S. Department of      State - On China",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Bowl 001",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-19",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Latin American Studies : Susana Draper to present &quot;Constellations of 1968 Mexico. Experiments on Freedom and Democracy&quot;",
+        "description": "Princeton Work-in-Progress Series  Susana Draper (Comparative Literature, Princeton University)",
+        "locationName": "216 Burr Hall",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-05",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-05",
+        "endTime": "13:20:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Latin American Studies : Eduardo Neves to present &quot;Was There Ever a Neolithic in the Neotropics?: A Discussion from the Amazon&quot;",
+        "description": "New Trends in Latin American Studies Series  Featuring: Eduardo Neves (Anthropologist, Visiting Professor at Harvard)",
+        "locationName": "216 Burr Hall",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-19",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "13:20:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "EDMUND CLARK : Artist Talk",
+        "description": "Join us for an artist talk by photographer Edmund Clark, whose work is featured in Revealing Pictures: Photographs from the Christopher E. Olofson Collection. Edmund Clark&apos;s work links history, politics, and representation, and engages with state censorship to explore hidden experiences as well as spaces of control and incarceration in the global &quot;war on terror.&quot;A book signing and reception will follow in the Art Museum.",
+        "locationName": "McCosh 10",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-06",
+        "startTime": "18:00:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "19:30:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "4",
+              "categoryName": "Exhibits"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "WOMEN&apos;S MEDITATION : All women students, staff, and faculty are invited to this meditation in Murray-Dodge 104",
+        "description": "All women students, staff, and faculty are invited to this meditation in Murray-Dodge 104.  A healthy lunch will be served.  Facilitated by Alison Boden, Dean of Religious Life and of the Chapel, and Shefalika Gandhi, LCSW.  Sponsored by University Health Services and the Office of Religious Life.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-18",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Princeton Entrepreneurship Club : The Internet, Politics, and Buzzfeed: A Conversation with Jon Steinberg 99",
+        "locationID": "0024",
+        "locationName": "McCosh Hall Lecture Hall 10",
+        "latitude": "40.348307",
+        "longitude": "-74.656521",
+        "startDate": "2017-04-08",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Creative Mind and Leadership Lecture Ser : Creative Mind and Leadership Lecture Series",
+        "description": "The Keller Center welcomes Dan Formosa, Consultant in Design at NYU as part of The Creative Mind and Leadership Lecture Series.",
+        "locationID": "0616",
+        "locationName": "Friend Center Bowl 006",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-06",
+        "startTime": "16:00:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "19:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Program in Latin American Studies : Ana María Ochoa presents &quot;The Aural, the Oral, Silence&quot;",
+        "description": "New Trends in Latin American Studies Series.  Ana María Ochoa (Music, Columbia University)",
+        "locationName": "McCormick 106",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-11",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "MUSLIM LIFE PROGRAM : [Teach-In] A History of Muslims in America",
+        "description": "[Teach-In] A History of Muslims in      America",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Bowl 002",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-11",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "19:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Educational Seminar for Non-immigrant Vi : Educational Seminar for Non-immigrant Visas",
+        "description": "Many international students are interested in working in the US after graduation, but know little about how and when to apply for a working visa. In this seminar, we will invite an attorney from the FYZ Law Group to introduce all kinds of non-immigration visa.Our seminars will involve discussion of Trump¿s new immigrant policy, the process and requirements to obtain a non-immigrant working visa such as H-1B, J-1, O-1, as well as employment-based green card application including EB-1A (Alien of Extraordinary Ability), EB-1B (Outstanding Professor  Researcher), NIW (National Interest Waiver) and PERM (Labor Certification).",
+        "locationID": "0616",
+        "locationName": "Friend Center Bowl 006",
+        "latitude": "40.350268",
+        "longitude": "-74.652827",
+        "startDate": "2017-04-10",
+        "startTime": "15:00:00 EDT",
+        "endDate": "2017-04-10",
+        "endTime": "17:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "PALM SUNDAY WORSHIP SERVICE : All are welcome to the University Chapel for Palm Sunday Worship Service!",
+        "description": "All are welcome to this ecumenical Christian Worship Service on Palm Sunday at 11am in the University Chapel.  Rev. Theresa S. Thames, Associate Dean of Religious Life and the Chapel will be preaching and there will be music by the magnificent Princeton University Chapel Choir.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-09",
+        "startTime": "11:00:00 EDT",
+        "endDate": "2017-04-09",
+        "endTime": "12:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "EASTER SUNDAY WORSHIP SERVICE : Join us for Easter Sunday Services!",
+        "description": "All are welcome to this ecumenical Christian Worship Service on Easter Sunday at 11am in the University Chapel.  Rev. Dr. Alison L. Boden, Dean of Religious Life and the Chapel will be preaching and there will be music by the magnificent Princeton University Chapel Choir.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-16",
+        "startTime": "11:00:00 EDT",
+        "endDate": "2017-04-16",
+        "endTime": "12:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "EASTER SUNDAY WORSHIP SERVICE : Join us for this early morning Worship Service in the University Chapel.",
+        "description": "All are welcome to this early morning ecumenical Christian Worship Service on Easter Sunday at 8am in the University Chapel.  Rev. Dr. Alison L. Boden, Dean of Religious Life and the Chapel will be preaching and there will be music by the magnificent Princeton University Chapel Choir.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-16",
+        "startTime": "08:00:00 EDT",
+        "endDate": "2017-04-16",
+        "endTime": "09:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "MAUNDY THURSDAY SERVICE : Join us for Maundy Thursday service in the Chancellor Green Rotunda",
+        "description": "All are welcome to the Maundy Thursday service at 8pm in the Chancellor Green Rotunda.  We hope you can join us!",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-13",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "21:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "SOLEMN REPROACHES OF THE CROSS : Join us on Good Friday for the Solemn Reproaches of the Cross in the University Chapel.",
+        "description": "Please join us for this service sponsored by the Office of Religious Life.  We hope you can join us later this evening for Tenebrae as well.",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-14",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "GOOD FRIDAY TENEBRAE SERVICE : All are welcome to this service in the University Chapel.",
+        "description": "Join us - all are welcome!",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-14",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "21:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "6",
+              "categoryName": "Religious"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "REEES LECTURE : Civic Ecologies: Vladimir Korolenko, Kliment Timiriazev and Perspectives From the Environmental Humanities",
+        "description": "Jane Costlow, Bates CollegeFor more information, please visit: http://piirs.princeton.edu/event/civic-ecologies-vladimir-korolenko-kliment-timiriazev-and-perspectives-environmental",
+        "locationName": "A71 Louis A. Simpson Building",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-18",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "18:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "FUNG GLOBAL FELLOWS PROGRAM : The Primacy of the Neighborhood: Regionalism and the Preferences of Brazil and India in the WTO",
+        "description": "Vinicius Rodrigues Vieira, Fung Global Fellow / University of São Paulo, Brazil",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building 35 Person Meeting Room 144",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-18",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PRISM/PCCM SEMINAR SERIES : New Vistas in Electrochemical Energy Storage",
+        "description": "Linda Nazar, University of Waterloo -- The widespread integration of renewable, intermittent energy sources such as wind or solar is dependent upon the development of efficient large-scale energy storage systems for load-levelling the electric grid.  Similarly, the acceptance of plug-in hybrid electric - and especially pure electric vehicles - hinges on the availability of intermediate scale, safe, low-cost energy storage batteries to provide practical driving ranges. These approaches can help mitigate CO2 emissions and urban pollution, but it is widely acknowledged that traditional Li-ion batteries - which work on the principle of reversible storage of electrons and Li-ions in bulk materials - are approaching heir limits.  This presentation will focus on the challenge to find better electrochemical energy storage systems that go ¿beyond Li-ion¿ batteries. Topics will encompass multivalent intercalation batteries and cells that operate on the basis of ¿chemical transformations.¿ These both represent exciting new technologies that could meet the needs for high energy density storage.  Yet many barriers remain to realizing their full promise, especially for automotive applications. They require cleverly designed materials for the electrodes, different electrolyte strategies than those used for Li-ion batteries and advanced electrode architectures. If the hurdles can be overcome, then energy storage technology has a much better opportunity to change the way we manage energy. In this seminar, I will discuss the research in our lab at the Electrochemical Energy Research Centre at Waterloo that is aimed at addressing the above challenges. For more information, please visit materials.princeton.edu",
+        "locationID": "0553",
+        "locationName": "Bowen Hall Lecture Hall 222",
+        "latitude": "40.349486",
+        "longitude": "-74.650428",
+        "startDate": "2017-04-05",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-05",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Latin American Studies : Rosina Lozano presents &quot;Governing Bilingually: A History of Spanish in the US&quot;",
+        "description": "Princeton Work-in-Progress Series  Featuring: Rosina Lozano (History, Princeton University)",
+        "locationName": "216 Burr Hall",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-12",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-12",
+        "endTime": "13:20:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "BOBST/POLITICS : Charles Harb: Birth Pangs of an Islamic Caliphate?...&quot;",
+        "description": "Charles Harb: ¿Birth Pangs¿ of an Islamic Caliphate?      Misunderstanding ISIS, and why the war on ¿Islamic Terror¿ is      bound to fail.      Charles Harb is Professor of Social and Political Psychology and      Chairperson of the Department of Psychology at the American      University of Beirut, Lebanon. He has conducted extensive      empirical research on intergroup dynamics, social cohesion and      collective action in the Arab region.",
+        "locationID": "0130",
+        "locationName": "Robertson Hall Bowl 001",
+        "latitude": "40.348373",
+        "longitude": "-74.654762",
+        "startDate": "2017-04-17",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-17",
+        "endTime": "18:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PIIRS GSR Lecture with John Beckford : &quot;Infrastructure Resilience Matters: Infrastructure Systems and Risk in the United Kingdom&quot;",
+        "description": "Abstract: Beginning with an overview of the opportunities and challenges for infrastructure in the U.K., Professor John Beckford explores how infrastructure has been articulated and explored as a &quot;system of systems.&quot; He shows how growing interdependency within systems of infrastructure improves local efficiency in the short run, yet can damage systemic effectiveness and resilience, increase risk, and lead to potential &quot;single points of failure&quot; in the long term. Within the field of infrastructure, Beckford explores how such factors as regulatory and funding models, business models, globalization of supply chains, changes in skill sets, and increasing reliance on remote internet-enabled management each affect the resilience of infrastructure and the consequent risks facing society as a whole. Articulating a systemic perspective on the meaning of &quot;performance,&quot; Beckford illustrates his lecture with examples from transportation, energy, telecommunications, education, and healthcare.  John Becjford is a Partner at Beckford Consulting, Visiting Professor in the Dept. of Science, Technology, Engineering, and Public Policy, University College London, &amp; Visiting Professor in the Centre for Information Management, Loughborough UniversityRooted in an overview of the opportunities and challenges for infrastructure in the UK, Beckfords lecture will explore how infrastructure has been articulated and explored as a system of systems. He will discuss how the systems of infrastructure face unique challenges in an increasingly globalized and interconnected world, and how the resilience of these systems may be compromised: leading to greater risks of failure.",
+        "locationID": "0630",
+        "locationName": "Lewis Library Bowl 138",
+        "latitude": "40.34624",
+        "longitude": "-74.6528",
+        "startDate": "2017-04-06",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "PRISM/PCCM SEMINAR SERIES : Quantum Sensing and Imaging with Diamond Spins",
+        "description": "Ania Jayich, University of California-Santa Barbara -- The nitrogen vacancy (NV) center in diamond is an atomic-scale defect in diamond that is highly sensitive to a wide variety of fields: magnetic, electric, thermal, and strain. Here I discuss an NV-based imaging platform (Fig. 1) where we have incorporated an NV center into a scanning probe microscope and used it to image vortices in superconductors [1] and skyrmions, nanoscale topological spin textures, in thin film magnetic multilayers. A grand challenge to improving the spatial resolution and magnetic sensitivity of the NV is mitigating surface-induced quantum decoherence, which I will discuss in the second part of this talk. Decoherence at interfaces is a universal problem that affects many quantum technologies, but the microscopic origins are as yet unclear. With its sensitivity to electric and magnetic fields over a wide range of frequencies, we have used the NV center as a noise spectrometer to spectroscopically probe sources of surface-related decoherence, differentiating between electric and magnetic origins. These studies guide the ongoing development of quantum control and diamond surface preparation techniques, pushing towards the ultimate goal of NV-based single nuclear spin imaging. For more information, please visit materials.princeton.edu",
+        "locationID": "0553",
+        "locationName": "Bowen Hall Lecture Hall 222",
+        "latitude": "40.349486",
+        "longitude": "-74.650428",
+        "startDate": "2017-04-12",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-12",
+        "endTime": "13:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Expressions presents: -topia : Expressions Dance Company",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-06",
+        "startTime": "21:00:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "22:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Expressions presents: -topia : Expressions Dance Company",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-07",
+        "startTime": "21:00:00 EDT",
+        "endDate": "2017-04-07",
+        "endTime": "22:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Expressions presents: -topia : Expressions Dance Company",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-08",
+        "startTime": "21:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "22:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "DEPARTMENT OF POLITICS : CAPITALISTS ARISE!: End Economic Inequality, Grow the Middle Class, Heal the Nation",
+        "description": "Peter Georgescu ¿61, Chairman Emeritus of Young &amp; Rubicam, Georgescu will give a talk about his new book, CAPITALISTS ARISE!: End Economic Inequality, Grow the Middle Class, Heal the Nation, which argues that the stark reality of our current economic malaise and social breakdown can be attributed to the short-term thinking spawned by shareholder primacy.",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building Bowl A71",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-19",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "Establishing Personhood",
+        "description": "Dr. R.J. Snell, Director of the Center on the University and Intellectual Life at the Witherspoon Institute, will deliver a lecture on the topic of personhood¿how we define it, why it is relevant, and what the repercussions of a narrow definition of personhood look like in the modern era.",
+        "locationID": "0027",
+        "locationName": "Guyot Hall Lecture Hall 10",
+        "latitude": "40.345797",
+        "longitude": "-74.65456",
+        "startDate": "2017-04-19",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Princeton Environmental Institute : Art of Environmental Justice in an Expanded Field: A Symposium on Creative Activism and Eco-Politics across Boundaries",
+        "description": "Leading international contemporary artists discuss their work on environmental justice issues,highlighting the expansive power of creative activism to reimagine eco-politics acrossboundaries of nations, socioeconomic classes, identities, disciplines, species, and media. Lunchavailable and reception following.  Global Perspectives on Environmental Justice Series Event.  For more information contact Alan C. Braddock (acb4@princeton.edu), Currie C. and Thomas A.Barron Visiting Professor of Environment and Humanities, Princeton University",
+        "locationName": "Betts Auditorium, School of Architecture",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-13",
+        "startTime": "09:00:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Althea Ward Clark w21 Reading Series wit : Althea Ward Clark w21 Reading Series with John Ashbery and Jim Jarmusch",
+        "description": "Poet John Ashbery and screenwriterdirector Jim Jarmusch read from their work on Wednesday, April 19, at 4:30 p.m. in the Berlind Theatre at McCarter Theatre Center. Both writers will be introduced by Pulitzer Prize-winning poet and Professor of Creative Writing Paul Muldoon. The event, part of the Althea Ward Clark W¿21 Reading Series, is free and open to the public but seating is limited; seats are available on a first-come, first-served basis.",
+        "locationID": "0024",
+        "locationName": "McCosh Hall Lecture Hall 50",
+        "latitude": "40.348307",
+        "longitude": "-74.656521",
+        "startDate": "2017-04-19",
+        "startTime": "16:00:00 EDT",
+        "endDate": "2017-04-19",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "SHAHZIA SIKANDER : Artist Talk",
+        "description": "Artist Shahzia Sikander inaugurates her recent works for Princeton¿s campus with a talk on the inspiration, iconography, and working process behind her first monumental commissions in glass and mosaic. A reception will follow.",
+        "locationName": "Forum, Julis Romo Rabinowitz Building",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-08",
+        "startTime": "14:00:00 EDT",
+        "endDate": "2017-04-08",
+        "endTime": "16:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "4",
+              "categoryName": "Exhibits"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "INSPIRATION NIGHT : ",
+        "description": "The Student Advisory Board invites you to an evening of art, conversation, and performances inspired by the exhibition Revealing Pictures. Refreshments will be served as individuals from the campus community discuss the theme of social activism.",
+        "locationName": "Art Museum",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-13",
+        "startTime": "19:00:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "21:00:00 EDT",
+        "categories": {
+          "category": [
+            {
+              "categoryID": "1",
+              "categoryName": "Academic Events"
+            },
+            {
+              "categoryID": "8",
+              "categoryName": "Alumni"
+            },
+            {
+              "categoryID": "2",
+              "categoryName": "Arts"
+            },
+            {
+              "categoryID": "4",
+              "categoryName": "Exhibits"
+            },
+            {
+              "categoryID": "5",
+              "categoryName": "Princeton Community"
+            },
+            {
+              "categoryID": "7",
+              "categoryName": "Student Life"
+            }
+          ]
+        }
+      },
+      {
+        "title": "PLAS Graduate Works-in-Progress : Program in Latin American Studies",
+        "description": "&quot;To Cry on Facebook: Digital Culture in 21st Century Cuba&quot;Lizabel Mónica (Spanish and Portuguese, Princeton University).  &quot;Berimbau, Agency and Capoeira: On the Social Life of a Musical Instrument&quot;Jorge M. Herrera Acuña (Spanish and Portuguese, Princeton University)",
+        "locationName": "216 Burr Hall",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-06",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "13:20:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Princeton Environmental Institute : The Dust We Breath: Climate and Public Health in the MENA region",
+        "description": "Hamid Pouran - Environmental Scientist and Mossavar-Rahmani Center Visiting Scholar  This presentation will address issues of climate change and reduced annual precipitation which, along with human activities, have made some of Iran¿s cities among the most air-polluted in the world.  Additionally, instability and conflict in Syria and Iraq have led to their governments¿ failure to maintain their land-management commitments and as a result have generated new dust storm hotspots. Transboundary dust storms, in particular those generated in Syria and Iraq, impose an even greater risk to public health, as they likely carry war remnants and pollutants containing heavy metals.",
+        "locationName": "Guyot Hall, Room 10",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-18",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-18",
+        "endTime": "17:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "PIIRS RESEARCH COMMUNITY : (Roundtable Discussion) Primitive Accumulation After Neoliberalism: The Actuality of Imperialism",
+        "description": "Banu Bargu (The New School)Juan Obarrio (Institute for Advanced Study)Massimiliano Tomba (Institute for Advanced Study)Nick Nesbitt (Department of French and Italian)",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building Bowl A71",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-05",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-05",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PIIRS RESEARCH COMMUNITY : Panel Discussion, The Refugee Crisis: Reporting on the Front Lines in Greece - and New Jersey",
+        "description": "Joe Stephens, Ferris Professor of JournalismDeborah Amos, National Public RadioAlexandra Markovich ¿17Hayley Roth ¿17Iris Samuels ¿19Princeton¿s journalism program launched an innovative course last summer in which students traveled to Greece for five weeks to act as eyewitnesses to history, reporting on the continuing refugee crisis in Athens and on the island of Lesbos. Joe Stephens, Ferris Professor of Journalism in residence and a veteran investigative reporter for The Washington Post, and his students will explain what they discovered while working as foreign correspondents. NPR Correspondent Deborah Amos will report on what she has discovered about the crisis right here in New Jersey.Sponsored by the PIIRS Research Community, Migration: People and Cultures across Borders, and by the Humanities Council.",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building 35 Person Meeting Room 144",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-06",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PROGRAM IN TRANSLATION : Improper Translations: Multilingual Reading practices in Fourteenth-Century English Literature",
+        "description": "In this paper, Emily Dalton read Chaucer¿s late fourteenth-century dream-vision poem The Book of the Duchess as an investigation of the creative possibilities of citation and the degree to which literary genres do or do not travel across the Channel. She argues that the poem¿s orientation toward proper names and the possibility of their translation shed light on what makes The Book of the Duchess an authentic work in English rather than a pastiche of translated French texts. Tracing the dislocating effect of citation that cuts across generic and linguistic boundaries, she shows how the poem explores the diverse forms of literary afterlife, bringing to light its interest in what happens when language ¿lives on¿ in other textual spaces.Dalton¿s work helps recover an understanding of fourteenth-century Englishness as encompassing plural and contested identities, revealing an archaeology of English literature attuned to its multilingualism and its origins in multiple textual traditions.",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building 35 Person Meeting Room 144",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-10",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-10",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PROGRAM IN AFRICAN STUDIES : Sara Lopus and Maggie Frye, Princeton University",
+        "description": "Works-in-Progress Series",
+        "locationID": "0853",
+        "locationName": "Louis A. Simpson Building 35 Person Meeting Room 144",
+        "latitude": "40.349279",
+        "longitude": "-74.654895",
+        "startDate": "2017-04-11",
+        "startTime": "12:15:00 EDT",
+        "endDate": "2017-04-11",
+        "endTime": "13:45:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "1",
+            "categoryName": "Academic Events"
+          }
+        }
+      },
+      {
+        "title": "PIIRS : Is There Convergence in the Future of Global Capitalism?",
+        "description": "Is There Convergence in the Future of Global Capitalism?  Dani Rodrik, Harvard University  The Future of Capitalism Talk Series  Dani Rodrik is Ford Foundation Professor of International Political Economy at the Harvard Kennedy School. He has published widely in the areas of economic development, international economics, and political economy. His current research focuses on the political economy of liberal democracy and economic growth in developing countries. He is the recipient of the inaugural Albert O. Hirschman Prize of the Social Sciences Research Council and of the Leontief Award for Advancing the Frontiers of Economic Thought. His most recent book is Economics Rules: The Rights and Wrongs of the Dismal Science (Norton, forthcoming). He is also the author of The Globalization Paradox: Democracy and the Future of the World Economy (2011) and One Economics, Many Recipes: Globalization, Institutions, and Economic Growth (2007).  Sponsored by Comparative Political Economy Research Initiative",
+        "locationName": "A17 Louis A. Simpson International Building",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-06",
+        "startTime": "16:30:00 EDT",
+        "endDate": "2017-04-06",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Worship House Easter Service",
+        "locationID": "0039",
+        "locationName": "McCormick Hall Lecture Hall 101",
+        "latitude": "40.347274",
+        "longitude": "-74.658045",
+        "startDate": "2017-04-15",
+        "startTime": "18:30:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "21:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Program in Latin American Studies : Dilma Rousseff, Former President of Brazil, presents &quot;The Challenges for Democracy in Brazil&quot;",
+        "description": "Simultaneous translation will be provided.  Free and open to the public.  Presented by: the Department of Spanish and Portuguese, Program in Latin American Studies and Princeton Institute for International and Regional Studies",
+        "locationName": "McCormick 101",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-13",
+        "startTime": "12:00:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "13:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "&quot;DIVIDE&quot; : DiSiac",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-13",
+        "startTime": "20:00:00 EDT",
+        "endDate": "2017-04-13",
+        "endTime": "22:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "&quot;DIVIDE&quot; : DiSiac",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-14",
+        "startTime": "18:30:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "20:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "&quot;DIVIDE&quot; : DiSiac",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-15",
+        "startTime": "18:30:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "20:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "&quot;DIVIDE&quot; : DiSiac",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-14",
+        "startTime": "21:30:00 EDT",
+        "endDate": "2017-04-14",
+        "endTime": "23:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "&quot;DIVIDE&quot; : DiSiac",
+        "locationID": "0605",
+        "locationName": "Frist Campus Center Film/Performance Theatre",
+        "latitude": "40.34673",
+        "longitude": "-74.655259",
+        "startDate": "2017-04-15",
+        "startTime": "21:30:00 EDT",
+        "endDate": "2017-04-15",
+        "endTime": "23:30:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      },
+      {
+        "title": "Wilson College Signature Lecture Series : How to Sustain an Activist Life",
+        "description": "Panel speakers include Chris Hedges, Fazal Sheikh, Gayatril Chakravorty Spivak, Liana Theodoratuou, Cornel West",
+        "locationName": "McCosh 50",
+        "latitude": "0",
+        "longitude": "0",
+        "startDate": "2017-04-17",
+        "startTime": "17:00:00 EDT",
+        "endDate": "2017-04-17",
+        "endTime": "18:00:00 EDT",
+        "categories": {
+          "category": {
+            "categoryID": "0",
+            "categoryName": "Other"
+          }
+        }
+      }
+    ]
+  }
+}
