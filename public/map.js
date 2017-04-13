@@ -87,7 +87,7 @@ function initMap() {
 function createMap(pos) {
     $.getJSON("mapstyle.json", function(data) {
         map = new google.maps.Map(document.getElementById('map'), {
-            center: pos,
+            center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             styles: data
         });
