@@ -1,0 +1,23 @@
+McDonnell Hall
+
+ [
+new google.maps.LatLng(40.345420,-74.652703),
+new google.maps.LatLng(40.345461,-74.652643),
+new google.maps.LatLng(40.345487,-74.652593),
+new google.maps.LatLng(40.345517,-74.652525),
+new google.maps.LatLng(40.345541,-74.652474),
+new google.maps.LatLng(40.345508,-74.652447),
+new google.maps.LatLng(40.345516,-74.652429),
+new google.maps.LatLng(40.345249,-74.652216),
+new google.maps.LatLng(40.345201,-74.652324),
+new google.maps.LatLng(40.345201,-74.652334),
+new google.maps.LatLng(40.345173,-74.652325),
+new google.maps.LatLng(40.345120,-74.652523),
+new google.maps.LatLng(40.345213,-74.652570),
+new google.maps.LatLng(40.345209,-74.652592),
+new google.maps.LatLng(40.345302,-74.652637),
+new google.maps.LatLng(40.345297,-74.652661),
+new google.maps.LatLng(40.345394,-74.652708),
+new google.maps.LatLng(40.345400,-74.652691),
+new google.maps.LatLng(40.345418,-74.652702)
+]

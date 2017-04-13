@@ -1,0 +1,15 @@
+Caldwell Fieldhouse
+
+[
+new google.maps.LatLng(40.344207,-74.648658),
+new google.maps.LatLng(40.344179,-74.648739),
+new google.maps.LatLng(40.344030,-74.648653),
+new google.maps.LatLng(40.344286,-74.647895),
+new google.maps.LatLng(40.344556,-74.648049),
+new google.maps.LatLng(40.344515,-74.648182),
+new google.maps.LatLng(40.344538,-74.648196),
+new google.maps.LatLng(40.344467,-74.648412),
+new google.maps.LatLng(40.344444,-74.648401),
+new google.maps.LatLng(40.344334,-74.648731),
+new google.maps.LatLng(40.344223,-74.648668)
+]

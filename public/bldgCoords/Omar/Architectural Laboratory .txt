@@ -1,0 +1,13 @@
+Architectural Laboratory
+
+[
+new google.maps.LatLng(40.343518,-74.650197),
+new google.maps.LatLng(40.343443,-74.650132),
+new google.maps.LatLng(40.343648,-74.649745),
+new google.maps.LatLng(40.343733,-74.649730),
+new google.maps.LatLng(40.343799,-74.649601),
+new google.maps.LatLng(40.343858,-74.649660),
+new google.maps.LatLng(40.343813,-74.649733),
+new google.maps.LatLng(40.343774,-74.649699),
+new google.maps.LatLng(40.343520,-74.650189)
+]
