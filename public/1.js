@@ -55,39 +55,39 @@ function drawPolygon1() {
         fillOpacity: 0.01
     });
 
-    
-    myPolygon.setMap(map);   
+
+    myPolygon.setMap(map);
 
     var vertices = myPolygon.getPath();
     var center = getBoundingBox(myPolygon).getCenter();
-    
+
     var marker = new google.maps.Marker({
         position: center,
         map: map
     });
-    
+
     //marker.setLabel("Dillon Gym");
     marker.addListener('click', function(event) {
         showInfo(event, this);
-    }); 
-    
+    });
+
     myPolygon.addListener('click', function(event) {
         showInfo(event, marker);
     });
-    
+
     // Add a listener for the click event.
     myPolygon.addListener('mouseover', function(event) {
         myPolygon.setOptions({
             strokeOpacity: 0.8,
             fillOpacity: 0.35
-        }); 
+        });
     });
 
     myPolygon.addListener('mouseout', function(event) {
         myPolygon.setOptions({
             strokeOpacity: 0.01,
             fillOpacity: 0.01
-        }); 
+        });
     });
 
     function showInfo(event, marker) {
