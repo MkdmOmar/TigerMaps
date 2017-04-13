@@ -1,3 +1,4 @@
+Quad
 [
 new google.maps.LatLng(40.347979,-74.652555),
 new google.maps.LatLng(40.347963,-74.652612),
