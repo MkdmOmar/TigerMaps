@@ -1,0 +1,19 @@
+Cloister
+[
+new google.maps.LatLng(40.348516,-74.650384),
+new google.maps.LatLng(40.348490,-74.650482),
+new google.maps.LatLng(40.348551,-74.650510),
+new google.maps.LatLng(40.348510,-74.650663),
+new google.maps.LatLng(40.348546,-74.650680),
+new google.maps.LatLng(40.348543,-74.650693),
+new google.maps.LatLng(40.348576,-74.650709),
+new google.maps.LatLng(40.348568,-74.650740),
+new google.maps.LatLng(40.348594,-74.650752),
+new google.maps.LatLng(40.348602,-74.650722),
+new google.maps.LatLng(40.348633,-74.650735),
+new google.maps.LatLng(40.348669,-74.650599),
+new google.maps.LatLng(40.348693,-74.650610),
+new google.maps.LatLng(40.348720,-74.650511),
+new google.maps.LatLng(40.348710,-74.650506),
+new google.maps.LatLng(40.348717,-74.650478)
+];

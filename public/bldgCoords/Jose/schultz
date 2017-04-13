@@ -1,0 +1,24 @@
+Schultz Lab
+[
+new google.maps.LatLng(40.345340,-74.654316),
+new google.maps.LatLng(40.345396,-74.654104),
+new google.maps.LatLng(40.345411,-74.654070),
+new google.maps.LatLng(40.345481,-74.653917),
+new google.maps.LatLng(40.345460,-74.653899),
+new google.maps.LatLng(40.345462,-74.653892),
+new google.maps.LatLng(40.345429,-74.653866),
+new google.maps.LatLng(40.345526,-74.653649),
+new google.maps.LatLng(40.345483,-74.653616),
+new google.maps.LatLng(40.345467,-74.653651),
+new google.maps.LatLng(40.345452,-74.653647),
+new google.maps.LatLng(40.345449,-74.653661),
+new google.maps.LatLng(40.345436,-74.653655),
+new google.maps.LatLng(40.345424,-74.653654),
+new google.maps.LatLng(40.345413,-74.653656),
+new google.maps.LatLng(40.345401,-74.653665),
+new google.maps.LatLng(40.345390,-74.653676),
+new google.maps.LatLng(40.345382,-74.653691),
+new google.maps.LatLng(40.345377,-74.653709),
+new google.maps.LatLng(40.345375,-74.653732),
+new google.maps.LatLng(40.345231,-74.654264)
+];

@@ -1,0 +1,21 @@
+Charter
+[
+new google.maps.LatLng(40.348816,-74.650256),
+new google.maps.LatLng(40.348589,-74.650150),
+new google.maps.LatLng(40.348616,-74.650044),
+new google.maps.LatLng(40.348626,-74.650049),
+new google.maps.LatLng(40.348642,-74.649993),
+new google.maps.LatLng(40.348667,-74.650006),
+new google.maps.LatLng(40.348680,-74.649951),
+new google.maps.LatLng(40.348719,-74.649970),
+new google.maps.LatLng(40.348722,-74.649954),
+new google.maps.LatLng(40.348741,-74.649962),
+new google.maps.LatLng(40.348754,-74.649908),
+new google.maps.LatLng(40.348746,-74.649902),
+new google.maps.LatLng(40.348772,-74.649796),
+new google.maps.LatLng(40.348923,-74.649867),
+new google.maps.LatLng(40.348894,-74.649971),
+new google.maps.LatLng(40.348863,-74.649957),
+new google.maps.LatLng(40.348818,-74.650135),
+new google.maps.LatLng(40.348847,-74.650151)
+];

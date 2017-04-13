@@ -1,0 +1,21 @@
+Neuroscience Institute
+[
+new google.maps.LatLng(40.343729,-74.652390),
+new google.maps.LatLng(40.343352,-74.652092),
+new google.maps.LatLng(40.343305,-74.652157),
+new google.maps.LatLng(40.343195,-74.652064),
+new google.maps.LatLng(40.343119,-74.652204),
+new google.maps.LatLng(40.342874,-74.652022),
+new google.maps.LatLng(40.342707,-74.652425),
+new google.maps.LatLng(40.342924,-74.652594),
+new google.maps.LatLng(40.342887,-74.652670),
+new google.maps.LatLng(40.343239,-74.652948),
+new google.maps.LatLng(40.343250,-74.652926),
+new google.maps.LatLng(40.343349,-74.652997),
+new google.maps.LatLng(40.343546,-74.652653),
+new google.maps.LatLng(40.343529,-74.652641),
+new google.maps.LatLng(40.343543,-74.652613),
+new google.maps.LatLng(40.343481,-74.652537),
+new google.maps.LatLng(40.343509,-74.652472),
+new google.maps.LatLng(40.343683,-74.652564)
+];
