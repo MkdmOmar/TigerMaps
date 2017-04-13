@@ -1,28 +1,28 @@
 var map;
 var placesService;
 var infoWindow;
+polygonNames = []
+    /*
+    function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+        });
+    }
 
-/*
-function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-    });
-}
-
-function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
+    function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+            }
         }
     }
-}
-*/
+    */
 
 // The About adds a control to the map that links to the About page
 function About(controlDiv, map) {
@@ -135,24 +135,119 @@ function createMap(pos) {
         aboutDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
 
-        loadPolygons();
+        $.getScript('bldgCoords.js', function() {
+            // script is now loaded and executed.
+            // put your dependent JS here.
+            loadPolygons();
+        });
+
 
     });
 }
 
 //Courtesy of http://moduscreate.com/placing-markers-inside-polygons-with-google-maps/
 function getBoundingBox(polygon) {
-  var bounds = new google.maps.LatLngBounds();
+    var bounds = new google.maps.LatLngBounds();
 
-  polygon.getPath().forEach(function(element,index) {
-    bounds.extend(element)
-  });
-  return(bounds);
+    polygon.getPath().forEach(function(element, index) {
+        bounds.extend(element)
+    });
+    return (bounds);
 }
 
 function loadPolygons() {
-    $.getScript('1.js', function() {
-        //script is loaded and executed put your dependent JS here
-    });
+
+    for (var i = 0; i < locations.length; i++) {
+
+        var myPolygon = new google.maps.Polygon({
+            paths: locations[i].coords,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.01,
+            strokeWeight: 3,
+            fillColor: '#FF0000',
+            fillOpacity: 0.01,
+            name: locations[i].name
+        });
+
+        // if (locations[i].coords.length == 1) {
+        //     myPolygon = new google.maps.Polygon({
+        //         paths: locations[i].coords[0],
+        //         strokeColor: '#FF0000',
+        //         strokeOpacity: 0.01,
+        //         strokeWeight: 3,
+        //         fillColor: '#FF0000',
+        //         fillOpacity: 0.01,
+        //         name: locations[i].name
+        //     });
+        // }
+
+
+
+        polygonNames.push(locations[i].name);
+        console.log(polygonNames);
+
+
+
+        var vertices = myPolygon.getPath();
+        var center = getBoundingBox(myPolygon).getCenter();
+
+        var marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            name: locations[i].name
+        });
+
+        myPolygon.marker = marker;
+        myPolygon.setMap(map);
+
+
+        /*
+        MUST USE 'this' TO AVOID CLOSURE!!!!!
+
+        https://forums.phpfreaks.com/topic/281402-google-maps-add-click-listener-to-each-polygon/
+        */
+
+        marker.addListener('click', function(event) {
+            showMarkerInfo(event, this);
+        });
+
+        myPolygon.addListener('click', function(event) {
+            showPolygonInfo(event, this);
+        });
+
+        // Add a listener for the click event.
+        myPolygon.addListener('mouseover', function(event) {
+            this.setOptions({
+                strokeOpacity: 0.8,
+                fillOpacity: 0.35
+            });
+        });
+
+        myPolygon.addListener('mouseout', function(event) {
+            this.setOptions({
+                strokeOpacity: 0.01,
+                fillOpacity: 0.01
+            });
+        });
+
+
+    }
+
 }
-/** @this {google.maps.Polygon} */
+
+
+function showMarkerInfo(event, pMarker) {
+    // Replace the info window's content and position.
+    //infoWindow.setPosition(event.latLng);
+    var infoWindow = new google.maps.InfoWindow;
+    infoWindow.setContent("You clicked on " + pMarker.name + "!");
+    infoWindow.open(map, pMarker);
+}
+
+function showPolygonInfo(event, polygon) {
+    // Replace the info window's content and position.
+    //infoWindow.setPosition(event.latLng);
+    var infoWindow = new google.maps.InfoWindow;
+    infoWindow.setContent("You clicked on " + polygon.name + "!");
+    infoWindow.open(map, polygon.marker);
+}
