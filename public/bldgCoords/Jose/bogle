@@ -1,0 +1,21 @@
+Bogle Hall
+[
+new google.maps.LatLng(40.344388,-74.655699),
+new google.maps.LatLng(40.344417,-74.655561),
+new google.maps.LatLng(40.344195,-74.655402),
+new google.maps.LatLng(40.344159,-74.655530),
+new google.maps.LatLng(40.344177,-74.655544),
+new google.maps.LatLng(40.344187,-74.655560),
+new google.maps.LatLng(40.344194,-74.655568),
+new google.maps.LatLng(40.344202,-74.655574),
+new google.maps.LatLng(40.344206,-74.655576),
+new google.maps.LatLng(40.344213,-74.655578),
+new google.maps.LatLng(40.344223,-74.655578),
+new google.maps.LatLng(40.344247,-74.655597),
+new google.maps.LatLng(40.344254,-74.655609),
+new google.maps.LatLng(40.344262,-74.655619),
+new google.maps.LatLng(40.344269,-74.655625),
+new google.maps.LatLng(40.344277,-74.655628),
+new google.maps.LatLng(40.344285,-74.655631),
+new google.maps.LatLng(40.344294,-74.655632)
+];
