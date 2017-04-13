@@ -33,4 +33,4 @@ new google.maps.LatLng(40.348149,-74.651439),
 new google.maps.LatLng(40.348140,-74.651440),
 new google.maps.LatLng(40.348114,-74.651536),
 new google.maps.LatLng(40.348124,-74.651542)
-];
+]

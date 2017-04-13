@@ -1,4 +1,4 @@
-Cannon
+Cannon Club
 [
 new google.maps.LatLng(40.347941,-74.653128),
 new google.maps.LatLng(40.347909,-74.653113),
@@ -32,4 +32,4 @@ new google.maps.LatLng(40.347890,-74.653414),
 new google.maps.LatLng(40.347878,-74.653407),
 new google.maps.LatLng(40.347918,-74.653252),
 new google.maps.LatLng(40.347909,-74.653247)
-];
+]

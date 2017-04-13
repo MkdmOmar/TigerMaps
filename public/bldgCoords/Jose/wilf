@@ -32,4 +32,4 @@ new google.maps.LatLng(40.344372,-74.655209),
 new google.maps.LatLng(40.344378,-74.655211),
 new google.maps.LatLng(40.344389,-74.655213),
 new google.maps.LatLng(40.344395,-74.655218)
-];
+]

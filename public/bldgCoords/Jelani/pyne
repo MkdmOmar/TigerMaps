@@ -1,5 +1,5 @@
 Pyne Hall
-[new google.maps.LatLng(40.348492,-74.658054),
+[[new google.maps.LatLng(40.348492,-74.658054),
 new google.maps.LatLng(40.348913,-74.658245),
 new google.maps.LatLng(40.348899,-74.658325),
 new google.maps.LatLng(40.348905,-74.658336),
@@ -25,8 +25,8 @@ new google.maps.LatLng(40.348470,-74.658623),
 new google.maps.LatLng(40.348451,-74.658633),
 new google.maps.LatLng(40.348433,-74.658625),
 new google.maps.LatLng(40.348425,-74.658601),
-new google.maps.LatLng(40.348355,-74.658566)]
+new google.maps.LatLng(40.348355,-74.658566)],
 [new google.maps.LatLng(40.348570,-74.658245),
 new google.maps.LatLng(40.348505,-74.658491),
 new google.maps.LatLng(40.348693,-74.658583),
-new google.maps.LatLng(40.348758,-74.658330)]
+new google.maps.LatLng(40.348758,-74.658330)]]

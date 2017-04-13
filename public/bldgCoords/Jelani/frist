@@ -1,5 +1,5 @@
 Frist Campus Center
-[new google.maps.LatLng(40.346677,-74.654583),
+[[new google.maps.LatLng(40.346677,-74.654583),
 new google.maps.LatLng(40.346720,-74.654624),
 new google.maps.LatLng(40.346728,-74.654618),
 new google.maps.LatLng(40.346763,-74.654645),
@@ -33,13 +33,16 @@ new google.maps.LatLng(40.346415,-74.655165),
 new google.maps.LatLng(40.346397,-74.655141),
 new google.maps.LatLng(40.346581,-74.654739),
 new google.maps.LatLng(40.346605,-74.654750),
-new google.maps.LatLng(40.346675,-74.654589)]
-[new google.maps.LatLng(40.346724,-74.654897),
-new google.maps.LatLng(40.346744,-74.654865),
-new google.maps.LatLng(40.346890,-74.654983),
-new google.maps.LatLng(40.346704,-74.655383),
-new google.maps.LatLng(40.346558,-74.655267),
-new google.maps.LatLng(40.346571,-74.655246),
-new google.maps.LatLng(40.346605,-74.655267),
+new google.maps.LatLng(40.346675,-74.654589)],
+[new google.maps.LatLng(40.346728,-74.654903),
 new google.maps.LatLng(40.346761,-74.654935),
-new google.maps.LatLng(40.346728,-74.654903)]
+new google.maps.LatLng(40.346605,-74.655267),
+new google.maps.LatLng(40.346571,-74.655246),
+new google.maps.LatLng(40.346558,-74.655267),
+new google.maps.LatLng(40.346704,-74.655383),
+new google.maps.LatLng(40.346890,-74.654983),
+new google.maps.LatLng(40.346744,-74.654865),
+new google.maps.LatLng(40.346724,-74.654897)]]
+
+
+Second set of coords has to be in the opposite direction.
