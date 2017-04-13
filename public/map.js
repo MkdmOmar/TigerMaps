@@ -140,7 +140,7 @@ function createMap(pos) {
 
 var infoWindow;
 
-function drawAllPolygons() {
+function drawDillonPolygon() {
 
     var DillonCoords = [
         new google.maps.LatLng(40.346222, -74.658846),
