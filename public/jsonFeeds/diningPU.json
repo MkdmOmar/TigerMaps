@@ -1,0 +1,1231 @@
+{
+  "places": {
+    "-xmlns": "http://as.oit.princeton.edu/xml/places-1_2",
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-version": "1.2",
+    "-xsi:schemaLocation": "http://as.oit.princeton.edu/xml/places-1_2    http://atsweb.princeton.edu/mobile/xsd/places-1_2.xsd",
+    "categories": {
+      "TCCategory": {
+        "name": "Dining Halls",
+        "category_id": "20"
+      }
+    },
+    "places": {
+      "PLPlace": [
+        {
+          "name": "Butler College Dining Hall",
+          "id": "1",
+          "category_id": "20",
+          "building_id": "0160",
+          "building_name": "Wu Hall",
+          "longitude": "-74.656574",
+          "latitude": "40.344719",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "College",
+                "value": "Butler"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=02&locationName=Butler+%26+Wilson+Colleges",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491746400",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Forbes College Dining Hall",
+          "id": "5",
+          "category_id": "20",
+          "building_id": "0148",
+          "building_name": "Forbes Main",
+          "longitude": "-74.661144",
+          "latitude": "40.342214",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "College",
+                "value": "Forbes"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=03&locationName=Forbes+College",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491391800",
+                      "end": "1491404400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491478200",
+                      "end": "1491490800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491564600",
+                      "end": "1491577200"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491746400",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491823800",
+                      "end": "1491836400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491910200",
+                      "end": "1491922800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Mathey College Dining Hall",
+          "id": "4",
+          "category_id": "20",
+          "building_id": "0029",
+          "building_name": "Hamilton Hall",
+          "longitude": "-74.66219",
+          "latitude": "40.34811",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "College",
+                "value": "Mathey"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=01&locationName=Rockefeller+%26+Mathey+Colleges",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491391800",
+                      "end": "1491404400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491478200",
+                      "end": "1491490800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491564600",
+                      "end": "1491577200"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491746400",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491823800",
+                      "end": "1491836400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491910200",
+                      "end": "1491922800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Rockefeller College Dining Hall",
+          "id": "3",
+          "category_id": "20",
+          "building_id": "0036",
+          "building_name": "Madison Hall",
+          "longitude": "-74.66236",
+          "latitude": "40.348433",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "College",
+                "value": "Rockefeller"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=01&locationName=Rockefeller+%26+Mathey+Colleges",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "11:00am-2:00pm",
+                      "start": "1491750000",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Whitman College Dining Hall",
+          "id": "6",
+          "category_id": "20",
+          "building_id": "0675",
+          "building_name": "Community Hall",
+          "longitude": "-74.657705",
+          "latitude": "40.344179",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "Capacity",
+                "value": "168, 168"
+              },
+              {
+                "name": "College",
+                "value": "Whitman"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=08&locationName=Whitman+College",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              },
+              {
+                "name": "Reservable",
+                "value": "Yes"
+              },
+              {
+                "name": "ReserveURL",
+                "value": "http://www.princeton.edu/whitmancollege/college-spaces/reservation-form/",
+                "linkType": "url"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491391800",
+                      "end": "1491404400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491478200",
+                      "end": "1491490800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491564600",
+                      "end": "1491577200"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491746400",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491823800",
+                      "end": "1491836400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491910200",
+                      "end": "1491922800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Wilson College Dining Hall",
+          "id": "2",
+          "category_id": "20",
+          "building_id": "0099",
+          "building_name": "Wilcox Hall",
+          "longitude": "-74.656064",
+          "latitude": "40.34491",
+          "attributes": {
+            "attribute": [
+              {
+                "name": "College",
+                "value": "Wilson"
+              },
+              {
+                "name": "MenuURL",
+                "value": "http://campusdining.princeton.edu/FPMobile/date.asp?sName=Princeton+University+Dining+Services&naFlag=1&locationNum=02&locationName=Butler+%26+Wilson+Colleges",
+                "linkType": "url"
+              },
+              {
+                "name": "Nutrition",
+                "value": "http://campusdining.princeton.edu/FPMobile/location.asp",
+                "linkType": "url"
+              },
+              {
+                "name": "Open to",
+                "value": "Faculty, Staff, Students"
+              },
+              {
+                "name": "Payment",
+                "value": "Meal Plan, PawPoints"
+              }
+            ]
+          },
+          "open": "no",
+          "times": {
+            "day": [
+              {
+                "name": "Wednesday",
+                "date": "2017-04-05",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491391800",
+                      "end": "1491404400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491406200",
+                      "end": "1491415200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491426000",
+                      "end": "1491436800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Thursday",
+                "date": "2017-04-06",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491478200",
+                      "end": "1491490800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491492600",
+                      "end": "1491501600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491512400",
+                      "end": "1491523200"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Friday",
+                "date": "2017-04-07",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "10:30am-11:00am",
+                      "start": "1491575400",
+                      "end": "1491577200"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491579000",
+                      "end": "1491588000"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491598800",
+                      "end": "1491609600"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Saturday",
+                "date": "2017-04-08",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491660000",
+                      "end": "1491674400"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491685200",
+                      "end": "1491696000"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Sunday",
+                "date": "2017-04-09",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Brunch",
+                      "hourset": "10:00am-2:00pm",
+                      "start": "1491746400",
+                      "end": "1491760800"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491771600",
+                      "end": "1491782400"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Monday",
+                "date": "2017-04-10",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491823800",
+                      "end": "1491836400"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491838200",
+                      "end": "1491847200"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491858000",
+                      "end": "1491868800"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Tuesday",
+                "date": "2017-04-11",
+                "sessions": {
+                  "session": [
+                    {
+                      "name": "Breakfast",
+                      "hourset": "7:30am-11:00am",
+                      "start": "1491910200",
+                      "end": "1491922800"
+                    },
+                    {
+                      "name": "Lunch",
+                      "hourset": "11:30am-2:00pm",
+                      "start": "1491924600",
+                      "end": "1491933600"
+                    },
+                    {
+                      "name": "Dinner",
+                      "hourset": "5:00pm-8:00pm",
+                      "start": "1491944400",
+                      "end": "1491955200"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

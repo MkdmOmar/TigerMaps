@@ -134,7 +134,6 @@ function createMap(pos) {
 
         drawDillonPolygon();
     });
-
 }
 
 
