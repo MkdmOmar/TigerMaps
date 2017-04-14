@@ -1,27 +1,7 @@
 var map;
 var placesService;
 var infoWindow;
-/*
-function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-        map: map,
-        position: place.geometry.location
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
-    });
-}
 
-function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-        }
-    }
-}
-*/
 
 // The About adds a control to the map that links to the About page
 function About(controlDiv, map) {
@@ -90,19 +70,7 @@ function createMap(pos) {
             zoom: 17,
             styles: data
         });
-        //placesService = new google.maps.places.PlacesService(map);
-        infowindow = new google.maps.InfoWindow();
 
-        /*
-        var testPos = {
-            lat: 40.348322,
-            lng: -74.660621
-        };
-        placesService.nearbySearch({
-            location: testPos,
-            radius: 50
-        }, callback);
-        */
 
         // Map bounds
         var allowedBounds = new google.maps.LatLngBounds(
@@ -286,7 +254,6 @@ function loadPolygons() {
 
 function showMarkerInfo(event, pMarker) {
     // Replace the info window's content and position.
-    //infoWindow.setPosition(event.latLng);
     var infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + pMarker.name + "!");
     infoWindow.open(map, pMarker);
@@ -294,7 +261,6 @@ function showMarkerInfo(event, pMarker) {
 
 function showPolygonInfo(event, polygon) {
     // Replace the info window's content and position.
-    //infoWindow.setPosition(event.latLng);
     var infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + polygon.name + "!");
     infoWindow.open(map, polygon.marker);
