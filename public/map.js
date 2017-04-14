@@ -1,7 +1,6 @@
 var map;
 var placesService;
-var infoWindow;
-
+var infoWindow = null;
 
 // The About adds a control to the map that links to the About page
 function About(controlDiv, map) {
@@ -252,16 +251,29 @@ function loadPolygons() {
 }
 
 
+
 function showMarkerInfo(event, pMarker) {
+
+    // Close previous infowindow, if any
+    if (infoWindow) {
+        infoWindow.close();
+    }
+
     // Replace the info window's content and position.
-    var infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + pMarker.name + "!");
     infoWindow.open(map, pMarker);
 }
 
 function showPolygonInfo(event, polygon) {
+
+    // Close previous infowindow, if any
+    if (infoWindow) {
+        infoWindow.close();
+    }
+
     // Replace the info window's content and position.
-    var infoWindow = new google.maps.InfoWindow;
+    infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + polygon.name + "!");
     infoWindow.open(map, polygon.marker);
 }
