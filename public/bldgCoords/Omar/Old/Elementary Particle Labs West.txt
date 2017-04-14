@@ -1,4 +1,4 @@
-Elementary Particle Labs
+Elementary Particle Labs West
 
 [
 new google.maps.LatLng(40.344324,-74.646182),

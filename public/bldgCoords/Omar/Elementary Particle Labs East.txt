@@ -1,0 +1,13 @@
+Elementary Particle Labs East
+
+[
+new google.maps.LatLng(40.344486,-74.644864),
+new google.maps.LatLng(40.344413,-74.644874),
+new google.maps.LatLng(40.344436,-74.645148),
+new google.maps.LatLng(40.344353,-74.645160),
+new google.maps.LatLng(40.344305,-74.644611),
+new google.maps.LatLng(40.344389,-74.644601),
+new google.maps.LatLng(40.344402,-74.644755),
+new google.maps.LatLng(40.344476,-74.644744),
+new google.maps.LatLng(40.344485,-74.644859)
+]

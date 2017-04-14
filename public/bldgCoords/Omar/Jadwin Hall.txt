@@ -1,0 +1,48 @@
+Jadwin Hall
+
+[
+[
+new google.maps.LatLng(40.345411,-74.651853),
+new google.maps.LatLng(40.345200,-74.652324),
+new google.maps.LatLng(40.345171,-74.652302),
+new google.maps.LatLng(40.345131,-74.652389),
+new google.maps.LatLng(40.345102,-74.652367),
+new google.maps.LatLng(40.345105,-74.652359),
+new google.maps.LatLng(40.345075,-74.652336),
+new google.maps.LatLng(40.345112,-74.652255),
+new google.maps.LatLng(40.344919,-74.652106),
+new google.maps.LatLng(40.344831,-74.652302),
+new google.maps.LatLng(40.344441,-74.652002),
+new google.maps.LatLng(40.344538,-74.651784),
+new google.maps.LatLng(40.344675,-74.651889),
+new google.maps.LatLng(40.344683,-74.651872),
+new google.maps.LatLng(40.344627,-74.651829),
+new google.maps.LatLng(40.344644,-74.651791),
+new google.maps.LatLng(40.344650,-74.651795),
+new google.maps.LatLng(40.344667,-74.651758),
+new google.maps.LatLng(40.344720,-74.651798),
+new google.maps.LatLng(40.345006,-74.651158),
+new google.maps.LatLng(40.345036,-74.651182),
+new google.maps.LatLng(40.345064,-74.651119),
+new google.maps.LatLng(40.345093,-74.651141),
+new google.maps.LatLng(40.345089,-74.651151),
+new google.maps.LatLng(40.345118,-74.651174),
+new google.maps.LatLng(40.345095,-74.651227),
+new google.maps.LatLng(40.345223,-74.651325),
+new google.maps.LatLng(40.345147,-74.651494),
+new google.maps.LatLng(40.345464,-74.651738),
+new google.maps.LatLng(40.345447,-74.651775),
+new google.maps.LatLng(40.345497,-74.651813),
+new google.maps.LatLng(40.345474,-74.651863),
+new google.maps.LatLng(40.345466,-74.651857),
+new google.maps.LatLng(40.345453,-74.651885),
+new google.maps.LatLng(40.345421,-74.651861)
+],
+[
+new google.maps.LatLng(40.345237,-74.651774),
+new google.maps.LatLng(40.345078,-74.651652),
+new google.maps.LatLng(40.344964,-74.651907),
+new google.maps.LatLng(40.345123,-74.652030),
+new google.maps.LatLng(40.345235,-74.651779)
+]
+]

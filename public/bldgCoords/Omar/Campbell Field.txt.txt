@@ -1,0 +1,9 @@
+Campbell Field
+
+[
+new google.maps.LatLng(40.345943,-74.647737),
+new google.maps.LatLng(40.344939,-74.647174),
+new google.maps.LatLng(40.345153,-74.646530),
+new google.maps.LatLng(40.346161,-74.647107),
+new google.maps.LatLng(40.345952,-74.647728)
+]
