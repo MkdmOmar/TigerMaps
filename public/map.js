@@ -1,9 +1,10 @@
 var map;
 var placesService;
-var infoWindow = null;
+var infoWindows = [];
+var showAllInfoWindows = false;
 
 // The About adds a control to the map that links to the About page
-function About(controlDiv, map) {
+function createAboutButton(controlDiv, map) {
 
     // Set CSS for the control border.
     var controlUI = document.createElement('div');
@@ -36,6 +37,23 @@ function About(controlDiv, map) {
 }
 
 function initMap() {
+
+    $("#allInfoWindow").click(function() {
+
+        //alert("showAllInfoWindows = true;");
+        showAllInfoWindows = true;
+    });
+
+    $("#oneInfoWindow").click(function() {
+
+        // alert("showAllInfoWindows = false;");
+        showAllInfoWindows = false;
+
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
+        }
+    });
+
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -96,7 +114,7 @@ function createMap(pos) {
         // Create the DIV to hold the control and call the About()
         // constructor passing in this DIV.
         var aboutDiv = document.createElement('div');
-        var aboutControl = new About(aboutDiv, map);
+        var aboutControl = new createAboutButton(aboutDiv, map);
 
         aboutDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
@@ -254,26 +272,36 @@ function loadPolygons() {
 
 function showMarkerInfo(event, pMarker) {
 
-    // Close previous infowindow, if any
-    if (infoWindow) {
-        infoWindow.close();
+    // If !showAllInfoWindows, close previous infowindows
+    if (showAllInfoWindows && infoWindows.length != 0) {
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
+        }
     }
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + pMarker.name + "!");
     infoWindow.open(map, pMarker);
+
+    // Keep track of all infoWindows
+    infoWindows.push(infoWindow);
 }
 
 function showPolygonInfo(event, polygon) {
 
-    // Close previous infowindow, if any
-    if (infoWindow) {
-        infoWindow.close();
+    // If !showAllInfoWindows, close previous infowindows
+    if (!showAllInfoWindows && infoWindows.length != 0) {
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
+        }
     }
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + polygon.name + "!");
     infoWindow.open(map, polygon.marker);
+
+    // Keep track of all infoWindows
+    infoWindows.push(infoWindow);
 }
