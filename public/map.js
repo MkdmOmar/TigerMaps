@@ -3,6 +3,24 @@ var placesService;
 var infoWindows = [];
 var showAllInfoWindows = false;
 
+
+$("#allInfoWindow").click(function() {
+
+    //alert("showAllInfoWindows = true;");
+    showAllInfoWindows = true;
+});
+
+$("#oneInfoWindow").click(function() {
+
+    // alert("showAllInfoWindows = false;");
+    showAllInfoWindows = false;
+
+    for (var i = 0; i < infoWindows.length; i++) {
+        infoWindows[i].close();
+    }
+});
+
+
 // The About adds a control to the map that links to the About page
 function createAboutButton(controlDiv, map) {
 
@@ -36,23 +54,36 @@ function createAboutButton(controlDiv, map) {
     });
 }
 
-function initMap() {
 
-    $("#allInfoWindow").click(function() {
+// Set the zoom and pan bounds for the map
+function setZoomPanBounds() {
+    // Map bounds
+    var allowedBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(40.329950, -74.670505),
+        new google.maps.LatLng(40.356531, -74.639470)
+    );
+    var minZoom = 15;
+    var lastValidCenter = map.getCenter();
 
-        //alert("showAllInfoWindows = true;");
-        showAllInfoWindows = true;
-    });
-
-    $("#oneInfoWindow").click(function() {
-
-        // alert("showAllInfoWindows = false;");
-        showAllInfoWindows = false;
-
-        for (var i = 0; i < infoWindows.length; i++) {
-            infoWindows[i].close();
+    google.maps.event.addListener(map, "center_changed", function() {
+        if (allowedBounds.contains(map.getCenter())) {
+            // Still within valid bounds, so save the last valid position
+            lastValidCenter = map.getCenter();
+            return;
         }
+        // Not valid anymore, return to last valid position
+        map.panTo(lastValidCenter);
     });
+    google.maps.event.addListener(map, "zoom_changed", function() {
+        if (map.getZoom() < minZoom)
+            map.setZoom(minZoom);
+    });
+}
+
+
+// Center map on location of user, if possible
+function geolocate() {
+    infoWindow = new google.maps.InfoWindow;
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -61,55 +92,109 @@ function initMap() {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-            createMap(pos);
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
         }, function() {
-            handleLocationError(true);
+            handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
         // Browser doesn't support Geolocation
-        handleLocationError(false);
+        handleLocationError(false, infoWindow, map.getCenter());
     }
+}
 
-    function handleLocationError(browserHasGeolocation) {
-        var pos = {
-            lat: 40.34663,
-            lng: -74.6565801
-        };
-        createMap(pos);
-    }
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
+
+// Create map search box
+function createSearchBox() {
+
+    // Create the search box and link it to the UI element.
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    // Bias the SearchBox results towards current map's viewport.
+    map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+    });
+
+
+    var markers = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+    searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+            return;
+        }
+
+        // Clear out the old markers.
+        markers.forEach(function(marker) {
+            marker.setMap(null);
+        });
+        markers = [];
+
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+            if (!place.geometry) {
+                console.log("Returned place contains no geometry");
+                return;
+            }
+            var icon = {
+                url: place.icon,
+                size: new google.maps.Size(71, 71),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(17, 34),
+                scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+                map: map,
+                icon: icon,
+                title: place.name,
+                position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+                // Only geocodes have viewport.
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
+        });
+        map.fitBounds(bounds);
+    });
 
 }
 
-function createMap(pos) {
+function initMap(pos) {
     $.getJSON("mapstyle.json", function(data) {
+
+        // Create map and assign it to div
         map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             styles: data
         });
 
+        // Set the zoom and pan bounds for the map
+        setZoomPanBounds();
 
-        // Map bounds
-        var allowedBounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(40.329950, -74.670505),
-            new google.maps.LatLng(40.356531, -74.639470)
-        );
-        var minZoom = 15;
-        var lastValidCenter = map.getCenter();
-
-        google.maps.event.addListener(map, "center_changed", function() {
-            if (allowedBounds.contains(map.getCenter())) {
-                // Still within valid bounds, so save the last valid position
-                lastValidCenter = map.getCenter();
-                return;
-            }
-            // Not valid anymore, return to last valid position
-            map.panTo(lastValidCenter);
-        });
-        google.maps.event.addListener(map, "zoom_changed", function() {
-            if (map.getZoom() < minZoom)
-                map.setZoom(minZoom);
-        });
+        // Center map on location of user, if possible
+        geolocate();
 
         // Create the DIV to hold the control and call the About()
         // constructor passing in this DIV.
@@ -120,70 +205,12 @@ function createMap(pos) {
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
 
         $.getScript('bldgCoords.js', function() {
-            // script is now loaded and executed.
-            // put your dependent JS here.
-            loadPolygons();
+            // Draw polygons once they've been loaded from bldgCoords.js
+            drawPolygons();
         });
 
-
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-            searchBox.setBounds(map.getBounds());
-        });
-
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-            var places = searchBox.getPlaces();
-
-            if (places.length == 0) {
-                return;
-            }
-
-            // Clear out the old markers.
-            markers.forEach(function(marker) {
-                marker.setMap(null);
-            });
-            markers = [];
-
-            // For each place, get the icon, name and location.
-            var bounds = new google.maps.LatLngBounds();
-            places.forEach(function(place) {
-                if (!place.geometry) {
-                    console.log("Returned place contains no geometry");
-                    return;
-                }
-                var icon = {
-                    url: place.icon,
-                    size: new google.maps.Size(71, 71),
-                    origin: new google.maps.Point(0, 0),
-                    anchor: new google.maps.Point(17, 34),
-                    scaledSize: new google.maps.Size(25, 25)
-                };
-
-                // Create a marker for each place.
-                markers.push(new google.maps.Marker({
-                    map: map,
-                    icon: icon,
-                    title: place.name,
-                    position: place.geometry.location
-                }));
-
-                if (place.geometry.viewport) {
-                    // Only geocodes have viewport.
-                    bounds.union(place.geometry.viewport);
-                } else {
-                    bounds.extend(place.geometry.location);
-                }
-            });
-            map.fitBounds(bounds);
-        });
+        // Create map search box
+        createSearchBox();
     });
 }
 
@@ -199,7 +226,7 @@ function getBoundingBox(polygon) {
     return (bounds);
 }
 
-function loadPolygons() {
+function drawPolygons() {
 
     // Iterate over all locations
     for (var i = 0; i < locations.length; i++) {
@@ -207,10 +234,10 @@ function loadPolygons() {
         // Construct a polygon for each location
         var myPolygon = new google.maps.Polygon({
             paths: locations[i].coords,
-            strokeColor: '#FF0000',
+            strokeColor: '#ff9966',
             strokeOpacity: 0.01,
             strokeWeight: 3,
-            fillColor: '#FF0000',
+            fillColor: '#ff9966',
             fillOpacity: 0.01,
             name: locations[i].name
         });
@@ -263,9 +290,7 @@ function loadPolygons() {
                 fillOpacity: 0.01
             });
         });
-
     }
-
 }
 
 
