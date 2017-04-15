@@ -284,6 +284,9 @@ function showMarkerInfo(event, pMarker) {
     infoWindow.setContent("You clicked on " + pMarker.name + "!");
     infoWindow.open(map, pMarker);
 
+    // Center map on info window location
+    map.panTo(pMarker.position);
+
     // Keep track of all infoWindows
     infoWindows.push(infoWindow);
 }
@@ -301,6 +304,9 @@ function showPolygonInfo(event, polygon) {
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + polygon.name + "!");
     infoWindow.open(map, polygon.marker);
+
+    // Center map on info window location
+    map.panTo(polygon.marker.position);
 
     // Keep track of all infoWindows
     infoWindows.push(infoWindow);
