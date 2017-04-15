@@ -273,7 +273,7 @@ function loadPolygons() {
 function showMarkerInfo(event, pMarker) {
 
     // If !showAllInfoWindows, close previous infowindows
-    if (showAllInfoWindows && infoWindows.length != 0) {
+    if (!showAllInfoWindows && infoWindows.length != 0) {
         for (var i = 0; i < infoWindows.length; i++) {
             infoWindows[i].close();
         }
