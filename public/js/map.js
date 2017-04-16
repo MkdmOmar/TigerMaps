@@ -50,7 +50,7 @@ function createAboutButton(controlDiv, map) {
     // Setup the click event listeners to link to About page.
     controlUI.addEventListener('click', function() {
         //alert("Clicked! :-)")
-        window.location.href = '/about.html';
+        window.location.href = 'about.html';
     });
 }
 
