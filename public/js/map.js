@@ -181,7 +181,7 @@ function createSearchBox() {
 }
 
 function initMap(pos) {
-    $.getJSON("mapstyle.json", function(data) {
+    $.getJSON("js/mapstyle.json", function(data) {
 
         // Create map and assign it to div
         map = new google.maps.Map(document.getElementById('map'), {
@@ -204,7 +204,7 @@ function initMap(pos) {
         aboutDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
 
-        $.getScript('bldgCoords.js', function() {
+        $.getScript('js/bldgCoords.js', function() {
             // Draw polygons once they've been loaded from bldgCoords.js
             drawPolygons();
         });
