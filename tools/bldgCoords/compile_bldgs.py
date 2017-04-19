@@ -1,9 +1,16 @@
+#
 # This file parses all building data files in the directories listed below.
 # You can find sample building file formats in the files
 # "sample_bldg" and "sample_bldg2"
+# It's basically the same format we were using for the
+# first building data we gathered.
 #
 # To run this script, simply do "python compile_bldgs.py".
 # It will output a bldgCoords.js file.
+#
+# Note that this script and all the building data files are NOT in any way
+# part of the actual application. They are simply simpler ways for us to
+# collect and compile all the building data in any way we need.
 #
 
 import sys
@@ -11,10 +18,12 @@ import os
 
 directories = ["Jelani", "Jose", "Omar", "Osama"]
 
+# Format of the bldgCoords.js file as a whole.
 bldg_coords_prototype = """var locations = [
 {}
 ];"""
 
+# Format of each building data entry in "locations" in the bldgCoords.js file.
 bldg_data_prototype = """{{
 name: "{}",
 coords: {}

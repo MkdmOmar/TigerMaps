@@ -18,3 +18,4 @@ new google.maps.LatLng(40.343610,-74.657025)
 ]
 
 there can be text here, it will be ignored
+(anything after that last closing square bracket will be ignored)

@@ -91,5 +91,5 @@ new google.maps.LatLng(40.344734,-74.650016)
 Text here will be ignored!
 
 Note that this building has a hole, in which case the data is specified as an
-array of arrays of points. The first array is the outer loop, the other
-is the inner loop of the hole, in opposite winding order as the outer loop.
+array of 2 arrays of points. The first array is the outer loop, the other
+is the inner loop (hole), with the points winding in opposite order.
