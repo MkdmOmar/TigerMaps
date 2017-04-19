@@ -1,0 +1,99 @@
+# This file parses all building data files in the directories listed below.
+# You can find sample building file formats in the files
+# "sample_bldg" and "sample_bldg2"
+#
+# To run this script, simply do "python compile_bldgs.py".
+# It will output a bldgCoords.js file.
+#
+
+import sys
+import os
+
+directories = ["Jelani", "Jose", "Omar", "Osama"]
+
+bldg_coords_prototype = """var locations = [
+{}
+];"""
+
+bldg_data_prototype = """{{
+name: "{}",
+coords: {}
+}}"""
+
+def format_coords(string, filepath):
+    """
+    Format the actual building polygon coordinates appropriately.
+    Prints out some warnings if files are incorrectly formatted,
+    but does NO checking on the actual coordinates themselves.
+    """
+    try:
+        bracket1 = 0
+        while string[bracket1] != "[":
+            bracket1 += 1
+
+        bracket2 = bracket1 + 1
+        while string[bracket2] != "[" and string[bracket2] != "]":
+            bracket2 += 1
+
+        if string[bracket2] == "]":
+            # No holes in the building
+            coords = string[(bracket1+1):bracket2].strip()
+            return "[\n" + coords + "\n]"
+        elif string[bracket2] == "[":
+            # Holes in the building, things get messier
+            between = string[(bracket1+1):bracket2]
+            if not (len(between) == 0 or between.isspace()):
+                print "WARNING: text between [ and [ in", filepath
+
+            bracket3 = bracket2 + 1
+            while string[bracket3] != "]":
+                bracket3 += 1
+            coordsOuter = string[(bracket2+1):bracket3].strip()
+
+            bracket4 = bracket3 + 1
+            while string[bracket4] != "[":
+                bracket4 += 1
+            between = string[(bracket3+1):bracket4]
+            if not between.strip() == ",":
+                print "WARNING: text other than comma between ] and [ in", filepath
+
+            bracket5 = bracket4 + 1
+            while string[bracket5] != "]":
+                bracket5 += 1
+            coordsInner = string[(bracket4+1):bracket5].strip()
+
+            bracket6 = bracket5 + 1
+            while string[bracket6] != "]":
+                bracket6 += 1
+            between = string[(bracket5+1):bracket6]
+            if not (len(between) == 0 or between.isspace()):
+                print "WARNING: text between ] and ] in", filepath
+
+            return "[\n[\n" + coordsOuter + "\n],\n[\n" + coordsInner + "\n]\n]"
+    except:
+        print "ERROR IN", filepath
+
+def parse_bldg_data(filepath):
+    """
+    Parse building data from file. Return formatted string.
+    """
+    with open(filepath, "r") as file:
+        name = file.readline()[:-1]
+        coords = format_coords(file.read(), filepath)
+        return bldg_data_prototype.format(name, coords)
+
+def compile():
+    result = ""
+    for directory in directories:
+        currentPath = os.path.normpath(os.path.dirname(__file__))
+        dirpath = os.path.join(currentPath, directory)
+        for filename in os.listdir(dirpath):
+            filepath = os.path.join(dirpath, filename)
+            result += parse_bldg_data(filepath) + ",\n"
+
+    return result[:-2]
+
+if __name__ == "__main__":
+    locations = compile()
+    with open("bldgCoords.js", "w+") as outfile:
+        outfile.write(bldg_coords_prototype.format(locations))
