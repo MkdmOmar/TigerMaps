@@ -25,9 +25,16 @@ bldg_coords_prototype = """var locations = [
 
 # Format of each building data entry in "locations" in the bldgCoords.js file.
 bldg_data_prototype = """{{
-name: "{}",
-coords: {}
+\tname: "{}",
+\tcoords: {}
 }}"""
+
+def indent(string, tabs):
+    result = ""
+    for line in string.splitlines():
+        result += ("\t" * tabs) + line + "\n"
+
+    return result[:-1]
 
 def format_coords(string, filepath):
     """
@@ -47,7 +54,10 @@ def format_coords(string, filepath):
         if string[bracket2] == "]":
             # No holes in the building
             coords = string[(bracket1+1):bracket2].strip()
-            return "[\n" + coords + "\n]"
+            coords = indent(coords, 1)
+            result = "[\n" + coords + "\n]"
+            result = indent(result, 2).strip()
+            return result
         elif string[bracket2] == "[":
             # Holes in the building, things get messier
             between = string[(bracket1+1):bracket2]
@@ -58,6 +68,7 @@ def format_coords(string, filepath):
             while string[bracket3] != "]":
                 bracket3 += 1
             coordsOuter = string[(bracket2+1):bracket3].strip()
+            coordsOuter = indent(coordsOuter, 1)
 
             bracket4 = bracket3 + 1
             while string[bracket4] != "[":
@@ -70,6 +81,7 @@ def format_coords(string, filepath):
             while string[bracket5] != "]":
                 bracket5 += 1
             coordsInner = string[(bracket4+1):bracket5].strip()
+            coordsInner = indent(coordsInner, 1)
 
             bracket6 = bracket5 + 1
             while string[bracket6] != "]":
@@ -78,7 +90,11 @@ def format_coords(string, filepath):
             if not (len(between) == 0 or between.isspace()):
                 print "WARNING: text between ] and ] in", filepath
 
-            return "[\n[\n" + coordsOuter + "\n],\n[\n" + coordsInner + "\n]\n]"
+            result = "[\n" + coordsOuter + "\n],\n[\n" + coordsInner + "\n]"
+            result = indent(result, 1)
+            result = "[\n" + result + "\n]"
+            result = indent(result, 2).strip()
+            return result
     except:
         print "ERROR IN", filepath
 
