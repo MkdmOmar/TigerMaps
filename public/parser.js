@@ -13,25 +13,23 @@ This is just for development purposes only.
 // This function retrieves an XML string from url
 function parse(webFeedURL, returnResult) {
   console.log("loading parser!")
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xmlReq = new XMLHttpRequest();
   xmlReq.open("GET", webFeedURL, true);
+  xmlReq.send(null);
   xmlReq.onreadystatechange = function () {
     // If request was a success
-    if (xmlReq.readyState == 4 && xmlReq.status == 200)
-    {
-      // Parse XML as string
-      var xmlString = new XMLSerializer().serializeToString(xmlReq.responseXML)
-      console.log("parser success!")
-
-      // Pass result to callback function
-      returnResult(xmlString);
-
+    if (xmlReq.status == 200) {
+      // wait until response is ready
+      if (xmlReq.readyState == 4) {
+        console.log("parser success!");
+        returnResult(xmlReq.responseText);
+      }
     }
     else {
-      console.log("parser failure!")
+      console.log("parser failure!");
     }
   };
-  xmlReq.send(null);
 }
 
 
@@ -60,7 +58,7 @@ USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
 
 parse(compPrintURL, function(compPrintXML){
   console.log("Retrieved Computing and Printing Data!")
-  // console.log(compPrintXML);
+  //console.log(compPrintXML);
 });
 
 parse(diningURL, function(diningXML){
