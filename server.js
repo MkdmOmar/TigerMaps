@@ -1,10 +1,11 @@
 var express = require('express');
+var scheduler = require('./scheduler');
 
 var server = express();
 
 server.use(
   function(req, res, next) {
-    // on connection
+    scheduler.onConnection();
     next();
   },
   express.static(__dirname + '/public')

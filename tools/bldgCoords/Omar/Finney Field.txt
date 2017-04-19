@@ -1,0 +1,9 @@
+Finney Field
+
+[
+new google.maps.LatLng(40.345728,-74.648401),
+new google.maps.LatLng(40.344716,-74.647823),
+new google.maps.LatLng(40.344934,-74.647179),
+new google.maps.LatLng(40.345944,-74.647749),
+new google.maps.LatLng(40.345733,-74.648389)
+]

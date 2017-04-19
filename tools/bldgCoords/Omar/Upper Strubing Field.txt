@@ -1,0 +1,15 @@
+Upper Strubing Field
+
+ [
+new google.maps.LatLng(40.347429,-74.648096),
+new google.maps.LatLng(40.347113,-74.647611),
+new google.maps.LatLng(40.347013,-74.647459),
+new google.maps.LatLng(40.347004,-74.647423),
+new google.maps.LatLng(40.347733,-74.646517),
+new google.maps.LatLng(40.347826,-74.646568),
+new google.maps.LatLng(40.347888,-74.646704),
+new google.maps.LatLng(40.347901,-74.646812),
+new google.maps.LatLng(40.347898,-74.646946),
+new google.maps.LatLng(40.347859,-74.647053),
+new google.maps.LatLng(40.347456,-74.648058)
+]

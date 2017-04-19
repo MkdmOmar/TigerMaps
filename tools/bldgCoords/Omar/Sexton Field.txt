@@ -1,0 +1,10 @@
+Sexton Field
+
+[
+new google.maps.LatLng(40.346783,-74.645578),
+new google.maps.LatLng(40.346322,-74.645197),
+new google.maps.LatLng(40.345819,-74.646268),
+new google.maps.LatLng(40.346193,-74.646542),
+new google.maps.LatLng(40.346310,-74.646624),
+new google.maps.LatLng(40.346775,-74.645613)
+]
