@@ -16,15 +16,22 @@
 import sys
 import os
 
+# Names of the directories with the building files.
+# These must be in the same directory as this script.
 directories = ["Jelani", "Jose", "Omar", "Osama"]
 
+# Simple check for duplicates.
+# Elements with the same indices correspond.
+bldgNameList = []
+bldgPathList = []
+
 # Format of the bldgCoords.js file as a whole.
-bldg_coords_prototype = """var locations = [
+bldgCoordsPrototype = """var locations = [
 {}
 ];"""
 
 # Format of each building data entry in "locations" in the bldgCoords.js file.
-bldg_data_prototype = """{{
+bldgDataPrototype = """{{
 \tname: "{}",
 \tcoords: {}
 }}"""
@@ -104,8 +111,14 @@ def parse_bldg_data(filepath):
     """
     with open(filepath, "r") as file:
         name = file.readline()[:-1]
+        if name in bldgNameList:
+            ind = bldgNameList.index(name)
+            print "WARNING: duplicate building name \"" + name + "\"" \
+                + "in files", filepath, "and", bldgPathList[ind]
+        bldgNameList.append(name)
+        bldgPathList.append(filepath)
         coords = format_coords(file.read(), filepath)
-        return bldg_data_prototype.format(name, coords)
+        return bldgDataPrototype.format(name, coords)
 
 def compile():
     result = ""
@@ -121,4 +134,4 @@ def compile():
 if __name__ == "__main__":
     locations = compile()
     with open("bldgCoords.js", "w+") as outfile:
-        outfile.write(bldg_coords_prototype.format(locations))
+        outfile.write(bldgCoordsPrototype.format(locations))

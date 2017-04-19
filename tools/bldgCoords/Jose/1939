@@ -1,0 +1,19 @@
+1939 Hall
+[
+new google.maps.LatLng(40.345511,-74.656564),
+new google.maps.LatLng(40.345285,-74.656387),
+new google.maps.LatLng(40.345280,-74.656396),
+new google.maps.LatLng(40.345258,-74.656378),
+new google.maps.LatLng(40.345281,-74.656326),
+new google.maps.LatLng(40.345219,-74.656277),
+new google.maps.LatLng(40.345167,-74.656392),
+new google.maps.LatLng(40.345197,-74.656415),
+new google.maps.LatLng(40.345195,-74.656420),
+new google.maps.LatLng(40.345214,-74.656435),
+new google.maps.LatLng(40.345216,-74.656431),
+new google.maps.LatLng(40.345230,-74.656440),
+new google.maps.LatLng(40.345233,-74.656433),
+new google.maps.LatLng(40.345256,-74.656452),
+new google.maps.LatLng(40.345235,-74.656500),
+new google.maps.LatLng(40.345460,-74.656676)
+]
