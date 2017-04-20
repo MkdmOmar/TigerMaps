@@ -13,7 +13,7 @@ This is just for development purposes only.
 // This function retrieves an XML string from url
 function parse(webFeedURL, returnResult) {
   console.log("loading parser!")
-  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xmlReq = new XMLHttpRequest();
   xmlReq.open("GET", webFeedURL, true);
   xmlReq.send(null);
