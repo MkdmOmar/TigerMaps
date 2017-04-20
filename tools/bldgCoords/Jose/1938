@@ -1,0 +1,15 @@
+1938 Hall
+[
+new google.maps.LatLng(40.345178,-74.655450),
+new google.maps.LatLng(40.345231,-74.655332),
+new google.maps.LatLng(40.345146,-74.655266),
+new google.maps.LatLng(40.345126,-74.655310),
+new google.maps.LatLng(40.345101,-74.655289),
+new google.maps.LatLng(40.345103,-74.655284),
+new google.maps.LatLng(40.345015,-74.655215),
+new google.maps.LatLng(40.344882,-74.655507),
+new google.maps.LatLng(40.344971,-74.655577),
+new google.maps.LatLng(40.345075,-74.655351),
+new google.maps.LatLng(40.345096,-74.655368),
+new google.maps.LatLng(40.345090,-74.655380)
+]

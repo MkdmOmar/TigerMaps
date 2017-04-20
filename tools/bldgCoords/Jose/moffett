@@ -1,0 +1,9 @@
+Moffett Laboratory
+[
+new google.maps.LatLng(40.345429,-74.653867),
+new google.maps.LatLng(40.345462,-74.653893),
+new google.maps.LatLng(40.345460,-74.653899),
+new google.maps.LatLng(40.345746,-74.654117),
+new google.maps.LatLng(40.345843,-74.653899),
+new google.maps.LatLng(40.345527,-74.653650)
+]

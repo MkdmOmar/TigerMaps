@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .checkboxes {
+            background: white;
+        }
+
+        .toggle-buttons {
+            background-color: #fff; 
+            border: 2px solid #888; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 6px grey; 
+            cursor: pointer; 
+            text-align: center; 
+            display: inline-block;
+            width: 100px; 
+            height: auto;
+        }
+
+        .toggle-buttons:hover {
+            background-color: #ffb347;
+        }
+
+        .toggle-texts {
+            font-family: Roboto,Arial,sans-serif; 
+            color: black; 
+            text-decoration: none; 
+            font-size: 15px; 
+            line-height: 12px;
+            height: 12px;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <input id="pac-input" class="controls" style="position:absolute; z-index:3;height:40px;width:400px;border-radius:5px;font-size:18px;border: 1px solid black; right: 10px; top: 1em;" type="text" placeholder="&nbsp Search For Places Here">
+    
+    <div style="background-color: #fff; border: 2px solid #888; border-radius: 5px; box-shadow: 0 2px 6px grey; cursor: pointer; text-align: center; position: absolute; top: 0.5em; left: 8em; width: 100px; height: auto;">
+        <a href="/index.html" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; height: 30px;">About Us</a>
+    </div>
+
+    <div class="checkboxes" style="z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:5em;right:10px;height: 40px;">
+        <label><input type="radio" name="infoWindowDisplayMode" id="oneInfoWindow" checked="checked"> Display 1 Info Window at a time</label>
+        <br/>
+        <label><input type="radio" name="infoWindowDisplayMode" id="allInfoWindow" > Keep all clicked Info Windows</label>
+    </div>
+
+    <div style="width: 100%; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
+        <div onClick="parse(diningURL,function(result) {showEventPlaces(result);});" class="toggle-buttons" style="margin-right: 15px; margin-left: 5em;">
+            <p class="toggle-texts">Events</p>
+        </div>
+        <div class="toggle-buttons" style="margin-right: 15px;" onclick="showFoodPlaces()">
+            <p class="toggle-texts">Food</p>
+        </div>
+        <div class="toggle-buttons" style="margin-right: 15px;" onclick="showLaundryPlaces()">
+            <p class="toggle-texts">Laundry</p>
+        </div>
+        <div class="toggle-buttons" style="margin-right: 15px;" onclick="showPlacePlaces()">
+            <p class="toggle-texts">Places</p>
+        </div>
+        <div class="toggle-buttons" onclick="showPrinterPlaces()">
+            <p class="toggle-texts">Printers</p>
+        </div>
+
+    </div>
+
+</body>
+<script src="js/toggle.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
+
+</html>

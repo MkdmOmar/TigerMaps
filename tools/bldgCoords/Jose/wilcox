@@ -1,0 +1,19 @@
+Wilcox Hall
+[
+new google.maps.LatLng(40.345152,-74.656290),
+new google.maps.LatLng(40.344906,-74.656092),
+new google.maps.LatLng(40.345024,-74.655827),
+new google.maps.LatLng(40.344992,-74.655801),
+new google.maps.LatLng(40.345037,-74.655702),
+new google.maps.LatLng(40.344949,-74.655632),
+new google.maps.LatLng(40.344902,-74.655733),
+new google.maps.LatLng(40.344889,-74.655724),
+new google.maps.LatLng(40.344768,-74.656000),
+new google.maps.LatLng(40.344720,-74.655965),
+new google.maps.LatLng(40.344664,-74.656091),
+new google.maps.LatLng(40.344710,-74.656124),
+new google.maps.LatLng(40.344599,-74.656364),
+new google.maps.LatLng(40.344736,-74.656466),
+new google.maps.LatLng(40.344848,-74.656222),
+new google.maps.LatLng(40.345096,-74.656417)
+]

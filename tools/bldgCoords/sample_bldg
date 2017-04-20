@@ -1,0 +1,21 @@
+Sample Building Name
+[
+new google.maps.LatLng(40.343611,-74.657024),
+new google.maps.LatLng(40.343651,-74.657048),
+new google.maps.LatLng(40.343674,-74.656970),
+new google.maps.LatLng(40.343769,-74.657019),
+new google.maps.LatLng(40.343746,-74.657096),
+new google.maps.LatLng(40.343713,-74.657082),
+new google.maps.LatLng(40.343640,-74.657319),
+new google.maps.LatLng(40.343852,-74.657435),
+new google.maps.LatLng(40.343810,-74.657565),
+new google.maps.LatLng(40.343680,-74.657497),
+new google.maps.LatLng(40.343676,-74.657509),
+new google.maps.LatLng(40.343564,-74.657450),
+new google.maps.LatLng(40.343567,-74.657439),
+new google.maps.LatLng(40.343495,-74.657401),
+new google.maps.LatLng(40.343610,-74.657025)
+]
+
+there can be text here, it will be ignored
+(anything after that last closing square bracket will be ignored)

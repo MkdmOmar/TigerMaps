@@ -1,0 +1,7 @@
+Rock Magnetism Laboratory
+[
+new google.maps.LatLng(40.345241,-74.655205),
+new google.maps.LatLng(40.345283,-74.655114),
+new google.maps.LatLng(40.345248,-74.655087),
+new google.maps.LatLng(40.345207,-74.655177)
+]

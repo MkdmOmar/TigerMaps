@@ -72,6 +72,7 @@ var url = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.co
 // Use connect method to connect to the server
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
+  assert.notEqual(null, db);
   console.log("Connected successfully to server");
 
   // replace with desired functions

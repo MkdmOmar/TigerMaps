@@ -11,29 +11,40 @@ This is just for development purposes only.
 */
 
 // This function retrieves an XML string from url
-function parse(webFeedURL, returnResult) {
+function getXML(webFeedURL, returnResult) {
   console.log("loading parser!")
+  var toJson = require("./xml2json");
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+  //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xmlReq = new XMLHttpRequest();
   xmlReq.open("GET", webFeedURL, true);
+  xmlReq.send(null);
   xmlReq.onreadystatechange = function () {
     // If request was a success
-    if (xmlReq.readyState == 4 && xmlReq.status == 200)
-    {
-      // Parse XML as string
-      var xmlString = new XMLSerializer().serializeToString(xmlReq.responseXML)
-      console.log("parser success!")
+    if (xmlReq.status == 200) {
+      // wait until response is ready
+      if (xmlReq.readyState == 4) {
+        console.log("parser success!");
 
-      // Pass result to callback function
-      returnResult(xmlString);
+        var toType = function(obj) {
+          return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
+        }
+        console.log(toType(xmlReq.responseXML));
 
+        //var json = toJson.xml2json(xmlReq.responseXML);
+        //returnResult(json);
+      }
     }
     else {
-      console.log("parser failure!")
+      console.log("parser failure!");
     }
   };
-  xmlReq.send(null);
 }
 
+// Public Events: Provides near-real-time XML and JSON streams of event data
+// from the R25 public events scheduling system.
+var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
 
 // Computing and Printing: Provides XML streams of data about computer and
 // printing public clusters on campus
@@ -50,40 +61,38 @@ var locationsURL = "https://etcweb.princeton.edu/webfeeds/map/"
 // (e.g. dining, printing, parking, etc.)
 var placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
 
-// Public Events: Provides near-real-time XML and JSON streams of event data
-// from the R25 public events scheduling system.
-var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
-
 // USG Events: Provides iCal and XML streams of event data from the USG Student
 // Events Calendar.
 var USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
 
-parse(compPrintURL, function(compPrintXML){
-  console.log("Retrieved Computing and Printing Data!")
-  // console.log(compPrintXML);
+getXML(publicEventsURL, function(publicEventsXML){
+  console.log("Retrieved Public Events Data!");
+  console.log(publicEventsXML);
 });
 
-parse(diningURL, function(diningXML){
+/*
+getXML(compPrintURL, function(compPrintXML){
+  console.log("Retrieved Computing and Printing Data!")
+  //console.log(compPrintXML);
+});
+
+getXML(diningURL, function(diningXML){
   console.log("Retrieved Dining Data!")
   // console.log(diningXML);
 });
 
-parse(locationsURL, function(locationsXML){
+getXML(locationsURL, function(locationsXML){
   console.log("Retrieved Locations Data!")
   // console.log(locationsXML);
 });
 
-parse(placesURL, function(placesXML){
+getXML(placesURL, function(placesXML){
   console.log("Retrieved Places Data!")
   // console.log(placesXML);
 });
 
-parse(publicEventsURL, function(publicEventsXML){
-  console.log("Retrieved Public Events Data!")
-  // console.log(publicEventsXML);
-});
-
-parse(USGEventsURL, function(USGEventsXML){
+getXML(USGEventsURL, function(USGEventsXML){
   console.log("Retrieved USG Events Data!")
   // console.log(USGEventsXML);
 });
+*/

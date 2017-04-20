@@ -1,0 +1,11 @@
+1927-Clapp Hall
+[
+new google.maps.LatLng(40.345155,-74.655976),
+new google.maps.LatLng(40.345321,-74.655614),
+new google.maps.LatLng(40.345222,-74.655536),
+new google.maps.LatLng(40.345059,-74.655899),
+new google.maps.LatLng(40.345093,-74.655926),
+new google.maps.LatLng(40.345090,-74.655931),
+new google.maps.LatLng(40.345120,-74.655954),
+new google.maps.LatLng(40.345122,-74.655950)
+]
