@@ -61,22 +61,44 @@ var findByName = function(db, query, callback) {
   });
 }
 
+var findData = function(db, collection, tag, query, callback) {
+  db.collection(collection).find({ "id" : { "$gt": 0, "$lt": 5 } }).toArray(function(err, results) {
+    assert.equal(err, null);
+    assert.notEqual(results, [])
+    console.log("Found the following records");
+    console.log(results);
+    if (callback) callback(results);
+  });
+
+  /*
+  db.collection(collection).find({tag: { "$regex": query } }).toArray(function(err, results) {
+    assert.equal(err, null);
+    assert.notEqual(results, [])
+    console.log("Found the following records");
+    console.log(results);
+    if (callback) callback(results);
+  });
+  */
+}
+
 // uncomment to connect to the database and access the functions
 var MongoClient = require('mongodb').MongoClient
-, assert = require('assert');
+var assert = require('assert');
 
-// Connection URL
+// Connection URLj
 //var url = 'mongodb://localhost:27017/myproject';
 var url = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
-// Use connect method to connect to the server
+//Copy and paste the below code whenever you need to pull from the database
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
   assert.notEqual(null, db);
   console.log("Connected successfully to server");
 
   // replace with desired functions
-  findByBuilding(db, "Richardson", function() {
+  findData(db, "diningPU", "name", "Butler College Dining Hall", function(results) {
+    //do something with results
+
     db.close(function (err) {
       if(err) throw err;
     });

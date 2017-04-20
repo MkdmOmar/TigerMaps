@@ -1,11 +1,12 @@
 var express = require('express');
 var scheduler = require('./scheduler');
 var CASAuthentication = require('cas-authentication');
-
+var parser = require('./public/js/parser');
+var dbFuncs = require('./public/js/dbFuncs');
 var server = express();
 
 /* CAS documentation:
-https://www.npmjs.com/package/cas-authentication
+se
 */
 
 // Create a new instance of CASAuthentication.

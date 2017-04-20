@@ -20,7 +20,9 @@
   "dependencies": {
     "express": "^4.15.2",
     "mongodb": "^2.2.25",
-    "cas-authentication": "0.0.8"
+    "cas-authentication": "0.0.8",
+    "xmlhttprequest": "1.8.0",
+    "assert": "1.4.1"
   },
   "engines": {
     "node": "6.10.1"
