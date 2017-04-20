@@ -1,0 +1,16 @@
+Dodge-Osborn Hall
+[
+new google.maps.LatLng(40.345680,-74.655957),
+new google.maps.LatLng(40.345734,-74.655838),
+new google.maps.LatLng(40.345646,-74.655769),
+new google.maps.LatLng(40.345626,-74.655814),
+new google.maps.LatLng(40.345608,-74.655800),
+new google.maps.LatLng(40.345610,-74.655795),
+new google.maps.LatLng(40.345336,-74.655582),
+new google.maps.LatLng(40.345282,-74.655698),
+new google.maps.LatLng(40.345283,-74.655700),
+new google.maps.LatLng(40.345558,-74.655912),
+new google.maps.LatLng(40.345581,-74.655861),
+new google.maps.LatLng(40.345602,-74.655878),
+new google.maps.LatLng(40.345595,-74.655891)
+]

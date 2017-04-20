@@ -1,0 +1,7 @@
+Gauss Hall
+[
+new google.maps.LatLng(40.345061,-74.656895),
+new google.maps.LatLng(40.345209,-74.656567),
+new google.maps.LatLng(40.345120,-74.656497),
+new google.maps.LatLng(40.344972,-74.656825)
+]
