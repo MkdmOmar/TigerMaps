@@ -19,7 +19,8 @@
   "homepage": "https://github.com/MkdmOmar/TigerMaps#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "mongodb": "^2.2.25"
+    "mongodb": "^2.2.25",
+    "cas-authentication": "0.0.8"
   },
   "engines": {
     "node": "6.10.1"

@@ -44,26 +44,26 @@ function getXML(webFeedURL, returnResult) {
 
 // Public Events: Provides near-real-time XML and JSON streams of event data
 // from the R25 public events scheduling system.
-publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
+var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
 
 // Computing and Printing: Provides XML streams of data about computer and
 // printing public clusters on campus
-compPrintURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=5"
+var compPrintURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=5"
 
 // Dining: Provides XML streams of data about dining facilities on campus.
-diningURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=20"
+var diningURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=20"
 
 // Locations: Provides XML and JSON streams of location data for buildings,
 // parking lots and other constructed elements of the Princeton University campus.
-locationsURL = "https://etcweb.princeton.edu/webfeeds/map/"
+var locationsURL = "https://etcweb.princeton.edu/webfeeds/map/"
 
 // Places: Provides XML streams of data about "places" on campus
 // (e.g. dining, printing, parking, etc.)
-placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
+var placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
 
 // USG Events: Provides iCal and XML streams of event data from the USG Student
 // Events Calendar.
-USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
+var USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
 
 getXML(publicEventsURL, function(publicEventsXML){
   console.log("Retrieved Public Events Data!");
