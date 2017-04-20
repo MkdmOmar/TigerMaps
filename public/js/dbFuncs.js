@@ -3,16 +3,16 @@ function readEvents(file) {
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var rawFile = new XMLHttpRequest(), events = [];
   rawFile.open("GET", file, false);
+  rawFile.send(null);
   rawFile.onreadystatechange = function ()
   {
-    if(rawFile.readyState === 4 && (rawFile.status === 200 || rawFile.status == 0))
+    if(rawFile.readyState === 4 && rawFile.status === 200)
     {
       var allText = rawFile.responseText,
       json = JSON && JSON.parse(allText) || $.parseJSON(allText);
       events = json["events"]["event"];
     }
   }
-  rawFile.send(null);
   return events;
 }
 
@@ -101,7 +101,7 @@ MongoClient.connect(url, function(err, db) {
 
     db.close(function (err) {
       if(err) throw err;
-    });   
+    });
   });
   */
 
