@@ -37,7 +37,7 @@ function getXML(webFeedURL, returnResult) {
       }
     }
     else {
-      console.log("parser failure!");
+      console.log("parser failure. Error: %d", xmlReq.status);
     }
   };
 }

@@ -20,7 +20,7 @@ function readEvents(file) {
 var insertEvents = function(db, callback) {
   // Get the PU events collection
   var collection = db.collection('eventsPU');
-  var file = "file:///Users/osamakhld/Courses/Spring2017/COS333/TigerMaps/public/jsonFeeds/eventsPU.json";
+  var file = "file:///Users/osamakhld/Courses/Spring2017/COS333/TigerMaps/jsonFeeds/eventsPU.json";
 
   // Insert events into collection
   collection.insertMany(readEvents(file), function(err, result) {
