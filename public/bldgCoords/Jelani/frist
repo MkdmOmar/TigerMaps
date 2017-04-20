@@ -45,4 +45,3 @@ new google.maps.LatLng(40.346744,-74.654865),
 new google.maps.LatLng(40.346724,-74.654897)]]
 
 
-Second set of coords has to be in the opposite direction.

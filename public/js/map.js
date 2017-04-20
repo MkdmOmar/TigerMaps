@@ -2,7 +2,8 @@ var map;
 var placesService;
 var infoWindows = [];
 var showAllInfoWindows = false;
-
+var previousHighlight = null;
+var polygons = [];
 
 $("#allInfoWindow").click(function() {
 
@@ -19,41 +20,6 @@ $("#oneInfoWindow").click(function() {
         infoWindows[i].close();
     }
 });
-
-
-// The About adds a control to the map that links to the About page
-function createAboutButton(controlDiv, map) {
-
-    // Set CSS for the control border.
-    var controlUI = document.createElement('div');
-    controlUI.style.backgroundColor = '#fff';
-    controlUI.style.border = '2px solid #888';
-    controlUI.style.borderRadius = '4px';
-    controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-    controlUI.style.cursor = 'pointer';
-    controlUI.style.marginBottom = '22px';
-    controlUI.style.textAlign = 'center';
-    controlUI.title = 'Click to find more about the team behind this app';
-    controlDiv.appendChild(controlUI);
-
-    // Set CSS for the control interior.
-    var controlText = document.createElement('div');
-    controlText.style.color = 'rgb(25,25,25)';
-    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-    controlText.style.fontSize = '16px';
-    controlText.style.lineHeight = '38px';
-    controlText.style.paddingLeft = '5px';
-    controlText.style.paddingRight = '5px';
-    controlText.innerHTML = 'About Us';
-    controlUI.appendChild(controlText);
-
-    // Setup the click event listeners to link to About page.
-    controlUI.addEventListener('click', function() {
-        //alert("Clicked! :-)")
-        window.location.href = 'about.html';
-    });
-}
-
 
 // Set the zoom and pan bounds for the map
 function setZoomPanBounds() {
@@ -174,8 +140,42 @@ function createSearchBox() {
             } else {
                 bounds.extend(place.geometry.location);
             }
+
+            //disperse previousHighlight
+            if (previousHighlight != null) {
+                previousHighlight.setOptions({
+                    strokeOpacity: 0.01,
+                    fillOpacity: 0.01
+                });
+                previousHighlight = null;
+            }
+
+            //highlight current searched place 
+            var champion = null;
+            var minimum = Number.MAX_VALUE;
+            var contender = Number.MAX_VALUE;
+
+            for (var i = 0; i < polygons.length; i++) {
+                contender = Math.sqrt((polygons[i].center.lat() - place.geometry.location.lat())**2 + (polygons[i].center.lng() - place.geometry.location.lng())**2);
+                if (contender < minimum) {
+                    champion = polygons[i].polygon;
+                    minimum = contender;
+                }
+            }
+                        
+            if (champion != null) { 
+                previousHighlight = champion;
+
+                champion.setOptions({
+                    strokeOpacity: 0.8,
+                    fillOpacity: 0.35
+                });
+            }
+
+            //panTo its location
+            map.panTo(place.geometry.location);
         });
-        map.fitBounds(bounds);
+        //map.fitBounds(bounds);
     });
 
 }
@@ -198,11 +198,11 @@ function initMap(pos) {
 
         // Create the DIV to hold the control and call the About()
         // constructor passing in this DIV.
-        var aboutDiv = document.createElement('div');
-        var aboutControl = new createAboutButton(aboutDiv, map);
+        //var aboutDiv = document.createElement('div');
+        //var aboutControl = new createAboutButton(aboutDiv, map);
 
-        aboutDiv.index = 1;
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
+        //aboutDiv.index = 1;
+        //map.controls[google.maps.ControlPosition.TOP_CENTER].push(aboutDiv);
 
         $.getScript('js/bldgCoords.js', function() {
             // Draw polygons once they've been loaded from bldgCoords.js
@@ -242,14 +242,22 @@ function drawPolygons() {
             name: locations[i].name
         });
 
-        // Ger center of polygon
+        // Get center of polygon
         var center = getBoundingBox(myPolygon).getCenter();
+
+        //store polygon, its center, and its name
+        polygons.push({
+            'polygon':myPolygon,
+            'name':locations[i].name,
+            'center':center
+        }); 
 
         // Create a marker object for each polygon
         var marker = new google.maps.Marker({
             position: center,
             map: map,
-            name: locations[i].name
+            name: locations[i].name,
+            visible: false
         });
 
         // Insert the marker as a field in the polygon object
