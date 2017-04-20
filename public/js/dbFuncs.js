@@ -90,12 +90,12 @@ var assert = require('assert');
 var url = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
 //Copy and paste the below code whenever you need to pull from the database
+/*
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
   assert.notEqual(null, db);
   console.log("Connected successfully to server");
 
-  /*
   findByBuilding(db,"PUT BUILDING NAME HERE",function(results){
     //do something with results
 
@@ -103,9 +103,7 @@ MongoClient.connect(url, function(err, db) {
       if(err) throw err;
     });   
   });
-  */
 
-  /*
   getEntireCollection(db, "diningPU", function(results) {
     //do something with results
 
@@ -113,6 +111,7 @@ MongoClient.connect(url, function(err, db) {
       if(err) throw err;
     });
   });
- */
+ 
 
 });
+*/
