@@ -15,7 +15,7 @@ function getXML(webFeedURL, returnResult) {
   console.log("loading parser!")
   var toJson = require("./xml2json");
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-=======
+
   //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var xmlReq = new XMLHttpRequest();
   xmlReq.open("GET", webFeedURL, true);
