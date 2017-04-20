@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .checkboxes {
+            background: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="map"></div>
+    <input id="pac-input" class="controls" style="position:absolute;top:1em;right:1em;z-index:2;height:40px;width:400px;border-radius:5px;font-size:18px;" type="text" placeholder="Search For Places Here">
+
+    <div class="checkboxes" style="position:absolute;top:4em;left:1em;z-index:3;">
+        <label><input type="radio" name="infoWindowDisplayMode" id="oneInfoWindow" checked="checked"> Display 1 Info Window at a time</label>
+        <br/>
+        <label><input type="radio" name="infoWindowDisplayMode" id="allInfoWindow" > Keep all clicked Info Windows</label>
+    </div>
+
+
+</body>
+<script src="js/parser.js"></script>
+<script src="js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
+
+</html>
