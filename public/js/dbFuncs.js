@@ -61,8 +61,8 @@ var findByName = function(db, query, callback) {
   });
 }
 
-var findData = function(db, collection, tag, query, callback) {
-  db.collection(collection).find({ "id" : { "$gt": 0, "$lt": 5 } }).toArray(function(err, results) {
+var getEntireCollection = function(db, collection, callback) {
+  db.collection(collection).find({}).toArray(function(err, results) {
     assert.equal(err, null);
     assert.notEqual(results, [])
     console.log("Found the following records");
@@ -95,12 +95,24 @@ MongoClient.connect(url, function(err, db) {
   assert.notEqual(null, db);
   console.log("Connected successfully to server");
 
-  // replace with desired functions
-  findData(db, "diningPU", "name", "Butler College Dining Hall", function(results) {
+  /*
+  findByBuilding(db,"PUT BUILDING NAME HERE",function(results){
+    //do something with results
+
+    db.close(function (err) {
+      if(err) throw err;
+    });   
+  });
+  */
+
+  /*
+  getEntireCollection(db, "diningPU", function(results) {
     //do something with results
 
     db.close(function (err) {
       if(err) throw err;
     });
   });
+ */
+
 });
