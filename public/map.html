@@ -71,7 +71,7 @@
     </div>
 
     <div style="width: 100%; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
-        <div onClick="parse(diningURL,function(result) {showEventPlaces(result);});" class="toggle-buttons" style="margin-right: 15px; margin-left: 5em;">
+        <div class="toggle-buttons" style="margin-right: 15px; margin-left: 5em;" onclick="showEventPlaces()">
             <p class="toggle-texts">Events</p>
         </div>
         <div class="toggle-buttons" style="margin-right: 15px;" onclick="showFoodPlaces()">
@@ -90,9 +90,10 @@
     </div>
 
 </body>
-<script src="js/toggle.js"></script>
-<script src="js/parser.js"></script>
+<script src="js/xml2json.js"></script>
+<script src="js/xmlToJSON.js"></script>
 <script src="js/map.js"></script>
+<script src="js/toggle.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
 
 </html>

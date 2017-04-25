@@ -3,7 +3,10 @@ var placesService;
 var infoWindows = [];
 var showAllInfoWindows = false;
 var previousHighlight = null;
+var previousHighlights = [];
 var polygons = [];
+
+//console.log(JSON.stringify(previousHighlights));
 
 $("#allInfoWindow").click(function() {
 
