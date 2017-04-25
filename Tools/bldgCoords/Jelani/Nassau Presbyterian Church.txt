@@ -1,0 +1,20 @@
+Nassau Presbyterian Church
+[
+new google.maps.LatLng(-74.660771,40.348693),
+new google.maps.LatLng(-74.660431,40.348783),
+new google.maps.LatLng(-74.660503,40.348958),
+new google.maps.LatLng(-74.660562,40.348946),
+new google.maps.LatLng(-74.660676,40.349180),
+new google.maps.LatLng(-74.660904,40.349118),
+new google.maps.LatLng(-74.660883,40.349065),
+new google.maps.LatLng(-74.660896,40.349063),
+new google.maps.LatLng(-74.660904,40.349078),
+new google.maps.LatLng(-74.660937,40.349070),
+new google.maps.LatLng(-74.660964,40.349075),
+new google.maps.LatLng(-74.660984,40.349069),
+new google.maps.LatLng(-74.660990,40.349055),
+new google.maps.LatLng(-74.661025,40.349044),
+new google.maps.LatLng(-74.660904,40.348780),
+new google.maps.LatLng(-74.660825,40.348798),
+new google.maps.LatLng(-74.660779,40.348701)
+]

@@ -1,0 +1,24 @@
+Nassau Hall
+[
+new google.maps.LatLng(-74.659607,40.348560),
+new google.maps.LatLng(-74.659376,40.348619),
+new google.maps.LatLng(-74.659309,40.348478),
+new google.maps.LatLng(-74.659154,40.348519),
+new google.maps.LatLng(-74.659210,40.348664),
+new google.maps.LatLng(-74.658985,40.348725),
+new google.maps.LatLng(-74.659012,40.348772),
+new google.maps.LatLng(-74.658971,40.348783),
+new google.maps.LatLng(-74.658990,40.348832),
+new google.maps.LatLng(-74.659036,40.348823),
+new google.maps.LatLng(-74.659057,40.348868),
+new google.maps.LatLng(-74.659288,40.348816),
+new google.maps.LatLng(-74.659295,40.348824),
+new google.maps.LatLng(-74.659452,40.348787),
+new google.maps.LatLng(-74.659457,40.348772),
+new google.maps.LatLng(-74.659677,40.348716),
+new google.maps.LatLng(-74.659655,40.348665),
+new google.maps.LatLng(-74.659702,40.348653),
+new google.maps.LatLng(-74.659678,40.348589),
+new google.maps.LatLng(-74.659633,40.348603),
+new google.maps.LatLng(-74.659611,40.348558)
+]

@@ -1,0 +1,18 @@
+Laughlin Hall
+[
+new google.maps.LatLng(-74.660302,40.346205),
+new google.maps.LatLng(-74.660190,40.346234),
+new google.maps.LatLng(-74.660343,40.346475),
+new google.maps.LatLng(-74.660243,40.346496),
+new google.maps.LatLng(-74.660268,40.346558),
+new google.maps.LatLng(-74.660337,40.346541),
+new google.maps.LatLng(-74.660345,40.346559),
+new google.maps.LatLng(-74.660418,40.346547),
+new google.maps.LatLng(-74.660432,40.346582),
+new google.maps.LatLng(-74.660514,40.346561),
+new google.maps.LatLng(-74.660498,40.346498),
+new google.maps.LatLng(-74.660516,40.346494),
+new google.maps.LatLng(-74.660498,40.346433),
+new google.maps.LatLng(-74.660471,40.346433),
+new google.maps.LatLng(-74.660306,40.346208)
+]

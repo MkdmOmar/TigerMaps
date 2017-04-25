@@ -1,0 +1,18 @@
+Blair Hall
+[
+new google.maps.LatLng(-74.662112,40.347576),
+new google.maps.LatLng(-74.661866,40.347251),
+new google.maps.LatLng(-74.661031,40.347489),
+new google.maps.LatLng(-74.660983,40.347476),
+new google.maps.LatLng(-74.660913,40.347605),
+new google.maps.LatLng(-74.660956,40.347615),
+new google.maps.LatLng(-74.660967,40.347632),
+new google.maps.LatLng(-74.660983,40.347638),
+new google.maps.LatLng(-74.661013,40.347634),
+new google.maps.LatLng(-74.661013,40.347623),
+new google.maps.LatLng(-74.661018,40.347607),
+new google.maps.LatLng(-74.661801,40.347384),
+new google.maps.LatLng(-74.661831,40.347395),
+new google.maps.LatLng(-74.661994,40.347609),
+new google.maps.LatLng(-74.662091,40.347585)
+]

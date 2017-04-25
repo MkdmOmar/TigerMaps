@@ -1,0 +1,20 @@
+Buyers Hall
+[
+new google.maps.LatLng(-74.660983,40.347472),
+new google.maps.LatLng(-74.660940,40.347460),
+new google.maps.LatLng(-74.660720,40.347223),
+new google.maps.LatLng(-74.660522,40.347266),
+new google.maps.LatLng(-74.660500,40.347235),
+new google.maps.LatLng(-74.660431,40.347253),
+new google.maps.LatLng(-74.660484,40.347370),
+new google.maps.LatLng(-74.660661,40.347331),
+new google.maps.LatLng(-74.660809,40.347487),
+new google.maps.LatLng(-74.660833,40.347550),
+new google.maps.LatLng(-74.660819,40.347556),
+new google.maps.LatLng(-74.660817,40.347568),
+new google.maps.LatLng(-74.660817,40.347581),
+new google.maps.LatLng(-74.660836,40.347589),
+new google.maps.LatLng(-74.660857,40.347581),
+new google.maps.LatLng(-74.660911,40.347601),
+new google.maps.LatLng(-74.660981,40.347474)
+]

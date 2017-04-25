@@ -1,0 +1,25 @@
+Witherspoon Hall
+[
+new google.maps.LatLng(-74.660190,40.347306),
+new google.maps.LatLng(-74.660227,40.347383),
+new google.maps.LatLng(-74.659985,40.347442),
+new google.maps.LatLng(-74.659953,40.347374),
+new google.maps.LatLng(-74.659858,40.347397),
+new google.maps.LatLng(-74.659952,40.347601),
+new google.maps.LatLng(-74.660048,40.347575),
+new google.maps.LatLng(-74.660036,40.347550),
+new google.maps.LatLng(-74.660286,40.347488),
+new google.maps.LatLng(-74.660296,40.347511),
+new google.maps.LatLng(-74.660384,40.347488),
+new google.maps.LatLng(-74.660363,40.347435),
+new google.maps.LatLng(-74.660355,40.347435),
+new google.maps.LatLng(-74.660311,40.347343),
+new google.maps.LatLng(-74.660319,40.347338),
+new google.maps.LatLng(-74.660302,40.347303),
+new google.maps.LatLng(-74.660309,40.347291),
+new google.maps.LatLng(-74.660303,40.347277),
+new google.maps.LatLng(-74.660279,40.347272),
+new google.maps.LatLng(-74.660266,40.347277),
+new google.maps.LatLng(-74.660262,40.347286),
+new google.maps.LatLng(-74.660197,40.347304)
+]
