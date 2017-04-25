@@ -65,8 +65,8 @@ var getEntireCollection = function(db, collection, callback) {
   db.collection(collection).find({}).toArray(function(err, results) {
     assert.equal(err, null);
     assert.notEqual(results, [])
-    console.log("Found the following records");
-    console.log(results);
+    //console.log("Found the following records");
+    //console.log(results);
     if (callback) callback(results);
   });
 
@@ -81,20 +81,18 @@ var getEntireCollection = function(db, collection, callback) {
   */
 }
 
-// uncomment to connect to the database and access the functions
-var MongoClient = require('mongodb').MongoClient
-var assert = require('assert');
-
-// Connection URLj
-//var url = 'mongodb://localhost:27017/myproject';
-var url = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
-
-//Copy and paste the below code whenever you need to pull from the database
+// Connection URL/URI
 /*
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  assert.notEqual(null, db);
-  console.log("Connected successfully to server");
+var url = 'mongodb://localhost:27017/myproject';
+var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
+
+mongodb.MongoClient.connect(uri, function(err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+  
+  console.log("Connected successfully to database");
 
   findByBuilding(db,"PUT BUILDING NAME HERE",function(results){
     //do something with results
@@ -112,6 +110,5 @@ MongoClient.connect(url, function(err, db) {
     });
   });
  
-
 });
 */
