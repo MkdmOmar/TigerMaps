@@ -45,6 +45,7 @@ mongodb.MongoClient.connect(uri, function(err, database) {
 
 
 });
+        //CAS AUTHENTICATION FUNCTIONS
 
 // Create a new instance of CASAuthentication.
 var cas = new CASAuthentication({
@@ -71,6 +72,9 @@ app.get( '/authenticate', cas.bounce_redirect );
 app.get( '/api', cas.block, function ( req, res ) {
     res.json( { success: true } );
 });
+
+        //HTTP REQUEST FUNCTIONS
+        //require('./public/js/http.js');
 
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
