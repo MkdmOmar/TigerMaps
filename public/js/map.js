@@ -242,7 +242,6 @@ function drawPolygons() {
             strokeWeight: 3,
             fillColor: '#ff9966',
             fillOpacity: 0.01,
-            name: locations[i].name
         });
 
         // Get center of polygon
@@ -296,10 +295,24 @@ function drawPolygons() {
 
         // mouseout polygon listener
         myPolygon.addListener('mouseout', function(event) {
-            this.setOptions({
-                strokeOpacity: 0.01,
-                fillOpacity: 0.01
+            var toggle = false;
+
+            //only unhighlight if not in toggle mode 
+            previousHighlights.forEach(function(polygon){
+                //If both operands are objects, then JavaScript compares internal references 
+                //which are equal when operands refer to the same object in memory.
+                if (this == polygon) {
+                    toggle = true;
+                }
             });
+
+            if (toggle == false) {
+                this.setOptions({
+                    strokeOpacity: 0.01,
+                    fillOpacity: 0.01
+                });
+            }
+
         });
     }
 }

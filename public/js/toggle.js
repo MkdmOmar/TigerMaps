@@ -7,10 +7,10 @@ function showFoodPlaces() {
       xhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
   //Uncomment below when developing
-  //xhttp.open("GET", "http://localhost:8080/fetch/dining", true);
+  xhttp.open("GET", "http://localhost:8080/fetch/dining", true);
 
   //Uncomment below for pushing to github/heroku
-  xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/dining", true);
+  //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/dining", true);
 
   xhttp.onreadystatechange = handleReadyStateChange;
   xhttp.send(null);
