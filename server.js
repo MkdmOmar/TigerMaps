@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
+var path = require('path');
 var ObjectID = mongodb.ObjectID;
 
 //our own Node.js modules
@@ -45,6 +46,16 @@ app.use(
     },
     express.static(__dirname + '/public')
 );
+
+// Serve the main landing page
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/pages/index.html'));
+})
+
+// Serve the map page
+app.get('/map', function(req, res) {
+    res.sendFile(path.join(__dirname + '/views/pages/map.html'));
+})
 
 //HTTP REQUEST FUNCTIONS
 //require('./public/js/http.js');
