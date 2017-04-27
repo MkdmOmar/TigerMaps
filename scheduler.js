@@ -1,15 +1,21 @@
-function lastUpdated(datafeed)
-{
-  // query database for a timestamp of when the datafeed was last updated
+const cron = require("node-cron");
+
+const parser = require("./parser");
+
+// Frequency of database update.
+// Look up "Cron format" and this will make sense.
+var updateFreq = "0 * * * *";
+
+function updateDatabase() {
+  console.log("Scheduler: updated database");
+  parser.updateDB();
 }
 
-function onConnection()
-{
-  // check if database needs updating here, in case Heroku Scheduler
-  // missed an update.
-  //console.log("connection!")
+function start() {
+  updateDatabase();
+  cron.schedule(updateFreq, updateDatabase);
 }
 
 module.exports = {
-  onConnection: onConnection
+  start: start
 };

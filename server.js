@@ -1,4 +1,4 @@
-//pre-made Node.js modules
+// Pre-made Node.js modules
 var express = require('express');
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
@@ -7,23 +7,24 @@ var ObjectID = mongodb.ObjectID;
 var CAS = require('cas')
 var session = require('cookie-session')
 
-//our own Node.js modules
+// Our own Node.js modules
 var scheduler = require('./scheduler');
-var parser = require('./public/js/parser');
-var dbFuncs = require('./public/js/dbFuncs');
 
-//the app
+// The app
 var app = express();
 app.use(bodyParser.json());
 
-//database variable to use outside of callback
+// Database variable to use outside of callback
 var db;
 
-//uri for connections
+// URI for connections
 var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
 // Bind port to process.env.PORT or, if none available, port 8080
 var port = process.env.PORT || 8080;
+
+// start the scheduler
+scheduler.start();
 
 mongodb.MongoClient.connect(uri, function(err, database) {
     if (err) {
@@ -42,7 +43,7 @@ mongodb.MongoClient.connect(uri, function(err, database) {
 
 app.use(
     function(req, res, next) {
-        scheduler.onConnection();
+        //scheduler.onConnection();
         next();
     },
     express.static(__dirname + '/public')

@@ -9,7 +9,7 @@ function readEvents(file) {
     if(rawFile.readyState === 4 && rawFile.status === 200)
     {
       var allText = rawFile.responseText,
-      json = JSON && JSON.parse(allText);
+      json = JSON && JSON.parse(allText) || $.parseJSON(allText);
       events = json["events"]["event"];
     }
   }
@@ -17,17 +17,17 @@ function readEvents(file) {
 }
 
 // inserts the PU events into the DB
-var insertEvents = function(db, callback) {
+var insertEvents = function(db) {
   // Get the PU events collection
   var collection = db.collection('eventsPU');
   var file = "file:///Users/osamakhld/Courses/Spring2017/COS333/TigerMaps/jsonFeeds/eventsPU.json";
 
   // Insert events into collection
+  console.log(readEvents(file))
   collection.insertMany(readEvents(file), function(err, result) {
     assert.equal(err, null);
     assert.notEqual(result, [])
     console.log("Inserted events into the collection");
-    if (callback) callback(result);
   });
 }
 
@@ -82,24 +82,30 @@ var getEntireCollection = function(db, collection, callback) {
 }
 
 // Connection URL/URI
-/*
-var url = 'mongodb://localhost:27017/myproject';
-var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
-mongodb.MongoClient.connect(uri, function(err, database) {
+//var url = 'mongodb://localhost:27017/myproject';
+var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
+var mongodb = require("mongodb");
+
+
+mongodb.MongoClient.connect(uri, function(err, db) {
   if (err) {
     console.log(err);
     process.exit(1);
   }
 
   console.log("Connected successfully to database");
+  insertEvents(db);
+  db.close(function (err) {
+    if(err) throw err;
+  });
 
+
+  /*
   findByBuilding(db,"PUT BUILDING NAME HERE",function(results){
     //do something with results
 
-    db.close(function (err) {
-      if(err) throw err;
-    });
+
   });
 
   getEntireCollection(db, "diningPU", function(results) {
@@ -109,6 +115,6 @@ mongodb.MongoClient.connect(uri, function(err, database) {
       if(err) throw err;
     });
   });
+  */
 
 });
-*/
