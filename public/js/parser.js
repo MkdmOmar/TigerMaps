@@ -13,7 +13,9 @@ This is just for development purposes only.
 // This function retrieves an XML string from url
 function getXML(webFeedURL, returnResult) {
   console.log("loading parser!")
-  var toJson = require("./xml2json");
+  //The below var is not needed, xml2json has been included in script tag
+  //var toJson = require("./xml2json");
+
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
   //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;

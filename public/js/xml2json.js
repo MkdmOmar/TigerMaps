@@ -36,4 +36,4 @@ function xml2json(xml) {
 	return obj;
 };
 
-exports.xml2json = xml2json;
+//exports.xml2json = xml2json;
