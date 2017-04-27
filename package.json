@@ -1,31 +1,34 @@
 {
-  "name": "tigermaps",
-  "version": "1.0.0",
-  "description": "TigerMaps is a web app that provides a live interactive campus map which integrates seamlessly with multiple dynamic data feeds primarily related to events occurring at Princeton University of interest to students, faculty, and visitors. Edit",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MkdmOmar/TigerMaps.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MkdmOmar/TigerMaps/issues"
-  },
-  "homepage": "https://github.com/MkdmOmar/TigerMaps#readme",
-  "dependencies": {
-    "assert": "1.4.1",
-    "body-parser": "^1.17.1",
-    "cas-authentication": "0.0.8",
-    "express": "^4.15.2",
-    "mongodb": "^2.2.26",
-    "xmlhttprequest": "1.8.0"
-  },
-  "engines": {
-    "node": "6.10.1"
-  }
+    "name": "tigermaps",
+    "version": "1.0.0",
+    "description": "TigerMaps is a web app that provides a live interactive campus map which integrates seamlessly with multiple dynamic data feeds primarily related to events occurring at Princeton University of interest to students, faculty, and visitors. Edit",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MkdmOmar/TigerMaps.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MkdmOmar/TigerMaps/issues"
+    },
+    "homepage": "https://github.com/MkdmOmar/TigerMaps#readme",
+    "dependencies": {
+        "assert": "1.4.1",
+        "body-parser": "^1.17.1",
+        "cas": "0.0.3",
+        "cookie-session": "^2.0.0-beta.1",
+        "ejs": "^2.5.6",
+        "express": "^4.15.2",
+        "mongodb": "^2.2.26",
+        "path": "^0.12.7",
+        "xmlhttprequest": "1.8.0"
+    },
+    "engines": {
+        "node": "6.10.1"
+    }
 }
