@@ -53,18 +53,18 @@ app.use(
 // Configure the app to save a cookie with two attributes (for netid and status)
 app.use(session({ keys: ['key1', 'key2'] }))
 
-var serviceURL = "https://tigermaps.herokuapp.com/verify";
+// The domain and port on which the app is running
+var host = process.env.HOST || 'http://localhost:8080'
+console.log("host:", host);
 
-// Turn debug to true when developing, false when in production (on Heroku).
-var debug = true;
-if (debug) {
-    serviceURL = 'http://localhost:8080/verify';
-}
+// CAS service URL
+var casServiceURL = host + "/verify";
+
 // Configure CAS authentication
 var casURL = 'https://fed.princeton.edu/cas/'
 var cas = new CAS({
     base_url: casURL,
-    service: serviceURL
+    service: casServiceURL
 })
 
 
@@ -72,7 +72,7 @@ var cas = new CAS({
 app.get('/login', function(req, res) {
     console.log("logging in");
     // Redirect the user to the CAS server
-    res.redirect(casURL + 'login?service=' + serviceURL);
+    res.redirect(casURL + 'login?service=' + casServiceURL);
 });
 
 app.get('/verify', function(req, res) {
