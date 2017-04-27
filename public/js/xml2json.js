@@ -154,4 +154,4 @@ function xml2json(xmlString, tab) {
    return JSON && JSON.parse(json);
 }
 
-//exports.xml2json = xml2json;
+exports.xml2json = xml2json;
