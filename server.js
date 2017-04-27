@@ -25,6 +25,9 @@ var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.co
 // Bind port to process.env.PORT or, if none available, port 8080
 var port = process.env.PORT || 8080;
 
+// start the scheduler
+scheduler.start();
+
 mongodb.MongoClient.connect(uri, function(err, database) {
     if (err) {
         console.log(err);
@@ -42,7 +45,7 @@ mongodb.MongoClient.connect(uri, function(err, database) {
 
 app.use(
     function(req, res, next) {
-        scheduler.onConnection();
+        //scheduler.onConnection();
         next();
     },
     express.static(__dirname + '/public')
