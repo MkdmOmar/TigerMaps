@@ -1,0 +1,8 @@
+Maeder Hall
+
+[
+new google.maps.LatLng(40.349293,-74.650706),
+new google.maps.LatLng(40.349167,-74.650653),
+new google.maps.LatLng(40.349129,-74.650811),
+new google.maps.LatLng(40.349254,-74.650863)
+]

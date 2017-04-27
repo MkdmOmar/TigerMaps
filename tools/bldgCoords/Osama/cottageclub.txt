@@ -1,4 +1,4 @@
-Cottage
+Cottage Club
 [
 new google.maps.LatLng(40.348078,-74.651709),
 new google.maps.LatLng(40.348069,-74.651708),

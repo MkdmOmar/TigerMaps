@@ -1,4 +1,4 @@
-Tower
+Tower Club
 [
 new google.maps.LatLng(40.347835,-74.653862),
 new google.maps.LatLng(40.347773,-74.653835),

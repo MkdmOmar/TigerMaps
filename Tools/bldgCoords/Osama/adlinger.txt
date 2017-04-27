@@ -1,0 +1,10 @@
+Andlinger Center for Energy and Environment
+
+[
+new google.maps.LatLng(40.349366,-74.650526),
+new google.maps.LatLng(40.349334,-74.650642),
+new google.maps.LatLng(40.349501,-74.650736),
+new google.maps.LatLng(40.349388,-74.651143),
+new google.maps.LatLng(40.349564,-74.651221),
+new google.maps.LatLng(40.349687,-74.650663)
+]

@@ -1,0 +1,9 @@
+Aaron Burr Hall
+
+[
+new google.maps.LatLng(40.350251,-74.656822),
+new google.maps.LatLng(40.350388,-74.656513),
+new google.maps.LatLng(40.350144,-74.656326),
+new google.maps.LatLng(40.350131,-74.656330),
+new google.maps.LatLng(40.349999,-74.656629)
+]

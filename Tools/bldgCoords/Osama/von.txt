@@ -1,0 +1,20 @@
+Von Neumann Hall
+
+[
+new google.maps.LatLng(40.350555,-74.649588),
+new google.maps.LatLng(40.350688,-74.649612),
+new google.maps.LatLng(40.350750,-74.649129),
+new google.maps.LatLng(40.350612,-74.649104),
+new google.maps.LatLng(40.350612,-74.649122),
+new google.maps.LatLng(40.350550,-74.649090),
+new google.maps.LatLng(40.350562,-74.649046),
+new google.maps.LatLng(40.350396,-74.648967),
+new google.maps.LatLng(40.350339,-74.649200),
+new google.maps.LatLng(40.350273,-74.649172),
+new google.maps.LatLng(40.350219,-74.649387),
+new google.maps.LatLng(40.350323,-74.649431),
+new google.maps.LatLng(40.350391,-74.649184),
+new google.maps.LatLng(40.350512,-74.649240),
+new google.maps.LatLng(40.350524,-74.649196),
+new google.maps.LatLng(40.350597,-74.649232)
+]

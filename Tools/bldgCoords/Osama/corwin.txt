@@ -1,0 +1,18 @@
+Corwin Hall
+
+[
+new google.maps.LatLng(40.348832,-74.654231),
+new google.maps.LatLng(40.348777,-74.654358),
+new google.maps.LatLng(40.348888,-74.654444),
+new google.maps.LatLng(40.348889,-74.654454),
+new google.maps.LatLng(40.348894,-74.654464),
+new google.maps.LatLng(40.348906,-74.654477),
+new google.maps.LatLng(40.348921,-74.654479),
+new google.maps.LatLng(40.348927,-74.654475),
+new google.maps.LatLng(40.348968,-74.654507),
+new google.maps.LatLng(40.349145,-74.654134),
+new google.maps.LatLng(40.349084,-74.654083),
+new google.maps.LatLng(40.349070,-74.654113),
+new google.maps.LatLng(40.349035,-74.654084),
+new google.maps.LatLng(40.348931,-74.654309)
+]

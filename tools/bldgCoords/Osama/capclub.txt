@@ -1,4 +1,4 @@
-Cap
+Cap & Gown Club
 [
 new google.maps.LatLng(40.348128,-74.650798),
 new google.maps.LatLng(40.348097,-74.650913),

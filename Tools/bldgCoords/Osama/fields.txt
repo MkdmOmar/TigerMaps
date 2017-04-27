@@ -1,0 +1,22 @@
+Carl A. Fields Center
+
+[
+new google.maps.LatLng(40.348983,-74.651703),
+new google.maps.LatLng(40.348948,-74.651687),
+new google.maps.LatLng(40.348921,-74.651789),
+new google.maps.LatLng(40.349069,-74.651856),
+new google.maps.LatLng(40.349073,-74.651838),
+new google.maps.LatLng(40.349095,-74.651848),
+new google.maps.LatLng(40.349093,-74.651856),
+new google.maps.LatLng(40.349154,-74.651884),
+new google.maps.LatLng(40.349152,-74.651892),
+new google.maps.LatLng(40.349289,-74.651955),
+new google.maps.LatLng(40.349360,-74.651688),
+new google.maps.LatLng(40.349224,-74.651626),
+new google.maps.LatLng(40.349204,-74.651701),
+new google.maps.LatLng(40.349158,-74.651681),
+new google.maps.LatLng(40.349172,-74.651628),
+new google.maps.LatLng(40.349153,-74.651618),
+new google.maps.LatLng(40.349158,-74.651596),
+new google.maps.LatLng(40.349027,-74.651536)
+]

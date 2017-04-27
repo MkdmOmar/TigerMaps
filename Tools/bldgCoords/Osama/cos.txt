@@ -1,0 +1,21 @@
+Computer Science Building
+
+[
+new google.maps.LatLng(40.350401,-74.652459),
+new google.maps.LatLng(40.350472,-74.652204),
+new google.maps.LatLng(40.350065,-74.652016),
+new google.maps.LatLng(40.350042,-74.652031),
+new google.maps.LatLng(40.350026,-74.652055),
+new google.maps.LatLng(40.350008,-74.652088),
+new google.maps.LatLng(40.349994,-74.652125),
+new google.maps.LatLng(40.349989,-74.652176),
+new google.maps.LatLng(40.350006,-74.652236),
+new google.maps.LatLng(40.350021,-74.652242),
+new google.maps.LatLng(40.350031,-74.652267),
+new google.maps.LatLng(40.350046,-74.652289),
+new google.maps.LatLng(40.350068,-74.652313),
+new google.maps.LatLng(40.350098,-74.652336),
+new google.maps.LatLng(40.350130,-74.652354),
+new google.maps.LatLng(40.350159,-74.652364),
+new google.maps.LatLng(40.350197,-74.652364)
+]

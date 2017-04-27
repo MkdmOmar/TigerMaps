@@ -1,0 +1,8 @@
+Seely G. Mudd Manuscript Library
+
+[
+new google.maps.LatLng(40.349795,-74.651830),
+new google.maps.LatLng(40.349586,-74.651735),
+new google.maps.LatLng(40.349448,-74.652231),
+new google.maps.LatLng(40.349658,-74.652329)
+]

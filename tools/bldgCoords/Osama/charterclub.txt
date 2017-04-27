@@ -1,4 +1,4 @@
-Charter
+Charter Club
 [
 new google.maps.LatLng(40.348816,-74.650256),
 new google.maps.LatLng(40.348589,-74.650150),
