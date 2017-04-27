@@ -250,20 +250,21 @@ function drawPolygons() {
         var center = getBoundingBox(myPolygon).getCenter();
         myPolygon.center = center;
 
+        // Create a marker object for each polygon
+        var marker = new google.maps.Marker({
+             position: center,
+             map: map,
+             name: locations[i].name,
+             visible: false
+        });
+
         //store polygon, its center, and its name
         polygons.push({
             'polygon': myPolygon,
             'name': locations[i].name,
-            'center': center
+            'center': center,
+            'marker': marker
         });
-
-        // // Create a marker object for each polygon
-        // var marker = new google.maps.Marker({
-        //     position: center,
-        //     map: map,
-        //     name: locations[i].name,
-        //     visible: false
-        // });
 
 
         // Assign the polygon to the map
@@ -275,11 +276,6 @@ function drawPolygons() {
 
         https://forums.phpfreaks.com/topic/281402-google-maps-add-click-listener-to-each-polygon/
         */
-
-        // On-click marker listener
-        // marker.addListener('click', function(event) {
-        //     showMarkerInfo(event, this);
-        // });
 
         // On-click polygon listener
         myPolygon.addListener('click', function(event) {
@@ -297,14 +293,31 @@ function drawPolygons() {
         // mouseout polygon listener
         myPolygon.addListener('mouseout', function(event) {
             var toggle = false;
+            var _this = this;
 
             //only unhighlight if not in toggle mode 
-            previousHighlights.forEach(function(polygon) {
-                //If both operands are objects, then JavaScript compares internal references 
-                //which are equal when operands refer to the same object in memory.
-                if (this == polygon) {
+            previousHighlights.forEach(function(current) {
+
+                if (_this == current.polygon || _this === current.polygon) {
                     toggle = true;
                 }
+
+                /*
+                console.log(current.name);
+                var path = _this.getPath();
+                if (path == current.polygon.getPath()) {
+                    toggle = true;
+                }
+                */
+
+                /*
+                if (center_current.lat == polygon.center.lat) {
+                    if (center_current.lng == polygon.center.lng) {
+                        console.log('hmm');
+                        toggle = true;
+                    }                  
+                }
+                */
             });
 
             if (toggle == false) {
@@ -320,7 +333,7 @@ function drawPolygons() {
 
 
 
-function showMarkerInfo(event, pMarker) {
+function showMarkerInfo(event, pMarker, content) {
 
     // If !showAllInfoWindows, close previous infowindows
     if (!showAllInfoWindows && infoWindows.length != 0) {
@@ -331,7 +344,12 @@ function showMarkerInfo(event, pMarker) {
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
-    infoWindow.setContent("You clicked on " + pMarker.name + "!");
+    if (typeof(content) === undefined) {
+        infoWindow.setContent("You clicked on " + pMarker.name + "!");
+    } else {
+        infoWindow.setContent(content);
+    }
+
     infoWindow.open(map, pMarker);
 
     // Center map on info window location

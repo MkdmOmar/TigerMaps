@@ -1,4 +1,4 @@
-//pre-made Node.js modules
+// Pre-made Node.js modules
 var express = require('express');
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
@@ -7,19 +7,17 @@ var ObjectID = mongodb.ObjectID;
 var CAS = require('cas')
 var session = require('cookie-session')
 
-//our own Node.js modules
+// Our own Node.js modules
 var scheduler = require('./scheduler');
-var parser = require('./public/js/parser');
-var dbFuncs = require('./public/js/dbFuncs');
 
-//the app
+// The app
 var app = express();
 app.use(bodyParser.json());
 
-//database variable to use outside of callback
+// Database variable to use outside of callback
 var db;
 
-//uri for connections
+// URI for connections
 var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
 // Bind port to process.env.PORT or, if none available, port 8080
@@ -177,7 +175,7 @@ function handleError(res, reason, message, code) {
 }
 
 app.get("/fetch/dining", function(req, res) {
-    db.collection("diningPU").find({}).toArray(function(err, docs) {
+    db.collection("dining").find({}).toArray(function(err, docs) {
         if (err) {
             handleError(res, err.message, "Failed to get dining information.");
         } else {
@@ -186,8 +184,8 @@ app.get("/fetch/dining", function(req, res) {
     });
 });
 
-app.get("/fetch/dining", function(req, res) {
-    db.collection("diningPU").find({}).toArray(function(err, docs) {
+app.get("/fetch/laundry", function(req, res) {
+    db.collection("laundry").find({}).toArray(function(err, docs) {
         if (err) {
             handleError(res, err.message, "Failed to get dining information.");
         } else {
@@ -195,3 +193,59 @@ app.get("/fetch/dining", function(req, res) {
         }
     });
 });
+
+app.get("/fetch/locations", function(req, res) {
+    db.collection("locations").find({}).toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get dining information.");
+        } else {
+            res.status(200).json(docs);
+        }
+    });
+});
+
+app.get("/fetch/places", function(req, res) {
+    db.collection("places").find({}).toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get dining information.");
+        } else {
+            res.status(200).json(docs);
+        }
+    });
+});
+
+app.get("/fetch/printers", function(req, res) {
+    db.collection("printers").find({}).toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get dining information.");
+        } else {
+            res.status(200).json(docs);
+        }
+    });
+});
+
+app.get("/fetch/puEvents", function(req, res) {
+    db.collection("puEvents").find({}).toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get dining information.");
+        } else {
+            res.status(200).json(docs);
+        }
+    });
+});
+
+app.get("/fetch/usgEvents", function(req, res) {
+    db.collection("usgEvents").find({}).toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get dining information.");
+        } else {
+            res.status(200).json(docs);
+        }
+    });
+});
+
+
+
+
+
+

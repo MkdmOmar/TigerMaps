@@ -1,12 +1,18 @@
 const cron = require("node-cron");
 
-var updateFreq = "0 * 0 * * *";
+const parser = require("./parser");
+
+// Frequency of database update.
+// Look up "Cron format" and this will make sense.
+var updateFreq = "0 * * * *";
 
 function updateDatabase() {
-  console.log("update database!");
+  console.log("Scheduler: updated database");
+  parser.updateDB();
 }
 
 function start() {
+  updateDatabase();
   cron.schedule(updateFreq, updateDatabase);
 }
 

@@ -12,9 +12,12 @@ This is just for development purposes only.
 
 // pre-made Node.js modules
 var MongoClient = require('mongodb').MongoClient
-var toJson = require("./xml2json");
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const https = require("https");
 var assert = require("assert");
+// TODO unused
+//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
+var toJson = require("./xml2json");
 
 // datafeed URIs
 var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
@@ -28,8 +31,9 @@ var laundryURL = " https://etcweb.princeton.edu/webfeeds/places/?categoryID=14"
 // MongoDB Conncetion URI
 var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
 
-//  retrieves an XML string from url
-function getFeed(webFeedURL, returnResult) {
+// TODO unused
+//  retrieves an XML string from url (OLD VERSION)
+/*function getFeedOLD(webFeedURL, returnResult) {
 
   var xmlReq = new XMLHttpRequest();
   xmlReq.open("GET", webFeedURL, true);
@@ -49,6 +53,26 @@ function getFeed(webFeedURL, returnResult) {
       if (!returnResult) return null
     }
   };
+}*/
+
+// Retrieves a JSON object from a URL containing an XML feed.
+function getFeed(webFeedURL, callback) {
+  const req = https.request(webFeedURL, function(response) {
+    let str = ""
+    response.on("data", function(data) {
+      str += data;
+    });
+    response.on("end", function(data) {
+      var json = toJson.xml2json(str, "");
+      callback(json);
+    });
+  });
+
+  req.on("error", function(error) {
+    console.error(error);
+  });
+
+  req.end();
 }
 
 // inserts the PU events into the DB
@@ -149,9 +173,11 @@ function updateDB() {
 
     getAllFeeds(db);
     //db.close(function (err) {
-    //  if(err) throw err;
+    //  if (err) throw err;
     //});
   });
 }
 
-exports.parser = parser;
+module.exports = {
+  updateDB: updateDB
+};
