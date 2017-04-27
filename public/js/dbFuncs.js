@@ -9,7 +9,7 @@ function readEvents(file) {
     if(rawFile.readyState === 4 && rawFile.status === 200)
     {
       var allText = rawFile.responseText,
-      json = JSON && JSON.parse(allText) || $.parseJSON(allText);
+      json = JSON && JSON.parse(allText);
       events = json["events"]["event"];
     }
   }
@@ -91,7 +91,7 @@ mongodb.MongoClient.connect(uri, function(err, database) {
     console.log(err);
     process.exit(1);
   }
-  
+
   console.log("Connected successfully to database");
 
   findByBuilding(db,"PUT BUILDING NAME HERE",function(results){
@@ -109,6 +109,6 @@ mongodb.MongoClient.connect(uri, function(err, database) {
       if(err) throw err;
     });
   });
- 
+
 });
 */
