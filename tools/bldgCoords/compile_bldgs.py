@@ -15,6 +15,10 @@
 
 import sys
 import os
+import re
+
+# Corrects flipped coordinates (JELAAANIIII...)
+typicalCoord = [40, -70];
 
 # Names of the directories with the building files.
 # These must be in the same directory as this script.
@@ -43,6 +47,26 @@ def indent(string, tabs):
 
     return result[:-1]
 
+def maybe_flip_coords(line):
+    newLine = line
+    coordNumStrs = re.findall(r"-?\d+.\d+", newLine)
+    coordNums = [float(numStr) for numStr in coordNumStrs]
+    dist = sum([abs(typicalCoord[i] - coordNums[i]) for i in range(2)])
+    distFlipped = sum([abs(typicalCoord[(i+1)%2] - coordNums[i]) for i in range(2)])
+    if dist > distFlipped:
+        newLine = newLine.replace(coordNumStrs[0], "PUTNUMBERHERE")
+        newLine = newLine.replace(coordNumStrs[1], coordNumStrs[0])
+        newLine = newLine.replace("PUTNUMBERHERE", coordNumStrs[1])
+    return newLine
+
+def format_coord_lines(coords):
+    fixed = ""
+    for line in coords.splitlines():
+        line = maybe_flip_coords(line)
+        fixed += line + "\n"
+
+    return fixed[:-1]
+
 def format_coords(string, filepath):
     """
     Format the actual building polygon coordinates appropriately.
@@ -61,6 +85,7 @@ def format_coords(string, filepath):
         if string[bracket2] == "]":
             # No holes in the building
             coords = string[(bracket1+1):bracket2].strip()
+            coords = format_coord_lines(coords)
             coords = indent(coords, 1)
             result = "[\n" + coords + "\n]"
             result = indent(result, 2).strip()
@@ -75,6 +100,7 @@ def format_coords(string, filepath):
             while string[bracket3] != "]":
                 bracket3 += 1
             coordsOuter = string[(bracket2+1):bracket3].strip()
+            coordsOuter = format_coord_lines(coordsOuter)
             coordsOuter = indent(coordsOuter, 1)
 
             bracket4 = bracket3 + 1
@@ -88,6 +114,7 @@ def format_coords(string, filepath):
             while string[bracket5] != "]":
                 bracket5 += 1
             coordsInner = string[(bracket4+1):bracket5].strip()
+            coordsInner = format_coord_lines(coordsInner)
             coordsInner = indent(coordsInner, 1)
 
             bracket6 = bracket5 + 1
@@ -104,6 +131,7 @@ def format_coords(string, filepath):
             return result
     except:
         print "ERROR IN", filepath
+        raise
 
 def parse_bldg_data(filepath):
     """

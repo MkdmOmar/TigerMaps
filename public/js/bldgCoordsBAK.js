@@ -1,41 +1,41 @@
 var locations = [
-{
-	name: "1901 Hall",
-	coords: [
-			new google.maps.LatLng(40.346206,-74.660300),
-			new google.maps.LatLng(40.346196,-74.660294),
-			new google.maps.LatLng(40.346186,-74.660300),
-			new google.maps.LatLng(40.346114,-74.660260),
-			new google.maps.LatLng(40.346117,-74.660251),
-			new google.maps.LatLng(40.345764,-74.660111),
-			new google.maps.LatLng(40.345740,-74.660117),
-			new google.maps.LatLng(40.345719,-74.660224),
-			new google.maps.LatLng(40.345690,-74.660220),
-			new google.maps.LatLng(40.345686,-74.660229),
-			new google.maps.LatLng(40.345675,-74.660227),
-			new google.maps.LatLng(40.345674,-74.660211),
-			new google.maps.LatLng(40.345648,-74.660199),
-			new google.maps.LatLng(40.345658,-74.660141),
-			new google.maps.LatLng(40.345650,-74.660141),
-			new google.maps.LatLng(40.345650,-74.660114),
-			new google.maps.LatLng(40.345569,-74.660081),
-			new google.maps.LatLng(40.345582,-74.660012),
-			new google.maps.LatLng(40.345663,-74.660044),
-			new google.maps.LatLng(40.345709,-74.659831),
-			new google.maps.LatLng(40.345791,-74.659859),
-			new google.maps.LatLng(40.345771,-74.659987),
-			new google.maps.LatLng(40.346143,-74.660125),
-			new google.maps.LatLng(40.346195,-74.659954),
-			new google.maps.LatLng(40.346270,-74.659988),
-			new google.maps.LatLng(40.346263,-74.660020),
-			new google.maps.LatLng(40.346272,-74.660027),
-			new google.maps.LatLng(40.346232,-74.660180),
-			new google.maps.LatLng(40.346209,-74.660291)
+	{
+		name: "1901 Hall",
+		coords: [
+			new google.maps.LatLng(-74.660300,40.346206),
+			new google.maps.LatLng(-74.660294,40.346196),
+			new google.maps.LatLng(-74.660300,40.346186),
+			new google.maps.LatLng(-74.660260,40.346114),
+			new google.maps.LatLng(-74.660251,40.346117),
+			new google.maps.LatLng(-74.660111,40.345764),
+			new google.maps.LatLng(-74.660117,40.345740),
+			new google.maps.LatLng(-74.660224,40.345719),
+			new google.maps.LatLng(-74.660220,40.345690),
+			new google.maps.LatLng(-74.660229,40.345686),
+			new google.maps.LatLng(-74.660227,40.345675),
+			new google.maps.LatLng(-74.660211,40.345674),
+			new google.maps.LatLng(-74.660199,40.345648),
+			new google.maps.LatLng(-74.660141,40.345658),
+			new google.maps.LatLng(-74.660141,40.345650),
+			new google.maps.LatLng(-74.660114,40.345650),
+			new google.maps.LatLng(-74.660081,40.345569),
+			new google.maps.LatLng(-74.660012,40.345582),
+			new google.maps.LatLng(-74.660044,40.345663),
+			new google.maps.LatLng(-74.659831,40.345709),
+			new google.maps.LatLng(-74.659859,40.345791),
+			new google.maps.LatLng(-74.659987,40.345771),
+			new google.maps.LatLng(-74.660125,40.346143),
+			new google.maps.LatLng(-74.659954,40.346195),
+			new google.maps.LatLng(-74.659988,40.346270),
+			new google.maps.LatLng(-74.660020,40.346263),
+			new google.maps.LatLng(-74.660027,40.346272),
+			new google.maps.LatLng(-74.660180,40.346232),
+			new google.maps.LatLng(-74.660291,40.346209)
 		]
-},
-{
-	name: "1981 Hall",
-	coords: [
+	},
+	{
+		name: "1981 Hall",
+		coords: [
 			new google.maps.LatLng(40.343611,-74.657024),
 			new google.maps.LatLng(40.343651,-74.657048),
 			new google.maps.LatLng(40.343674,-74.656970),
@@ -52,69 +52,69 @@ var locations = [
 			new google.maps.LatLng(40.343495,-74.657401),
 			new google.maps.LatLng(40.343610,-74.657025)
 		]
-},
-{
-	name: "Alexander Hall",
-	coords: [
-			new google.maps.LatLng(40.348192,-74.660648),
-			new google.maps.LatLng(40.348147,-74.660787),
-			new google.maps.LatLng(40.348161,-74.660811),
-			new google.maps.LatLng(40.348188,-74.660811),
-			new google.maps.LatLng(40.348214,-74.660758),
-			new google.maps.LatLng(40.348200,-74.660817),
-			new google.maps.LatLng(40.348300,-74.660868),
-			new google.maps.LatLng(40.348316,-74.660801),
-			new google.maps.LatLng(40.348390,-74.660787),
-			new google.maps.LatLng(40.348389,-74.660803),
-			new google.maps.LatLng(40.348394,-74.660825),
-			new google.maps.LatLng(40.348407,-74.660835),
-			new google.maps.LatLng(40.348421,-74.660837),
-			new google.maps.LatLng(40.348434,-74.660830),
-			new google.maps.LatLng(40.348440,-74.660811),
-			new google.maps.LatLng(40.348440,-74.660794),
-			new google.maps.LatLng(40.348437,-74.660784),
-			new google.maps.LatLng(40.348427,-74.660775),
-			new google.maps.LatLng(40.348422,-74.660771),
-			new google.maps.LatLng(40.348454,-74.660732),
-			new google.maps.LatLng(40.348465,-74.660712),
-			new google.maps.LatLng(40.348479,-74.660685),
-			new google.maps.LatLng(40.348485,-74.660655),
-			new google.maps.LatLng(40.348489,-74.660634),
-			new google.maps.LatLng(40.348491,-74.660593),
-			new google.maps.LatLng(40.348486,-74.660555),
-			new google.maps.LatLng(40.348502,-74.660560),
-			new google.maps.LatLng(40.348510,-74.660553),
-			new google.maps.LatLng(40.348517,-74.660547),
-			new google.maps.LatLng(40.348521,-74.660534),
-			new google.maps.LatLng(40.348522,-74.660522),
-			new google.maps.LatLng(40.348522,-74.660513),
-			new google.maps.LatLng(40.348514,-74.660500),
-			new google.maps.LatLng(40.348501,-74.660492),
-			new google.maps.LatLng(40.348493,-74.660492),
-			new google.maps.LatLng(40.348486,-74.660495),
-			new google.maps.LatLng(40.348478,-74.660502),
-			new google.maps.LatLng(40.348471,-74.660510),
-			new google.maps.LatLng(40.348430,-74.660452),
-			new google.maps.LatLng(40.348398,-74.660430),
-			new google.maps.LatLng(40.348373,-74.660420),
-			new google.maps.LatLng(40.348316,-74.660392),
-			new google.maps.LatLng(40.348329,-74.660361),
-			new google.maps.LatLng(40.348325,-74.660344),
-			new google.maps.LatLng(40.348320,-74.660331),
-			new google.maps.LatLng(40.348313,-74.660325),
-			new google.maps.LatLng(40.348302,-74.660321),
-			new google.maps.LatLng(40.348293,-74.660325),
-			new google.maps.LatLng(40.348282,-74.660334),
-			new google.maps.LatLng(40.348276,-74.660342),
-			new google.maps.LatLng(40.348257,-74.660412),
-			new google.maps.LatLng(40.348247,-74.660411),
-			new google.maps.LatLng(40.348181,-74.660636),
-			new google.maps.LatLng(40.348190,-74.660641)
+	},
+	{
+		name: "Alexander Hall",
+		coords: [
+			new google.maps.LatLng(-74.660648,40.348192),
+			new google.maps.LatLng(-74.660787,40.348147),
+			new google.maps.LatLng(-74.660811,40.348161),
+			new google.maps.LatLng(-74.660811,40.348188),
+			new google.maps.LatLng(-74.660758,40.348214),
+			new google.maps.LatLng(-74.660817,40.348200),
+			new google.maps.LatLng(-74.660868,40.348300),
+			new google.maps.LatLng(-74.660801,40.348316),
+			new google.maps.LatLng(-74.660787,40.348390),
+			new google.maps.LatLng(-74.660803,40.348389),
+			new google.maps.LatLng(-74.660825,40.348394),
+			new google.maps.LatLng(-74.660835,40.348407),
+			new google.maps.LatLng(-74.660837,40.348421),
+			new google.maps.LatLng(-74.660830,40.348434),
+			new google.maps.LatLng(-74.660811,40.348440),
+			new google.maps.LatLng(-74.660794,40.348440),
+			new google.maps.LatLng(-74.660784,40.348437),
+			new google.maps.LatLng(-74.660775,40.348427),
+			new google.maps.LatLng(-74.660771,40.348422),
+			new google.maps.LatLng(-74.660732,40.348454),
+			new google.maps.LatLng(-74.660712,40.348465),
+			new google.maps.LatLng(-74.660685,40.348479),
+			new google.maps.LatLng(-74.660655,40.348485),
+			new google.maps.LatLng(-74.660634,40.348489),
+			new google.maps.LatLng(-74.660593,40.348491),
+			new google.maps.LatLng(-74.660555,40.348486),
+			new google.maps.LatLng(-74.660560,40.348502),
+			new google.maps.LatLng(-74.660553,40.348510),
+			new google.maps.LatLng(-74.660547,40.348517),
+			new google.maps.LatLng(-74.660534,40.348521),
+			new google.maps.LatLng(-74.660522,40.348522),
+			new google.maps.LatLng(-74.660513,40.348522),
+			new google.maps.LatLng(-74.660500,40.348514),
+			new google.maps.LatLng(-74.660492,40.348501),
+			new google.maps.LatLng(-74.660492,40.348493),
+			new google.maps.LatLng(-74.660495,40.348486),
+			new google.maps.LatLng(-74.660502,40.348478),
+			new google.maps.LatLng(-74.660510,40.348471),
+			new google.maps.LatLng(-74.660452,40.348430),
+			new google.maps.LatLng(-74.660430,40.348398),
+			new google.maps.LatLng(-74.660420,40.348373),
+			new google.maps.LatLng(-74.660392,40.348316),
+			new google.maps.LatLng(-74.660361,40.348329),
+			new google.maps.LatLng(-74.660344,40.348325),
+			new google.maps.LatLng(-74.660331,40.348320),
+			new google.maps.LatLng(-74.660325,40.348313),
+			new google.maps.LatLng(-74.660321,40.348302),
+			new google.maps.LatLng(-74.660325,40.348293),
+			new google.maps.LatLng(-74.660334,40.348282),
+			new google.maps.LatLng(-74.660342,40.348276),
+			new google.maps.LatLng(-74.660412,40.348257),
+			new google.maps.LatLng(-74.660411,40.348247),
+			new google.maps.LatLng(-74.660636,40.348181),
+			new google.maps.LatLng(-74.660641,40.348190)
 		]
-},
-{
-	name: "Princeton University Art Museum",
-	coords: [
+	},
+	{
+		name: "Princeton University Art Museum",
+		coords: [
 			new google.maps.LatLng(40.346698,-74.657747),
 			new google.maps.LatLng(40.346937,-74.657854),
 			new google.maps.LatLng(40.346959,-74.657770),
@@ -139,131 +139,131 @@ var locations = [
 			new google.maps.LatLng(40.346802,-74.657345),
 			new google.maps.LatLng(40.346698,-74.657744)
 		]
-},
-{
-	name: "Blair Hall",
-	coords: [
-			new google.maps.LatLng(40.347576,-74.662112),
-			new google.maps.LatLng(40.347251,-74.661866),
-			new google.maps.LatLng(40.347489,-74.661031),
-			new google.maps.LatLng(40.347476,-74.660983),
-			new google.maps.LatLng(40.347605,-74.660913),
-			new google.maps.LatLng(40.347615,-74.660956),
-			new google.maps.LatLng(40.347632,-74.660967),
-			new google.maps.LatLng(40.347638,-74.660983),
-			new google.maps.LatLng(40.347634,-74.661013),
-			new google.maps.LatLng(40.347623,-74.661013),
-			new google.maps.LatLng(40.347607,-74.661018),
-			new google.maps.LatLng(40.347384,-74.661801),
-			new google.maps.LatLng(40.347395,-74.661831),
-			new google.maps.LatLng(40.347609,-74.661994),
-			new google.maps.LatLng(40.347585,-74.662091)
+	},
+	{
+		name: "Blair Hall",
+		coords: [
+			new google.maps.LatLng(-74.662112,40.347576),
+			new google.maps.LatLng(-74.661866,40.347251),
+			new google.maps.LatLng(-74.661031,40.347489),
+			new google.maps.LatLng(-74.660983,40.347476),
+			new google.maps.LatLng(-74.660913,40.347605),
+			new google.maps.LatLng(-74.660956,40.347615),
+			new google.maps.LatLng(-74.660967,40.347632),
+			new google.maps.LatLng(-74.660983,40.347638),
+			new google.maps.LatLng(-74.661013,40.347634),
+			new google.maps.LatLng(-74.661013,40.347623),
+			new google.maps.LatLng(-74.661018,40.347607),
+			new google.maps.LatLng(-74.661801,40.347384),
+			new google.maps.LatLng(-74.661831,40.347395),
+			new google.maps.LatLng(-74.661994,40.347609),
+			new google.maps.LatLng(-74.662091,40.347585)
 		]
-},
-{
-	name: "Buyers Hall",
-	coords: [
-			new google.maps.LatLng(40.347472,-74.660983),
-			new google.maps.LatLng(40.347460,-74.660940),
-			new google.maps.LatLng(40.347223,-74.660720),
-			new google.maps.LatLng(40.347266,-74.660522),
-			new google.maps.LatLng(40.347235,-74.660500),
-			new google.maps.LatLng(40.347253,-74.660431),
-			new google.maps.LatLng(40.347370,-74.660484),
-			new google.maps.LatLng(40.347331,-74.660661),
-			new google.maps.LatLng(40.347487,-74.660809),
-			new google.maps.LatLng(40.347550,-74.660833),
-			new google.maps.LatLng(40.347556,-74.660819),
-			new google.maps.LatLng(40.347568,-74.660817),
-			new google.maps.LatLng(40.347581,-74.660817),
-			new google.maps.LatLng(40.347589,-74.660836),
-			new google.maps.LatLng(40.347581,-74.660857),
-			new google.maps.LatLng(40.347601,-74.660911),
-			new google.maps.LatLng(40.347474,-74.660981)
+	},
+	{
+		name: "Buyers Hall",
+		coords: [
+			new google.maps.LatLng(-74.660983,40.347472),
+			new google.maps.LatLng(-74.660940,40.347460),
+			new google.maps.LatLng(-74.660720,40.347223),
+			new google.maps.LatLng(-74.660522,40.347266),
+			new google.maps.LatLng(-74.660500,40.347235),
+			new google.maps.LatLng(-74.660431,40.347253),
+			new google.maps.LatLng(-74.660484,40.347370),
+			new google.maps.LatLng(-74.660661,40.347331),
+			new google.maps.LatLng(-74.660809,40.347487),
+			new google.maps.LatLng(-74.660833,40.347550),
+			new google.maps.LatLng(-74.660819,40.347556),
+			new google.maps.LatLng(-74.660817,40.347568),
+			new google.maps.LatLng(-74.660817,40.347581),
+			new google.maps.LatLng(-74.660836,40.347589),
+			new google.maps.LatLng(-74.660857,40.347581),
+			new google.maps.LatLng(-74.660911,40.347601),
+			new google.maps.LatLng(-74.660981,40.347474)
 		]
-},
-{
-	name: "Campbell Hall",
-	coords: [
-			new google.maps.LatLng(40.347928,-74.661070),
-			new google.maps.LatLng(40.347904,-74.661182),
-			new google.maps.LatLng(40.348067,-74.661263),
-			new google.maps.LatLng(40.348007,-74.661475),
-			new google.maps.LatLng(40.347999,-74.661472),
-			new google.maps.LatLng(40.347978,-74.661543),
-			new google.maps.LatLng(40.348079,-74.661591),
-			new google.maps.LatLng(40.348091,-74.661552),
-			new google.maps.LatLng(40.348087,-74.661549),
-			new google.maps.LatLng(40.348106,-74.661477),
-			new google.maps.LatLng(40.348115,-74.661475),
-			new google.maps.LatLng(40.348120,-74.661462),
-			new google.maps.LatLng(40.348116,-74.661449),
-			new google.maps.LatLng(40.348139,-74.661377),
-			new google.maps.LatLng(40.348143,-74.661373),
-			new google.maps.LatLng(40.348148,-74.661359),
-			new google.maps.LatLng(40.348146,-74.661351),
-			new google.maps.LatLng(40.348160,-74.661298),
-			new google.maps.LatLng(40.348168,-74.661302),
-			new google.maps.LatLng(40.348193,-74.661210),
-			new google.maps.LatLng(40.348128,-74.661180),
-			new google.maps.LatLng(40.348140,-74.661130),
-			new google.maps.LatLng(40.348094,-74.661107),
-			new google.maps.LatLng(40.348090,-74.661119),
-			new google.maps.LatLng(40.347988,-74.661067),
-			new google.maps.LatLng(40.347991,-74.661054),
-			new google.maps.LatLng(40.347949,-74.661033),
-			new google.maps.LatLng(40.347937,-74.661077),
-			new google.maps.LatLng(40.347931,-74.661074)
+	},
+	{
+		name: "Campbell Hall",
+		coords: [
+			new google.maps.LatLng(-74.661070,40.347928),
+			new google.maps.LatLng(-74.661182,40.347904),
+			new google.maps.LatLng(-74.661263,40.348067),
+			new google.maps.LatLng(-74.661475,40.348007),
+			new google.maps.LatLng(-74.661472,40.347999),
+			new google.maps.LatLng(-74.661543,40.347978),
+			new google.maps.LatLng(-74.661591,40.348079),
+			new google.maps.LatLng(-74.661552,40.348091),
+			new google.maps.LatLng(-74.661549,40.348087),
+			new google.maps.LatLng(-74.661477,40.348106),
+			new google.maps.LatLng(-74.661475,40.348115),
+			new google.maps.LatLng(-74.661462,40.348120),
+			new google.maps.LatLng(-74.661449,40.348116),
+			new google.maps.LatLng(-74.661377,40.348139),
+			new google.maps.LatLng(-74.661373,40.348143),
+			new google.maps.LatLng(-74.661359,40.348148),
+			new google.maps.LatLng(-74.661351,40.348146),
+			new google.maps.LatLng(-74.661298,40.348160),
+			new google.maps.LatLng(-74.661302,40.348168),
+			new google.maps.LatLng(-74.661210,40.348193),
+			new google.maps.LatLng(-74.661180,40.348128),
+			new google.maps.LatLng(-74.661130,40.348140),
+			new google.maps.LatLng(-74.661107,40.348094),
+			new google.maps.LatLng(-74.661119,40.348090),
+			new google.maps.LatLng(-74.661067,40.347988),
+			new google.maps.LatLng(-74.661054,40.347991),
+			new google.maps.LatLng(-74.661033,40.347949),
+			new google.maps.LatLng(-74.661077,40.347937),
+			new google.maps.LatLng(-74.661074,40.347931)
 		]
-},
-{
-	name: "Chancellor Green Hall",
-	coords: [
-			new google.maps.LatLng(40.348850,-74.658455),
-			new google.maps.LatLng(40.348899,-74.658473),
-			new google.maps.LatLng(40.348910,-74.658435),
-			new google.maps.LatLng(40.348943,-74.658451),
-			new google.maps.LatLng(40.348935,-74.658487),
-			new google.maps.LatLng(40.348979,-74.658509),
-			new google.maps.LatLng(40.349057,-74.658452),
-			new google.maps.LatLng(40.349069,-74.658456),
-			new google.maps.LatLng(40.349081,-74.658405),
-			new google.maps.LatLng(40.349069,-74.658400),
-			new google.maps.LatLng(40.349053,-74.658364),
-			new google.maps.LatLng(40.349065,-74.658326),
-			new google.maps.LatLng(40.349093,-74.658305),
-			new google.maps.LatLng(40.349173,-74.658341),
-			new google.maps.LatLng(40.349185,-74.658376),
-			new google.maps.LatLng(40.349177,-74.658416),
-			new google.maps.LatLng(40.349150,-74.658432),
-			new google.maps.LatLng(40.349142,-74.658432),
-			new google.maps.LatLng(40.349131,-74.658489),
-			new google.maps.LatLng(40.349168,-74.658587),
-			new google.maps.LatLng(40.349139,-74.658697),
-			new google.maps.LatLng(40.349067,-74.658739),
-			new google.maps.LatLng(40.349052,-74.658786),
-			new google.maps.LatLng(40.349076,-74.658832),
-			new google.maps.LatLng(40.349066,-74.658874),
-			new google.maps.LatLng(40.349041,-74.658891),
-			new google.maps.LatLng(40.348954,-74.658857),
-			new google.maps.LatLng(40.348940,-74.658827),
-			new google.maps.LatLng(40.348949,-74.658780),
-			new google.maps.LatLng(40.348977,-74.658762),
-			new google.maps.LatLng(40.348985,-74.658764),
-			new google.maps.LatLng(40.348997,-74.658713),
-			new google.maps.LatLng(40.348993,-74.658713),
-			new google.maps.LatLng(40.348951,-74.658596),
-			new google.maps.LatLng(40.348913,-74.658577),
-			new google.maps.LatLng(40.348901,-74.658615),
-			new google.maps.LatLng(40.348865,-74.658603),
-			new google.maps.LatLng(40.348871,-74.658568),
-			new google.maps.LatLng(40.348827,-74.658546),
-			new google.maps.LatLng(40.348844,-74.658466)
+	},
+	{
+		name: "Chancellor Green Hall",
+		coords: [
+			new google.maps.LatLng(-74.658455,40.348850),
+			new google.maps.LatLng(-74.658473,40.348899),
+			new google.maps.LatLng(-74.658435,40.348910),
+			new google.maps.LatLng(-74.658451,40.348943),
+			new google.maps.LatLng(-74.658487,40.348935),
+			new google.maps.LatLng(-74.658509,40.348979),
+			new google.maps.LatLng(-74.658452,40.349057),
+			new google.maps.LatLng(-74.658456,40.349069),
+			new google.maps.LatLng(-74.658405,40.349081),
+			new google.maps.LatLng(-74.658400,40.349069),
+			new google.maps.LatLng(-74.658364,40.349053),
+			new google.maps.LatLng(-74.658326,40.349065),
+			new google.maps.LatLng(-74.658305,40.349093),
+			new google.maps.LatLng(-74.658341,40.349173),
+			new google.maps.LatLng(-74.658376,40.349185),
+			new google.maps.LatLng(-74.658416,40.349177),
+			new google.maps.LatLng(-74.658432,40.349150),
+			new google.maps.LatLng(-74.658432,40.349142),
+			new google.maps.LatLng(-74.658489,40.349131),
+			new google.maps.LatLng(-74.658587,40.349168),
+			new google.maps.LatLng(-74.658697,40.349139),
+			new google.maps.LatLng(-74.658739,40.349067),
+			new google.maps.LatLng(-74.658786,40.349052),
+			new google.maps.LatLng(-74.658832,40.349076),
+			new google.maps.LatLng(-74.658874,40.349066),
+			new google.maps.LatLng(-74.658891,40.349041),
+			new google.maps.LatLng(-74.658857,40.348954),
+			new google.maps.LatLng(-74.658827,40.348940),
+			new google.maps.LatLng(-74.658780,40.348949),
+			new google.maps.LatLng(-74.658762,40.348977),
+			new google.maps.LatLng(-74.658764,40.348985),
+			new google.maps.LatLng(-74.658713,40.348997),
+			new google.maps.LatLng(-74.658713,40.348993),
+			new google.maps.LatLng(-74.658596,40.348951),
+			new google.maps.LatLng(-74.658577,40.348913),
+			new google.maps.LatLng(-74.658615,40.348901),
+			new google.maps.LatLng(-74.658603,40.348865),
+			new google.maps.LatLng(-74.658568,40.348871),
+			new google.maps.LatLng(-74.658546,40.348827),
+			new google.maps.LatLng(-74.658466,40.348844)
 		]
-},
-{
-	name: "Dillon Gym",
-	coords: [
+	},
+	{
+		name: "Dillon Gym",
+		coords: [
 			new google.maps.LatLng(40.346222, -74.658846),
 			new google.maps.LatLng(40.346044, -74.658765),
 			new google.maps.LatLng(40.346035, -74.658796),
@@ -305,10 +305,10 @@ var locations = [
 			new google.maps.LatLng(40.346108, -74.659277),
 			new google.maps.LatLng(40.346222, -74.658847)
 		]
-},
-{
-	name: "Frist Campus Center",
-	coords: [
+	},
+	{
+		name: "Frist Campus Center",
+		coords: [
 			[
 				new google.maps.LatLng(40.346677,-74.654583),
 				new google.maps.LatLng(40.346720,-74.654624),
@@ -358,10 +358,10 @@ var locations = [
 				new google.maps.LatLng(40.346724,-74.654897)
 			]
 		]
-},
-{
-	name: "Hamilton Hall",
-	coords: [
+	},
+	{
+		name: "Hamilton Hall",
+		coords: [
 			new google.maps.LatLng(40.348135,-74.662407),
 			new google.maps.LatLng(40.348110,-74.662399),
 			new google.maps.LatLng(40.348085,-74.662485),
@@ -374,10 +374,10 @@ var locations = [
 			new google.maps.LatLng(40.348155,-74.662316),
 			new google.maps.LatLng(40.348135,-74.662399)
 		]
-},
-{
-	name: "Holder Hall",
-	coords: [
+	},
+	{
+		name: "Holder Hall",
+		coords: [
 			new google.maps.LatLng(40.348200,-74.661745),
 			new google.maps.LatLng(40.348226,-74.661611),
 			new google.maps.LatLng(40.348245,-74.661611),
@@ -408,116 +408,116 @@ var locations = [
 			new google.maps.LatLng(40.348267,-74.661780),
 			new google.maps.LatLng(40.348206,-74.661753)
 		]
-},
-{
-	name: "Joline Hall",
-	coords: [
-			new google.maps.LatLng(40.347978,-74.661544),
-			new google.maps.LatLng(40.348079,-74.661593),
-			new google.maps.LatLng(40.348069,-74.661623),
-			new google.maps.LatLng(40.348066,-74.661621),
-			new google.maps.LatLng(40.348049,-74.661675),
-			new google.maps.LatLng(40.348052,-74.661685),
-			new google.maps.LatLng(40.348048,-74.661701),
-			new google.maps.LatLng(40.348042,-74.661705),
-			new google.maps.LatLng(40.348017,-74.661783),
-			new google.maps.LatLng(40.348022,-74.661791),
-			new google.maps.LatLng(40.348017,-74.661808),
-			new google.maps.LatLng(40.348010,-74.661810),
-			new google.maps.LatLng(40.347992,-74.661876),
-			new google.maps.LatLng(40.348001,-74.661880),
-			new google.maps.LatLng(40.347978,-74.661956),
-			new google.maps.LatLng(40.347968,-74.661952),
-			new google.maps.LatLng(40.347952,-74.662007),
-			new google.maps.LatLng(40.347956,-74.662014),
-			new google.maps.LatLng(40.347951,-74.662030),
-			new google.maps.LatLng(40.347945,-74.662031),
-			new google.maps.LatLng(40.347927,-74.662093),
-			new google.maps.LatLng(40.347931,-74.662101),
-			new google.maps.LatLng(40.347924,-74.662118),
-			new google.maps.LatLng(40.347918,-74.662120),
-			new google.maps.LatLng(40.347900,-74.662185),
-			new google.maps.LatLng(40.347903,-74.662193),
-			new google.maps.LatLng(40.347898,-74.662210),
-			new google.maps.LatLng(40.347893,-74.662212),
-			new google.maps.LatLng(40.347859,-74.662328),
-			new google.maps.LatLng(40.347575,-74.662112),
-			new google.maps.LatLng(40.347609,-74.661992),
-			new google.maps.LatLng(40.347776,-74.662118),
-			new google.maps.LatLng(40.347777,-74.662126),
-			new google.maps.LatLng(40.347807,-74.662146),
-			new google.maps.LatLng(40.347977,-74.661570),
-			new google.maps.LatLng(40.347970,-74.661566),
-			new google.maps.LatLng(40.347977,-74.661546)
+	},
+	{
+		name: "Joline Hall",
+		coords: [
+			new google.maps.LatLng(-74.661544,40.347978),
+			new google.maps.LatLng(-74.661593,40.348079),
+			new google.maps.LatLng(-74.661623,40.348069),
+			new google.maps.LatLng(-74.661621,40.348066),
+			new google.maps.LatLng(-74.661675,40.348049),
+			new google.maps.LatLng(-74.661685,40.348052),
+			new google.maps.LatLng(-74.661701,40.348048),
+			new google.maps.LatLng(-74.661705,40.348042),
+			new google.maps.LatLng(-74.661783,40.348017),
+			new google.maps.LatLng(-74.661791,40.348022),
+			new google.maps.LatLng(-74.661808,40.348017),
+			new google.maps.LatLng(-74.661810,40.348010),
+			new google.maps.LatLng(-74.661876,40.347992),
+			new google.maps.LatLng(-74.661880,40.348001),
+			new google.maps.LatLng(-74.661956,40.347978),
+			new google.maps.LatLng(-74.661952,40.347968),
+			new google.maps.LatLng(-74.662007,40.347952),
+			new google.maps.LatLng(-74.662014,40.347956),
+			new google.maps.LatLng(-74.662030,40.347951),
+			new google.maps.LatLng(-74.662031,40.347945),
+			new google.maps.LatLng(-74.662093,40.347927),
+			new google.maps.LatLng(-74.662101,40.347931),
+			new google.maps.LatLng(-74.662118,40.347924),
+			new google.maps.LatLng(-74.662120,40.347918),
+			new google.maps.LatLng(-74.662185,40.347900),
+			new google.maps.LatLng(-74.662193,40.347903),
+			new google.maps.LatLng(-74.662210,40.347898),
+			new google.maps.LatLng(-74.662212,40.347893),
+			new google.maps.LatLng(-74.662328,40.347859),
+			new google.maps.LatLng(-74.662112,40.347575),
+			new google.maps.LatLng(-74.661992,40.347609),
+			new google.maps.LatLng(-74.662118,40.347776),
+			new google.maps.LatLng(-74.662126,40.347777),
+			new google.maps.LatLng(-74.662146,40.347807),
+			new google.maps.LatLng(-74.661570,40.347977),
+			new google.maps.LatLng(-74.661566,40.347970),
+			new google.maps.LatLng(-74.661546,40.347977)
 		]
-},
-{
-	name: "Laughlin Hall",
-	coords: [
-			new google.maps.LatLng(40.346205,-74.660302),
-			new google.maps.LatLng(40.346234,-74.660190),
-			new google.maps.LatLng(40.346475,-74.660343),
-			new google.maps.LatLng(40.346496,-74.660243),
-			new google.maps.LatLng(40.346558,-74.660268),
-			new google.maps.LatLng(40.346541,-74.660337),
-			new google.maps.LatLng(40.346559,-74.660345),
-			new google.maps.LatLng(40.346547,-74.660418),
-			new google.maps.LatLng(40.346582,-74.660432),
-			new google.maps.LatLng(40.346561,-74.660514),
-			new google.maps.LatLng(40.346498,-74.660498),
-			new google.maps.LatLng(40.346494,-74.660516),
-			new google.maps.LatLng(40.346433,-74.660498),
-			new google.maps.LatLng(40.346433,-74.660471),
-			new google.maps.LatLng(40.346208,-74.660306)
+	},
+	{
+		name: "Laughlin Hall",
+		coords: [
+			new google.maps.LatLng(-74.660302,40.346205),
+			new google.maps.LatLng(-74.660190,40.346234),
+			new google.maps.LatLng(-74.660343,40.346475),
+			new google.maps.LatLng(-74.660243,40.346496),
+			new google.maps.LatLng(-74.660268,40.346558),
+			new google.maps.LatLng(-74.660337,40.346541),
+			new google.maps.LatLng(-74.660345,40.346559),
+			new google.maps.LatLng(-74.660418,40.346547),
+			new google.maps.LatLng(-74.660432,40.346582),
+			new google.maps.LatLng(-74.660514,40.346561),
+			new google.maps.LatLng(-74.660498,40.346498),
+			new google.maps.LatLng(-74.660516,40.346494),
+			new google.maps.LatLng(-74.660498,40.346433),
+			new google.maps.LatLng(-74.660471,40.346433),
+			new google.maps.LatLng(-74.660306,40.346208)
 		]
-},
-{
-	name: "Little Hall",
-	coords: [
-			new google.maps.LatLng(40.347049,-74.660417),
-			new google.maps.LatLng(40.346939,-74.660374),
-			new google.maps.LatLng(40.346949,-74.660401),
-			new google.maps.LatLng(40.346944,-74.660416),
-			new google.maps.LatLng(40.346930,-74.660417),
-			new google.maps.LatLng(40.346914,-74.660402),
-			new google.maps.LatLng(40.346904,-74.660429),
-			new google.maps.LatLng(40.346860,-74.660389),
-			new google.maps.LatLng(40.346872,-74.660359),
-			new google.maps.LatLng(40.346550,-74.660062),
-			new google.maps.LatLng(40.346629,-74.659720),
-			new google.maps.LatLng(40.346644,-74.659724),
-			new google.maps.LatLng(40.346662,-74.659645),
-			new google.maps.LatLng(40.346652,-74.659622),
-			new google.maps.LatLng(40.346408,-74.659508),
-			new google.maps.LatLng(40.346399,-74.659516),
-			new google.maps.LatLng(40.346368,-74.659627),
-			new google.maps.LatLng(40.346304,-74.659604),
-			new google.maps.LatLng(40.346304,-74.659582),
-			new google.maps.LatLng(40.346203,-74.659540),
-			new google.maps.LatLng(40.346160,-74.659521),
-			new google.maps.LatLng(40.346066,-74.659481),
-			new google.maps.LatLng(40.346062,-74.659500),
-			new google.maps.LatLng(40.346001,-74.659473),
-			new google.maps.LatLng(40.346005,-74.659453),
-			new google.maps.LatLng(40.345970,-74.659439),
-			new google.maps.LatLng(40.345992,-74.659351),
-			new google.maps.LatLng(40.346029,-74.659363),
-			new google.maps.LatLng(40.346055,-74.659257),
-			new google.maps.LatLng(40.346098,-74.659276),
-			new google.maps.LatLng(40.346080,-74.659387),
-			new google.maps.LatLng(40.346325,-74.659497),
-			new google.maps.LatLng(40.346369,-74.659342),
-			new google.maps.LatLng(40.346438,-74.659375),
-			new google.maps.LatLng(40.346786,-74.659537),
-			new google.maps.LatLng(40.346668,-74.660027),
-			new google.maps.LatLng(40.346981,-74.660300),
-			new google.maps.LatLng(40.347068,-74.660341),
-			new google.maps.LatLng(40.347055,-74.660409)
+	},
+	{
+		name: "Little Hall",
+		coords: [
+			new google.maps.LatLng(-74.660417,40.347049),
+			new google.maps.LatLng(-74.660374,40.346939),
+			new google.maps.LatLng(-74.660401,40.346949),
+			new google.maps.LatLng(-74.660416,40.346944),
+			new google.maps.LatLng(-74.660417,40.346930),
+			new google.maps.LatLng(-74.660402,40.346914),
+			new google.maps.LatLng(-74.660429,40.346904),
+			new google.maps.LatLng(-74.660389,40.346860),
+			new google.maps.LatLng(-74.660359,40.346872),
+			new google.maps.LatLng(-74.660062,40.346550),
+			new google.maps.LatLng(-74.659720,40.346629),
+			new google.maps.LatLng(-74.659724,40.346644),
+			new google.maps.LatLng(-74.659645,40.346662),
+			new google.maps.LatLng(-74.659622,40.346652),
+			new google.maps.LatLng(-74.659508,40.346408),
+			new google.maps.LatLng(-74.659516,40.346399),
+			new google.maps.LatLng(-74.659627,40.346368),
+			new google.maps.LatLng(-74.659604,40.346304),
+			new google.maps.LatLng(-74.659582,40.346304),
+			new google.maps.LatLng(-74.659540,40.346203),
+			new google.maps.LatLng(-74.659521,40.346160),
+			new google.maps.LatLng(-74.659481,40.346066),
+			new google.maps.LatLng(-74.659500,40.346062),
+			new google.maps.LatLng(-74.659473,40.346001),
+			new google.maps.LatLng(-74.659453,40.346005),
+			new google.maps.LatLng(-74.659439,40.345970),
+			new google.maps.LatLng(-74.659351,40.345992),
+			new google.maps.LatLng(-74.659363,40.346029),
+			new google.maps.LatLng(-74.659257,40.346055),
+			new google.maps.LatLng(-74.659276,40.346098),
+			new google.maps.LatLng(-74.659387,40.346080),
+			new google.maps.LatLng(-74.659497,40.346325),
+			new google.maps.LatLng(-74.659342,40.346369),
+			new google.maps.LatLng(-74.659375,40.346438),
+			new google.maps.LatLng(-74.659537,40.346786),
+			new google.maps.LatLng(-74.660027,40.346668),
+			new google.maps.LatLng(-74.660300,40.346981),
+			new google.maps.LatLng(-74.660341,40.347068),
+			new google.maps.LatLng(-74.660409,40.347055)
 		]
-},
-{
-	name: "Madison Hall",
-	coords: [
+	},
+	{
+		name: "Madison Hall",
+		coords: [
 			new google.maps.LatLng(40.348545,-74.662839),
 			new google.maps.LatLng(40.348490,-74.662810),
 			new google.maps.LatLng(40.348509,-74.662743),
@@ -561,10 +561,10 @@ var locations = [
 			new google.maps.LatLng(40.348570,-74.662775),
 			new google.maps.LatLng(40.348547,-74.662834)
 		]
-},
-{
-	name: "McCormick Hall",
-	coords: [
+	},
+	{
+		name: "McCormick Hall",
+		coords: [
 			new google.maps.LatLng(40.346959,-74.657772),
 			new google.maps.LatLng(40.347221,-74.657882),
 			new google.maps.LatLng(40.347325,-74.657479),
@@ -596,58 +596,58 @@ var locations = [
 			new google.maps.LatLng(40.346904,-74.657979),
 			new google.maps.LatLng(40.346958,-74.657774)
 		]
-},
-{
-	name: "Nassau Hall",
-	coords: [
-			new google.maps.LatLng(40.348560,-74.659607),
-			new google.maps.LatLng(40.348619,-74.659376),
-			new google.maps.LatLng(40.348478,-74.659309),
-			new google.maps.LatLng(40.348519,-74.659154),
-			new google.maps.LatLng(40.348664,-74.659210),
-			new google.maps.LatLng(40.348725,-74.658985),
-			new google.maps.LatLng(40.348772,-74.659012),
-			new google.maps.LatLng(40.348783,-74.658971),
-			new google.maps.LatLng(40.348832,-74.658990),
-			new google.maps.LatLng(40.348823,-74.659036),
-			new google.maps.LatLng(40.348868,-74.659057),
-			new google.maps.LatLng(40.348816,-74.659288),
-			new google.maps.LatLng(40.348824,-74.659295),
-			new google.maps.LatLng(40.348787,-74.659452),
-			new google.maps.LatLng(40.348772,-74.659457),
-			new google.maps.LatLng(40.348716,-74.659677),
-			new google.maps.LatLng(40.348665,-74.659655),
-			new google.maps.LatLng(40.348653,-74.659702),
-			new google.maps.LatLng(40.348589,-74.659678),
-			new google.maps.LatLng(40.348603,-74.659633),
-			new google.maps.LatLng(40.348558,-74.659611)
+	},
+	{
+		name: "Nassau Hall",
+		coords: [
+			new google.maps.LatLng(-74.659607,40.348560),
+			new google.maps.LatLng(-74.659376,40.348619),
+			new google.maps.LatLng(-74.659309,40.348478),
+			new google.maps.LatLng(-74.659154,40.348519),
+			new google.maps.LatLng(-74.659210,40.348664),
+			new google.maps.LatLng(-74.658985,40.348725),
+			new google.maps.LatLng(-74.659012,40.348772),
+			new google.maps.LatLng(-74.658971,40.348783),
+			new google.maps.LatLng(-74.658990,40.348832),
+			new google.maps.LatLng(-74.659036,40.348823),
+			new google.maps.LatLng(-74.659057,40.348868),
+			new google.maps.LatLng(-74.659288,40.348816),
+			new google.maps.LatLng(-74.659295,40.348824),
+			new google.maps.LatLng(-74.659452,40.348787),
+			new google.maps.LatLng(-74.659457,40.348772),
+			new google.maps.LatLng(-74.659677,40.348716),
+			new google.maps.LatLng(-74.659655,40.348665),
+			new google.maps.LatLng(-74.659702,40.348653),
+			new google.maps.LatLng(-74.659678,40.348589),
+			new google.maps.LatLng(-74.659633,40.348603),
+			new google.maps.LatLng(-74.659611,40.348558)
 		]
-},
-{
-	name: "Nassau Presbyterian Church",
-	coords: [
-			new google.maps.LatLng(40.348693,-74.660771),
-			new google.maps.LatLng(40.348783,-74.660431),
-			new google.maps.LatLng(40.348958,-74.660503),
-			new google.maps.LatLng(40.348946,-74.660562),
-			new google.maps.LatLng(40.349180,-74.660676),
-			new google.maps.LatLng(40.349118,-74.660904),
-			new google.maps.LatLng(40.349065,-74.660883),
-			new google.maps.LatLng(40.349063,-74.660896),
-			new google.maps.LatLng(40.349078,-74.660904),
-			new google.maps.LatLng(40.349070,-74.660937),
-			new google.maps.LatLng(40.349075,-74.660964),
-			new google.maps.LatLng(40.349069,-74.660984),
-			new google.maps.LatLng(40.349055,-74.660990),
-			new google.maps.LatLng(40.349044,-74.661025),
-			new google.maps.LatLng(40.348780,-74.660904),
-			new google.maps.LatLng(40.348798,-74.660825),
-			new google.maps.LatLng(40.348701,-74.660779)
+	},
+	{
+		name: "Nassau Presbyterian Church",
+		coords: [
+			new google.maps.LatLng(-74.660771,40.348693),
+			new google.maps.LatLng(-74.660431,40.348783),
+			new google.maps.LatLng(-74.660503,40.348958),
+			new google.maps.LatLng(-74.660562,40.348946),
+			new google.maps.LatLng(-74.660676,40.349180),
+			new google.maps.LatLng(-74.660904,40.349118),
+			new google.maps.LatLng(-74.660883,40.349065),
+			new google.maps.LatLng(-74.660896,40.349063),
+			new google.maps.LatLng(-74.660904,40.349078),
+			new google.maps.LatLng(-74.660937,40.349070),
+			new google.maps.LatLng(-74.660964,40.349075),
+			new google.maps.LatLng(-74.660984,40.349069),
+			new google.maps.LatLng(-74.660990,40.349055),
+			new google.maps.LatLng(-74.661025,40.349044),
+			new google.maps.LatLng(-74.660904,40.348780),
+			new google.maps.LatLng(-74.660825,40.348798),
+			new google.maps.LatLng(-74.660779,40.348701)
 		]
-},
-{
-	name: "Patton Hall",
-	coords: [
+	},
+	{
+		name: "Patton Hall",
+		coords: [
 			new google.maps.LatLng(40.345017,-74.657239),
 			new google.maps.LatLng(40.345034,-74.657194),
 			new google.maps.LatLng(40.345024,-74.657145),
@@ -668,10 +668,10 @@ var locations = [
 			new google.maps.LatLng(40.345025,-74.657245),
 			new google.maps.LatLng(40.345017,-74.657239)
 		]
-},
-{
-	name: "Pyne Hall",
-	coords: [
+	},
+	{
+		name: "Pyne Hall",
+		coords: [
 			[
 				new google.maps.LatLng(40.348492,-74.658054),
 				new google.maps.LatLng(40.348913,-74.658245),
@@ -708,37 +708,37 @@ var locations = [
 				new google.maps.LatLng(40.348758,-74.658330)
 			]
 		]
-},
-{
-	name: "Witherspoon Hall",
-	coords: [
-			new google.maps.LatLng(40.347306,-74.660190),
-			new google.maps.LatLng(40.347383,-74.660227),
-			new google.maps.LatLng(40.347442,-74.659985),
-			new google.maps.LatLng(40.347374,-74.659953),
-			new google.maps.LatLng(40.347397,-74.659858),
-			new google.maps.LatLng(40.347601,-74.659952),
-			new google.maps.LatLng(40.347575,-74.660048),
-			new google.maps.LatLng(40.347550,-74.660036),
-			new google.maps.LatLng(40.347488,-74.660286),
-			new google.maps.LatLng(40.347511,-74.660296),
-			new google.maps.LatLng(40.347488,-74.660384),
-			new google.maps.LatLng(40.347435,-74.660363),
-			new google.maps.LatLng(40.347435,-74.660355),
-			new google.maps.LatLng(40.347343,-74.660311),
-			new google.maps.LatLng(40.347338,-74.660319),
-			new google.maps.LatLng(40.347303,-74.660302),
-			new google.maps.LatLng(40.347291,-74.660309),
-			new google.maps.LatLng(40.347277,-74.660303),
-			new google.maps.LatLng(40.347272,-74.660279),
-			new google.maps.LatLng(40.347277,-74.660266),
-			new google.maps.LatLng(40.347286,-74.660262),
-			new google.maps.LatLng(40.347304,-74.660197)
+	},
+	{
+		name: "Witherspoon Hall",
+		coords: [
+			new google.maps.LatLng(-74.660190,40.347306),
+			new google.maps.LatLng(-74.660227,40.347383),
+			new google.maps.LatLng(-74.659985,40.347442),
+			new google.maps.LatLng(-74.659953,40.347374),
+			new google.maps.LatLng(-74.659858,40.347397),
+			new google.maps.LatLng(-74.659952,40.347601),
+			new google.maps.LatLng(-74.660048,40.347575),
+			new google.maps.LatLng(-74.660036,40.347550),
+			new google.maps.LatLng(-74.660286,40.347488),
+			new google.maps.LatLng(-74.660296,40.347511),
+			new google.maps.LatLng(-74.660384,40.347488),
+			new google.maps.LatLng(-74.660363,40.347435),
+			new google.maps.LatLng(-74.660355,40.347435),
+			new google.maps.LatLng(-74.660311,40.347343),
+			new google.maps.LatLng(-74.660319,40.347338),
+			new google.maps.LatLng(-74.660302,40.347303),
+			new google.maps.LatLng(-74.660309,40.347291),
+			new google.maps.LatLng(-74.660303,40.347277),
+			new google.maps.LatLng(-74.660279,40.347272),
+			new google.maps.LatLng(-74.660266,40.347277),
+			new google.maps.LatLng(-74.660262,40.347286),
+			new google.maps.LatLng(-74.660197,40.347304)
 		]
-},
-{
-	name: "1915 Hall",
-	coords: [
+	},
+	{
+		name: "1915 Hall",
+		coords: [
 			new google.maps.LatLng(40.344923,-74.657196),
 			new google.maps.LatLng(40.344981,-74.657069),
 			new google.maps.LatLng(40.344918,-74.657018),
@@ -772,10 +772,10 @@ var locations = [
 			new google.maps.LatLng(40.344900,-74.657209),
 			new google.maps.LatLng(40.344911,-74.657187)
 		]
-},
-{
-	name: "1927-Clapp Hall",
-	coords: [
+	},
+	{
+		name: "1927-Clapp Hall",
+		coords: [
 			new google.maps.LatLng(40.345155,-74.655976),
 			new google.maps.LatLng(40.345321,-74.655614),
 			new google.maps.LatLng(40.345222,-74.655536),
@@ -785,10 +785,10 @@ var locations = [
 			new google.maps.LatLng(40.345120,-74.655954),
 			new google.maps.LatLng(40.345122,-74.655950)
 		]
-},
-{
-	name: "1938 Hall",
-	coords: [
+	},
+	{
+		name: "1938 Hall",
+		coords: [
 			new google.maps.LatLng(40.345178,-74.655450),
 			new google.maps.LatLng(40.345231,-74.655332),
 			new google.maps.LatLng(40.345146,-74.655266),
@@ -802,10 +802,10 @@ var locations = [
 			new google.maps.LatLng(40.345096,-74.655368),
 			new google.maps.LatLng(40.345090,-74.655380)
 		]
-},
-{
-	name: "1939 Hall",
-	coords: [
+	},
+	{
+		name: "1939 Hall",
+		coords: [
 			new google.maps.LatLng(40.345511,-74.656564),
 			new google.maps.LatLng(40.345285,-74.656387),
 			new google.maps.LatLng(40.345280,-74.656396),
@@ -823,10 +823,10 @@ var locations = [
 			new google.maps.LatLng(40.345235,-74.656500),
 			new google.maps.LatLng(40.345460,-74.656676)
 		]
-},
-{
-	name: "1967 Hall",
-	coords: [
+	},
+	{
+		name: "1967 Hall",
+		coords: [
 			new google.maps.LatLng(40.343773,-74.656017),
 			new google.maps.LatLng(40.343864,-74.656080),
 			new google.maps.LatLng(40.343881,-74.656040),
@@ -875,10 +875,10 @@ var locations = [
 			new google.maps.LatLng(40.343797,-74.655954),
 			new google.maps.LatLng(40.343797,-74.655964)
 		]
-},
-{
-	name: "1976 Hall",
-	coords: [
+	},
+	{
+		name: "1976 Hall",
+		coords: [
 			new google.maps.LatLng(40.344578,-74.655747),
 			new google.maps.LatLng(40.344592,-74.655703),
 			new google.maps.LatLng(40.344596,-74.655700),
@@ -919,10 +919,10 @@ var locations = [
 			new google.maps.LatLng(40.344533,-74.655727),
 			new google.maps.LatLng(40.344536,-74.655727)
 		]
-},
-{
-	name: "Bloomberg Hall",
-	coords: [
+	},
+	{
+		name: "Bloomberg Hall",
+		coords: [
 			new google.maps.LatLng(40.343836,-74.655545),
 			new google.maps.LatLng(40.343886,-74.655438),
 			new google.maps.LatLng(40.343803,-74.655336),
@@ -1008,10 +1008,10 @@ var locations = [
 			new google.maps.LatLng(40.343812,-74.655534),
 			new google.maps.LatLng(40.343829,-74.655548)
 		]
-},
-{
-	name: "Bogle Hall",
-	coords: [
+	},
+	{
+		name: "Bogle Hall",
+		coords: [
 			new google.maps.LatLng(40.344388,-74.655699),
 			new google.maps.LatLng(40.344417,-74.655561),
 			new google.maps.LatLng(40.344195,-74.655402),
@@ -1031,10 +1031,10 @@ var locations = [
 			new google.maps.LatLng(40.344285,-74.655631),
 			new google.maps.LatLng(40.344294,-74.655632)
 		]
-},
-{
-	name: "Dodge-Osborn Hall",
-	coords: [
+	},
+	{
+		name: "Dodge-Osborn Hall",
+		coords: [
 			new google.maps.LatLng(40.345680,-74.655957),
 			new google.maps.LatLng(40.345734,-74.655838),
 			new google.maps.LatLng(40.345646,-74.655769),
@@ -1049,10 +1049,10 @@ var locations = [
 			new google.maps.LatLng(40.345602,-74.655878),
 			new google.maps.LatLng(40.345595,-74.655891)
 		]
-},
-{
-	name: "Eno Hall",
-	coords: [
+	},
+	{
+		name: "Eno Hall",
+		coords: [
 			new google.maps.LatLng(40.345377,-74.655498),
 			new google.maps.LatLng(40.345433,-74.655377),
 			new google.maps.LatLng(40.345441,-74.655376),
@@ -1080,19 +1080,19 @@ var locations = [
 			new google.maps.LatLng(40.345288,-74.655433),
 			new google.maps.LatLng(40.345371,-74.655498)
 		]
-},
-{
-	name: "Gauss Hall",
-	coords: [
+	},
+	{
+		name: "Gauss Hall",
+		coords: [
 			new google.maps.LatLng(40.345061,-74.656895),
 			new google.maps.LatLng(40.345209,-74.656567),
 			new google.maps.LatLng(40.345120,-74.656497),
 			new google.maps.LatLng(40.344972,-74.656825)
 		]
-},
-{
-	name: "Guyot Hall",
-	coords: [
+	},
+	{
+		name: "Guyot Hall",
+		coords: [
 			new google.maps.LatLng(40.346177,-74.654131),
 			new google.maps.LatLng(40.346088,-74.654332),
 			new google.maps.LatLng(40.346109,-74.654349),
@@ -1122,10 +1122,10 @@ var locations = [
 			new google.maps.LatLng(40.346000,-74.654095),
 			new google.maps.LatLng(40.346034,-74.654019)
 		]
-},
-{
-	name: "Icahn Laboratory",
-	coords: [
+	},
+	{
+		name: "Icahn Laboratory",
+		coords: [
 			new google.maps.LatLng(40.343995,-74.652910),
 			new google.maps.LatLng(40.344044,-74.652796),
 			new google.maps.LatLng(40.344099,-74.652837),
@@ -1173,10 +1173,10 @@ var locations = [
 			new google.maps.LatLng(40.344029,-74.652950),
 			new google.maps.LatLng(40.344009,-74.652927)
 		]
-},
-{
-	name: "Moffett Laboratory",
-	coords: [
+	},
+	{
+		name: "Moffett Laboratory",
+		coords: [
 			new google.maps.LatLng(40.345429,-74.653867),
 			new google.maps.LatLng(40.345462,-74.653893),
 			new google.maps.LatLng(40.345460,-74.653899),
@@ -1184,10 +1184,10 @@ var locations = [
 			new google.maps.LatLng(40.345843,-74.653899),
 			new google.maps.LatLng(40.345527,-74.653650)
 		]
-},
-{
-	name: "Neuroscience Institute",
-	coords: [
+	},
+	{
+		name: "Neuroscience Institute",
+		coords: [
 			new google.maps.LatLng(40.343729,-74.652390),
 			new google.maps.LatLng(40.343352,-74.652092),
 			new google.maps.LatLng(40.343305,-74.652157),
@@ -1207,19 +1207,19 @@ var locations = [
 			new google.maps.LatLng(40.343509,-74.652472),
 			new google.maps.LatLng(40.343683,-74.652564)
 		]
-},
-{
-	name: "Rock Magnetism Laboratory",
-	coords: [
+	},
+	{
+		name: "Rock Magnetism Laboratory",
+		coords: [
 			new google.maps.LatLng(40.345241,-74.655205),
 			new google.maps.LatLng(40.345283,-74.655114),
 			new google.maps.LatLng(40.345248,-74.655087),
 			new google.maps.LatLng(40.345207,-74.655177)
 		]
-},
-{
-	name: "Schultz Laboratory",
-	coords: [
+	},
+	{
+		name: "Schultz Laboratory",
+		coords: [
 			new google.maps.LatLng(40.345340,-74.654316),
 			new google.maps.LatLng(40.345396,-74.654104),
 			new google.maps.LatLng(40.345411,-74.654070),
@@ -1242,10 +1242,10 @@ var locations = [
 			new google.maps.LatLng(40.345375,-74.653732),
 			new google.maps.LatLng(40.345231,-74.654264)
 		]
-},
-{
-	name: "Scully Hall",
-	coords: [
+	},
+	{
+		name: "Scully Hall",
+		coords: [
 			new google.maps.LatLng(40.344753,-74.655167),
 			new google.maps.LatLng(40.344759,-74.655099),
 			new google.maps.LatLng(40.344753,-74.655096),
@@ -1308,10 +1308,10 @@ var locations = [
 			new google.maps.LatLng(40.344710,-74.655124),
 			new google.maps.LatLng(40.344707,-74.655131)
 		]
-},
-{
-	name: "Thomas Laboratory",
-	coords: [
+	},
+	{
+		name: "Thomas Laboratory",
+		coords: [
 			new google.maps.LatLng(40.344949,-74.654337),
 			new google.maps.LatLng(40.345205,-74.653394),
 			new google.maps.LatLng(40.344994,-74.653291),
@@ -1325,10 +1325,10 @@ var locations = [
 			new google.maps.LatLng(40.344908,-74.654335),
 			new google.maps.LatLng(40.344914,-74.654315)
 		]
-},
-{
-	name: "Wilcox Hall",
-	coords: [
+	},
+	{
+		name: "Wilcox Hall",
+		coords: [
 			new google.maps.LatLng(40.345152,-74.656290),
 			new google.maps.LatLng(40.344906,-74.656092),
 			new google.maps.LatLng(40.345024,-74.655827),
@@ -1346,10 +1346,10 @@ var locations = [
 			new google.maps.LatLng(40.344848,-74.656222),
 			new google.maps.LatLng(40.345096,-74.656417)
 		]
-},
-{
-	name: "Wilf Hall",
-	coords: [
+	},
+	{
+		name: "Wilf Hall",
+		coords: [
 			new google.maps.LatLng(40.344499,-74.655296),
 			new google.maps.LatLng(40.344555,-74.655179),
 			new google.maps.LatLng(40.344513,-74.655151),
@@ -1383,10 +1383,10 @@ var locations = [
 			new google.maps.LatLng(40.344389,-74.655213),
 			new google.maps.LatLng(40.344395,-74.655218)
 		]
-},
-{
-	name: "Wu Hall",
-	coords: [
+	},
+	{
+		name: "Wu Hall",
+		coords: [
 			new google.maps.LatLng(40.344892,-74.656719),
 			new google.maps.LatLng(40.344933,-74.656625),
 			new google.maps.LatLng(40.344808,-74.656533),
@@ -1419,10 +1419,10 @@ var locations = [
 			new google.maps.LatLng(40.344816,-74.656679),
 			new google.maps.LatLng(40.344822,-74.656668)
 		]
-},
-{
-	name: "Yoseloff Hall",
-	coords: [
+	},
+	{
+		name: "Yoseloff Hall",
+		coords: [
 			new google.maps.LatLng(40.344303,-74.656368),
 			new google.maps.LatLng(40.344320,-74.656331),
 			new google.maps.LatLng(40.344326,-74.656330),
@@ -1498,10 +1498,10 @@ var locations = [
 			new google.maps.LatLng(40.344231,-74.656270),
 			new google.maps.LatLng(40.344212,-74.656308)
 		]
-},
-{
-	name: "Architectural Laboratory",
-	coords: [
+	},
+	{
+		name: "Architectural Laboratory",
+		coords: [
 			new google.maps.LatLng(40.343518,-74.650197),
 			new google.maps.LatLng(40.343443,-74.650132),
 			new google.maps.LatLng(40.343648,-74.649745),
@@ -1512,10 +1512,10 @@ var locations = [
 			new google.maps.LatLng(40.343774,-74.649699),
 			new google.maps.LatLng(40.343520,-74.650189)
 		]
-},
-{
-	name: "Caldwell Fieldhouse",
-	coords: [
+	},
+	{
+		name: "Caldwell Fieldhouse",
+		coords: [
 			new google.maps.LatLng(40.344207,-74.648658),
 			new google.maps.LatLng(40.344179,-74.648739),
 			new google.maps.LatLng(40.344030,-74.648653),
@@ -1528,20 +1528,20 @@ var locations = [
 			new google.maps.LatLng(40.344334,-74.648731),
 			new google.maps.LatLng(40.344223,-74.648668)
 		]
-},
-{
-	name: "Campbell Field",
-	coords: [
+	},
+	{
+		name: "Campbell Field",
+		coords: [
 			new google.maps.LatLng(40.345943,-74.647737),
 			new google.maps.LatLng(40.344939,-74.647174),
 			new google.maps.LatLng(40.345153,-74.646530),
 			new google.maps.LatLng(40.346161,-74.647107),
 			new google.maps.LatLng(40.345952,-74.647728)
 		]
-},
-{
-	name: "Clarke Field",
-	coords: [
+	},
+	{
+		name: "Clarke Field",
+		coords: [
 			new google.maps.LatLng(40.346729,-74.648864),
 			new google.maps.LatLng(40.346652,-74.648873),
 			new google.maps.LatLng(40.346567,-74.648896),
@@ -1599,10 +1599,10 @@ var locations = [
 			new google.maps.LatLng(40.346650,-74.648908),
 			new google.maps.LatLng(40.346669,-74.648877)
 		]
-},
-{
-	name: "Denunzio Pool",
-	coords: [
+	},
+	{
+		name: "Denunzio Pool",
+		coords: [
 			new google.maps.LatLng(40.344059,-74.647714),
 			new google.maps.LatLng(40.344009,-74.647893),
 			new google.maps.LatLng(40.343977,-74.647877),
@@ -1636,10 +1636,10 @@ var locations = [
 			new google.maps.LatLng(40.344030,-74.647699),
 			new google.maps.LatLng(40.344056,-74.647713)
 		]
-},
-{
-	name: "Elementary Particle Labs East",
-	coords: [
+	},
+	{
+		name: "Elementary Particle Labs East",
+		coords: [
 			new google.maps.LatLng(40.344486,-74.644864),
 			new google.maps.LatLng(40.344413,-74.644874),
 			new google.maps.LatLng(40.344436,-74.645148),
@@ -1650,10 +1650,10 @@ var locations = [
 			new google.maps.LatLng(40.344476,-74.644744),
 			new google.maps.LatLng(40.344485,-74.644859)
 		]
-},
-{
-	name: "Elementary Particle Labs West",
-	coords: [
+	},
+	{
+		name: "Elementary Particle Labs West",
+		coords: [
 			new google.maps.LatLng(40.344324,-74.646182),
 			new google.maps.LatLng(40.344325,-74.646242),
 			new google.maps.LatLng(40.344275,-74.646244),
@@ -1672,10 +1672,10 @@ var locations = [
 			new google.maps.LatLng(40.344375,-74.646179),
 			new google.maps.LatLng(40.344338,-74.646181)
 		]
-},
-{
-	name: "Fine Hall",
-	coords: [
+	},
+	{
+		name: "Fine Hall",
+		coords: [
 			new google.maps.LatLng(40.345765,-74.652892),
 			new google.maps.LatLng(40.345770,-74.652905),
 			new google.maps.LatLng(40.345765,-74.652911),
@@ -1756,20 +1756,20 @@ var locations = [
 			new google.maps.LatLng(40.345798,-74.652771),
 			new google.maps.LatLng(40.345766,-74.652888)
 		]
-},
-{
-	name: "Finney Field",
-	coords: [
+	},
+	{
+		name: "Finney Field",
+		coords: [
 			new google.maps.LatLng(40.345728,-74.648401),
 			new google.maps.LatLng(40.344716,-74.647823),
 			new google.maps.LatLng(40.344934,-74.647179),
 			new google.maps.LatLng(40.345944,-74.647749),
 			new google.maps.LatLng(40.345733,-74.648389)
 		]
-},
-{
-	name: "Fitzrandolph Observatory",
-	coords: [
+	},
+	{
+		name: "Fitzrandolph Observatory",
+		coords: [
 			new google.maps.LatLng(40.345676,-74.645790),
 			new google.maps.LatLng(40.345681,-74.645813),
 			new google.maps.LatLng(40.345682,-74.645837),
@@ -1804,10 +1804,10 @@ var locations = [
 			new google.maps.LatLng(40.345749,-74.645623),
 			new google.maps.LatLng(40.345677,-74.645787)
 		]
-},
-{
-	name: "Frelinghuysen Field",
-	coords: [
+	},
+	{
+		name: "Frelinghuysen Field",
+		coords: [
 			new google.maps.LatLng(40.344746,-74.649995),
 			new google.maps.LatLng(40.344797,-74.649839),
 			new google.maps.LatLng(40.344857,-74.649666),
@@ -1850,10 +1850,10 @@ var locations = [
 			new google.maps.LatLng(40.344724,-74.650041),
 			new google.maps.LatLng(40.344734,-74.650016)
 		]
-},
-{
-	name: "Frick Chemistry Laboratory",
-	coords: [
+	},
+	{
+		name: "Frick Chemistry Laboratory",
+		coords: [
 			new google.maps.LatLng(40.344582,-74.650878),
 			new google.maps.LatLng(40.344507,-74.651043),
 			new google.maps.LatLng(40.344404,-74.650966),
@@ -1886,10 +1886,10 @@ var locations = [
 			new google.maps.LatLng(40.344447,-74.650771),
 			new google.maps.LatLng(40.344576,-74.650877)
 		]
-},
-{
-	name: "Jadwin Gymnasium",
-	coords: [
+	},
+	{
+		name: "Jadwin Gymnasium",
+		coords: [
 			new google.maps.LatLng(40.343640,-74.649366),
 			new google.maps.LatLng(40.343507,-74.649302),
 			new google.maps.LatLng(40.343486,-74.649356),
@@ -1940,10 +1940,10 @@ var locations = [
 			new google.maps.LatLng(40.343702,-74.649310),
 			new google.maps.LatLng(40.343650,-74.649357)
 		]
-},
-{
-	name: "Jadwin Hall",
-	coords: [
+	},
+	{
+		name: "Jadwin Hall",
+		coords: [
 			[
 				new google.maps.LatLng(40.345411,-74.651853),
 				new google.maps.LatLng(40.345200,-74.652324),
@@ -1989,10 +1989,10 @@ var locations = [
 				new google.maps.LatLng(40.345235,-74.651779)
 			]
 		]
-},
-{
-	name: "Lewis Library",
-	coords: [
+	},
+	{
+		name: "Lewis Library",
+		coords: [
 			new google.maps.LatLng(40.346040,-74.653260),
 			new google.maps.LatLng(40.346046,-74.653238),
 			new google.maps.LatLng(40.346104,-74.653200),
@@ -2066,10 +2066,10 @@ var locations = [
 			new google.maps.LatLng(40.345947,-74.653168),
 			new google.maps.LatLng(40.346039,-74.653260)
 		]
-},
-{
-	name: "McDonnell Hall",
-	coords: [
+	},
+	{
+		name: "McDonnell Hall",
+		coords: [
 			new google.maps.LatLng(40.345420,-74.652703),
 			new google.maps.LatLng(40.345461,-74.652643),
 			new google.maps.LatLng(40.345487,-74.652593),
@@ -2090,10 +2090,10 @@ var locations = [
 			new google.maps.LatLng(40.345400,-74.652691),
 			new google.maps.LatLng(40.345418,-74.652702)
 		]
-},
-{
-	name: "Peyton Hall",
-	coords: [
+	},
+	{
+		name: "Peyton Hall",
+		coords: [
 			new google.maps.LatLng(40.346591,-74.652024),
 			new google.maps.LatLng(40.346352,-74.651921),
 			new google.maps.LatLng(40.346415,-74.651672),
@@ -2109,10 +2109,10 @@ var locations = [
 			new google.maps.LatLng(40.346737,-74.651440),
 			new google.maps.LatLng(40.346592,-74.652022)
 		]
-},
-{
-	name: "Powers Field",
-	coords: [
+	},
+	{
+		name: "Powers Field",
+		coords: [
 			new google.maps.LatLng(40.346103,-74.650634),
 			new google.maps.LatLng(40.346157,-74.650603),
 			new google.maps.LatLng(40.346381,-74.649930),
@@ -2141,10 +2141,10 @@ var locations = [
 			new google.maps.LatLng(40.345491,-74.650285),
 			new google.maps.LatLng(40.346091,-74.650631)
 		]
-},
-{
-	name: "Powers Field @ Princeton Stadium",
-	coords: [
+	},
+	{
+		name: "Powers Field @ Princeton Stadium",
+		coords: [
 			[
 				new google.maps.LatLng(40.346677,-74.650525),
 				new google.maps.LatLng(40.346622,-74.650667),
@@ -2210,10 +2210,10 @@ var locations = [
 				new google.maps.LatLng(40.346091,-74.650631)
 			]
 		]
-},
-{
-	name: "Sexton Field",
-	coords: [
+	},
+	{
+		name: "Sexton Field",
+		coords: [
 			new google.maps.LatLng(40.346783,-74.645578),
 			new google.maps.LatLng(40.346322,-74.645197),
 			new google.maps.LatLng(40.345819,-74.646268),
@@ -2221,10 +2221,10 @@ var locations = [
 			new google.maps.LatLng(40.346310,-74.646624),
 			new google.maps.LatLng(40.346775,-74.645613)
 		]
-},
-{
-	name: "Strubing Field",
-	coords: [
+	},
+	{
+		name: "Strubing Field",
+		coords: [
 			new google.maps.LatLng(40.347375,-74.646592),
 			new google.maps.LatLng(40.347367,-74.646604),
 			new google.maps.LatLng(40.347353,-74.646605),
@@ -2253,10 +2253,10 @@ var locations = [
 			new google.maps.LatLng(40.347383,-74.646568),
 			new google.maps.LatLng(40.347380,-74.646584)
 		]
-},
-{
-	name: "Upper Strubing Field",
-	coords: [
+	},
+	{
+		name: "Upper Strubing Field",
+		coords: [
 			new google.maps.LatLng(40.347429,-74.648096),
 			new google.maps.LatLng(40.347113,-74.647611),
 			new google.maps.LatLng(40.347013,-74.647459),
@@ -2269,10 +2269,10 @@ var locations = [
 			new google.maps.LatLng(40.347859,-74.647053),
 			new google.maps.LatLng(40.347456,-74.648058)
 		]
-},
-{
-	name: "Weaver Track Stadium",
-	coords: [
+	},
+	{
+		name: "Weaver Track Stadium",
+		coords: [
 			[
 				new google.maps.LatLng(40.344646,-74.650299),
 				new google.maps.LatLng(40.344501,-74.650347),
@@ -2360,10 +2360,10 @@ var locations = [
 				new google.maps.LatLng(40.344734,-74.650016)
 			]
 		]
-},
-{
-	name: "Cannon Club",
-	coords: [
+	},
+	{
+		name: "Cannon Club",
+		coords: [
 			new google.maps.LatLng(40.347941,-74.653128),
 			new google.maps.LatLng(40.347909,-74.653113),
 			new google.maps.LatLng(40.347911,-74.653109),
@@ -2397,10 +2397,10 @@ var locations = [
 			new google.maps.LatLng(40.347918,-74.653252),
 			new google.maps.LatLng(40.347909,-74.653247)
 		]
-},
-{
-	name: "Cap",
-	coords: [
+	},
+	{
+		name: "Cap",
+		coords: [
 			new google.maps.LatLng(40.348128,-74.650798),
 			new google.maps.LatLng(40.348097,-74.650913),
 			new google.maps.LatLng(40.348132,-74.650930),
@@ -2422,10 +2422,10 @@ var locations = [
 			new google.maps.LatLng(40.348297,-74.650843),
 			new google.maps.LatLng(40.348288,-74.650873)
 		]
-},
-{
-	name: "Charter",
-	coords: [
+	},
+	{
+		name: "Charter",
+		coords: [
 			new google.maps.LatLng(40.348816,-74.650256),
 			new google.maps.LatLng(40.348589,-74.650150),
 			new google.maps.LatLng(40.348616,-74.650044),
@@ -2445,10 +2445,10 @@ var locations = [
 			new google.maps.LatLng(40.348818,-74.650135),
 			new google.maps.LatLng(40.348847,-74.650151)
 		]
-},
-{
-	name: "Cloister",
-	coords: [
+	},
+	{
+		name: "Cloister",
+		coords: [
 			new google.maps.LatLng(40.348516,-74.650384),
 			new google.maps.LatLng(40.348490,-74.650482),
 			new google.maps.LatLng(40.348551,-74.650510),
@@ -2466,10 +2466,10 @@ var locations = [
 			new google.maps.LatLng(40.348710,-74.650506),
 			new google.maps.LatLng(40.348717,-74.650478)
 		]
-},
-{
-	name: "Colonial",
-	coords: [
+	},
+	{
+		name: "Colonial",
+		coords: [
 			new google.maps.LatLng(40.348766,-74.652867),
 			new google.maps.LatLng(40.348733,-74.652988),
 			new google.maps.LatLng(40.348848,-74.653042),
@@ -2491,10 +2491,10 @@ var locations = [
 			new google.maps.LatLng(40.348757,-74.652696),
 			new google.maps.LatLng(40.348718,-74.652845)
 		]
-},
-{
-	name: "Cottage",
-	coords: [
+	},
+	{
+		name: "Cottage",
+		coords: [
 			new google.maps.LatLng(40.348078,-74.651709),
 			new google.maps.LatLng(40.348069,-74.651708),
 			new google.maps.LatLng(40.348043,-74.651805),
@@ -2529,10 +2529,10 @@ var locations = [
 			new google.maps.LatLng(40.348114,-74.651536),
 			new google.maps.LatLng(40.348124,-74.651542)
 		]
-},
-{
-	name: "Ivy",
-	coords: [
+	},
+	{
+		name: "Ivy",
+		coords: [
 			new google.maps.LatLng(40.347975,-74.651943),
 			new google.maps.LatLng(40.347959,-74.652005),
 			new google.maps.LatLng(40.347980,-74.652014),
@@ -2560,10 +2560,10 @@ var locations = [
 			new google.maps.LatLng(40.347995,-74.651948),
 			new google.maps.LatLng(40.347994,-74.651952)
 		]
-},
-{
-	name: "Quad",
-	coords: [
+	},
+	{
+		name: "Quad",
+		coords: [
 			new google.maps.LatLng(40.347979,-74.652555),
 			new google.maps.LatLng(40.347963,-74.652612),
 			new google.maps.LatLng(40.347961,-74.652612),
@@ -2589,10 +2589,10 @@ var locations = [
 			new google.maps.LatLng(40.348017,-74.652567),
 			new google.maps.LatLng(40.348014,-74.652566)
 		]
-},
-{
-	name: "Terrace",
-	coords: [
+	},
+	{
+		name: "Terrace",
+		coords: [
 			new google.maps.LatLng(40.347131,-74.653849),
 			new google.maps.LatLng(40.347115,-74.653837),
 			new google.maps.LatLng(40.347151,-74.653754),
@@ -2614,10 +2614,10 @@ var locations = [
 			new google.maps.LatLng(40.347066,-74.653871),
 			new google.maps.LatLng(40.347108,-74.653902)
 		]
-},
-{
-	name: "TI",
-	coords: [
+	},
+	{
+		name: "TI",
+		coords: [
 			new google.maps.LatLng(40.348863,-74.652182),
 			new google.maps.LatLng(40.348849,-74.652176),
 			new google.maps.LatLng(40.348815,-74.652320),
@@ -2633,10 +2633,10 @@ var locations = [
 			new google.maps.LatLng(40.349023,-74.652178),
 			new google.maps.LatLng(40.348878,-74.652118)
 		]
-},
-{
-	name: "Tower",
-	coords: [
+	},
+	{
+		name: "Tower",
+		coords: [
 			new google.maps.LatLng(40.347835,-74.653862),
 			new google.maps.LatLng(40.347773,-74.653835),
 			new google.maps.LatLng(40.347785,-74.653779),
@@ -2654,14 +2654,14 @@ var locations = [
 			new google.maps.LatLng(40.347724,-74.654115),
 			new google.maps.LatLng(40.347765,-74.654131)
 		]
-},
-{
-	name: "WoodyWo",
-	coords: [
+	},
+	{
+		name: "WoodyWo",
+		coords: [
 			new google.maps.LatLng(40.348665,-74.654480),
 			new google.maps.LatLng(40.348420,-74.654288),
 			new google.maps.LatLng(40.348119,-74.654945),
 			new google.maps.LatLng(40.348364,-74.655137)
 		]
-}
+	}
 ];

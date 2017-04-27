@@ -11,11 +11,8 @@ This is just for development purposes only.
 */
 
 // This function retrieves an XML string from url
-function getXML(webFeedURL, returnResult) {
-  console.log("loading parser!")
-  //The below var is not needed, xml2json has been included in script tag
-  //var toJson = require("./xml2json");
-
+function getFeed(webFeedURL, returnResult) {
+  var toJson = require("./xml2json");
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
   //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -27,19 +24,14 @@ function getXML(webFeedURL, returnResult) {
     if (xmlReq.status == 200) {
       // wait until response is ready
       if (xmlReq.readyState == 4) {
-        console.log("parser success!");
-
-        var toType = function(obj) {
-          return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase()
-        }
-        console.log(toType(xmlReq.responseXML));
-
-        //var json = toJson.xml2json(xmlReq.responseXML);
-        //returnResult(json);
+        var json = toJson.xml2json(xmlReq.responseText, "");
+        if (returnResult) (returnResult(json))
+        else return json
       }
     }
     else {
       console.log("parser failure. Error: %d", xmlReq.status);
+      if (!returnResult) return null
     }
   };
 }
@@ -67,34 +59,34 @@ var placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
 // Events Calendar.
 var USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
 
-getXML(publicEventsURL, function(publicEventsXML){
+
+
+getFeed(publicEventsURL, function(publicEventsXML){
   console.log("Retrieved Public Events Data!");
-  console.log(publicEventsXML);
+  //console.log(publicEventsXML);
 });
 
-/*
-getXML(compPrintURL, function(compPrintXML){
+getFeed(compPrintURL, function(compPrintXML){
   console.log("Retrieved Computing and Printing Data!")
   //console.log(compPrintXML);
 });
 
-getXML(diningURL, function(diningXML){
+getFeed(diningURL, function(diningXML){
   console.log("Retrieved Dining Data!")
   // console.log(diningXML);
 });
 
-getXML(locationsURL, function(locationsXML){
+getFeed(locationsURL, function(locationsXML){
   console.log("Retrieved Locations Data!")
   // console.log(locationsXML);
 });
 
-getXML(placesURL, function(placesXML){
+getFeed(placesURL, function(placesXML){
   console.log("Retrieved Places Data!")
   // console.log(placesXML);
 });
 
-getXML(USGEventsURL, function(USGEventsXML){
+getFeed(USGEventsURL, function(USGEventsXML){
   console.log("Retrieved USG Events Data!")
   // console.log(USGEventsXML);
 });
-*/
