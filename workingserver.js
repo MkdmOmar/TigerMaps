@@ -10,10 +10,11 @@ app.use(session({ keys: ['key1', 'key2'] }))
 // Configure CAS authentication
 var casURL = 'https://fed.princeton.edu/cas/'
 var cas = new CAS({
-        base_url: casURL,
-        service: 'http://localhost:8080/verify'
-    })
-    // https://fed.princeton.edu/cas/login?service=http://localhost:8080/verify
+    base_url: casURL,
+    service: 'http://localhost:8080/verify'
+})
+
+// https://fed.princeton.edu/cas/login?service=http://localhost:8080/verify
 app.get('/login', function(req, res) {
     console.log("logging in");
     // Redirect the user to the CAS server
@@ -69,7 +70,7 @@ app.get('/logout', function(req, res) {
     res.redirect('/');
 
     // Perhpas we should just logout of CAS entirely?
-    res.redirect('https://fed.princeton.edu/cas/logout');
+    //res.redirect('https://fed.princeton.edu/cas/logout');
 })
 
 

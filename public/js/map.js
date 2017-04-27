@@ -159,14 +159,14 @@ function createSearchBox() {
             var contender = Number.MAX_VALUE;
 
             for (var i = 0; i < polygons.length; i++) {
-                contender = Math.sqrt((polygons[i].center.lat() - place.geometry.location.lat())**2 + (polygons[i].center.lng() - place.geometry.location.lng())**2);
+                contender = Math.sqrt((polygons[i].center.lat() - place.geometry.location.lat()) ** 2 + (polygons[i].center.lng() - place.geometry.location.lng()) ** 2);
                 if (contender < minimum) {
                     champion = polygons[i].polygon;
                     minimum = contender;
                 }
             }
-                        
-            if (champion != null) { 
+
+            if (champion != null) {
                 previousHighlight = champion;
 
                 champion.setOptions({
@@ -242,28 +242,29 @@ function drawPolygons() {
             strokeWeight: 3,
             fillColor: '#ff9966',
             fillOpacity: 0.01,
+            name: locations[i].name
         });
+
 
         // Get center of polygon
         var center = getBoundingBox(myPolygon).getCenter();
+        myPolygon.center = center;
 
         //store polygon, its center, and its name
         polygons.push({
-            'polygon':myPolygon,
-            'name':locations[i].name,
-            'center':center
-        }); 
-
-        // Create a marker object for each polygon
-        var marker = new google.maps.Marker({
-            position: center,
-            map: map,
-            name: locations[i].name,
-            visible: false
+            'polygon': myPolygon,
+            'name': locations[i].name,
+            'center': center
         });
 
-        // Insert the marker as a field in the polygon object
-        myPolygon.marker = marker;
+        // // Create a marker object for each polygon
+        // var marker = new google.maps.Marker({
+        //     position: center,
+        //     map: map,
+        //     name: locations[i].name,
+        //     visible: false
+        // });
+
 
         // Assign the polygon to the map
         myPolygon.setMap(map);
@@ -276,9 +277,9 @@ function drawPolygons() {
         */
 
         // On-click marker listener
-        marker.addListener('click', function(event) {
-            showMarkerInfo(event, this);
-        });
+        // marker.addListener('click', function(event) {
+        //     showMarkerInfo(event, this);
+        // });
 
         // On-click polygon listener
         myPolygon.addListener('click', function(event) {
@@ -298,7 +299,7 @@ function drawPolygons() {
             var toggle = false;
 
             //only unhighlight if not in toggle mode 
-            previousHighlights.forEach(function(polygon){
+            previousHighlights.forEach(function(polygon) {
                 //If both operands are objects, then JavaScript compares internal references 
                 //which are equal when operands refer to the same object in memory.
                 if (this == polygon) {
@@ -352,10 +353,11 @@ function showPolygonInfo(event, polygon) {
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setContent("You clicked on " + polygon.name + "!");
-    infoWindow.open(map, polygon.marker);
+    infoWindow.setPosition(polygon.center);
+    infoWindow.open(map);
 
     // Center map on info window location
-    map.panTo(polygon.marker.position);
+    map.panTo(polygon.center);
 
     // Keep track of all infoWindows
     infoWindows.push(infoWindow);
