@@ -1,11 +1,8 @@
-var events = 0;
-var food = 0;
-var laundry = 0;
-var printer = 0;
 var toggled = false;
 var count_options = 0;
 var event_dict = {};
 var do_once = true;
+var last_click = null;
 
 function loggedIn() {
   if ($('#notLoggedIn').css('display') == 'none') {
@@ -224,17 +221,26 @@ function getNearestPolygon(lat, lng) {
 }
 
 function showFoodPlaces() {
-  if (food != 1) { //first time clicking (add all)
-    food = 1;
-    $('#food_button').css('background-color', '#ffb347');
-  } else { 
-    //second time clicking (remove all)
-    food = 0;
-    $('#food_button').css('background-color', '#fff');
+  //clear last_click
+  console.log(last_click);
+  var food = 0;
+  if (last_click != null) {
+    if (last_click == 'food') { 
+      food = 1; //downclick event, no other button affected
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      last_click = null;
+    } else { //intercept event, keep change last_click to food
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      $('#food_button').css('background-color', '#ffb347');
+      last_click = 'food';
+    }
     unhighlightAll();
+  } else { //upclick event
+    $('#food_button').css('background-color', '#ffb347');
+    last_click = 'food';
   }
 
-  if (food == 1) { //first time clicking
+  if (food != 1) { //dont highlight food buildings on downclick event
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -311,17 +317,26 @@ function showFoodPlaces() {
 } // end of function
 
 function showPrinterPlaces() {
-  if (printer != 1) { //first time clicking (add all)
-    printer = 1;
-    $('#printer_button').css('background-color', '#ffb347');
-  } else { 
-    //second time clicking (remove all)
-    printer = 0;
-    $('#printer_button').css('background-color', '#fff');
+  //clear last_click
+  console.log(last_click);
+  var printer = 0;
+  if (last_click != null) {
+    if (last_click == 'printer') { 
+      printer = 1; //downclick event, no other button affected
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      last_click = null;
+    } else { //intercept event, keep change last_click to printer
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      $('#printer_button').css('background-color', '#ffb347');
+      last_click = 'printer';
+    }
     unhighlightAll();
+  } else { //upclick event
+    $('#printer_button').css('background-color', '#ffb347');
+    last_click = 'printer';
   }
 
-  if (printer == 1) { //first time clicking
+  if (printer != 1) { //first time clicking
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -387,17 +402,26 @@ function showPrinterPlaces() {
 } // end of function
 
 function showLaundryPlaces() {
-  if (laundry != 1) { //first time clicking (add all)
-    laundry = 1;
-    $('#laundry_button').css('background-color', '#ffb347');
-  } else { 
-    //second time clicking (remove all)
-    laundry = 0;
-    $('#laundry_button').css('background-color', '#fff');
+  //clear last_click
+  console.log(last_click);
+  var laundry = 0;
+  if (last_click != null) {
+    if (last_click == 'laundry') { 
+      laundry = 1; //downclick event, no other button affected
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      last_click = null;
+    } else { //intercept event, keep change last_click to laundry
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      $('#laundry_button').css('background-color', '#ffb347');
+      last_click = 'laundry'
+    }
     unhighlightAll();
+  } else { //upclick event
+    $('#laundry_button').css('background-color', '#ffb347');
+    last_click = 'laundry';
   }
 
-  if (laundry == 1) { //first time clicking
+  if (laundry != 1) { //first time clicking
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -471,17 +495,26 @@ function showLaundryPlaces() {
 } // end of function
 
 function showEventPlaces() {
-  if (events != 1) { //first time clicking (add all)
-    events = 1;
-    $('#event_button').css('background-color', '#ffb347');
-  } else { 
-    //second time clicking (remove all)
-    events = 0;
-    $('#event_button').css('background-color', '#fff');
+  //clear last_click
+  console.log(last_click);
+  var events = 0;
+  if (last_click != null) {
+    if (last_click == 'events') { 
+      events = 1; //downclick event, no other button affected
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      last_click = null;
+    } else { //intercept event, keep change last_click to events
+      $('#' + last_click + '_button').css('background-color', '#fff');
+      $('#events_button').css('background-color', '#ffb347');
+      last_click = 'events';
+    }
     unhighlightAll();
+  } else { //upclick event
+    $('#events_button').css('background-color', '#ffb347');
+    last_click = 'events';
   }
 
-  if (events == 1) { //first time clicking
+  if (events != 1) { //first time clicking
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
