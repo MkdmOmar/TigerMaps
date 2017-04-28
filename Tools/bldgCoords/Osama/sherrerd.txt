@@ -1,0 +1,18 @@
+Sherrerd Hall
+
+[
+new google.maps.LatLng(40.349496,-74.652351),
+new google.maps.LatLng(40.349482,-74.652403),
+new google.maps.LatLng(40.349496,-74.652411),
+new google.maps.LatLng(40.349481,-74.652469),
+new google.maps.LatLng(40.349476,-74.652466),
+new google.maps.LatLng(40.349408,-74.652712),
+new google.maps.LatLng(40.349413,-74.652713),
+new google.maps.LatLng(40.349370,-74.652875),
+new google.maps.LatLng(40.349457,-74.652916),
+new google.maps.LatLng(40.349455,-74.652926),
+new google.maps.LatLng(40.349494,-74.652944),
+new google.maps.LatLng(40.349497,-74.652934),
+new google.maps.LatLng(40.349573,-74.652970),
+new google.maps.LatLng(40.349714,-74.652453)
+]

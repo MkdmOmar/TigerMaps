@@ -1,4 +1,4 @@
-WoodyWo
+Woodrow Wilson School of Public Policy
 [
 new google.maps.LatLng(40.348665,-74.654480),
 new google.maps.LatLng(40.348420,-74.654288),

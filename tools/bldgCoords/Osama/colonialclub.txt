@@ -1,4 +1,4 @@
-Colonial
+Colonial Club
 [
 new google.maps.LatLng(40.348766,-74.652867),
 new google.maps.LatLng(40.348733,-74.652988),

@@ -1,0 +1,13 @@
+Friend Center
+
+[
+new google.maps.LatLng(40.350254,-74.653274),
+new google.maps.LatLng(40.350538,-74.652505),
+new google.maps.LatLng(40.350620,-74.652163),
+new google.maps.LatLng(40.350502,-74.652096),
+new google.maps.LatLng(40.350401,-74.652458),
+new google.maps.LatLng(40.350362,-74.652439),
+new google.maps.LatLng(40.350337,-74.652525),
+new google.maps.LatLng(40.350215,-74.652467),
+new google.maps.LatLng(40.350034,-74.653162)
+]

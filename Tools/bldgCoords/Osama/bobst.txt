@@ -1,0 +1,22 @@
+Bobst Hall
+
+[
+new google.maps.LatLng(40.348835,-74.649508),
+new google.maps.LatLng(40.348788,-74.649486),
+new google.maps.LatLng(40.348772,-74.649543),
+new google.maps.LatLng(40.348858,-74.649584),
+new google.maps.LatLng(40.348840,-74.649649),
+new google.maps.LatLng(40.348902,-74.649679),
+new google.maps.LatLng(40.348929,-74.649584),
+new google.maps.LatLng(40.348960,-74.649598),
+new google.maps.LatLng(40.348982,-74.649519),
+new google.maps.LatLng(40.349002,-74.649528),
+new google.maps.LatLng(40.349026,-74.649442),
+new google.maps.LatLng(40.348986,-74.649423),
+new google.maps.LatLng(40.349009,-74.649340),
+new google.maps.LatLng(40.348951,-74.649313),
+new google.maps.LatLng(40.348927,-74.649401),
+new google.maps.LatLng(40.348908,-74.649393),
+new google.maps.LatLng(40.348900,-74.649423),
+new google.maps.LatLng(40.348863,-74.649406)
+]

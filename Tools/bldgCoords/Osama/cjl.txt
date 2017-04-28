@@ -1,0 +1,28 @@
+Center for Jewish Life
+
+[
+new google.maps.LatLng(40.346572,-74.653647),
+new google.maps.LatLng(40.346545,-74.653704),
+new google.maps.LatLng(40.346493,-74.653748),
+new google.maps.LatLng(40.346545,-74.653858),
+new google.maps.LatLng(40.346611,-74.653801),
+new google.maps.LatLng(40.346669,-74.653848),
+new google.maps.LatLng(40.346692,-74.653801),
+new google.maps.LatLng(40.346740,-74.653841),
+new google.maps.LatLng(40.346772,-74.653773),
+new google.maps.LatLng(40.346724,-74.653736),
+new google.maps.LatLng(40.346757,-74.653666),
+new google.maps.LatLng(40.346773,-74.653679),
+new google.maps.LatLng(40.346854,-74.653504),
+new google.maps.LatLng(40.346746,-74.653419),
+new google.maps.LatLng(40.346746,-74.653404),
+new google.maps.LatLng(40.346678,-74.653396),
+new google.maps.LatLng(40.346652,-74.653343),
+new google.maps.LatLng(40.346607,-74.653384),
+new google.maps.LatLng(40.346638,-74.653447),
+new google.maps.LatLng(40.346628,-74.653537),
+new google.maps.LatLng(40.346618,-74.653529),
+new google.maps.LatLng(40.346599,-74.653570),
+new google.maps.LatLng(40.346629,-74.653595),
+new google.maps.LatLng(40.346595,-74.653668)
+]

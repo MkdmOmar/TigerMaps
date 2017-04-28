@@ -1,4 +1,4 @@
-Cloister
+Cloister Club
 [
 new google.maps.LatLng(40.348516,-74.650384),
 new google.maps.LatLng(40.348490,-74.650482),

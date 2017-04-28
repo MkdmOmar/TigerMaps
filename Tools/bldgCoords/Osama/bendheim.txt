@@ -1,0 +1,20 @@
+Bendheim Hall
+
+[
+new google.maps.LatLng(40.348657,-74.654009),
+new google.maps.LatLng(40.348646,-74.654044),
+new google.maps.LatLng(40.348644,-74.654043),
+new google.maps.LatLng(40.348596,-74.654204),
+new google.maps.LatLng(40.348641,-74.654240),
+new google.maps.LatLng(40.348645,-74.654231),
+new google.maps.LatLng(40.348651,-74.654236),
+new google.maps.LatLng(40.348644,-74.654252),
+new google.maps.LatLng(40.348672,-74.654272),
+new google.maps.LatLng(40.348734,-74.654147),
+new google.maps.LatLng(40.348797,-74.654198),
+new google.maps.LatLng(40.348806,-74.654181),
+new google.maps.LatLng(40.348838,-74.654194),
+new google.maps.LatLng(40.348866,-74.654093),
+new google.maps.LatLng(40.348691,-74.654002),
+new google.maps.LatLng(40.348685,-74.654022)
+]
