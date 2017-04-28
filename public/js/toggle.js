@@ -13,52 +13,70 @@ function loggedIn() {
 }
 
 function showEventInfo(entry) {
-  var champion = getNearestPolygon(entry["latitude"],entry["longitude"]);
-
-  //create content
-  var content = "";
-  if ("title" in entry) {
-    content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
-  }
-  if ("locationName" in entry) {
-    content = content + entry["locationName"] + "<br>";
-  }
-  if ("startTime" in entry) {
-    content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
-  }
-  if ("endTime" in entry) {
-    content = content + "End Time: " + entry["endTime"] + "<br>";
-  }
-  if ("description" in entry) {
-    if (entry["description"] != null) {
-      content = content + "<br>Description: " + entry["description"] + "<br></p>";
-    }             
-  }
-  
-  //show the marker and add listener
-  if (champion != null) {
-    champion.marker.setVisible(true);      
-    champion.marker.addListener('click', function(event) {
-        showMarkerInfo(event, this, content);
-    });
-  } 
-}
-
-//below function provided by 
-//http://stackoverflow.com/questions/30022728/perform-action-when-clicking-html5-datalist-option
-function listenForSelection() {
-  var val = $('#new-input').value;
-  var opts = $('#titles').childNodes;
-  for (var i = 0; i < opts.length; i++) {
-    if (opts[i].value === val) {
-      // An item was selected from the list!
-      if (val in event_dict) {
-        showEventInfo(event_dict[val]);
+  // alert(JSON.stringify(entry));
+  if (entry["latitude"] == 0 || entry["longitude"] == 0) {
+    if ("locationName" in entry) {
+      for (var key in event_dict) {
+        if (event_dict[key]["locationName"] == entry["locationName"]) {
+          entry["latitude"] = event_dict[key]["latitude"];
+          entry["longitude"] = event_dict[key]["longitude"];
+        }
       }
-      break;
     }
+
+  }
+
+  if (entry["latitude"] != 0 && entry["longitude"] != 0) {
+
+    var champion = getNearestPolygon(entry["latitude"],entry["longitude"]);
+
+    //create content
+    var content = "";
+    if ("title" in entry) {
+      content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
+    }
+    if ("locationName" in entry) {
+      content = content + entry["locationName"] + "<br>";
+    }
+    if ("startTime" in entry) {
+      content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
+    }
+    if ("endTime" in entry) {
+      content = content + "End Time: " + entry["endTime"] + "<br>";
+    }
+    if ("description" in entry) {
+      if (entry["description"] != null) {
+        content = content + "<br>Description: " + entry["description"] + "<br></p>";
+      }             
+    }
+    
+    //show the marker and add listener
+    if (champion != null) {
+      champion.marker.setVisible(true);      
+      champion.marker.addListener('click', function(event) {
+          showMarkerInfo(event, this, content);
+      });
+      var pos = {lat:parseFloat(entry["latitude"]),lng:parseFloat(entry["longitude"])};
+      console.log(JSON.stringify(pos));
+      map.panTo(pos);
+
+    } 
   }
 }
+
+$('#new-input').on('input',function() {
+  var val = $(this).val();
+  if (val == "") {
+    unhighlightAll();
+  } else {
+    console.log(val);
+    if (val in event_dict) {
+      showEventInfo(event_dict[val]);
+    }    
+  }
+  //var opt = $('option[value="'+$(this).val()+'"]');
+  //alert(opt.length ? opt.attr('id') : 'NO OPTION');
+});
 
 function toggleSearch() {
   if (toggled) { //currently searching for events
