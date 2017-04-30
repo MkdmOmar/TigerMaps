@@ -1667,7 +1667,16 @@ var locations = [
 		]
 },
 {
-	name: "Wendell Hall",
+	name: "Wendell Hall B",
+	coords: [
+			new google.maps.LatLng(40.344503,-74.658498),
+			new google.maps.LatLng(40.344534,-74.658357),
+			new google.maps.LatLng(40.344175,-74.658223),
+			new google.maps.LatLng(40.344137,-74.658357)
+		]
+},
+{
+	name: "Wendell Hall C",
 	coords: [
 			new google.maps.LatLng(40.343948,-74.658356),
 			new google.maps.LatLng(40.344042,-74.658400),
