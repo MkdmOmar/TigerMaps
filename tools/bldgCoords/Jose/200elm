@@ -1,0 +1,12 @@
+200 Elm
+[
+new google.maps.LatLng(40.342811,-74.657264),
+new google.maps.LatLng(40.342909,-74.656901),
+new google.maps.LatLng(40.342909,-74.656897),
+new google.maps.LatLng(40.342908,-74.656893),
+new google.maps.LatLng(40.342905,-74.656889),
+new google.maps.LatLng(40.342903,-74.656885),
+new google.maps.LatLng(40.342899,-74.656882),
+new google.maps.LatLng(40.342782,-74.656830),
+new google.maps.LatLng(40.342676,-74.657204)
+]
