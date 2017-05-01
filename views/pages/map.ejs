@@ -38,7 +38,7 @@
             cursor: pointer;
             text-align: center;
             display: inline-block;
-            width: 100px;
+            width: 75px;
             height: auto;
         }
         /*.toggle-buttons:hover {
@@ -69,15 +69,15 @@
 
     <div id="map"></div>
 
-    <input id="pac-input" class="controls" style="position:absolute; z-index:3;height:40px;width:400px;border-radius:5px;font-size:18px;border: 1px solid black; right: 10px; top: 0.5em;" type="text" placeholder="&nbsp Search For Places Here">
+    <input id="pac-input" class="controls" style="position:absolute; z-index:3;height:30px;width:400px;border-radius:5px;font-size:18px;border: 1px solid black; right: 10px; top: 0.5em;" type="text" placeholder="&nbsp Search For Places Here">
 
-    <input id="new-input" class="controls" style="display: none; position:absolute; z-index:3;height:40px;width:400px;border-radius:5px;font-size:18px;border: 1px solid black; right: 10px; top: 0.5em;" type="text" placeholder="&nbsp Search For Events Here"
+    <input id="new-input" class="controls" style="display: none; position:absolute; z-index:3;height:30px;width:400px;border-radius:5px;font-size:18px;border: 1px solid black; right: 10px; top: 0.5em;" type="text" placeholder="&nbsp Search For Events Here"
         list="titles">
 
     <datalist id="titles">
     </datalist>
 
-    <div id="toggle_search" class="toggle-search" style="position:absolute; z-index:3;height:40px;width:80px;border-radius:5px;font-size:18px;border: 1px solid black; right: 420px; top: 0.5em;text-align: center;line-height:40px;" onclick="toggleSearch()">Places
+    <div id="toggle_search" class="toggle-search" style="position:absolute; z-index:3;height:30px;width:80px;border-radius:5px;font-size:18px;border: 1px solid black; right: 420px; top: 0.5em;text-align: center;line-height:30px;" onclick="toggleSearch()">Places
         <!--<p style="line-height: 10px;">Events</p>-->
     </div>
 
@@ -85,7 +85,7 @@
         <a href="/" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; height: 30px;">About Us</a>
     </div>
 
-    <div class="checkboxes" style="z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:3.75em;right:10px;height: 40px;">
+    <div class="checkboxes" style="z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:3.25em;right:10px;height: 40px;">
         <label><input type="radio" name="infoWindowDisplayMode" id="oneInfoWindow" checked="checked"> Display 1 Info Window at a time</label>
         <br/>
         <label><input type="radio" name="infoWindowDisplayMode" id="allInfoWindow" > Keep all clicked Info Windows</label>
@@ -93,11 +93,11 @@
 
     <!--This EJS logic will generate the logged In and not logged in divs based on the "loggedIn" parameter passed in from server.js-->
     <% if(loggedIn){ %>
-        <div id="notLoggedIn" class="notLoggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:7em;right:10px;">
+        <div id="notLoggedIn" class="notLoggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:6.5em;right:10px;">
             <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; ">Log In Here</a>
         </div>
 
-        <div id="loggedIn" class="loggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:7em;right:10px;">
+        <div id="loggedIn" class="loggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:6.5em;right:10px;">
             <p style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; padding-left: 5px; padding-right: 5px; ">Hello,
                 <%= netID %>
             </p>
@@ -105,31 +105,31 @@
 
         </div>
         <% } else{ %>
-            <div id="notLoggedIn" class="notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:7em;right:10px;">
+            <div id="notLoggedIn" class="notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:6.5em;right:10px;">
                 <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; ">Log In Here</a>
             </div>
 
-            <div id="loggedIn" class="loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:7em;right:10px;">
+            <div id="loggedIn" class="loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:6.5em;right:10px;">
                 <p style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; padding-left: 5px; padding-right: 5px; ">Hello, </p>
             </div>
             <% } %>
 
 
-                <div style="width: 100%; position: absolute; z-index: 3; bottom: 1em; display: block; height: 40px; margin: auto; text-align:center">
-                    <div class="toggle-buttons" id="events_button" style="margin-right: 15px;" onclick="showEventPlaces()">
+                <div style="width: 100%; position: absolute; z-index: 3; bottom: 1.75em; display: block; height: 25px; margin: auto; text-align:center">
+                    <div class="toggle-buttons" id="events_button" style="margin-right: 10px;" onclick="showEventPlaces()">
                         <p class="toggle-texts">Events</p>
                     </div>
-                    <div class="toggle-buttons" id="food_button" style="margin-right: 15px;" onclick="showFoodPlaces()">
+                    <div class="toggle-buttons" id="food_button" style="margin-right: 10px;" onclick="showFoodPlaces()">
                         <p class="toggle-texts">Food</p>
                     </div>
-                    <div class="toggle-buttons" id="laundry_button" style="margin-right: 15px;" onclick="showLaundryPlaces()">
+                    <div class="toggle-buttons" id="laundry_button" style="margin-right: 10px;" onclick="showLaundryPlaces()">
                         <p class="toggle-texts">Laundry</p>
                     </div>
                     <!--
-                    <div class="toggle-buttons" id="places_button" style="margin-right: 15px;" onclick="showPlacePlaces()">
-                        <p class="toggle-texts">Places</p>
-                    </div>
-                    -->
+        <div class="toggle-buttons" id="places_button" style="margin-right: 10px;" onclick="showPlacePlaces()">
+            <p class="toggle-texts">Places</p>
+        </div>
+        -->
                     <div class="toggle-buttons" id="printer_button" onclick="showPrinterPlaces()">
                         <p class="toggle-texts">Printers</p>
                     </div>
