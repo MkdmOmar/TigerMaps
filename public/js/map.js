@@ -5,6 +5,7 @@ var showAllInfoWindows = false;
 var previousHighlight = null;
 var previousHighlights = [];
 var polygons = [];
+var markers = [];
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -97,8 +98,6 @@ function createSearchBox() {
         searchBox.setBounds(map.getBounds());
     });
 
-
-    var markers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener('places_changed', function() {
@@ -164,7 +163,7 @@ function createSearchBox() {
                     champion = polygons[i].polygon;
                     minimum = contender;
                 }
-            }
+            }  
 
             if (champion != null) {
                 previousHighlight = champion;
@@ -176,7 +175,10 @@ function createSearchBox() {
             }
 
             //panTo its location
-            map.panTo(place.geometry.location);
+            console.log(place.geometry.location);
+            var latitude = place.geometry.location.lat();
+            var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
+            map.panTo({'lat':latitude,'lng':longitude});
         });
         //map.fitBounds(bounds);
     });
@@ -334,32 +336,49 @@ function drawPolygons() {
 
 
 function showMarkerInfo(event, pMarker, content) {
+    if ($('#info_div').css('display') == 'none') { //info div is hidden so show info in infoWindow
 
-    // If !showAllInfoWindows, close previous infowindows
-    if (!showAllInfoWindows && infoWindows.length != 0) {
-        for (var i = 0; i < infoWindows.length; i++) {
-            infoWindows[i].close();
+        // If !showAllInfoWindows, close previous infowindows
+        if (!showAllInfoWindows && infoWindows.length != 0) {
+            for (var i = 0; i < infoWindows.length; i++) {
+                infoWindows[i].close();
+            }
         }
-    }
 
-    // Replace the info window's content and position.
-    infoWindow = new google.maps.InfoWindow;
-    if (typeof(content) === undefined) {
-        infoWindow.setContent("You clicked on " + pMarker.name + "!");
+        // Replace the info window's content and position.
+        infoWindow = new google.maps.InfoWindow;
+        if (typeof(content) === undefined) {
+            infoWindow.setContent("You clicked on " + pMarker.name + "!");
+        } else {
+            infoWindow.setContent(content);
+        }
+
+        infoWindow.open(map, pMarker);
+
+        // Keep track of all infoWindows
+        infoWindows.push(infoWindow);
+
     } else {
-        infoWindow.setContent(content);
-    }
 
-    infoWindow.open(map, pMarker);
+        //info div is not hidden show info in info_div
+        if (typeof(content) === undefined) {
+            $('#info_div').html("You clicked on " + pMarker.name + "!");
+        } else {
+            $('#info_div').html(content);
+        }
+
+    }
 
     // Center map on info window location
-    map.panTo(pMarker.position);
-
-    // Keep track of all infoWindows
-    infoWindows.push(infoWindow);
+    //map.panTo(pMarker.position);
+    var latitude = pMarker.position.lat();
+    var longitude = parseFloat(pMarker.position.lng()) - parseFloat(0.002);
+    map.panTo({'lat':latitude,'lng':longitude});
 }
 
-function showPolygonInfo(event, polygon) {
+function showPolygonInfo(event, polygon, content) {
+
+    unhighlightAll();
 
     // If !showAllInfoWindows, close previous infowindows
     if (!showAllInfoWindows && infoWindows.length != 0) {
@@ -375,7 +394,11 @@ function showPolygonInfo(event, polygon) {
     infoWindow.open(map);
 
     // Center map on info window location
-    map.panTo(polygon.center);
+    console.log(polygon.center.lng());
+    var latitude = polygon.center.lat();
+    var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
+    map.panTo({'lat':latitude,'lng':longitude});
+    //map.panTo(polygon.center);
 
     // Keep track of all infoWindows
     infoWindows.push(infoWindow);

@@ -41,6 +41,15 @@
             width: 100px;
             height: auto;
         }
+
+        .info_div {
+            background-color: #fff;
+            border: 2px solid #888;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px grey;
+            cursor: pointer;
+            text-align: center;
+        }
         
 
         /*.toggle-buttons:hover {
@@ -67,7 +76,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 
-<body>
+<body id='body'>
 
     <div id="map"></div>
 
@@ -78,9 +87,9 @@
     <datalist id="titles">
     </datalist>
 
-    <div id="toggle_search" class="toggle-search" style="position:absolute; z-index:3;height:40px;width:80px;border-radius:5px;font-size:18px;border: 1px solid black; right: 420px; top: 1em;text-align: center;line-height:40px;" onclick="toggleSearch()">Places <!--<p style="line-height: 10px;">Events</p>--></div>
+    <div id="toggle_search" class="toggle-search" style="position:absolute; z-index:3;height:40px;width:80px;border-radius:5px;font-size:18px;border: 1px solid black; right: 420px; top: 1em;text-align: center;line-height:40px;" onclick="toggleSearch()">Toggle <!--<p style="line-height: 10px;">Events</p>--></div>
 
-    <div style="background-color: #fff; border: 2px solid #888; border-radius: 5px; box-shadow: 0 2px 6px grey; cursor: pointer; text-align: center; position: absolute; top: 0.5em; left: 8em; width: 100px; height: auto;">
+    <div id="about_us" style="background-color: #fff; border: 2px solid #888; border-radius: 5px; box-shadow: 0 2px 6px grey; cursor: pointer; text-align: center; position: absolute; top: 0.5em; left: 8em; width: 100px; height: auto;">
         <a href="/" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; height: 30px;">About Us</a>
     </div>
 
@@ -88,6 +97,12 @@
         <label><input type="radio" name="infoWindowDisplayMode" id="oneInfoWindow" checked="checked"> Display 1 Info Window at a time</label>
         <br/>
         <label><input type="radio" name="infoWindowDisplayMode" id="allInfoWindow" > Keep all clicked Info Windows</label>
+    </div>
+
+    <div id="info_div" style="background-color: #fff; border: 2px solid #888; border-radius: 5px; box-shadow: 0 2px 6px grey; cursor: pointer; text-align: center; position: absolute; bottom: 7em; left: 2em; width: 350px; height: 70%; overflow-y: auto; padding:5px;">
+    </div>
+
+    <div id="info_toggle" style="background-color: #fff; border: 2px solid #888; border-radius: 5px; box-shadow: 0 2px 6px grey; cursor: pointer; text-align: center; position: absolute; bottom: 4em; left: 2em; width: 100px; height: auto;" onclick="toggleInfo()"><p id='info_hide' style="line-height:8px; height:8px; font-family: Roboto,Arial,sans-serif; color: black; font-size: 16px;">Hide Info</p>
     </div>
 
     <!--This EJS logic will generate the logged In and not logged in divs based on the "loggedIn" parameter passed in from server.js-->
@@ -103,37 +118,58 @@
             <a href="/logout" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; ">Logout</a>
 
         </div>
-        <% } else{ %>
-            <div id="notLoggedIn" class="notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:8em;right:10px;">
-                <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; ">Log In Here</a>
-            </div>
+    <% } else{ %>
+        <div id="notLoggedIn" class="notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:8em;right:10px;">
+            <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 30px; padding-left: 5px; padding-right: 5px; ">Log In Here</a>
+        </div>
 
-            <div id="loggedIn" class="loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:8em;right:10px;">
-                <p style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; padding-left: 5px; padding-right: 5px; ">Hello, </p>
-            </div>
-            <% } %>
+        <div id="loggedIn" class="loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:8em;right:10px;">
+            <p style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; padding-left: 5px; padding-right: 5px; ">Hello, </p>
+        </div>
+    <% } %>
 
+    <div id="vertical_container" style="width: auto; position: absolute; z-index: 3; right: 10px; display: none; height: 180px; width: 100px">
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;" id="events_button" onclick="showEventPlaces()">
+            <p class="toggle-texts">Events</p>
+        </div>
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;" id="food_button" onclick="showFoodPlaces()">
+            <p class="toggle-texts">Food</p>
+        </div>
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;" id="laundry_button" onclick="showLaundryPlaces()">
+            <p class="toggle-texts">Laundry</p>
+        </div>
+        <!--
+        <div class="toggle-buttons" id="places_button" style="margin-right: 15px;" onclick="showPlacePlaces()">
+            <p class="toggle-texts">Places</p>
+        </div>
+        -->
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;" id="printer_button" onclick="showPrinterPlaces()">
+            <p class="toggle-texts">Printers</p>
+        </div>
 
-                <div style="width: 100%; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
-                    <div class="toggle-buttons" id="events_button" style="margin-right: 15px; margin-left: 5em;" onclick="showEventPlaces()">
-                        <p class="toggle-texts">Events</p>
-                    </div>
-                    <div class="toggle-buttons" id="food_button" style="margin-right: 15px;" onclick="showFoodPlaces()">
-                        <p class="toggle-texts">Food</p>
-                    </div>
-                    <div class="toggle-buttons" id="laundry_button" style="margin-right: 15px;" onclick="showLaundryPlaces()">
-                        <p class="toggle-texts">Laundry</p>
-                    </div>
-                    <!--
-                    <div class="toggle-buttons" id="places_button" style="margin-right: 15px;" onclick="showPlacePlaces()">
-                        <p class="toggle-texts">Places</p>
-                    </div>
-                    -->
-                    <div class="toggle-buttons" id="printer_button" onclick="showPrinterPlaces()">
-                        <p class="toggle-texts">Printers</p>
-                    </div>
+    </div>
 
-                </div>
+    <div id="horizontal_container" style="width: auto; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
+        <div class="toggle-buttons" id="events_button" style="margin-right: 15px; margin-left: 5em;" onclick="showEventPlaces()">
+            <p class="toggle-texts">Events</p>
+        </div>
+        <div class="toggle-buttons" id="food_button" style="margin-right: 15px;" onclick="showFoodPlaces()">
+            <p class="toggle-texts">Food</p>
+        </div>
+        <div class="toggle-buttons" id="laundry_button" style="margin-right: 15px;" onclick="showLaundryPlaces()">
+            <p class="toggle-texts">Laundry</p>
+        </div>
+        <!--
+        <div class="toggle-buttons" id="places_button" style="margin-right: 15px;" onclick="showPlacePlaces()">
+            <p class="toggle-texts">Places</p>
+        </div>
+        -->
+        <div class="toggle-buttons" id="printer_button" onclick="showPrinterPlaces()">
+            <p class="toggle-texts">Printers</p>
+        </div>
+
+    </div>
+
 
 </body>
 <!--
@@ -142,6 +178,7 @@
 -->
 <script src="js/map.js"></script>
 <script src="js/toggle.js"></script>
+<script src="js/position.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
 
 </html>

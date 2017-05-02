@@ -52,12 +52,14 @@ function showEventInfo(entry) {
     
     //show the marker and add listener
     if (champion != null) {
+
       champion.marker.setVisible(true);      
       champion.marker.addListener('click', function(event) {
           showMarkerInfo(event, this, content);
-      });
-      var pos = {lat:parseFloat(entry["latitude"]),lng:parseFloat(entry["longitude"])};
-      console.log(JSON.stringify(pos));
+      });       
+
+      var pos = {lat:parseFloat(entry["latitude"]),lng:(parseFloat(entry["longitude"])-0.002)};
+      //console.log(JSON.stringify(pos));
       map.panTo(pos);
 
     } 
@@ -66,6 +68,7 @@ function showEventInfo(entry) {
 
 $('#new-input').on('input',function() {
   var val = $(this).val();
+  unhighlightAll();
   if (val == "") {
     unhighlightAll();
   } else {
@@ -80,7 +83,7 @@ $('#new-input').on('input',function() {
 
 function toggleSearch() {
   if (toggled) { //currently searching for events
-    $('#toggle_search').html('Places');
+    //$('#toggle_search').html('Events');
     $('#new-input').css('display','none');
     $('#pac-input').css('display','initial');
     toggled = false;
@@ -92,7 +95,7 @@ function toggleSearch() {
     //removes all child elements
     //dataList.remove();
   } else {
-    $('#toggle_search').html('Events');
+    //$('#toggle_search').html('Places');
     $('#pac-input').css('display','none');
     $('#new-input').css('display','initial');
     toggled = true;
@@ -115,13 +118,15 @@ function toggleSearch() {
       var hostname = window.location.hostname;
       if (hostname.search('tigermaps')  != -1) {
           if (loggedIn()) {
-            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
+            //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
+            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
           } else {
             xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
           }     
       } else {
           if (loggedIn()) {
-            xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+            //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+            xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true); 
           } else {
             xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true); 
           }      
@@ -184,6 +189,21 @@ function toggleSearch() {
     
 
 function unhighlightAll() {
+  // Clear out the old markers.
+  markers.forEach(function(marker) {
+      marker.setMap(null);
+  });
+  markers = [];
+
+  //disperse previousHighlight
+  if (previousHighlight != null) {
+      previousHighlight.setOptions({
+          strokeOpacity: 0.01,
+          fillOpacity: 0.01
+      });
+      previousHighlight = null;
+  }
+
   //unhighlight previousHighlights
   for (var i = 0; i < previousHighlights.length; i++) {
 
@@ -544,14 +564,18 @@ function showEventPlaces() {
     var hostname = window.location.hostname;
     if (hostname.search('tigermaps')  != -1) {
         if (loggedIn()) {
-          xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
+          //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
+          xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
         } else {
           xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
         }     
     } else {
         if (loggedIn()) {
-          xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+          //console.log('loggedin');
+          //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+          xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true); 
         } else {
+          //console.log('not loggedin');
           xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true); 
         }      
     }
