@@ -1,0 +1,9 @@
+Lauritzen Hall
+[
+new google.maps.LatLng(40.343721,-74.658430),
+new google.maps.LatLng(40.343543,-74.658341),
+new google.maps.LatLng(40.343539,-74.658352),
+new google.maps.LatLng(40.343472,-74.658317),
+new google.maps.LatLng(40.343516,-74.658173),
+new google.maps.LatLng(40.343761,-74.658291)
+]

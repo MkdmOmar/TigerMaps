@@ -1,0 +1,9 @@
+Pink House
+[
+new google.maps.LatLng(40.343055,-74.661277),
+new google.maps.LatLng(40.343001,-74.661239),
+new google.maps.LatLng(40.342988,-74.661268),
+new google.maps.LatLng(40.342931,-74.661228),
+new google.maps.LatLng(40.342878,-74.661351),
+new google.maps.LatLng(40.342989,-74.661432)
+]

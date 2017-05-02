@@ -1,0 +1,22 @@
+Community Hall
+[
+new google.maps.LatLng(40.344245,-74.657872),
+new google.maps.LatLng(40.344259,-74.657819),
+new google.maps.LatLng(40.344298,-74.657839),
+new google.maps.LatLng(40.344355,-74.657664),
+new google.maps.LatLng(40.344327,-74.657650),
+new google.maps.LatLng(40.344350,-74.657571),
+new google.maps.LatLng(40.344254,-74.657518),
+new google.maps.LatLng(40.344244,-74.657480),
+new google.maps.LatLng(40.344213,-74.657465),
+new google.maps.LatLng(40.344181,-74.657482),
+new google.maps.LatLng(40.344171,-74.657515),
+new google.maps.LatLng(40.344130,-74.657490),
+new google.maps.LatLng(40.344116,-74.657534),
+new google.maps.LatLng(40.344035,-74.657490),
+new google.maps.LatLng(40.344016,-74.657546),
+new google.maps.LatLng(40.343882,-74.657475),
+new google.maps.LatLng(40.343846,-74.657592),
+new google.maps.LatLng(40.344116,-74.657737),
+new google.maps.LatLng(40.344097,-74.657805)
+]

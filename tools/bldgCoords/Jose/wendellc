@@ -1,0 +1,20 @@
+Wendell Hall C
+[
+new google.maps.LatLng(40.343948,-74.658356),
+new google.maps.LatLng(40.344042,-74.658400),
+new google.maps.LatLng(40.344051,-74.658368),
+new google.maps.LatLng(40.344058,-74.658371),
+new google.maps.LatLng(40.344065,-74.658371),
+new google.maps.LatLng(40.344072,-74.658367),
+new google.maps.LatLng(40.344075,-74.658361),
+new google.maps.LatLng(40.344078,-74.658353),
+new google.maps.LatLng(40.344078,-74.658345),
+new google.maps.LatLng(40.344076,-74.658336),
+new google.maps.LatLng(40.344135,-74.658358),
+new google.maps.LatLng(40.344174,-74.658222),
+new google.maps.LatLng(40.344144,-74.658211),
+new google.maps.LatLng(40.344220,-74.657916),
+new google.maps.LatLng(40.344231,-74.657922),
+new google.maps.LatLng(40.344245,-74.657873),
+new google.maps.LatLng(40.344097,-74.657806)
+]

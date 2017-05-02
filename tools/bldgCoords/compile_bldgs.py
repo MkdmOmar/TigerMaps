@@ -142,7 +142,7 @@ def parse_bldg_data(filepath):
         if name in bldgNameList:
             ind = bldgNameList.index(name)
             print "WARNING: duplicate building name \"" + name + "\"" \
-                + "in files", filepath, "and", bldgPathList[ind]
+                + " in files", filepath, "and", bldgPathList[ind]
         bldgNameList.append(name)
         bldgPathList.append(filepath)
         coords = format_coords(file.read(), filepath)

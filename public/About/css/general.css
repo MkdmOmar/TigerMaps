@@ -1129,10 +1129,13 @@ html {
         padding-top: 50px;
         padding-bottom: 50px;
         color: #f8f8f8;
-        background-image: none;
-        background-size: cover;
+        /*background-image: none;
+        background-size: cover;*/
         text-align: center;
-        background-color: #34495e;
+        /*background-color: #34495e;*/
+    }
+    .h1_home {
+        font-size: 50px;
     }
     h1,
     .h1 {
@@ -1145,9 +1148,9 @@ html {
     #gallery1 {
         display: none
     }
-    .button_down {
+    /*.button_down {
         display: none
-    }
+    }*/
 }
 
 

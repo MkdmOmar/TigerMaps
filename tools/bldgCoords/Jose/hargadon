@@ -1,0 +1,19 @@
+Hargadon Hall
+[
+new google.maps.LatLng(40.343994,-74.658482),
+new google.maps.LatLng(40.343969,-74.658578),
+new google.maps.LatLng(40.343901,-74.658547),
+new google.maps.LatLng(40.343922,-74.658474),
+new google.maps.LatLng(40.343841,-74.658436),
+new google.maps.LatLng(40.343822,-74.658508),
+new google.maps.LatLng(40.343759,-74.658480),
+new google.maps.LatLng(40.343766,-74.658451),
+new google.maps.LatLng(40.343721,-74.658430),
+new google.maps.LatLng(40.343762,-74.658292),
+new google.maps.LatLng(40.343807,-74.658314),
+new google.maps.LatLng(40.343810,-74.658305),
+new google.maps.LatLng(40.343871,-74.658334),
+new google.maps.LatLng(40.343869,-74.658342),
+new google.maps.LatLng(40.343935,-74.658374),
+new google.maps.LatLng(40.343917,-74.658455)
+]

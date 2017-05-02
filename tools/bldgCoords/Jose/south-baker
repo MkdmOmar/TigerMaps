@@ -1,0 +1,16 @@
+South Baker Hall
+[
+new google.maps.LatLng(40.343471,-74.658316),
+new google.maps.LatLng(40.343421,-74.658289),
+new google.maps.LatLng(40.343426,-74.658269),
+new google.maps.LatLng(40.343353,-74.658232),
+new google.maps.LatLng(40.343398,-74.658078),
+new google.maps.LatLng(40.343399,-74.658074),
+new google.maps.LatLng(40.343384,-74.658066),
+new google.maps.LatLng(40.343563,-74.657449),
+new google.maps.LatLng(40.343677,-74.657510),
+new google.maps.LatLng(40.343505,-74.658090),
+new google.maps.LatLng(40.343525,-74.658101),
+new google.maps.LatLng(40.343506,-74.658168),
+new google.maps.LatLng(40.343516,-74.658173)
+]
