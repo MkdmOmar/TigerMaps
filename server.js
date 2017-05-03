@@ -41,14 +41,8 @@ mongodb.MongoClient.connect(uri, function(err, database) {
 
 });
 
-app.use(
-    function(req, res, next) {
-        //scheduler.onConnection();
-        next();
-    },
-    express.static(__dirname + '/public')
-);
-
+// Serve static content in /public directory
+app.use(express.static(__dirname + '/public'));
 
 
 // Configure the app to save a cookie with two attributes (for netid and status)
