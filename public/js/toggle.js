@@ -80,6 +80,10 @@ $('#new-input').on('input', function() {
     //alert(opt.length ? opt.attr('id') : 'NO OPTION');
 });
 
+function timeRange(start, end) {
+    
+}
+
 function toggleSearch() {
     if (toggled) { //currently searching for events
         //$('#toggle_search').html('Events');

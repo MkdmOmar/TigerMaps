@@ -19,8 +19,10 @@ function updateHeight() {
   	$('#about_us').css('left','8em');
 
   	//show infodiv elements
-  	$('#info_div').css('display','initial');
+  	//$('#info_div').css('display','initial');
    	$('#info_toggle').css('display','initial');
+    $('#info_hide').html('Show Info');
+    toggle_info = 0;  
 
   } else {
   	//show vertical buttons
@@ -45,12 +47,12 @@ var toggle_info = 0;
 
 function toggleInfo() {
 	if (toggle_info == 0) {
-		$('#info_div').css('display','none');
-		$('#info_hide').html('Show Info');
-		toggle_info = 1;		
-	} else {
 		$('#info_div').css('display','initial');
 		$('#info_hide').html('Hide Info');
+		toggle_info = 1;		
+	} else {
+		$('#info_div').css('display','none');
+		$('#info_hide').html('Show Info');
 		toggle_info = 0;	
 	}
 
