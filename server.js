@@ -243,40 +243,47 @@ app.get("/fetch/buildingInfo", function(req, res) {
     var queryBuildingName = req.query.buildingName;
     console.log("buildingName: " + queryBuildingName);
     var collections = ["printers", "dining", "laundry", "locations", "places", "puEvents", "usgEvents"]
+    var ignoreCollections = [ "system.indexes" ];
     var completedDBQueries = 0;
     var numDBQueries = collections.length;
-    response = {};
+    var response = {};
 
+    db.collections(function(err, collections) {
+        if (err) {
+            console.log("ERROR: Failed to get database collections.");
+        }
+        else {
+            var totalDBQueries = 0;
+            for (var i = 0; i < collections.length; i++) {
+                if (ignoreCollections.indexOf(collections[i].collectionName) == -1) {
+                    totalDBQueries += 1;
+                }
+            }
+            for (var i = 0; i < collections.length; i++) {
+                var collectionName = collections[i].collectionName;
+                if (ignoreCollections.indexOf(collectionName) == -1) {
+                    var processCollection = function(name) {
+                        // Wrapper for avoiding closure madness.
+                        return function(err, docs) {
+                            if (err) {
+                                console.log("ERROR: Failed to get " + collection + " information.");
+                            }
+                            else {
+                                response[name] = docs;
+                            }
+                            completedDBQueries += 1;
+                            if (completedDBQueries == totalDBQueries) {
+                                res.status(200).json(response);
+                            }
+                        };
+                    };
+                    collections[i].find({ building_name: queryBuildingName }).toArray(processCollection(collectionName));
+                }
+            }
+        }
+    });
 
-    // Ideally I should be able to loop through the collections array and get all the info, but I'm getting closure
-    // issues. So I just did in manually for each collection below.
-
-    // for (var i = 0; i < collections.length; i++) {
-    //     db.collection(collections[i]).find({ building_name: queryBuildingName }).toArray(function(err, docs, collection) {
-    //         console.log("current collection: " + collection);
-
-    //         if (err) {
-    //             console.log("ERROR: Failed to get " + collection + " information.");
-    //             completedDBQueries += 1;
-    //             if (completedDBQueries == numDBQueries) {
-    //                 res.status(200).json(response);
-    //             }
-    //         } else {
-    //             var name = collection
-    //             console.log(name)
-    //             console.log(response);
-    //             response[name] = docs;
-    //             console.log(response);
-
-    //             completedDBQueries += 1;
-    //             if (completedDBQueries == numDBQueries) {
-    //                 res.status(200).json(response);
-    //             }
-    //         }
-    //     }.bind({ collection: collections[i] }));
-    // }
-
-    db.collection("printers").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+    /*db.collection("printers").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
         if (err) {
             console.log("ERROR: Failed to get printing information.");
             completedDBQueries += 1;
@@ -386,6 +393,6 @@ app.get("/fetch/buildingInfo", function(req, res) {
                 res.status(200).json(response);
             }
         }
-    });
+    });*/
 
 });

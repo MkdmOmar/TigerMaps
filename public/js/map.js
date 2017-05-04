@@ -389,14 +389,15 @@ function showPolygonInfo(event, polygon, content) {
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
-    var content = getBuildingInfo(polygon.name);
+    getBuildingInfo(polygon.name, function(content) {
+        infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
+    });
 
-    infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
     infoWindow.setPosition(polygon.center);
     infoWindow.open(map);
 
     // Center map on info window location
-    console.log(polygon.center.lng());
+    //console.log(polygon.center.lng());
     var latitude = polygon.center.lat();
     var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
     map.panTo({ 'lat': latitude, 'lng': longitude });
