@@ -238,8 +238,154 @@ app.get("/fetch/usgEvents", function(req, res) {
     });
 });
 
+// Ferch ALL info for a building specified by the URL query
+app.get("/fetch/buildingInfo", function(req, res) {
+    var queryBuildingName = req.query.buildingName;
+    console.log("buildingName: " + queryBuildingName);
+    var collections = ["printers", "dining", "laundry", "locations", "places", "puEvents", "usgEvents"]
+    var completedDBQueries = 0;
+    var numDBQueries = collections.length;
+    response = {};
 
 
+    // Ideally I should be able to loop through the collections array and get all the info, but I'm getting closure
+    // issues. So I just did in manually for each collection below.
 
+    // for (var i = 0; i < collections.length; i++) {
+    //     db.collection(collections[i]).find({ building_name: queryBuildingName }).toArray(function(err, docs, collection) {
+    //         console.log("current collection: " + collection);
 
+    //         if (err) {
+    //             console.log("ERROR: Failed to get " + collection + " information.");
+    //             completedDBQueries += 1;
+    //             if (completedDBQueries == numDBQueries) {
+    //                 res.status(200).json(response);
+    //             }
+    //         } else {
+    //             var name = collection
+    //             console.log(name)
+    //             console.log(response);
+    //             response[name] = docs;
+    //             console.log(response);
 
+    //             completedDBQueries += 1;
+    //             if (completedDBQueries == numDBQueries) {
+    //                 res.status(200).json(response);
+    //             }
+    //         }
+    //     }.bind({ collection: collections[i] }));
+    // }
+
+    db.collection("printers").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get printing information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.printers = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("dining").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get dining information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.dining = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("laundry").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get laundry information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.laundry = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("locations").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get locations information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.locations = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("places").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get places information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.places = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("puEvents").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get puEvents information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.puEvents = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+    db.collection("usgEvents").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
+        if (err) {
+            console.log("ERROR: Failed to get usgEvents information.");
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        } else {
+            response.usgEvents = docs;
+            completedDBQueries += 1;
+            if (completedDBQueries == numDBQueries) {
+                res.status(200).json(response);
+            }
+        }
+    });
+
+});
