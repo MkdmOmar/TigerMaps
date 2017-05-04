@@ -27,7 +27,7 @@ function showEventInfo(entry) {
 
     if (entry["latitude"] != 0 && entry["longitude"] != 0) {
 
-        var champion = getNearestPolygon(entry["latitude"], entry["longitude"]);
+        var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
 
         //create content
         var content = "";
@@ -189,7 +189,13 @@ function toggleSearch() {
     }
 }
 
-
+function highlightPolygon(polygon) {
+    previousHighlights.push(polygon);
+    polygon.polygon.setOptions({
+        strokeOpacity: 0.8,
+        fillOpacity: 0.35
+    });
+}
 
 function unhighlightAll() {
     // Clear out the old markers.
@@ -235,7 +241,7 @@ function unhighlightAll() {
     previousHighlights = [];
 }
 
-function getNearestPolygon(lat, lng) {
+function getNearestPolygon(lat, lng, callback) {
     var champion = null;
     var minimum = Number.MAX_VALUE;
     var contender = Number.MAX_VALUE;
@@ -248,14 +254,9 @@ function getNearestPolygon(lat, lng) {
         }
     }
 
-    //highlight the winner and add to previousList
+    // Run callback on the champion polygon
     if (champion != null) {
-        previousHighlights.push(champion);
-
-        champion.polygon.setOptions({
-            strokeOpacity: 0.8,
-            fillOpacity: 0.35
-        });
+        callback(champion);
     }
 
     return champion;
@@ -310,7 +311,7 @@ function showFoodPlaces() {
 
                     //find current toggle buildings
                     dining.forEach(function(dhall) {
-                        var champion = getNearestPolygon(dhall["latitude"], dhall["longitude"]);
+                        var champion = getNearestPolygon(dhall["latitude"], dhall["longitude"], highlightPolygon);
 
                         //create content
                         var content = "";
@@ -400,7 +401,7 @@ function showPrinterPlaces() {
 
                     //find current toggle buildings
                     printers.forEach(function(entry) {
-                        var champion = getNearestPolygon(entry["latitude"], entry["longitude"]);
+                        var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
 
                         //create content
                         var content = "";
@@ -485,7 +486,7 @@ function showLaundryPlaces() {
 
                     //find current toggle buildings
                     laundry.forEach(function(entry) {
-                        var champion = getNearestPolygon(entry["latitude"], entry["longitude"]);
+                        var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
 
                         //create content
                         var content = "";
@@ -694,7 +695,7 @@ function parseDiningInfo(dhall) {
     return content;
 }
 
-function getBuildingInfo(buildingName, callback) {
+function getBuildingInfo(buildingName, lat, lng, callback) {
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -704,21 +705,19 @@ function getBuildingInfo(buildingName, callback) {
     }
 
     var hostname = window.location.hostname;
-    if (hostname.search('tigermaps') != -1) {
-        if (loggedIn()) {
-            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName=" + buildingName, true);
-        } else {
-            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName=" + buildingName, true);
-        }
+    var fetchURL = "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName="
+            + buildingName
+            + "&lat=" + lat + "&lng=" + lng;
+            
+    if (hostname.search('tigermaps') == -1) {
+        var fetchURL = "http://localhost:8080/fetch/buildingInfo?buildingName="
+            + buildingName
+            + "&lat=" + lat + "&lng=" + lng;
+    }
+    if (loggedIn()) {
+        xhttp.open("GET", fetchURL, true);
     } else {
-        if (loggedIn()) {
-            //console.log('loggedin');
-            //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
-            xhttp.open("GET", "http://localhost:8080/fetch/buildingInfo?buildingName=" + buildingName, true);
-        } else {
-            //console.log('not loggedin');
-            xhttp.open("GET", "http://localhost:8080/fetch/buildingInfo?buildingName=" + buildingName, true);
-        }
+        xhttp.open("GET", fetchURL, true);
     }
 
     xhttp.onreadystatechange = handleReadyStateChange;

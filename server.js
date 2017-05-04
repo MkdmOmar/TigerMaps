@@ -238,14 +238,68 @@ app.get("/fetch/usgEvents", function(req, res) {
     });
 });
 
+function toRadians(deg) {
+    return deg * Math.PI / 180.;
+}
+
+function distanceBetween(lat1, lng1, lat2, lng2) {
+    var earthRadius = 6371000; // meters
+    var dLat = toRadians(lat2-lat1);
+    var dLng = toRadians(lng2-lng1);
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+               Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+               Math.sin(dLng/2) * Math.sin(dLng/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var dist = earthRadius * c;
+
+    return dist;
+}
+
+// Returns an array of common words between strings str1 and str2.
+function findCommonWords(str1, str2) {
+    var words1 = str1.split(" ");
+    var words2 = str2.split(" ");
+    var result = [];
+
+    for (var i = 0; i < words1.length; i++) {
+        for (var j = 0; j < words2.length; j++) {
+            if (words1[i] === words2[j]) {
+                result.push(words1[i]);
+            }
+        }
+    }
+    return result;
+}
+
+function dbEntryMatch(entry, bldgName, lat, lng) {
+    var DIST_THRESH = 1.; // meters
+
+    var dbBldgName = entry["building_name"];
+    var dbLat = entry["latitude"];
+    var dbLng = entry["longitude"];
+    if (dbBldgName === undefined || dbLat === undefined || dbLng === undefined) {
+        return false;
+    }
+    if (dbBldgName === bldgName)
+        return true;
+    else {
+        var dist = distanceBetween(dbLat, dbLng, lat, lng);
+        // TODO this string matching can be improved
+        //  (remove uninformative words like "Hall" or "Center")
+        var commonWords = findCommonWords(dbBldgName, bldgName);
+        if (dist < DIST_THRESH && commonWords.length > 0)
+            return true;
+    }
+}
+
 // Ferch ALL info for a building specified by the URL query
 app.get("/fetch/buildingInfo", function(req, res) {
     var queryBuildingName = req.query.buildingName;
-    console.log("buildingName: " + queryBuildingName);
-    var collections = ["printers", "dining", "laundry", "locations", "places", "puEvents", "usgEvents"]
+    var queryLat = req.query.lat;
+    var queryLng = req.query.lng;
+    console.log("buildingName: " + queryBuildingName + " at (" + queryLat + ", " + queryLng + ")");
     var ignoreCollections = [ "system.indexes" ];
     var completedDBQueries = 0;
-    var numDBQueries = collections.length;
     var response = {};
 
     db.collections(function(err, collections) {
@@ -266,10 +320,14 @@ app.get("/fetch/buildingInfo", function(req, res) {
                         // Wrapper for avoiding closure madness.
                         return function(err, docs) {
                             if (err) {
-                                console.log("ERROR: Failed to get " + collection + " information.");
+                                console.log("ERROR: Failed to get " + name + " information.");
                             }
                             else {
-                                response[name] = docs;
+                                response[name] = [];
+                                for (var entry = 0; entry < docs.length; entry++) {
+                                    if (dbEntryMatch(docs[entry], queryBuildingName, queryLat, queryLng))
+                                        response[name].push(docs[entry]);
+                                }
                             }
                             completedDBQueries += 1;
                             if (completedDBQueries == totalDBQueries) {
@@ -277,7 +335,7 @@ app.get("/fetch/buildingInfo", function(req, res) {
                             }
                         };
                     };
-                    collections[i].find({ building_name: queryBuildingName }).toArray(processCollection(collectionName));
+                    collections[i].find().toArray(processCollection(collectionName));
                 }
             }
         }
