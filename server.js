@@ -244,12 +244,12 @@ function toRadians(deg) {
 
 function distanceBetween(lat1, lng1, lat2, lng2) {
     var earthRadius = 6371000; // meters
-    var dLat = toRadians(lat2-lat1);
-    var dLng = toRadians(lng2-lng1);
-    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-               Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-               Math.sin(dLng/2) * Math.sin(dLng/2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var dLat = toRadians(lat2 - lat1);
+    var dLng = toRadians(lng2 - lng1);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var dist = earthRadius * c;
 
     return dist;
@@ -298,15 +298,14 @@ app.get("/fetch/buildingInfo", function(req, res) {
     var queryLat = req.query.lat;
     var queryLng = req.query.lng;
     console.log("buildingName: " + queryBuildingName + " at (" + queryLat + ", " + queryLng + ")");
-    var ignoreCollections = [ "system.indexes" ];
+    var ignoreCollections = ["system.indexes"];
     var completedDBQueries = 0;
     var response = {};
 
     db.collections(function(err, collections) {
         if (err) {
             console.log("ERROR: Failed to get database collections.");
-        }
-        else {
+        } else {
             var totalDBQueries = 0;
             for (var i = 0; i < collections.length; i++) {
                 if (ignoreCollections.indexOf(collections[i].collectionName) == -1) {
@@ -321,8 +320,7 @@ app.get("/fetch/buildingInfo", function(req, res) {
                         return function(err, docs) {
                             if (err) {
                                 console.log("ERROR: Failed to get " + name + " information.");
-                            }
-                            else {
+                            } else {
                                 response[name] = [];
                                 for (var entry = 0; entry < docs.length; entry++) {
                                     if (dbEntryMatch(docs[entry], queryBuildingName, queryLat, queryLng))
