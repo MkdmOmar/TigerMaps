@@ -25,50 +25,59 @@ function showEventInfo(entry) {
         }
     }
 
-    if (entry["latitude"] != 0 && entry["longitude"] != 0) {
+    var proceed = false;
 
-        var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
-
-        //create content
-        var content = "";
-        if ("title" in entry) {
-            content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
-        }
-        if ("locationName" in entry) {
-            content = content + entry["locationName"] + "<br>";
-        }
-        if ("startTime" in entry) {
-            content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
-        }
-
-        if ("endTime" in entry) {
-            content = content + "End Time: " + entry["endTime"] + "<br>";
-        }
-        if ("description" in entry) {
-            if (entry["description"] != null) {
-                content = content + "<br>Description: " + entry["description"] + "<br></p>";
-            }
-        }
-
+    if ('startTime' in entry && 'endTime' in entry) 
+    {
         if (parseInt(entry['startTime'].substring(0,2)) >= start) {
             if (parseInt(entry['endTime'].substring(0,2)) <= end) {
-                //show the marker and add listener
-                if (champion != null) {
-
-                    champion.marker.setVisible(true);
-                    champion.marker.addListener('click', function(event) {
-                        showMarkerInfo(event, this, content);
-                    });
-
-                    var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
-                    //console.log(JSON.stringify(pos));
-                    map.panTo(pos);
-
-                }         
+                proceed = true;
             }
+        }     
+    } else {
+        proceed = true;
+    }
+
+    if (proceed) {
+        if (entry["latitude"] != 0 && entry["longitude"] != 0) {
+
+            var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
+
+            //create content
+            var content = "";
+            if ("title" in entry) {
+                content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
+            }
+            if ("locationName" in entry) {
+                content = content + entry["locationName"] + "<br>";
+            }
+            if ("startTime" in entry) {
+                content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
+            }
+
+            if ("endTime" in entry) {
+                content = content + "End Time: " + entry["endTime"] + "<br>";
+            }
+            if ("description" in entry) {
+                if (entry["description"] != null) {
+                    content = content + "<br>Description: " + entry["description"] + "<br></p>";
+                }
+            }
+
+            //show the marker and add listener
+            if (champion != null) {
+
+                champion.marker.setVisible(true);
+                champion.marker.addListener('click', function(event) {
+                    showMarkerInfo(event, this, content);
+                });
+
+                var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
+                //console.log(JSON.stringify(pos));
+                map.panTo(pos);
+
+            }  
         }
-
-
     }
 }
 
@@ -93,7 +102,7 @@ function timeRange() {
     if (do_once) { //events haven't been collected yet
         toggleSearch();
     }
-    for key in event_dict {
+    for (key in event_dict) {
         if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
             if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
                 dataList.append("<option value=" + key + ">");            
@@ -193,7 +202,7 @@ function toggleSearch() {
                         });
 
                         //restrict dataList based on time slider
-                        for key in event_dict {
+                        for (key in event_dict) {
                             if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
                                 if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
                                     dataList.append("<option value=" + key + ">");            
