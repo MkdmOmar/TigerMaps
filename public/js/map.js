@@ -6,6 +6,8 @@ var previousHighlight = null;
 var previousHighlights = [];
 var polygons = [];
 var markers = [];
+var start = 8;
+var end = 22;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -387,16 +389,23 @@ function showPolygonInfo(event, polygon, content) {
         }
     }
 
-    // Replace the info window's content and position.
-    infoWindow = new google.maps.InfoWindow;
     getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
         function(content) {
-            infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
+            if ($('#info_div').css('display') == 'none') { //info div is hidden 
+                // Replace the info window's content and position.
+                infoWindow = new google.maps.InfoWindow;
+                infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
+                infoWindow.setPosition(polygon.center);
+                infoWindow.open(map);
+                // Keep track of all infoWindows
+                infoWindows.push(infoWindow);
+            } else {
+                $('#info_div').html(content);
+            }
+
         }
     );
 
-    infoWindow.setPosition(polygon.center);
-    infoWindow.open(map);
 
     // Center map on info window location
     //console.log(polygon.center.lng());
@@ -405,6 +414,4 @@ function showPolygonInfo(event, polygon, content) {
     map.panTo({ 'lat': latitude, 'lng': longitude });
     //map.panTo(polygon.center);
 
-    // Keep track of all infoWindows
-    infoWindows.push(infoWindow);
 }

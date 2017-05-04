@@ -40,6 +40,7 @@ function showEventInfo(entry) {
         if ("startTime" in entry) {
             content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
         }
+
         if ("endTime" in entry) {
             content = content + "End Time: " + entry["endTime"] + "<br>";
         }
@@ -49,19 +50,25 @@ function showEventInfo(entry) {
             }
         }
 
-        //show the marker and add listener
-        if (champion != null) {
+        if (parseInt(entry['startTime'].substring(0,2)) >= start) {
+            if (parseInt(entry['endTime'].substring(0,2)) <= end) {
+                //show the marker and add listener
+                if (champion != null) {
 
-            champion.marker.setVisible(true);
-            champion.marker.addListener('click', function(event) {
-                showMarkerInfo(event, this, content);
-            });
+                    champion.marker.setVisible(true);
+                    champion.marker.addListener('click', function(event) {
+                        showMarkerInfo(event, this, content);
+                    });
 
-            var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
-            //console.log(JSON.stringify(pos));
-            map.panTo(pos);
+                    var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
+                    //console.log(JSON.stringify(pos));
+                    map.panTo(pos);
 
+                }         
+            }
         }
+
+
     }
 }
 
@@ -80,8 +87,19 @@ $('#new-input').on('input', function() {
     //alert(opt.length ? opt.attr('id') : 'NO OPTION');
 });
 
-function timeRange(start, end) {
-    
+function timeRange() {
+    var dataList = $('#titles');
+    dataList.empty();
+    if (do_once) { //events haven't been collected yet
+        toggleSearch();
+    }
+    for key in event_dict {
+        if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
+            if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
+                dataList.append("<option value=" + key + ">");            
+            }
+        }
+    }
 }
 
 function toggleSearch() {
@@ -148,8 +166,6 @@ function toggleSearch() {
                         jsonOptions.forEach(function(entry) {
                             if ("title" in entry) {
 
-                                // Add the <option> element to the <datalist>.
-                                dataList.append("<option value=" + entry['title'].replace(/\s/g, '') + ">");
                                 var toAdd = {};
                                 //store the relevant information for future reference
                                 toAdd["latitude"] = entry["latitude"];
@@ -175,6 +191,16 @@ function toggleSearch() {
                             }
 
                         });
+
+                        //restrict dataList based on time slider
+                        for key in event_dict {
+                            if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
+                                if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
+                                    dataList.append("<option value=" + key + ">");            
+                                }
+                            }
+                        }
+
 
                     } else {
                         // An error occured :(
