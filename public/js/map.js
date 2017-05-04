@@ -380,38 +380,40 @@ function showMarkerInfo(event, pMarker, content) {
 
 function showPolygonInfo(event, polygon, content) {
 
-    unhighlightAll();
+    if (last_click == null) {
+        unhighlightAll();
 
-    // If !showAllInfoWindows, close previous infowindows
-    if (!showAllInfoWindows && infoWindows.length != 0) {
-        for (var i = 0; i < infoWindows.length; i++) {
-            infoWindows[i].close();
-        }
-    }
-
-    getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
-        function(content) {
-            if ($('#info_div').css('display') == 'none') { //info div is hidden 
-                // Replace the info window's content and position.
-                infoWindow = new google.maps.InfoWindow;
-                infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
-                infoWindow.setPosition(polygon.center);
-                infoWindow.open(map);
-                // Keep track of all infoWindows
-                infoWindows.push(infoWindow);
-            } else {
-                $('#info_div').html(content);
+        // If !showAllInfoWindows, close previous infowindows
+        if (!showAllInfoWindows && infoWindows.length != 0) {
+            for (var i = 0; i < infoWindows.length; i++) {
+                infoWindows[i].close();
             }
-
         }
-    );
+
+        getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
+            function(content) {
+                if ($('#info_div').css('display') == 'none') { //info div is hidden 
+                    // Replace the info window's content and position.
+                    infoWindow = new google.maps.InfoWindow;
+                    infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
+                    infoWindow.setPosition(polygon.center);
+                    infoWindow.open(map);
+                    // Keep track of all infoWindows
+                    infoWindows.push(infoWindow);
+                } else {
+                    $('#info_div').html(content);
+                }
+
+            }
+        );
 
 
-    // Center map on info window location
-    //console.log(polygon.center.lng());
-    var latitude = polygon.center.lat();
-    var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
-    map.panTo({ 'lat': latitude, 'lng': longitude });
-    //map.panTo(polygon.center);
+        // Center map on info window location
+        //console.log(polygon.center.lng());
+        var latitude = polygon.center.lat();
+        var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
+        map.panTo({ 'lat': latitude, 'lng': longitude });
+        //map.panTo(polygon.center);
+    }
 
 }

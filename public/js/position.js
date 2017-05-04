@@ -14,9 +14,9 @@ function updateHeight() {
   	$('#horizontal_container').css('left',(body.width() - $('#horizontal_container').width()) / 2);
 
   	//reposition about us
-  	$('#about_us').css('top','0.5em');
+  	$('#about_us').css('top','3em');
   	$('#about_us').css('bottom','auto');
-  	$('#about_us').css('left','8em');
+  	$('#about_us').css('left','0.75em');
 
   	//show infodiv elements
   	//$('#info_div').css('display','initial');

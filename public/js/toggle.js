@@ -74,7 +74,7 @@ function showEventInfo(entry) {
 
                 var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
                 //console.log(JSON.stringify(pos));
-                map.panTo(pos);
+                //map.panTo(pos);
 
             }  
         }
@@ -565,6 +565,54 @@ function showLaundryPlaces() {
     } //end of if statement
 } // end of function
 
+function showEvents() {
+    var xhttp;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //Uncomment below when developing
+    var hostname = window.location.hostname;
+    if (hostname.search('tigermaps') != -1) {
+        if (loggedIn()) {
+            //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
+            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
+        } else {
+            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
+        }
+    } else {
+        if (loggedIn()) {
+            //console.log('loggedin');
+            //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+            xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
+        } else {
+            //console.log('not loggedin');
+            xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
+        }
+    }
+
+    xhttp.onreadystatechange = handleReadyStateChange;
+    xhttp.send(null);
+
+    function handleReadyStateChange() {
+        if (xhttp.readyState == 4) {
+            if (xhttp.status == 200) {
+                //update html :)
+                var puEventsList = JSON.parse(xhttp.response);
+                //console.log(JSON.stringify(puEventsList));
+                //console.log(typeof(dining));
+
+                //find current toggle buildings
+                puEventsList.forEach(function(entry) {
+                    showEventInfo(entry);
+                });
+            }
+        }
+    } //end of handleReadyStateChange()
+}
+
 function showEventPlaces() {
     //clear last_click
     console.log("last click: " + last_click);
@@ -586,52 +634,7 @@ function showEventPlaces() {
     }
 
     if (events != 1) { //first time clicking
-        var xhttp;
-        if (window.XMLHttpRequest) {
-            xhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        //Uncomment below when developing
-        var hostname = window.location.hostname;
-        if (hostname.search('tigermaps') != -1) {
-            if (loggedIn()) {
-                //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
-                xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-            } else {
-                xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-            }
-        } else {
-            if (loggedIn()) {
-                //console.log('loggedin');
-                //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
-                xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-            } else {
-                //console.log('not loggedin');
-                xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-            }
-        }
-
-        xhttp.onreadystatechange = handleReadyStateChange;
-        xhttp.send(null);
-
-        function handleReadyStateChange() {
-            if (xhttp.readyState == 4) {
-                if (xhttp.status == 200) {
-                    //update html :)
-                    var puEventsList = JSON.parse(xhttp.response);
-                    //console.log(JSON.stringify(puEventsList));
-                    //console.log(typeof(dining));
-
-                    //find current toggle buildings
-                    puEventsList.forEach(function(entry) {
-                        showEventInfo(entry);
-                    });
-                }
-            }
-        } //end of handleReadyStateChange()
-
+        showEvents();
     } //end of if statement
 } // end of function
 
