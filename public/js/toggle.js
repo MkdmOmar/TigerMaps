@@ -690,7 +690,7 @@ function parseDiningInfo(dhall) {
     return content;
 }
 
-function getBuildingInfo(buildingName) {
+function getBuildingInfo(buildingName, callback) {
     var xhttp;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -723,50 +723,51 @@ function getBuildingInfo(buildingName) {
     function handleReadyStateChange() {
         if (xhttp.readyState == 4) {
             if (xhttp.status == 200) {
-                //update html :)
+                // update html :)
                 var info = JSON.parse(xhttp.response);
                 // console.log(JSON.stringify(info));
 
                 var content = "<p style='text-align:center'>"
 
                 var puEvents = info["puEvents"];
-                console.log("puEvents: " + JSON.stringify(puEvents));
+                //console.log("puEvents: " + JSON.stringify(puEvents));
                 puEvents.forEach(function(event) {
                     content = content + parseEventInfo(event);
                 });
 
-                content = content + "<br> <br>";
+                if (info["puEvents"].length != 0)
+                    content = content + "<br> <br>";
 
                 var printers = info["printers"];
-                console.log("printers: " + JSON.stringify(printers));
+                //console.log("printers: " + JSON.stringify(printers));
                 printers.forEach(function(printer) {
                     content = content + parsePrinterInfo(printer);
                 });
 
-                content = content + "<br> <br>";
+                if (info["printers"].length != 0)
+                    content = content + "<br> <br>";
 
                 var dining = info["dining"];
-                console.log("dining: " + JSON.stringify(dining));
+                //console.log("dining: " + JSON.stringify(dining));
                 dining.forEach(function(dhall) {
                     content = content + parseDiningInfo(dhall);
                 });
 
-                content = content + "<br> <br>";
+                if (info["dining"].length != 0)
+                    content = content + "<br> <br>";
 
                 var laundryMachines = info["laundry"];
-                console.log("laundry: " + JSON.stringify(laundryMachines));
+                //console.log("laundry: " + JSON.stringify(laundryMachines));
                 laundryMachines.forEach(function(laundry) {
                     content = content + parseLaundryInfo(laundry);
                 });
 
-                content = content + "</p>";
-
+                if (info["laundry"].length != 0)
+                    content = content + "</p>";
 
                 console.log(content);
 
-                return content;
-
-
+                callback(content);
             }
         }
     } //end of handleReadyStateChange()
