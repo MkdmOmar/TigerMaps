@@ -286,6 +286,8 @@ function unhighlightAll() {
     previousHighlights = [];
 }
 
+// Returns the polygon closest to the given lat-lng pair.
+// If a callback is given, calls it on the returned polygon.
 function getNearestPolygon(lat, lng, callback) {
     var champion = null;
     var minimum = Number.MAX_VALUE;
@@ -300,7 +302,7 @@ function getNearestPolygon(lat, lng, callback) {
     }
 
     // Run callback on the champion polygon
-    if (champion != null) {
+    if (champion != null && callback !== undefined && callback !== null) {
         callback(champion);
     }
 

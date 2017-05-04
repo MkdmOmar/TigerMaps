@@ -241,9 +241,9 @@ app.get("/fetch/usgEvents", function(req, res) {
 function toRadians(deg) {
     return deg * Math.PI / 180.;
 }
-
+// Returns distance between two lat-lng pairs in meters.
 function distanceBetween(lat1, lng1, lat2, lng2) {
-    var earthRadius = 6371000; // meters
+    var earthRadius = 6371000.; // meters
     var dLat = toRadians(lat2 - lat1);
     var dLng = toRadians(lng2 - lng1);
     var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
@@ -272,22 +272,30 @@ function findCommonWords(str1, str2) {
 }
 
 function dbEntryMatch(entry, bldgName, lat, lng) {
-    var DIST_THRESH = 1.; // meters
+    var DIST_THRESH = 10.; // meters
 
     var dbBldgName = entry["building_name"];
     var dbLat = entry["latitude"];
     var dbLng = entry["longitude"];
-    if (dbBldgName === undefined || dbLat === undefined || dbLng === undefined) {
+    // NOTE(Jose): these fields might be called different things for different datafeed entries.
+    // We should either handle this here (which is messy, because that implies handling it
+    // in every specific case where we need this information), or standardize layout of
+    // at least simple fields like building name coordinates.
+    if (dbBldgName === undefined) {
+        dbBldgName = "";
+    }
+    if (dbLat === undefined || dbLng === undefined) {
         return false;
     }
-    if (dbBldgName === bldgName)
+    if (dbBldgName === bldgName) {
         return true;
+    }
     else {
         var dist = distanceBetween(dbLat, dbLng, lat, lng);
         // TODO this string matching can be improved
         //  (remove uninformative words like "Hall" or "Center")
-        var commonWords = findCommonWords(dbBldgName, bldgName);
-        if (dist < DIST_THRESH && commonWords.length > 0)
+        //var commonWords = findCommonWords(dbBldgName, bldgName);
+        if (dist < DIST_THRESH /*&& commonWords.length > 0*/)
             return true;
     }
 }
@@ -297,7 +305,7 @@ app.get("/fetch/buildingInfo", function(req, res) {
     var queryBuildingName = req.query.buildingName;
     var queryLat = req.query.lat;
     var queryLng = req.query.lng;
-    console.log("buildingName: " + queryBuildingName + " at (" + queryLat + ", " + queryLng + ")");
+    //console.log("buildingName: " + queryBuildingName + " at (" + queryLat + ", " + queryLng + ")");
     var ignoreCollections = ["system.indexes"];
     var completedDBQueries = 0;
     var response = {};
@@ -308,6 +316,8 @@ app.get("/fetch/buildingInfo", function(req, res) {
         } else {
             var totalDBQueries = 0;
             for (var i = 0; i < collections.length; i++) {
+                // First count how many collections there are (exclude "system.indexes" and
+                // possibly other stuff in ignoreCollections).
                 if (ignoreCollections.indexOf(collections[i].collectionName) == -1) {
                     totalDBQueries += 1;
                 }
@@ -315,6 +325,7 @@ app.get("/fetch/buildingInfo", function(req, res) {
             for (var i = 0; i < collections.length; i++) {
                 var collectionName = collections[i].collectionName;
                 if (ignoreCollections.indexOf(collectionName) == -1) {
+                    // Process each collection, entry by entry.
                     var processCollection = function(name) {
                         // Wrapper for avoiding closure madness.
                         return function(err, docs) {
@@ -323,6 +334,8 @@ app.get("/fetch/buildingInfo", function(req, res) {
                             } else {
                                 response[name] = [];
                                 for (var entry = 0; entry < docs.length; entry++) {
+                                    // Verifies whether this database entry matches the query building.
+                                    // If so, add it to the response.
                                     if (dbEntryMatch(docs[entry], queryBuildingName, queryLat, queryLng))
                                         response[name].push(docs[entry]);
                                 }
@@ -338,117 +351,4 @@ app.get("/fetch/buildingInfo", function(req, res) {
             }
         }
     });
-
-    /*db.collection("printers").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get printing information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.printers = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("dining").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get dining information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.dining = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("laundry").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get laundry information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.laundry = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("locations").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get locations information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.locations = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("places").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get places information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.places = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("puEvents").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get puEvents information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.puEvents = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });
-
-    db.collection("usgEvents").find({ building_name: queryBuildingName }).toArray(function(err, docs) {
-        if (err) {
-            console.log("ERROR: Failed to get usgEvents information.");
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        } else {
-            response.usgEvents = docs;
-            completedDBQueries += 1;
-            if (completedDBQueries == numDBQueries) {
-                res.status(200).json(response);
-            }
-        }
-    });*/
-
 });
