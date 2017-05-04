@@ -32,10 +32,12 @@ function showEventInfo(entry) {
         if (parseInt(entry['startTime'].substring(0,2)) >= start) {
             if (parseInt(entry['endTime'].substring(0,2)) <= end) {
                 proceed = true;
+                console.log('proceed');
             }
         }     
     } else {
         proceed = true;
+        console.log('proceed');
     }
 
     if (proceed) {
@@ -72,9 +74,17 @@ function showEventInfo(entry) {
                     showMarkerInfo(event, this, content);
                 });
 
-                var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
-                //console.log(JSON.stringify(pos));
-                //map.panTo(pos);
+                if (last_click == null) {
+                    if ($('#info_div').css('display') != 'none') { //info div is shown
+                        // Center map adjusted
+                        var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
+                        map.panTo(pos);    
+                    } else {
+                        var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"])) };
+                        map.panTo(pos);    
+                    }
+                }   
+
 
             }  
         }

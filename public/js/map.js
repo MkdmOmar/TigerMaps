@@ -403,6 +403,7 @@ function showPolygonInfo(event, polygon, content) {
                     infoWindow.open(map);
                     // Keep track of all infoWindows
                     infoWindows.push(infoWindow);
+
                 } else {
                     $('#info_div').html(content);
                 }
@@ -410,13 +411,21 @@ function showPolygonInfo(event, polygon, content) {
             }
         );
 
+        if ($('#info_div').css('display') != 'none') { //info div is shown
+            // Center map adjusted
+            var latitude = polygon.center.lat();
+            var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
+            map.panTo({ 'lat': latitude, 'lng': longitude });
 
-        // Center map on info window location
-        //console.log(polygon.center.lng());
-        var latitude = polygon.center.lat();
-        var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
-        map.panTo({ 'lat': latitude, 'lng': longitude });
-        //map.panTo(polygon.center);
+        } else {
+
+            // Center map not adjusted
+            map.panTo(polygon.center);
+        }
+
+
+
+
     }
 
 }
