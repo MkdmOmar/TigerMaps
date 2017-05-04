@@ -218,6 +218,6 @@ function clearDB() {
 }
 
 module.exports = {
-  updateDB: updateDB
-  clearDB: clear DB
+  updateDB: updateDB,
+  clearDB: clearDB
 };
