@@ -389,9 +389,11 @@ function showPolygonInfo(event, polygon, content) {
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
-    getBuildingInfo(polygon.name, function(content) {
-        infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
-    });
+    getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
+        function(content) {
+            infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
+        }
+    );
 
     infoWindow.setPosition(polygon.center);
     infoWindow.open(map);
