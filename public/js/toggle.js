@@ -594,3 +594,180 @@ function showEventPlaces() {
 
     } //end of if statement
 } // end of function
+
+
+
+function parseEventInfo(event) {
+    //create content
+    var content = "";
+    if ("title" in event) {
+        content = content + event["title"] + "<br>";
+    }
+    if ("locationName" in event) {
+        content = content + event["locationName"] + "<br>";
+    }
+    if ("startTime" in event) {
+        content = content + "<br>Start Time: " + event["startTime"] + "<br>";
+    }
+    if ("endTime" in event) {
+        content = content + "End Time: " + event["endTime"] + "<br>";
+    }
+    if ("description" in event) {
+        if (event["description"] != null) {
+            content = content + "<br>Description: " + event["description"] + "<br>";
+        }
+    }
+    return content;
+}
+
+function parsePrinterInfo(printer) {
+    var content = "";
+
+    content = content + printer["name"] + "<br>" + printer["building_name"] + "<br><br>";
+    if ("attributes" in printer) {
+        if ("attribute" in printer["attributes"]) {
+            var obj = printer["attributes"]["attribute"];
+            if (Array.isArray(obj)) {
+                obj.forEach(function(current_dict) {
+                    content = content + current_dict["name"] + " : " + current_dict["value"] + "<br>";
+                });
+            } else {
+                content = content + obj["name"] + " : " + obj["value"] + "<br>";
+            }
+        }
+    }
+    return content;
+}
+
+function parseLaundryInfo(laundry) {
+    var content = laundry["name"] + "<br>" + laundry["building_name"] + "<br><br>";
+    if ("attributes" in laundry) {
+        if ("attribute" in laundry["attributes"]) {
+            var obj = laundry["attributes"]["attribute"];
+            if (Array.isArray(obj)) {
+                obj.forEach(function(current_dict) {
+                    if (current_dict["name"] == "LaundryView") {
+                        content = content + current_dict["name"] + " : <a target='_blank' href='" + current_dict["value"] + "'>Link</a><br>";
+                    } else {
+                        content = content + current_dict["name"] + " : " + current_dict["value"] + "<br>";
+                    }
+                });
+            } else {
+                if (current_dict["name"] == "LaundryView") {
+                    content = content + current_dict["name"] + " : <a target='_blank' href='" + current_dict["value"] + "'>Link</a><br>";
+                } else {
+                    content = content + current_dict["name"] + " : " + current_dict["value"] + "<br>";
+                }
+            }
+
+        }
+    }
+    return content;
+}
+
+function parseDiningInfo(dhall) {
+    var content = "";
+    var day = null;
+    var d = new Date();
+    if (d.getDay() == 0) { day = "Sunday"; } else if (d.getDay() == 1) { day = "Monday"; } else if (d.getDay() == 1) { day = "Tuesday"; } else if (d.getDay() == 1) { day = "Wednesday"; } else if (d.getDay() == 1) { day = "Thursday"; } else if (d.getDay() == 1) { day = "Friday"; } else { day = "Saturday"; }
+
+    content = content + dhall["name"] + "<br>" + dhall["building_name"] + "<br><br>";
+    if (day != null) {
+        var days = dhall["times"]["day"];
+        var toAdd = "";
+        days.forEach(function(day_dict) {
+            if (day_dict["name"] == day) {
+                //console.log("good");
+                var sessions = day_dict["sessions"]["session"];
+                sessions.forEach(function(sesh) {
+                    toAdd = toAdd + sesh["name"] + " : " + sesh["hourset"] + "<br>";
+                });
+            }
+        });
+        content = content + toAdd;
+    }
+    content = content + "<br><a target='_blank' href='https://campusdining.princeton.edu/dining/_foodpro/location.asp'>Check Out The Menu</a>";
+    return content;
+}
+
+function getBuildingInfo(buildingName) {
+    var xhttp;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    var hostname = window.location.hostname;
+    if (hostname.search('tigermaps') != -1) {
+        if (loggedIn()) {
+            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName=" + buildingName, true);
+        } else {
+            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName=" + buildingName, true);
+        }
+    } else {
+        if (loggedIn()) {
+            //console.log('loggedin');
+            //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
+            xhttp.open("GET", "http://localhost:8080/fetch/buildingInfo?buildingName=" + buildingName, true);
+        } else {
+            //console.log('not loggedin');
+            xhttp.open("GET", "http://localhost:8080/fetch/buildingInfo?buildingName=" + buildingName, true);
+        }
+    }
+
+    xhttp.onreadystatechange = handleReadyStateChange;
+    xhttp.send(null);
+
+    function handleReadyStateChange() {
+        if (xhttp.readyState == 4) {
+            if (xhttp.status == 200) {
+                //update html :)
+                var info = JSON.parse(xhttp.response);
+                // console.log(JSON.stringify(info));
+
+                var content = "<p style='text-align:center'>"
+
+                var puEvents = info["puEvents"];
+                console.log("puEvents: " + JSON.stringify(puEvents));
+                puEvents.forEach(function(event) {
+                    content = content + parseEventInfo(event);
+                });
+
+                content = content + "<br> <br>";
+
+                var printers = info["printers"];
+                console.log("printers: " + JSON.stringify(printers));
+                printers.forEach(function(printer) {
+                    content = content + parsePrinterInfo(printer);
+                });
+
+                content = content + "<br> <br>";
+
+                var dining = info["dining"];
+                console.log("dining: " + JSON.stringify(dining));
+                dining.forEach(function(dhall) {
+                    content = content + parseDiningInfo(dhall);
+                });
+
+                content = content + "<br> <br>";
+
+                var laundryMachines = info["laundry"];
+                console.log("laundry: " + JSON.stringify(laundryMachines));
+                laundryMachines.forEach(function(laundry) {
+                    content = content + parseLaundryInfo(laundry);
+                });
+
+                content = content + "</p>";
+
+
+                console.log(content);
+
+                return content;
+
+
+            }
+        }
+    } //end of handleReadyStateChange()
+}

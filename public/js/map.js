@@ -163,7 +163,7 @@ function createSearchBox() {
                     champion = polygons[i].polygon;
                     minimum = contender;
                 }
-            }  
+            }
 
             if (champion != null) {
                 previousHighlight = champion;
@@ -178,7 +178,7 @@ function createSearchBox() {
             console.log(place.geometry.location);
             var latitude = place.geometry.location.lat();
             var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
-            map.panTo({'lat':latitude,'lng':longitude});
+            map.panTo({ 'lat': latitude, 'lng': longitude });
         });
         //map.fitBounds(bounds);
     });
@@ -254,10 +254,10 @@ function drawPolygons() {
 
         // Create a marker object for each polygon
         var marker = new google.maps.Marker({
-             position: center,
-             map: map,
-             name: locations[i].name,
-             visible: false
+            position: center,
+            map: map,
+            name: locations[i].name,
+            visible: false
         });
 
         //store polygon, its center, and its name
@@ -373,7 +373,7 @@ function showMarkerInfo(event, pMarker, content) {
     //map.panTo(pMarker.position);
     var latitude = pMarker.position.lat();
     var longitude = parseFloat(pMarker.position.lng()) - parseFloat(0.002);
-    map.panTo({'lat':latitude,'lng':longitude});
+    map.panTo({ 'lat': latitude, 'lng': longitude });
 }
 
 function showPolygonInfo(event, polygon, content) {
@@ -389,7 +389,9 @@ function showPolygonInfo(event, polygon, content) {
 
     // Replace the info window's content and position.
     infoWindow = new google.maps.InfoWindow;
-    infoWindow.setContent("You clicked on " + polygon.name + "!");
+    var content = getBuildingInfo(polygon.name);
+
+    infoWindow.setContent("You clicked on " + polygon.name + "!\n\n" + content);
     infoWindow.setPosition(polygon.center);
     infoWindow.open(map);
 
@@ -397,7 +399,7 @@ function showPolygonInfo(event, polygon, content) {
     console.log(polygon.center.lng());
     var latitude = polygon.center.lat();
     var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
-    map.panTo({'lat':latitude,'lng':longitude});
+    map.panTo({ 'lat': latitude, 'lng': longitude });
     //map.panTo(polygon.center);
 
     // Keep track of all infoWindows
