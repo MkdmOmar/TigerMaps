@@ -75,7 +75,7 @@ function getFeed(webFeedURL, callback) {
   req.end();
 }
 
-// inserts the PU events into the DB
+// Uodate all DB collections
 function getAllFeeds(db) {
   var puEvents, dining, printers, locations, places, usgEvents, laundry
 
@@ -83,61 +83,75 @@ function getAllFeeds(db) {
   getFeed(publicEventsURL, function(json) {
     console.log("Retrieved Public Events Data");
     puEvents = json["events"]["event"];
-    db.collection('puEvents').remove({});
-    db.collection('puEvents').insertMany(puEvents, function(err, result) {
-      assert.equal(err, null)
-      //assert.notEqual(result, null)
-      //assert.notEqual(result, [])
-      console.log("Inserted Public Events");
-    });
+    for (var i = 0; i < puEvents.length; i++){
+      var doc = puEvents[i];
+      db.collection('puEvents').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Public Events");
   });
 
   // Dining collection
   getFeed(diningURL, function(json) {
     console.log("Retrieved Dining Data");
     dining = json["places"]["places"]["PLPlace"];
-    db.collection('dining').remove({});
-    db.collection('dining').insertMany(dining, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, null);
-      console.log("Inserted Dining Data");
-    });
+    for (var i = 0; i < dining.length; i++){
+      var doc = dining[i];
+      db.collection('dining').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Dining Info");
   });
 
   // Printer collection
   getFeed(compPrintURL, function(json) {
     console.log("Retrieved Computing and Printing Data");
     printers = json["places"]["places"]["PLPlace"];
-    db.collection('printers').remove({});
-    db.collection('printers').insertMany(printers, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, null);
-      console.log("Inserted Computing and Printing Data");
-    });
+    for (var i = 0; i < printers.length; i++){
+      var doc = printers[i];
+      db.collection('printers').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Printers Info");
   });
 
   // Locations collection
   getFeed(locationsURL, function(json) {
     console.log("Retrieved Locations Data");
     locations = json["locations"]["location"];
-    db.collection('locations').remove({});
-    db.collection('locations').insertMany(locations, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, null);
-      console.log("Inserted Locations Data");
-    });
+    for (var i = 0; i < locations.length; i++){
+      var doc = locations[i];
+      db.collection('locations').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Locations Info");
   });
 
   // Places collection
   getFeed(placesURL, function(json) {
     console.log("Retrieved Places Data")
     places = json["places"]["places"]["PLPlace"];
-    db.collection('places').remove({});
-    db.collection('places').insertMany(places, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, []);
-      console.log("Inserted Places Data");
-    });
+    for (var i = 0; i < places.length; i++){
+      var doc = places[i];
+      db.collection('places').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Places Info");
   });
 
 
@@ -145,24 +159,30 @@ function getAllFeeds(db) {
   getFeed(USGEventsURL, function(json) {
     console.log("Retrieved USG Events Data");
     usgEvents = json["events"]["event"];
-    db.collection('usgEvents').remove({});
-    db.collection('usgEvents').insertMany(usgEvents, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, []);
-      console.log("Inserted USG Events Data");
-    });
+    for (var i = 0; i < usgEvents.length; i++){
+      var doc = usgEvents[i];
+      db.collection('usgEvents').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted USG Events ");
   });
 
   // Laundry collection
   getFeed(laundryURL, function(json) {
     console.log("Retrieved Laundry Data");
     laundry = json["places"]["places"]["PLPlace"];
-    db.collection('laundry').remove({});
-    db.collection('laundry').insertMany(laundry, function(err, result) {
-      assert.equal(err, null);
-      assert.notEqual(result, []);
-      console.log("Inserted Laundry Data");
-    });
+    for (var i = 0; i < laundry.length; i++){
+      var doc = laundry[i];
+      db.collection('laundry').update(doc, doc, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+    }
+    console.log("Inserted Laundry Info");
   });
 }
 
@@ -178,6 +198,26 @@ function updateDB() {
   });
 }
 
+function clearDB() {
+  MongoClient.connect(uri, function(err, db) {
+    assert.equal(null, err);
+    console.log("Connected successfully to server");
+
+    db.collection('puEvents').remove({});
+    db.collection('dining').remove({});
+    db.collection('printers').remove({});
+    db.collection('locations').remove({});
+    db.collection('places').remove({});
+    db.collection('usgEvents').remove({});
+    db.collection('laundry').remove({});
+    console.log("Database Cleared");
+    db.close(function (err) {
+      if (err) throw err;
+    });
+  });
+}
+
 module.exports = {
   updateDB: updateDB
+  clearDB: clear DB
 };
