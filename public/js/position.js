@@ -28,7 +28,7 @@ function updateHeight() {
      $('#new-input').css('width','400px');
 
      $('#time_range').css({'top':'3.5em','bottom':'auto'});
-     $('#slider-range').css({'top':'7em','bottom':'auto'});
+     $('#slider-range').css({'top':'7.25em','bottom':'auto'});
 
      $('#about_us').css('display','none');
 
