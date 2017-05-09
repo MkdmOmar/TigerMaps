@@ -6,7 +6,8 @@ function updateHeight() {
   var body = $('#body');
   console.log(body.width());
   console.log($('#horizontal_container').width())
-  if (body.width() > $('#horizontal_container').width()*1.25) {
+  //if (body.width() > $('#horizontal_container').width()*1.25) {
+  if (window.innerWidth > window.innerHeight) {
   	//show horizontal buttons
     console.log("in horizontal");
   	$('#vertical_container').css('display','none');
@@ -14,15 +15,31 @@ function updateHeight() {
   	$('#horizontal_container').css('left',(body.width() - $('#horizontal_container').width()) / 2);
 
   	//reposition about us
-  	$('#about_us').css('top','0.5em');
-  	$('#about_us').css('bottom','auto');
-  	$('#about_us').css('left','0.75em');
+  	//$('#about_us').css('top','0.5em');
+  	//$('#about_us').css('bottom','auto');
+  	//$('#about_us').css('left','0.75em');
 
   	//show infodiv elements
   	//$('#info_div').css('display','initial');
    	$('#info_toggle').css('display','initial');
     $('#info_hide').html('Show Info');
     toggle_info = 0;  
+
+    //fix slider width
+    $('#slider-range').css('width', '60%');
+    
+    //toggle button
+    $('#toggle_search').css('right', '420px');
+    $('#toggle_search').css('top', '0.5em'); 
+
+    if ( (window.innerWidth / window.innerHeight) <= 1206/645 ) {
+      $('#time_range').css('top', '0.5em');
+      $('#slider-range').css('top', '3.5em');
+    } else {
+      $('#time_range').css('top', '3em');
+      $('#slider-range').css('top', '1em');
+    }
+
 
   } else {
   	//show vertical buttons
@@ -34,11 +51,19 @@ function updateHeight() {
   	//reposition about us
   	$('#about_us').css('bottom','1em');
   	$('#about_us').css('top','auto');
-  	$('#about_us').css('left','2em');
+  	//$('#about_us').css('right','2em');
+    //$('#about_us').css('left','auto');
 
   	//hide infodiv elements
   	$('#info_div').css('display','none');
    	$('#info_toggle').css('display','none');
+
+    //adjust slider width
+    $('#slider-range').css('width', '50%');
+
+    //toggle button
+    $('#toggle_search').css('top','6.2em');
+    $('#toggle_search').css('right','6em');
   }
   
 }

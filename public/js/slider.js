@@ -14,6 +14,7 @@ $( function() {
       }
     }
   });
+  $( "#slider-range .ui-slider-range" ).css('background', 'rgb(255,153,0)');
   $( "#amount" ).val($("#slider-range").slider("values", 0) +
     " - " + $("#slider-range").slider( "values", 1));
 });
