@@ -27,14 +27,13 @@ function showEventInfo(entry) {
 
     var proceed = false;
 
-    if ('startTime' in entry && 'endTime' in entry) 
-    {
-        if (parseInt(entry['startTime'].substring(0,2)) >= start) {
-            if (parseInt(entry['endTime'].substring(0,2)) <= end) {
+    if ('startTime' in entry && 'endTime' in entry) {
+        if (parseInt(entry['startTime'].substring(0, 2)) >= start) {
+            if (parseInt(entry['endTime'].substring(0, 2)) <= end) {
                 proceed = true;
                 console.log('proceed');
             }
-        }     
+        }
     } else {
         proceed = true;
         console.log('proceed');
@@ -47,6 +46,8 @@ function showEventInfo(entry) {
 
             //create content
             var content = "";
+            content = content + '<div class="iw-subTitle">Events</div>';
+
             if ("title" in entry) {
                 content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
             }
@@ -78,15 +79,15 @@ function showEventInfo(entry) {
                     if ($('#info_div').css('display') != 'none') { //info div is shown
                         // Center map adjusted
                         var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
-                        map.panTo(pos);    
+                        map.panTo(pos);
                     } else {
                         var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"])) };
-                        map.panTo(pos);    
+                        map.panTo(pos);
                     }
-                }   
+                }
 
 
-            }  
+            }
         }
     }
 }
@@ -113,9 +114,9 @@ function timeRange() {
         toggleSearch();
     }
     for (key in event_dict) {
-        if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
-            if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
-                dataList.append("<option value=" + key + ">");            
+        if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
+            if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
+                dataList.append("<option value=" + key + ">");
             }
         }
     }
@@ -213,9 +214,9 @@ function toggleSearch() {
 
                         //restrict dataList based on time slider
                         for (key in event_dict) {
-                            if (parseInt(event_dict[key]['startTime'].substring(0,2)) >= start) {
-                                if (parseInt(event_dict[key]['endTime'].substring(0,2)) <= end) {
-                                    dataList.append("<option value=" + key + ">");            
+                            if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
+                                if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
+                                    dataList.append("<option value=" + key + ">");
                                 }
                             }
                         }
@@ -366,7 +367,7 @@ function showFoodPlaces() {
                         var d = new Date();
                         if (d.getDay() == 0) { day = "Sunday"; } else if (d.getDay() == 1) { day = "Monday"; } else if (d.getDay() == 1) { day = "Tuesday"; } else if (d.getDay() == 1) { day = "Wednesday"; } else if (d.getDay() == 1) { day = "Thursday"; } else if (d.getDay() == 1) { day = "Friday"; } else { day = "Saturday"; }
 
-                        content = content + "<p style='text-align:center'>" + dhall["name"] + "<br>" + dhall["building_name"] + "<br><br>";
+                        content = content + '<div class="iw-subTitle">' + dhall["name"] + "<br>" + dhall["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
                         if (day != null) {
                             var days = dhall["times"]["day"];
                             var toAdd = "";
@@ -453,7 +454,7 @@ function showPrinterPlaces() {
                         //create content
                         var content = "";
 
-                        content = content + "<p style='text-align:center'>" + entry["name"] + "<br>" + entry["building_name"] + "<br><br>";
+                        content = content + '<div class="iw-subTitle">' + entry["name"] + "<br>" + entry["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
                         if ("attributes" in entry) {
                             if ("attribute" in entry["attributes"]) {
                                 var obj = entry["attributes"]["attribute"];
@@ -538,7 +539,8 @@ function showLaundryPlaces() {
                         //create content
                         var content = "";
 
-                        content = content + "<p style='text-align:center'>" + entry["name"] + "<br>" + entry["building_name"] + "<br><br>";
+                        content = content + '<div class="iw-subTitle">' + entry["name"] + "<br>" + entry["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
+
                         if ("attributes" in entry) {
                             if ("attribute" in entry["attributes"]) {
                                 var obj = entry["attributes"]["attribute"];
@@ -655,6 +657,7 @@ function showEventPlaces() {
 function parseEventInfo(event) {
     //create content
     var content = "";
+    content = content + '<div class="iw-subTitle">Events</div>';
     if ("title" in event) {
         content = content + event["title"] + "<br>";
     }
@@ -678,7 +681,8 @@ function parseEventInfo(event) {
 function parsePrinterInfo(printer) {
     var content = "";
 
-    content = content + printer["name"] + "<br>" + printer["building_name"] + "<br><br>";
+    content = content + '<div class="iw-subTitle">' + printer["name"] + "<br>" + printer["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
+
     if ("attributes" in printer) {
         if ("attribute" in printer["attributes"]) {
             var obj = printer["attributes"]["attribute"];
@@ -695,7 +699,8 @@ function parsePrinterInfo(printer) {
 }
 
 function parseLaundryInfo(laundry) {
-    var content = laundry["name"] + "<br>" + laundry["building_name"] + "<br><br>";
+    var content = '<div class="iw-subTitle">' + laundry["name"] + "<br>" + laundry["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
+
     if ("attributes" in laundry) {
         if ("attribute" in laundry["attributes"]) {
             var obj = laundry["attributes"]["attribute"];
@@ -726,7 +731,7 @@ function parseDiningInfo(dhall) {
     var d = new Date();
     if (d.getDay() == 0) { day = "Sunday"; } else if (d.getDay() == 1) { day = "Monday"; } else if (d.getDay() == 1) { day = "Tuesday"; } else if (d.getDay() == 1) { day = "Wednesday"; } else if (d.getDay() == 1) { day = "Thursday"; } else if (d.getDay() == 1) { day = "Friday"; } else { day = "Saturday"; }
 
-    content = content + dhall["name"] + "<br>" + dhall["building_name"] + "<br><br>";
+    content = content + '<div class="iw-subTitle">' + dhall["name"] + "<br>" + dhall["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
     if (day != null) {
         var days = dhall["times"]["day"];
         var toAdd = "";
@@ -755,14 +760,14 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
     }
 
     var hostname = window.location.hostname;
-    var fetchURL = "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName="
-            + buildingName
-            + "&lat=" + lat + "&lng=" + lng;
-            
+    var fetchURL = "https://tigermaps.herokuapp.com/fetch/buildingInfo?buildingName=" +
+        buildingName +
+        "&lat=" + lat + "&lng=" + lng;
+
     if (hostname.search('tigermaps') == -1) {
-        var fetchURL = "http://localhost:8080/fetch/buildingInfo?buildingName="
-            + buildingName
-            + "&lat=" + lat + "&lng=" + lng;
+        var fetchURL = "http://localhost:8080/fetch/buildingInfo?buildingName=" +
+            buildingName +
+            "&lat=" + lat + "&lng=" + lng;
     }
     if (loggedIn()) {
         xhttp.open("GET", fetchURL, true);
@@ -780,7 +785,7 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
                 var info = JSON.parse(xhttp.response);
                 // console.log(JSON.stringify(info));
 
-                var content = "<p style='text-align:center'>"
+                var content = ""
 
                 var puEvents = info["puEvents"];
                 //console.log("puEvents: " + JSON.stringify(puEvents));
@@ -815,8 +820,8 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
                     content = content + parseLaundryInfo(laundry);
                 });
 
-                if (info["laundry"].length != 0)
-                    content = content + "</p>";
+                // if (info["laundry"].length != 0)
+                //     content = content + "</p>";
 
                 console.log(content);
 
