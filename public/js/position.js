@@ -33,12 +33,13 @@ function updateHeight() {
      $('#about_us').css('display','none');
 
      //toggle button
-     $('#toggle_search').css('right', $('#new-input').width()*1.05);
-     $('#toggle_search').css('top', '0.5em'); 
+     $('#toggle_search').css({'left':'1em','right':'auto'});
+     $('#toggle_search').css({'top':'0.5em','bottom':'auto'}); 
 
      //info_toggle position
      $('#info_toggle').css('display','initial');
-     $('#info_toggle').css('bottom','2em');
+     $('#info_toggle').css('bottom','1em');
+     $('#info_div').css({'left':'1em','bottom':'4em','width':'100px','height','250px'});
 
      //horiztonal toggle bar position
      $('#horizontal_container').css('bottom','1em');
@@ -87,10 +88,14 @@ function updateHeight() {
      $('#about_us').css('display','initial');
      $('#about_us').css({'bottom':'1em','right':'1em','left':'auto','top':'auto'});
 
-      //adjust slider width and placment
-      $('#slider-range').css('width', '90%');
-      $('#time_range').css({'top':'auto','bottom':'1em'});
-      $('#slider-range').css({'top':'auto', 'bottom':'4em'});
+     //adjust slider width and placment
+     $('#slider-range').css('width', '90%');
+     $('#time_range').css({'top':'auto','bottom':'1em'});
+     $('#slider-range').css({'top':'auto', 'bottom':'4em'});
+
+     //toggle button
+     $('#toggle_search').css('top','6.2em');
+     $('#toggle_search').css('right','6em');
   
     } else {
       //reposition about us
@@ -109,9 +114,7 @@ function updateHeight() {
   	$('#info_div').css('display','none');
    	$('#info_toggle').css('display','none');
 
-    //toggle button
-    $('#toggle_search').css('top','6.2em');
-    $('#toggle_search').css('right','6em');
+
   }
   
 }
