@@ -67,23 +67,21 @@ function updateHeight() {
      $('#new-input').css('width','90%');
 
      //reposition about us
-     $('#about_us').css({'top':'6.2em','bottom':'auto','right':'10em','left':'auto');
+     $('#about_us').css({'top':'6.2em','bottom':'auto','right':'10em','left':'auto'});
     } else {
       //reposition about us
       $('#about_us').css('bottom','1em');
       $('#about_us').css('top','auto');
       //$('#about_us').css('right','2em');
       //$('#about_us').css('left','auto');
+
+      //adjust slider width
+      $('#slider-range').css('width', '50%');
     }
-
-
 
   	//hide infodiv elements
   	$('#info_div').css('display','none');
    	$('#info_toggle').css('display','none');
-
-    //adjust slider width
-    $('#slider-range').css('width', '50%');
 
     //toggle button
     $('#toggle_search').css('top','6.2em');
