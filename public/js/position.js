@@ -28,7 +28,7 @@ function updateHeight() {
      $('#new-input').css('width','400px');
 
      $('#time_range').css({'top':'3.5em','bottom':'auto'});
-     $('#slider-range').css({'top':'5.5em','bottom':'auto'});
+     $('#slider-range').css({'top':'7em','bottom':'auto'});
 
      $('#about_us').css('display','none');
 
@@ -38,8 +38,8 @@ function updateHeight() {
 
      //info_toggle position
      $('#info_toggle').css('display','initial');
-     $('#info_toggle').css('bottom','1em');
-     $('#info_div').css({'left':'1em','bottom':'4em','width':'100px','height':'250px'});
+     $('#info_toggle').css('bottom','0.5em');
+     $('#info_div').css({'left':'1em','bottom':'4em','width':'100px','height':'100px'});
 
      //horiztonal toggle bar position
      $('#horizontal_container').css('bottom','1em');
