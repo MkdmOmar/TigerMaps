@@ -39,7 +39,7 @@ function updateHeight() {
      //info_toggle position
      $('#info_toggle').css('display','initial');
      $('#info_toggle').css('bottom','1em');
-     $('#info_div').css({'left':'1em','bottom':'4em','width':'100px','height','250px'});
+     $('#info_div').css({'left':'1em','bottom':'4em','width':'100px','height':'250px'});
 
      //horiztonal toggle bar position
      $('#horizontal_container').css('bottom','1em');
