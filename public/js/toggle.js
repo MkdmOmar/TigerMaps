@@ -3,7 +3,6 @@ var count_options = 0;
 var event_dict = {};
 var do_once = true;
 var last_click = null;
-var toggle_bounds = new google.maps.LatLngBounds();
 
 function loggedIn() {
     if ($('#notLoggedIn').css('display') == 'none') {

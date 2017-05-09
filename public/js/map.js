@@ -8,6 +8,7 @@ var polygons = [];
 var markers = [];
 var start = 8;
 var end = 22;
+var toggle_bounds = null;
 var current_location = null;
 
 //console.log(JSON.stringify(previousHighlights));
@@ -222,6 +223,9 @@ function initMap(pos) {
 
         // Create map search box
         createSearchBox();
+
+        //set toggle_bounds
+        var toggle_bounds = new google.maps.LatLngBounds();
     });
 }
 
