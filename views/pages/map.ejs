@@ -6,32 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/infoWindow.css">
+
     <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-
+        
         #map {
             height: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
-
+        
         html,
         body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-
+        
         .checkboxes {
             background: white;
         }
-
+        
         .notLoggedIn,
         .loggedIn {
             background: white;
         }
-
+        
         .toggle-buttons {
             background-color: #fff;
             border: 2px solid #888;
@@ -43,19 +45,18 @@
             width: 100px;
             height: auto;
         }
-
-        .info_div {
+        /*.info_div {
             background-color: #fff;
             border: 2px solid #888;
             border-radius: 5px;
             box-shadow: 0 2px 6px grey;
             cursor: pointer;
             text-align: center;
-        }
+        }*/
         /*.toggle-buttons:hover {
             background-color: #ffb347;
         }*/
-
+        
         .toggle-search {
             background-color: #fff;
             border: 2px solid #888;
@@ -67,11 +68,11 @@
             width: 75px;
             height: auto;
         }
-
+        
         .toggle-search:hover {
             background-color: #ffb347;
         }
-
+        
         .toggle-texts {
             font-family: Roboto, Arial, sans-serif;
             color: black;
@@ -80,6 +81,10 @@
             line-height: 12px;
             height: 12px;
         }
+        /*.gm-style-iw {
+            max-height: 30em;
+            max-width: 20em;
+        }*/
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
