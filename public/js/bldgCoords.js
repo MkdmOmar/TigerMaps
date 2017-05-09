@@ -737,6 +737,24 @@ var locations = [
 		]
 },
 {
+	name: "1895 Field",
+	coords: [
+			new google.maps.LatLng(40.342685,-74.655104),
+			new google.maps.LatLng(40.342509,-74.655780),
+			new google.maps.LatLng(40.342398,-74.655742),
+			new google.maps.LatLng(40.342296,-74.655667),
+			new google.maps.LatLng(40.342190,-74.655533),
+			new google.maps.LatLng(40.342124,-74.655420),
+			new google.maps.LatLng(40.342092,-74.655324),
+			new google.maps.LatLng(40.342075,-74.655238),
+			new google.maps.LatLng(40.342059,-74.655131),
+			new google.maps.LatLng(40.342067,-74.654986),
+			new google.maps.LatLng(40.342100,-74.654852),
+			new google.maps.LatLng(40.342116,-74.654766),
+			new google.maps.LatLng(40.342644,-74.654996)
+		]
+},
+{
 	name: "1915 Hall",
 	coords: [
 			new google.maps.LatLng(40.344923,-74.657196),
@@ -1564,6 +1582,15 @@ var locations = [
 		]
 },
 {
+	name: "Myslik Field",
+	coords: [
+			new google.maps.LatLng(40.342734,-74.654648),
+			new google.maps.LatLng(40.342950,-74.653832),
+			new google.maps.LatLng(40.341932,-74.653344),
+			new google.maps.LatLng(40.341699,-74.654154)
+		]
+},
+{
 	name: "Neuroscience Institute",
 	coords: [
 			new google.maps.LatLng(40.343729,-74.652390),
@@ -1612,6 +1639,15 @@ var locations = [
 			new google.maps.LatLng(40.342931,-74.661228),
 			new google.maps.LatLng(40.342878,-74.661351),
 			new google.maps.LatLng(40.342989,-74.661432)
+		]
+},
+{
+	name: "Plummer Field",
+	coords: [
+			new google.maps.LatLng(40.342963,-74.653784),
+			new google.maps.LatLng(40.343159,-74.653060),
+			new google.maps.LatLng(40.342149,-74.652582),
+			new google.maps.LatLng(40.341940,-74.653291)
 		]
 },
 {

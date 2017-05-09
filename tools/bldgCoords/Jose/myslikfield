@@ -1,0 +1,7 @@
+Myslik Field
+[
+new google.maps.LatLng(40.342734,-74.654648),
+new google.maps.LatLng(40.342950,-74.653832),
+new google.maps.LatLng(40.341932,-74.653344),
+new google.maps.LatLng(40.341699,-74.654154)
+]

@@ -1,0 +1,16 @@
+1895 Field
+[
+new google.maps.LatLng(40.342685,-74.655104),
+new google.maps.LatLng(40.342509,-74.655780),
+new google.maps.LatLng(40.342398,-74.655742),
+new google.maps.LatLng(40.342296,-74.655667),
+new google.maps.LatLng(40.342190,-74.655533),
+new google.maps.LatLng(40.342124,-74.655420),
+new google.maps.LatLng(40.342092,-74.655324),
+new google.maps.LatLng(40.342075,-74.655238),
+new google.maps.LatLng(40.342059,-74.655131),
+new google.maps.LatLng(40.342067,-74.654986),
+new google.maps.LatLng(40.342100,-74.654852),
+new google.maps.LatLng(40.342116,-74.654766),
+new google.maps.LatLng(40.342644,-74.654996)
+]

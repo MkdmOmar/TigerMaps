@@ -1,0 +1,7 @@
+Plummer Field
+[
+new google.maps.LatLng(40.342963,-74.653784),
+new google.maps.LatLng(40.343159,-74.653060),
+new google.maps.LatLng(40.342149,-74.652582),
+new google.maps.LatLng(40.341940,-74.653291)
+]
