@@ -1,0 +1,7 @@
+MacMillan Annex
+[
+new google.maps.LatLng(40.342386,-74.657238),
+new google.maps.LatLng(40.342500,-74.656810),
+new google.maps.LatLng(40.342436,-74.656782),
+new google.maps.LatLng(40.342324,-74.657209)
+]
