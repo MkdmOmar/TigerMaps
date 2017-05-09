@@ -53,10 +53,14 @@ function updateHeight() {
         $('#slider-range').css('top', '1em');
       }
 
-     
-      //toggle button
-      $('#toggle_search').css('right', '420px');
-      $('#toggle_search').css('top', '0.5em'); 
+      if ( (window.innerWidth / window.innerHeight) <= 684/645 ) {
+       $('#toggle_search').css('top','6.2em');
+       $('#toggle_search').css('right','6em');
+      } else {
+        //toggle button
+       $('#toggle_search').css('right', '420px');
+       $('#toggle_search').css('top', '0.5em'); 
+      }  
     }
 
   	//show infodiv elements
@@ -107,6 +111,8 @@ function updateHeight() {
       //adjust slider width and placment
       $('#slider-range').css('width', '50%');
 
+       $('#toggle_search').css('top','6.2em');
+       $('#toggle_search').css('right','6em');
     }
 
 
