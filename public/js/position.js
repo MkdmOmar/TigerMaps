@@ -67,7 +67,7 @@ function updateHeight() {
      $('#new-input').css('width','90%');
 
      //reposition about us
-     $('#about_us').css({'bottom':'1em','left':'1em','right':'auto'});
+     $('#about_us').css({'bottom':'1em','right':'1em','left':'auto'});
 
       //adjust slider width and placment
       $('#slider-range').css('width', '90%');
