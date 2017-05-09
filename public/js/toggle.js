@@ -3,6 +3,7 @@ var count_options = 0;
 var event_dict = {};
 var do_once = true;
 var last_click = null;
+var toggle_bounds = new google.maps.LatLngBounds();
 
 function loggedIn() {
     if ($('#notLoggedIn').css('display') == 'none') {
@@ -304,6 +305,7 @@ function getNearestPolygon(lat, lng, callback) {
 
     // Run callback on the champion polygon
     if (champion != null && callback !== undefined && callback !== null) {
+        toggle_bounds.extend(champion.center);
         callback(champion);
     }
 
@@ -329,6 +331,9 @@ function showFoodPlaces() {
         $('#food_button').css('background-color', '#ffb347');
         last_click = 'food';
     }
+
+    //clear boundary variable
+    toggle_bounds = new google.maps.LatLngBounds();
 
     if (food != 1) { //dont highlight food buildings on downclick event
         var xhttp;
@@ -393,6 +398,9 @@ function showFoodPlaces() {
                         }
 
                     });
+    
+                    //adjust boundaries of map
+                    map.fitBounds(toggle_bounds);
                 }
             }
         } //end of handleReadyStateChange()
@@ -419,6 +427,9 @@ function showPrinterPlaces() {
         $('#printer_button').css('background-color', '#ffb347');
         last_click = 'printer';
     }
+
+    //clear boundary variable
+    toggle_bounds = new google.maps.LatLngBounds;
 
     if (printer != 1) { //first time clicking
         var xhttp;
@@ -478,6 +489,10 @@ function showPrinterPlaces() {
                         }
 
                     });
+
+                    //adjust boundaries of map
+                    map.fitBounds(toggle_bounds);
+
                 }
             }
         } //end of handleReadyStateChange()
@@ -504,6 +519,9 @@ function showLaundryPlaces() {
         $('#laundry_button').css('background-color', '#ffb347');
         last_click = 'laundry';
     }
+
+    //clear boundary variable
+    toggle_bounds = new google.maps.LatLngBounds;
 
     if (laundry != 1) { //first time clicking
         var xhttp;
@@ -572,6 +590,10 @@ function showLaundryPlaces() {
                         }
 
                     });
+
+                    //adjust boundaries of map
+                    map.fitBounds(toggle_bounds);
+
                 }
             }
         } //end of handleReadyStateChange()
@@ -622,6 +644,10 @@ function showEvents() {
                 puEventsList.forEach(function(entry) {
                     showEventInfo(entry);
                 });
+                
+                //adjust boundaries of map
+                map.fitBounds(toggle_bounds);
+
             }
         }
     } //end of handleReadyStateChange()
@@ -646,6 +672,9 @@ function showEventPlaces() {
         $('#events_button').css('background-color', '#ffb347');
         last_click = 'events';
     }
+
+    //clear boundary variable
+    toggle_bounds = new google.maps.LatLngBounds;
 
     if (events != 1) { //first time clicking
         showEvents();

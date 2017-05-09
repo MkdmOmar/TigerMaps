@@ -68,6 +68,8 @@ function geolocate() {
 
             drawInfoWindow("Location Found", "You are here!", pos);
 
+            map.panTo(pos);
+
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -230,7 +232,7 @@ function getBoundingBox(polygon) {
     var bounds = new google.maps.LatLngBounds();
 
     polygon.getPath().forEach(function(element, index) {
-        bounds.extend(element)
+        bounds.extend(element);
     });
     return (bounds);
 }
