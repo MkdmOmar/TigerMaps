@@ -24,7 +24,8 @@ function updateHeight() {
      for (var i = 1; i < 5; i++){
       $('#div' + i).css('width','75px');
      } 
-     alert('done');
+     $('#pac-input').css('width','400px');
+     $('#new-input').css('width','400px');
     }
 
   	//show infodiv elements
@@ -55,12 +56,27 @@ function updateHeight() {
   	$('#vertical_container').css('display','block');
   	$('#horizontal_container').css('display','none');
   	$('#vertical_container').css('bottom',(body.height() - $('#vertical_container').height()) / 2);
-  	
-  	//reposition about us
-  	$('#about_us').css('bottom','1em');
-  	$('#about_us').css('top','auto');
-  	//$('#about_us').css('right','2em');
-    //$('#about_us').css('left','auto');
+
+    //if mobile device ...
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+     for (var i = 1; i < 5; i++){
+      $('#div' + i).css('width','75px');
+     } 
+
+     $('#pac-input').css('width','90%');
+     $('#new-input').css('width','90%');
+
+     //reposition about us
+     $('#about_us').css({'top':'6.2em','bottom':'auto','right':'10em','left':'auto');
+    } else {
+      //reposition about us
+      $('#about_us').css('bottom','1em');
+      $('#about_us').css('top','auto');
+      //$('#about_us').css('right','2em');
+      //$('#about_us').css('left','auto');
+    }
+
+
 
   	//hide infodiv elements
   	$('#info_div').css('display','none');
