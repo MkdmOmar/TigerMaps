@@ -26,6 +26,20 @@ function updateHeight() {
      } 
      $('#pac-input').css('width','400px');
      $('#new-input').css('width','400px');
+
+     $('#time_range').css({'top':'3em','bottom':'auto'});
+     $('#slider-range').css({'top':'4.5em','bottom':'auto'});
+
+     $('#about_us').css('display','none');
+
+    } else {
+      if ( (window.innerWidth / window.innerHeight) <= 1206/645 ) {
+        $('#time_range').css('top', '0.5em');
+        $('#slider-range').css('top', '3.5em');
+      } else {
+        $('#time_range').css('top', '3em');
+        $('#slider-range').css('top', '1em');
+      }
     }
 
   	//show infodiv elements
@@ -41,13 +55,7 @@ function updateHeight() {
     $('#toggle_search').css('right', '420px');
     $('#toggle_search').css('top', '0.5em'); 
 
-    if ( (window.innerWidth / window.innerHeight) <= 1206/645 ) {
-      $('#time_range').css('top', '0.5em');
-      $('#slider-range').css('top', '3.5em');
-    } else {
-      $('#time_range').css('top', '3em');
-      $('#slider-range').css('top', '1em');
-    }
+
 
 
   } else {
@@ -67,7 +75,8 @@ function updateHeight() {
      $('#new-input').css('width','90%');
 
      //reposition about us
-     $('#about_us').css({'bottom':'1em','right':'1em','left':'auto'});
+     $('#about_us').css('display','initial');
+     $('#about_us').css({'bottom':'1em','right':'1em','left':'auto','top':'auto'});
 
       //adjust slider width and placment
       $('#slider-range').css('width', '90%');
