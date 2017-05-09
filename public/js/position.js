@@ -24,6 +24,7 @@ function updateHeight() {
      for (var i = 1; i < 5; i++){
       $('#div' + i).css('width','75px');
      } 
+     alert('done');
     }
 
   	//show infodiv elements
