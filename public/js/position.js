@@ -66,7 +66,7 @@ function updateHeight() {
     toggle_info = 0;  
 
     //fix slider width
-    $('#slider-range').css('width', '60%');
+    $('#slider-range').css('width', '55%');
 
   } else {
   	//show vertical buttons
