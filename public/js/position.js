@@ -67,12 +67,12 @@ function updateHeight() {
      $('#new-input').css('width','90%');
 
      //reposition about us
-     $('#about_us').css({'top':'7em','bottom':'auto','right':'12em','left':'auto'});
+     $('#about_us').css({'bottom':'1em','left':'1em','right':'auto'});
 
       //adjust slider width and placment
-      $('#slider-range').css('width', '50%');
+      $('#slider-range').css('width', '90%');
       $('#time_range').css({'top':'auto','bottom':'1em'});
-      $('#slider-range').css({'top':'auto', 'bottom':'3em'});
+      $('#slider-range').css({'top':'auto', 'bottom':'4em'});
   
     } else {
       //reposition about us
@@ -81,10 +81,12 @@ function updateHeight() {
       //$('#about_us').css('right','2em');
       //$('#about_us').css('left','auto');
 
+      //adjust slider width and placment
+      $('#slider-range').css('width', '50%');
+
     }
-    //adjust slider width and placment
-    $('#slider-range').css('width', '50%');
-    
+
+
   	//hide infodiv elements
   	$('#info_div').css('display','none');
    	$('#info_toggle').css('display','none');
