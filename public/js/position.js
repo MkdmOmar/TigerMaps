@@ -19,6 +19,13 @@ function updateHeight() {
   	//$('#about_us').css('bottom','auto');
   	//$('#about_us').css('left','0.75em');
 
+    //if mobile device ...
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+     for (var i = 1; i < 5; i++){
+      $('#div' + i).css('width','75px');
+     } 
+    }
+
   	//show infodiv elements
   	//$('#info_div').css('display','initial');
    	$('#info_toggle').css('display','initial');
