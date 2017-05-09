@@ -8,6 +8,7 @@ var polygons = [];
 var markers = [];
 var start = 8;
 var end = 22;
+var current_location = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -65,14 +66,8 @@ function geolocate() {
                 lng: position.coords.longitude
             };
 
-
             drawInfoWindow("Location Found", "You are here!", pos);
 
-
-            // infoWindow.setPosition(pos);
-            // infoWindow.setContent('Location found.');
-            // infoWindow.open(map);
-            // map.setCenter(pos);
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
