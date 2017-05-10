@@ -12,7 +12,7 @@
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-
+        
         #map {
             margin: 0;
             padding: 0;
@@ -20,23 +20,23 @@
             max-width: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
-
+        
         html,
         body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-
+        
         .checkboxes {
             background: white;
         }
-
+        
         .notLoggedIn,
         .loggedIn {
             background: white;
         }
-
+        
         .toggle-buttons {
             background-color: #fff;
             border: 2px solid #888;
@@ -48,7 +48,7 @@
             width: 100px;
             height: auto;
         }
-
+        
         .toggle-search {
             background-color: #fff;
             border: 2px solid #888;
@@ -57,14 +57,14 @@
             cursor: pointer;
             text-align: center;
             display: inline-block;
-            width: 75px;
+            width: auto;
             height: auto;
         }
-
+        
         .toggle-search:hover {
             background-color: #ffb347;
         }
-
+        
         .toggle-texts {
             font-family: Roboto, Arial, sans-serif;
             color: black;
@@ -73,10 +73,29 @@
             line-height: 12px;
             height: 12px;
         }
-        /*.gm-style-iw {
-            max-height: 30em;
-            max-width: 20em;
-        }*/
+        
+        .walkMeButton {
+            background-color: #4CAF50;
+            color: white;
+            border: 2px solid #4CAF50;
+            padding: 4px 4px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 4px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            width: 90%;
+            border-radius: 12px;
+        }
+        
+        .walkMeButton:hover {
+            background-color: white;
+            color: black;
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -205,6 +224,7 @@
 <script src="js/toggle.js"></script>
 <script src="js/position.js"></script>
 <script src="js/slider.js"></script>
+<script src="js/path.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
 
 </html>
