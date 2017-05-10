@@ -354,6 +354,7 @@ app.get("/fetch/buildingInfo", function(req, res) {
 });
 
 // Fetch meal menu info for a given dining hall
+// Use it like this: http://localhost:8080/fetch/menuInfo?dhall=Rocky
 app.get("/fetch/menuInfo", function(req, res) {
     var dhall = req.query.dhall;
     if (dhall === "Wilson") {
