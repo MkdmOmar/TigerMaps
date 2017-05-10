@@ -40,8 +40,8 @@ $("#oneInfoWindow").click(function() {
 function setZoomPanBounds() {
     // Map bounds
     var allowedBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(40.329950, -74.670505),
-        new google.maps.LatLng(40.356531, -74.639470)
+        new google.maps.LatLng(40.339739, -74.667018),
+        new google.maps.LatLng(40.355313, -74.642077)
     );
     var minZoom = 15;
     var lastValidCenter = map.getCenter();
