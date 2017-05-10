@@ -6,8 +6,10 @@ var previousHighlight = null;
 var previousHighlights = [];
 var polygons = [];
 var markers = [];
-var start = 8;
-var end = 22;
+var start_time = 0;
+var end_time = 23;
+var start_date = 0;
+var end_date = 6;
 var toggle_bounds = null;
 var current_location = null;
 // --- for path.js ---
@@ -183,7 +185,7 @@ function createSearchBox() {
                 previousHighlight = null;
             }
 
-            //highlight current searched place 
+            //highlight current searched place
             var champion = null;
             var minimum = Number.MAX_VALUE;
             var contender = Number.MAX_VALUE;
@@ -344,7 +346,7 @@ function drawPolygons() {
             var toggle = false;
             var _this = this;
 
-            //only unhighlight if not in toggle mode 
+            //only unhighlight if not in toggle mode
             previousHighlights.forEach(function(current) {
 
                 if (_this == current.polygon || _this === current.polygon) {
@@ -364,7 +366,7 @@ function drawPolygons() {
                     if (center_current.lng == polygon.center.lng) {
                         console.log('hmm');
                         toggle = true;
-                    }                  
+                    }
                 }
                 */
             });
@@ -425,7 +427,7 @@ function showPolygonInfo(event, polygon) {
 
         getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
             function(info) {
-                if ($('#info_div').css('display') == 'none') { //info div is hidden 
+                if ($('#info_div').css('display') == 'none') { //info div is hidden
 
                     if (info == "") {
                         info = "<p>Nothing here!</p>";
