@@ -13,10 +13,10 @@ var end_date = 6;
 var toggle_bounds = null;
 var current_location = null;
 // --- for path.js ---
-var selectedPolygon = null;
 var directionsService = null;
 var directionsDisplay = null;
 var placesService = null;
+var userLocation = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -61,7 +61,8 @@ function setZoomPanBounds() {
     });
 }
 
-// Gets the location of the user, if possible.
+// Gets the location of the user,
+// if possible.
 // Execute the given callback on the location of the user.
 function geolocateCallback(callback) {
     infoWindow = new google.maps.InfoWindow;
@@ -73,8 +74,8 @@ function geolocateCallback(callback) {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
-            callback(pos);
+            userLocation = pos;
+            callback(userLocation);
         }, function() {
             // Geolocation failed
             console.log("Geolocation service supported but failed.");
@@ -100,6 +101,8 @@ function geolocate() {
             drawInfoWindow("Location Found", "You are here!", pos);
 
             map.panTo(pos);
+
+            userLocation = pos;
 
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -258,13 +261,13 @@ function initMap(pos) {
         createSearchBox();
 
         directionsService = new google.maps.DirectionsService();
-        directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+        directionsDisplay = new google.maps.DirectionsRenderer();
         directionsDisplay.setOptions({
             preserveViewport: true,
             suppressMarkers: true
         });
         placesService = new google.maps.places.PlacesService(map);
-        
+
         toggle_bounds = new google.maps.LatLngBounds();
     });
 }
@@ -322,7 +325,6 @@ function drawPolygons() {
 
         // Assign the polygon to the map
         myPolygon.setMap(map);
-
 
         /*
         MUST USE 'this' TO AVOID CLOSURE!!!!!
@@ -417,8 +419,6 @@ function showMarkerInfo(event, pMarker, info) {
 }
 
 function showPolygonInfo(event, polygon) {
-    selectedPolygon = polygon;
-
     if (last_click == null) {
         unhighlightAll();
 
@@ -458,33 +458,25 @@ function showPolygonInfo(event, polygon) {
     }
 }
 
-
-function findPath(lat, lng) {
-    var destination = {
-        latitude: lat,
-        longitude: lng
-    };
-    console.log("finding path to " + JSON.stringify(destination));
-}
-
 function drawInfoWindow(title, info, position) {
-    lat = position.lat;
-    lng = position.lng;
-    console.log("lat is of type " + typeof position.lat);
-    console.log("lng is of type " + typeof position.lng);
+    clearPath();
+    var lat = position.lat;
+    var lng = position.lng;
+    //console.log("lat is of type " + typeof position.lat);
+    //console.log("lng is of type " + typeof position.lng);
 
     if (typeof lat !== 'number' || typeof lng !== 'number') {
-        console.log("converting lat and lng to number");
+        //console.log("converting lat and lng to number");
         lat = position.lat();
         lng = position.lng();
     }
-    console.log("position is: lat " + lat + '   lng ' + lng);
+    //console.log("position is: lat " + lat + '   lng ' + lng);
 
 
     // InfoWindow content
     var content = '<div id="iw-container">' +
         '<div class="iw-title">' + title + '</div>' +
-        '<button type="button" class="walkMeButton" onclick="findPath(' + lat + ',' + lng + ')">Walk Me Here!</button> <br>' +
+        '<button type="button" class="walkMeButton" onclick="drawPathToCoords(\'' + title + '\',' + lat + ',' + lng + ')">Walk Me Here!</button> <br>' +
         '<div class="iw-content">' + info +
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +
