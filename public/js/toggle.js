@@ -12,82 +12,180 @@ function loggedIn() {
     }
 }
 
+function inVertical() {
+    if ($('#vertical_container').css('display') == 'none') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+//xml_special_to_escaped_one_map , escaped_one_to_xml_special_map
+//encodeXml and decodeXml courtesy of DracoBlue at
+//https://dracoblue.net/dev/encodedecode-special-xml-characters-in-javascript/
+
+var xml_special_to_escaped_one_map = {
+    '&': '&amp;',
+    '"': '&quot;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&apos;'
+};
+
+var escaped_one_to_xml_special_map = {
+    '&amp;': '&',
+    '&quot;': '"',
+    '&lt;': '<',
+    '&apos;':"'",
+    '&gt;': '>'
+};
+
+function encodeXml(string) {
+    return string.replace(/([\&"<>'])/g, function(str, item) {
+        return xml_special_to_escaped_one_map[item];
+    });
+};
+
+function decodeXml(string) {
+    return string.replace(/(&quot;|&lt;|&gt;|&amp;|&apos;)/g,
+        function(str, item) {
+            return escaped_one_to_xml_special_map[item];
+    });
+}
+
+
 function showEventInfo(entry) {
     // alert(JSON.stringify(entry));
-    if (entry["latitude"] == 0 || entry["longitude"] == 0) {
-        if ("locationName" in entry) {
-            for (var key in event_dict) {
-                if (event_dict[key]["locationName"] == entry["locationName"]) {
-                    entry["latitude"] = event_dict[key]["latitude"];
-                    entry["longitude"] = event_dict[key]["longitude"];
+    //console.log(entry["title"]);
+    //console.log(typeof(entry["longitude"]));
+    var winners = [];
+
+    if (parseFloat(entry["latitude"]) == 0.0 || parseFloat(entry["longitude"]) == 0.0 || entry["latitude"] == null || entry['longitude'] == null) {
+        var words = null;
+        if (entry["locationName"] != null) { 
+            //search by locationName words
+            words = entry["locationName"].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+            words = words.split(' ');
+        } else if (entry["title"] != null) {
+             //search by title words
+            words = entry["title"].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+            words = words.split(' '); 
+        }
+
+        if (words != null) {
+            for (var i = 0; i < words.length; i++) {
+                words[i] = words[i].toLowerCase();
+                //console.log(words[i]);
+            }
+            for (var i = 0; i < polygons.length; i++) {
+                var keyword = polygons[i].name.split(' ')[0].toLowerCase();
+                //console.log(keyword);
+                if ($.inArray(keyword, words) != -1) {
+                    winners.push(polygons[i]);//.position;
+                    //console.log('winner is ' + polygons[i].name);
                 }
             }
+
+            /*
+            if (winner != null) {
+                entry["latitude"] = winner.center.lat();
+                entry["longitude"] = winner.center.lng();
+
+                //console.log(entry["latitude"]);
+                //console.log(entry["longitude"]);
+            } else {
+                entry["latitude"] = null;
+                entry["longitude"] = null;
+            }
+            */
+
         }
     }
 
+    // assert that event lies within time slider range
+    //this code is redudany since timeRange() automatically limits the availabile
+    //dataList options absed on slider values
     var proceed = false;
 
-    if ('startTime' in entry && 'endTime' in entry) {
+    if (entry['startTime'] != null && entry['endTime'] != null) {
         if (parseInt(entry['startTime'].substring(0, 2)) >= start) {
             if (parseInt(entry['endTime'].substring(0, 2)) <= end) {
                 proceed = true;
-                console.log('proceed');
+                //console.log('proceed');
             }
         }
     } else {
         proceed = true;
-        console.log('proceed');
-    }
+        //console.log('proceed');
+    }  
 
     if (proceed) {
-        if (entry["latitude"] != 0 && entry["longitude"] != 0) {
+        if (winners.length != 0) {
+            //clear boundary variable
+            //toggle_bounds = new google.maps.LatLngBounds();
 
-            var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
+            winners.forEach(function(winner){
+                entry["latitude"] = winner.center.lat();
+                entry["longitude"] = winner.center.lng();
+                goProceed(entry);
+            });
+            //map.fitBounds(toggle_bounds);
+        } else {
+            goProceed(entry);
+        }  
+    }
 
-            //create content
-            var content = "";
-            content = content + '<div class="iw-subTitle">Events</div>';
+}
 
-            if ("title" in entry) {
-                content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
-            }
-            if ("locationName" in entry) {
-                content = content + entry["locationName"] + "<br>";
-            }
-            if ("startTime" in entry) {
-                content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
-            }
+function goProceed(entry) {
 
-            if ("endTime" in entry) {
-                content = content + "End Time: " + entry["endTime"] + "<br>";
+    if (entry["latitude"] != "0" && entry["longitude"] != "0" && entry["latitude"] != null && entry['longitude'] != null) {
+        //console.log('inside');
+        var champion = getNearestPolygon(entry["latitude"], entry["longitude"], highlightPolygon);
+
+        //create content
+        var content = "";
+        content = content + '<div class="iw-subTitle">Events</div>';
+
+        if (entry["title"] != null) {
+            content = content + "<p style='text-align:center'>" + entry["title"] + "<br>";
+        }
+        if (entry["locationName"] != null) {
+            content = content + entry["locationName"] + "<br>";
+        }
+        if (entry["startTime"] != null) {
+            content = content + "<br>Start Time: " + entry["startTime"] + "<br>";
+        }
+
+        if (entry["endTime"] != null) {
+            content = content + "End Time: " + entry["endTime"] + "<br>";
+        }
+        if (entry["description"] != null) {
+            if (entry["description"] != null) {
+                content = content + "<br>Description: " + entry["description"] + "<br></p>";
             }
-            if ("description" in entry) {
-                if (entry["description"] != null) {
-                    content = content + "<br>Description: " + entry["description"] + "<br></p>";
+        }
+
+        //show the marker and add listener
+        if (champion != null) {
+
+            champion.marker.setVisible(true);
+            champion.marker.addListener('click', function(event) {
+                showMarkerInfo(event, this, content);
+            });
+
+            if (last_click == null) {
+                if ($('#info_div').css('display') != 'none') { //info div is shown
+                    // Center map adjusted
+                    var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
+                    map.panTo(pos);
+                } else {
+                    var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"])) };
+                    map.panTo(pos);
                 }
             }
 
-            //show the marker and add listener
-            if (champion != null) {
 
-                champion.marker.setVisible(true);
-                champion.marker.addListener('click', function(event) {
-                    showMarkerInfo(event, this, content);
-                });
-
-                if (last_click == null) {
-                    if ($('#info_div').css('display') != 'none') { //info div is shown
-                        // Center map adjusted
-                        var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
-                        map.panTo(pos);
-                    } else {
-                        var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"])) };
-                        map.panTo(pos);
-                    }
-                }
-
-
-            }
         }
     }
 }
@@ -100,6 +198,8 @@ $('#new-input').on('input', function() {
     } else {
         console.log(val);
         if (val in event_dict) {
+            last_click = null;
+            console.log('showEventInfo');
             showEventInfo(event_dict[val]);
         }
     }
@@ -112,12 +212,95 @@ function timeRange() {
     dataList.empty();
     if (do_once) { //events haven't been collected yet
         toggleSearch();
+        do_once = false;
     }
     for (key in event_dict) {
         if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
             if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
                 dataList.append("<option value=" + key + ">");
             }
+        }
+    }
+}
+
+function collectEvents(rule, collection) {
+    console.log(collection);
+
+    var xhttp;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    var hostname = window.location.hostname;
+    if (hostname.search('tigermaps') != -1) {
+        xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/" + collection, false);
+    } else { 
+        //development mode
+        xhttp.open("GET", "http://localhost:8080/fetch/" + collection, false);
+    }
+
+    xhttp.onreadystatechange = handleReadyStateChange;
+    xhttp.send(null);
+
+    function handleReadyStateChange() {
+        if (xhttp.readyState === 4) {
+            if (xhttp.status === 200) {
+                // Parse the JSON
+                var jsonOptions = JSON.parse(xhttp.response);
+
+                // Loop over the JSON array.
+                jsonOptions.forEach(function(entry) {
+                    if ("title" in entry) {
+                        //console.log(entry['title']);
+                        var toAdd = {};
+                        //store the relevant information for future reference
+                        if ("longitude" in entry) {
+                            toAdd["longitude"] = entry["longitude"];
+                        }
+                        if ("latitude" in entry) {
+                            toAdd["latitude"] = entry["latitude"];
+                        }
+                        if ("locationName" in entry) {
+                            toAdd["locationName"] = entry["locationName"];
+                        }
+                        if ("startTime" in entry) {
+                            toAdd["startTime"] = entry["startTime"];
+                        }
+                        if ("endTime" in entry) {
+                            toAdd["endTime"] = entry["endTime"];
+                        }
+                        if ("description" in entry) {
+                            toAdd["description"] = entry["description"]; 
+                        }
+                        if (entry['title'] != null) {
+                            var title = decodeXml(entry['title'].replace(/\s/g, ''));
+                            toAdd["title"] = decodeXml(entry["title"]);
+                            event_dict[title] = toAdd;
+                        } else {
+                            //Don't store any event that cannot be indexed by title
+                        }
+                    
+                    }
+
+                });
+
+                //console.log('going forth');
+
+                if (rule == 2) {
+                    //console.log('going forth');
+                    collectEvents(1,'usgEvents');
+                }
+
+            } else {
+                // An error occured :(
+                console.log("Couldn't load datalist options :(");
+            }
+        } else {
+            // An error occured :(
+            console.log("Couldn't load datalist options :(");
         }
     }
 }
@@ -131,7 +314,7 @@ function toggleSearch() {
 
         //unpopulate dataList
         var dataList = $('#titles');
-        var input = $('#new-input');
+        dataList.empty();
 
         //removes all child elements
         //dataList.remove();
@@ -144,91 +327,29 @@ function toggleSearch() {
         if (do_once) {
             do_once = false;
 
-            //populate dataList
+            //clear dataList 
             var dataList = $('#titles');
-            var input = $('#new-input');
+            dataList.empty();
 
-            var xhttp;
-            if (window.XMLHttpRequest) {
-                xhttp = new XMLHttpRequest();
+            //clear event_dict (storage)
+            event_dict = {};
+
+            if (loggedIn()) {
+                collectEvents(2, 'puEvents');
             } else {
-                // code for IE6, IE5
-                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                collectEvents(1, 'puEvents');
             }
 
-            var hostname = window.location.hostname;
-            if (hostname.search('tigermaps') != -1) {
-                if (loggedIn()) {
-                    //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
-                    xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-                } else {
-                    xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-                }
-            } else {
-                if (loggedIn()) {
-                    //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
-                    xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-                } else {
-                    xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-                }
-            }
+            //console.log('complete');
 
-            xhttp.onreadystatechange = handleReadyStateChange;
-            xhttp.send(null);
-
-            function handleReadyStateChange() {
-                if (xhttp.readyState === 4) {
-                    if (xhttp.status === 200) {
-                        // Parse the JSON
-                        var jsonOptions = JSON.parse(xhttp.response);
-
-                        // Loop over the JSON array.
-                        jsonOptions.forEach(function(entry) {
-                            if ("title" in entry) {
-
-                                var toAdd = {};
-                                //store the relevant information for future reference
-                                toAdd["latitude"] = entry["latitude"];
-                                toAdd["longitude"] = entry["longitude"];
-
-                                if ("locationName" in entry) {
-                                    toAdd["locationName"] = entry["locationName"];
-                                }
-                                if ("startTime" in entry) {
-                                    toAdd["startTime"] = entry["startTime"];
-                                }
-                                if ("endTime" in entry) {
-                                    toAdd["endTime"] = entry["endTime"];
-                                }
-                                if ("description" in entry) {
-                                    if (entry["description"] != null) {
-                                        toAdd["description"] = entry["description"];
-                                    }
-                                }
-
-                                event_dict[entry['title'].replace(/\s/g, '')] = toAdd;
-
-                            }
-
-                        });
-
-                        //restrict dataList based on time slider
-                        for (key in event_dict) {
-                            if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
-                                if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
-                                    dataList.append("<option value=" + key + ">");
-                                }
-                            }
-                        }
-
-
-                    } else {
-                        // An error occured :(
-                        console.log("Couldn't load datalist options :(");
+            //populate the dataList but restrict it based on time slider
+            for (key in event_dict) {
+                //console.log('key');
+                if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
+                    if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
+                        dataList.append("<option value=" + key + ">");
+                        //console.log('appended' + key);
                     }
-                } else {
-                    // An error occured :(
-                    console.log("Couldn't load datalist options :(");
                 }
             }
         } //do_once end
@@ -304,7 +425,9 @@ function getNearestPolygon(lat, lng, callback) {
 
     // Run callback on the champion polygon
     if (champion != null && callback !== undefined && callback !== null) {
-        toggle_bounds.extend(champion.center);
+        if (toggle_bounds != null) {
+            toggle_bounds.extend(champion.center);
+        }
         callback(champion);
     }
 
@@ -318,16 +441,33 @@ function showFoodPlaces() {
     if (last_click != null) {
         if (last_click == 'food') {
             food = 1; //downclick event, no other button affected
-            $('#' + last_click + '_button').css('background-color', '#fff');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+            }
             last_click = null;
         } else { //intercept event, keep change last_click to food
-            $('#' + last_click + '_button').css('background-color', '#fff');
-            $('#food_button').css('background-color', '#ffb347');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+                $('#food_button_v').css('background-color', '#ffb347');
+                console.log('orange');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+                $('#food_button').css('background-color', '#ffb347');
+                console.log('orange');
+            }
             last_click = 'food';
         }
         unhighlightAll();
     } else { //upclick event
-        $('#food_button').css('background-color', '#ffb347');
+        if (inVertical()) {
+            $('#food_button_v').css('background-color', '#ffb347');
+            console.log('orange');
+        } else {
+            $('#food_button').css('background-color', '#ffb347');
+            console.log('orange');          
+        }
         last_click = 'food';
     }
 
@@ -414,21 +554,34 @@ function showPrinterPlaces() {
     if (last_click != null) {
         if (last_click == 'printer') {
             printer = 1; //downclick event, no other button affected
-            $('#' + last_click + '_button').css('background-color', '#fff');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+            }  
             last_click = null;
         } else { //intercept event, keep change last_click to printer
-            $('#' + last_click + '_button').css('background-color', '#fff');
-            $('#printer_button').css('background-color', '#ffb347');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+                $('#printer_button_v').css('background-color', '#ffb347');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+                $('#printer_button').css('background-color', '#ffb347');
+            }
             last_click = 'printer';
         }
         unhighlightAll();
     } else { //upclick event
-        $('#printer_button').css('background-color', '#ffb347');
+        if (inVertical()) {
+            $('#printer_button_v').css('background-color', '#ffb347');
+        } else {
+            $('#printer_button').css('background-color', '#ffb347');
+        }
         last_click = 'printer';
     }
 
     //clear boundary variable
-    toggle_bounds = new google.maps.LatLngBounds;
+    toggle_bounds = new google.maps.LatLngBounds();
 
     if (printer != 1) { //first time clicking
         var xhttp;
@@ -506,21 +659,40 @@ function showLaundryPlaces() {
     if (last_click != null) {
         if (last_click == 'laundry') {
             laundry = 1; //downclick event, no other button affected
-            $('#' + last_click + '_button').css('background-color', '#fff');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+            }
             last_click = null;
         } else { //intercept event, keep change last_click to laundry
             $('#' + last_click + '_button').css('background-color', '#fff');
-            $('#laundry_button').css('background-color', '#ffb347');
+            if (inVertical()) {
+                $('#laundry_button_v').css('background-color', '#ffb347');
+                console.log('orange');
+            } else {
+                $('#laundry_button').css('background-color', '#ffb347');
+                console.log('orange');
+            }
             last_click = 'laundry'
         }
         unhighlightAll();
+
     } else { //upclick event
-        $('#laundry_button').css('background-color', '#ffb347');
+
+        if (inVertical()) {
+            $('#laundry_button_v').css('background-color', '#ffb347');
+            console.log('orange');
+        } else {
+            $('#laundry_button').css('background-color', '#ffb347');
+            console.log('orange');
+        }
+        
         last_click = 'laundry';
     }
 
     //clear boundary variable
-    toggle_bounds = new google.maps.LatLngBounds;
+    toggle_bounds = new google.maps.LatLngBounds();
 
     if (laundry != 1) { //first time clicking
         var xhttp;
@@ -600,37 +772,10 @@ function showLaundryPlaces() {
     } //end of if statement
 } // end of function
 
+
+/*
+
 function showEvents() {
-    var xhttp;
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    } else {
-        // code for IE6, IE5
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    //Uncomment below when developing
-    var hostname = window.location.hostname;
-    if (hostname.search('tigermaps') != -1) {
-        if (loggedIn()) {
-            //xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/usgEvents", true);
-            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-        } else {
-            xhttp.open("GET", "https://tigermaps.herokuapp.com/fetch/puEvents", true);
-        }
-    } else {
-        if (loggedIn()) {
-            //console.log('loggedin');
-            //xhttp.open("GET", "http://localhost:8080/fetch/usgEvents", true);
-            xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-        } else {
-            //console.log('not loggedin');
-            xhttp.open("GET", "http://localhost:8080/fetch/puEvents", true);
-        }
-    }
-
-    xhttp.onreadystatechange = handleReadyStateChange;
-    xhttp.send(null);
-
     function handleReadyStateChange() {
         if (xhttp.readyState == 4) {
             if (xhttp.status == 200) {
@@ -644,12 +789,26 @@ function showEvents() {
                     showEventInfo(entry);
                 });
                 
-                //adjust boundaries of map
-                map.fitBounds(toggle_bounds);
-
             }
         }
-    } //end of handleReadyStateChange()
+    } 
+}
+*/
+
+function showEvents() { //keeping this function seperate allows us to update event results in real time
+                        //when slider is manipulated
+    if (do_once) { //collect all event data
+        toggleSearch();
+        do_once = false;
+    }
+
+    for (key_title in event_dict) {
+        console.log(key_title);
+        showEventInfo(event_dict[key_title]);
+    }
+
+    //adjust boundaries of map
+    map.fitBounds(toggle_bounds);
 }
 
 function showEventPlaces() {
@@ -659,24 +818,37 @@ function showEventPlaces() {
     if (last_click != null) {
         if (last_click == 'events') {
             events = 1; //downclick event, no other button affected
-            $('#' + last_click + '_button').css('background-color', '#fff');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+            }
             last_click = null;
         } else { //intercept event, keep change last_click to events
-            $('#' + last_click + '_button').css('background-color', '#fff');
-            $('#events_button').css('background-color', '#ffb347');
+            if (inVertical()) {
+                $('#' + last_click + '_button_v').css('background-color', '#fff');
+            } else {
+                $('#' + last_click + '_button').css('background-color', '#fff');
+            }
             last_click = 'events';
         }
         unhighlightAll();
     } else { //upclick event
-        $('#events_button').css('background-color', '#ffb347');
+        if (inVertical()) {
+            $('#events_button').css('background-color', '#ffb347');
+        } else {
+            $('#events_button').css('background-color', '#ffb347');
+        }
         last_click = 'events';
     }
 
     //clear boundary variable
-    toggle_bounds = new google.maps.LatLngBounds;
+    toggle_bounds = new google.maps.LatLngBounds();
 
     if (events != 1) { //first time clicking
+
         showEvents();
+
     } //end of if statement
 } // end of function
 
