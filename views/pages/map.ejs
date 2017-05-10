@@ -140,6 +140,32 @@
             color: black;
         }
         
+        .removePathButton {
+            background-color: #405472;
+            color: white;
+            border: 2px solid #405472;
+            padding: 4px 4px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 4px 4px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+            position: absolute;
+            top: 0.25em;
+            right: 70%;
+            width: 5em;
+            height: auto;
+        }
+        
+        .removePathButton:hover {
+            background-color: white;
+            color: black;
+        }
+        
         .showInfoButton {
             background-color: #6d1725;
             color: white;
@@ -358,6 +384,8 @@
                     <!--<button type="button" class="walkMeButton" onclick="drawPathToCoords()">Walk Me Here!</button>-->
     </div>
 
+    <button type="button" id="removePathButton" class="removePathButton" onclick="clearPath()" style="display: none;">Remove Path</button>
+
     <input id="pac-input" class="controls" style="position:absolute; z-index:3;height:30px;width:40%;border-radius:5px;font-size:18px;border: 1px solid black; left: 30%; top: 0.5em;" type="text" placeholder="&nbsp Search For Places Here">
 
     <input id="new-input" class="controls" style="display: none; position:absolute; z-index:3;height:30px;width:40%;border-radius:5px;font-size:18px;border: 1px solid black; left: 30%; top: 0.5em;" type="text" placeholder="&nbsp Search For Events Here" list="titles">
@@ -407,46 +435,39 @@
     </div>
 
 
+    <!--
+    <div id="vertical_container" style="width: auto; position: absolute; z-index: 3; right: 0em; display: none; height: 180px; width: 100px">
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px; width: 75px;" id="events_button_v" onclick="showEventPlaces()">
+            <p class="toggle-texts">Events</p>
+        </div>
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="food_button_v" onclick="showFoodPlaces()">
+            <p class="toggle-texts">Food</p>
+        </div>
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="laundry_button_v" onclick="showLaundryPlaces()">
+            <p class="toggle-texts">Laundry</p>
+        </div>
+        <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="printer_button_v" onclick="showPrinterPlaces()">
+            <p class="toggle-texts">Printers</p>
+        </div>
 
+    </div>
 
+    <div id="horizontal_container" style="width: auto; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
+        <div class="toggle-buttons" id="events_button" style="margin-right: 15px; margin-left: 5em;" onclick="showEventPlaces()">
+            <p class="toggle-texts">Events</p>
+        </div>
+        <div class="toggle-buttons" id="food_button" style="margin-right: 15px;" onclick="showFoodPlaces()">
+            <p class="toggle-texts">Food</p>
+        </div>
+        <div class="toggle-buttons" id="laundry_button" style="margin-right: 15px;" onclick="showLaundryPlaces()">
+            <p class="toggle-texts">Laundry</p>
+        </div>
+        <div class="toggle-buttons" id="printer_button" onclick="showPrinterPlaces()">
+            <p class="toggle-texts">Printers</p>
+        </div>
 
-
-
-
-
-
-
-    <!--<div id="vertical_container" style="width: auto; position: absolute; z-index: 3; right: 0em; display: none; height: 180px; width: 100px">
-                    <div class="toggle-buttons" style="display: inline-block; margin-top: 10px; width: 75px;" id="events_button" onclick="showEventPlaces()">
-                        <p class="toggle-texts">Events</p>
-                    </div>
-                    <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="food_button" onclick="showFoodPlaces()">
-                        <p class="toggle-texts">Food</p>
-                    </div>
-                    <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="laundry_button" onclick="showLaundryPlaces()">
-                        <p class="toggle-texts">Laundry</p>
-                    </div>
-                    <div class="toggle-buttons" style="display: inline-block; margin-top: 10px;width: 75px;" id="printer_button" onclick="showPrinterPlaces()">
-                        <p class="toggle-texts">Printers</p>
-                    </div>
-
-                </div>
-
-                <div id="horizontal_container" style="width: auto; position: absolute; z-index: 3; bottom: 2em; display: block; height: 40px;">
-                    <div id="div1" class="toggle-buttons" id="events_button" style="margin-right: 15px; margin-left: 5em;" onclick="showEventPlaces()">
-                        <p class="toggle-texts">Events</p>
-                    </div>
-                    <div id="div2" class="toggle-buttons" id="food_button" style="margin-right: 15px;" onclick="showFoodPlaces()">
-                        <p class="toggle-texts">Food</p>
-                    </div>
-                    <div id="div3" class="toggle-buttons" id="laundry_button" style="margin-right: 15px;" onclick="showLaundryPlaces()">
-                        <p class="toggle-texts">Laundry</p>
-                    </div>
-                    <div id="div4" class="toggle-buttons" id="printer_button" onclick="showPrinterPlaces()">
-                        <p class="toggle-texts">Printers</p>
-                    </div>
-
-                </div>-->
+    </div>
+    -->
 
 
 </body>

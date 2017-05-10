@@ -49,6 +49,7 @@ function drawPathToCoords(name, lat, lng) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setMap(map);
                     directionsDisplay.setDirections(response);
+                    $('#removePathButton').css('display', 'block');
                 } else {
                     console.log("Directions failed");
                 }
@@ -65,6 +66,7 @@ function drawPathToCoords(name, lat, lng) {
                     if (status == google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setMap(map);
                         directionsDisplay.setDirections(response);
+                        $('#removePathButton').css('display', 'block');
                     } else {
                         console.log("Directions failed");
                     }
@@ -76,4 +78,5 @@ function drawPathToCoords(name, lat, lng) {
 
 function clearPath() {
     directionsDisplay.setMap(null);
+    $('#removePathButton').css('display', 'none');
 }

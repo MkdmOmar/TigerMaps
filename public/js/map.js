@@ -214,7 +214,8 @@ function createSearchBox() {
             //panTo its location
             console.log(place.geometry.location);
             var latitude = place.geometry.location.lat();
-            var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
+            var longitude = place.geometry.location.lng();
+            //var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
             map.panTo({ 'lat': latitude, 'lng': longitude });
         });
         //map.fitBounds(bounds);
@@ -230,7 +231,7 @@ function initMap(pos) {
             center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             streetViewControl: false,
-            zoomControl: false,
+            zoomControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControlOptions: {
                 mapTypeIds: []
@@ -406,10 +407,13 @@ function showMarkerInfo(event, pMarker, info) {
 
 
     // Center map on info window location
-    //map.panTo(pMarker.position);
+    map.panTo(pMarker.position);
+
+    /*
     var latitude = pMarker.position.lat();
     var longitude = parseFloat(pMarker.position.lng()) - parseFloat(0.002);
     map.panTo({ 'lat': latitude, 'lng': longitude });
+    */
 }
 
 function showPolygonInfo(event, polygon) {
@@ -434,7 +438,8 @@ function showPolygonInfo(event, polygon) {
             }
         );
 
-        if ($('#info_div').css('display') != 'none') { //info div is shown
+        //if ($('#info_div').css('display') != 'none') { //info div is shown
+        if (false) {
             // Center map adjusted
             var latitude = polygon.center.lat();
             var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
