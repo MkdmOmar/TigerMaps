@@ -40,8 +40,8 @@ $("#oneInfoWindow").click(function() {
 function setZoomPanBounds() {
     // Map bounds
     var allowedBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(40.329950, -74.670505),
-        new google.maps.LatLng(40.356531, -74.639470)
+        new google.maps.LatLng(40.339739, -74.667018),
+        new google.maps.LatLng(40.355313, -74.642077)
     );
     var minZoom = 15;
     var lastValidCenter = map.getCenter();
@@ -399,10 +399,16 @@ function showMarkerInfo(event, pMarker, info) {
     }
     if (info == "") {
         info = "<p>Nothing here!</p>";
+        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+    } else {
+        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
     }
-    $('#info_div').html(info);
 
-    drawInfoWindow(pMarker.name, info, pMarker.position);
+
+    if ($('#left-panel-no-InfoWindow').css('display') == 'block') {
+        drawInfoWindow(pMarker.name, info, pMarker.position);
+    }
+
 
 
 
@@ -431,9 +437,14 @@ function showPolygonInfo(event, polygon) {
 
                 if (info == "") {
                     info = "<p>Nothing here!</p>";
+                    $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+                } else {
+                    $('#info_div').html("<b>" + polygon.name + "</b>" + info);
                 }
-                drawInfoWindow(polygon.name, info, polygon.center);
-                $('#info_div').html(info);
+
+                if ($('#left-panel-no-InfoWindow').css('display') == 'block') {
+                    drawInfoWindow(polygon.name, info, polygon.center);
+                }
 
             }
         );

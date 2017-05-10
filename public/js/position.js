@@ -132,6 +132,11 @@ function toggleInfo() {
         $('#left-panel-with-InfoWindow').css('display', 'initial');
         $('#left-panel-no-InfoWindow').css('display', 'none');
         //$('#info_hide').html('Hide Info');
+
+        // Remove previous info Windows
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
+        }
         toggle_info = 1;
     } else {
         $('#left-panel-with-InfoWindow').css('display', 'none');

@@ -7,8 +7,8 @@ const parser = require("./parser");
 var updateFreq = "0 * * * *";
 
 function updateDatabase() {
-  console.log("Scheduler: updated database");
-  parser.updateDB();
+  //console.log("Scheduler: updated database");
+  //parser.updateDB();
 }
 
 function start() {
