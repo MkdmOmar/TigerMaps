@@ -1,0 +1,14 @@
+Scheide Caldwell House
+[
+new google.maps.LatLng(-74.658609,40.349375),
+new google.maps.LatLng(-74.658459,40.349410),
+new google.maps.LatLng(-74.658459,40.349441),
+new google.maps.LatLng(-74.658446,40.349455),
+new google.maps.LatLng(-74.658494,40.349574),
+new google.maps.LatLng(-74.658518,40.349572),
+new google.maps.LatLng(-74.658534,40.349596),
+new google.maps.LatLng(-74.658687,40.349563),
+new google.maps.LatLng(-74.658668,40.349518),
+new google.maps.LatLng(-74.658684,40.349504),
+new google.maps.LatLng(-74.658620,40.349377)
+]

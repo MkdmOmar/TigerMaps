@@ -1,0 +1,15 @@
+Dod Hall
+[
+new google.maps.LatLng(-74.658861,40.346998),
+new google.maps.LatLng(-74.658810,40.346904),
+new google.maps.LatLng(-74.658786,40.346906),
+new google.maps.LatLng(-74.658676,40.346648),
+new google.maps.LatLng(-74.658701,40.346630),
+new google.maps.LatLng(-74.658658,40.346544),
+new google.maps.LatLng(-74.658470,40.346591),
+new google.maps.LatLng(-74.658518,40.346691),
+new google.maps.LatLng(-74.658534,40.346683),
+new google.maps.LatLng(-74.658647,40.346947),
+new google.maps.LatLng(-74.658682,40.347045),
+new google.maps.LatLng(-74.658851,40.347006)
+]

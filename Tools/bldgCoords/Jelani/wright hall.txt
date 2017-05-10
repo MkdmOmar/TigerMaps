@@ -1,0 +1,21 @@
+Wright Hall
+[
+new google.maps.LatLng(-74.657654,40.345690),
+new google.maps.LatLng(-74.657574,40.345479),
+new google.maps.LatLng(-74.657708,40.345414),
+new google.maps.LatLng(-74.657660,40.345338),
+new google.maps.LatLng(-74.657553,40.345389),
+new google.maps.LatLng(-74.657526,40.345383),
+new google.maps.LatLng(-74.657488,40.345430),
+new google.maps.LatLng(-74.657499,40.345461),
+new google.maps.LatLng(-74.657418,40.345500),
+new google.maps.LatLng(-74.657408,40.345510),
+new google.maps.LatLng(-74.657435,40.345540),
+new google.maps.LatLng(-74.657451,40.345540),
+new google.maps.LatLng(-74.657544,40.345747),
+new google.maps.LatLng(-74.657477,40.345773),
+new google.maps.LatLng(-74.657504,40.345837),
+new google.maps.LatLng(-74.657781,40.345771),
+new google.maps.LatLng(-74.657754,40.345675),
+new google.maps.LatLng(-74.657673,40.345700)
+]

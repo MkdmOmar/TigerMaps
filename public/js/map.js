@@ -227,7 +227,7 @@ function initMap(pos) {
         createSearchBox();
 
         //set toggle_bounds
-        var toggle_bounds = new google.maps.LatLngBounds();
+        toggle_bounds = new google.maps.LatLngBounds();
     });
 }
 

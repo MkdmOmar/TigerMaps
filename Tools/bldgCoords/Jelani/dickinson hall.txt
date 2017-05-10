@@ -1,0 +1,20 @@
+Dickinson Hall
+[
+new google.maps.LatLng(-74.656093,40.348637),
+new google.maps.LatLng(-74.655930,40.348668),
+new google.maps.LatLng(-74.655932,40.348686),
+new google.maps.LatLng(-74.655924,40.348703),
+new google.maps.LatLng(-74.655967,40.348748),
+new google.maps.LatLng(-74.656214,40.349034),
+new google.maps.LatLng(-74.656160,40.349081),
+new google.maps.LatLng(-74.656225,40.349159),
+new google.maps.LatLng(-74.656456,40.349063),
+new google.maps.LatLng(-74.656418,40.348995),
+new google.maps.LatLng(-74.656402,40.349005),
+new google.maps.LatLng(-74.656351,40.348946),
+new google.maps.LatLng(-74.656346,40.348946),
+new google.maps.LatLng(-74.656169,40.348729),
+new google.maps.LatLng(-74.656179,40.348721),
+new google.maps.LatLng(-74.656126,40.348658),
+new google.maps.LatLng(-74.656096,40.348641)
+]

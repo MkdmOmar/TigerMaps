@@ -1,0 +1,10 @@
+Dodge Hall
+[
+new google.maps.LatLng(-74.658049,40.347996),
+new google.maps.LatLng(-74.657966,40.347818),
+new google.maps.LatLng(-74.657823,40.347854),
+new google.maps.LatLng(-74.657917,40.348079),
+new google.maps.LatLng(-74.657987,40.348061),
+new google.maps.LatLng(-74.657963,40.348020),
+new google.maps.LatLng(-74.658033,40.348000)
+]
