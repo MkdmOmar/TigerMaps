@@ -53,12 +53,13 @@ var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.co
       }
     }
     else {
-      console.log("parser failure. Error: %d", xmlReq.status);
+      //console.log("parser failure. Error: %d", xmlReq.status);
       if (!returnResult) return null
     }
   };
 }*/
 
+// --------- String Helper Functions ---------
 function trim(str) {
     return str.replace(/^\s+|\s+$/g,'');
 }
@@ -72,6 +73,12 @@ function ReplaceAll(Source,stringToFind,stringToReplace){
         }
         return temp;
 }
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// --------- End String Helper Functions ---------
 
 
 // Retrieves a JSON object from a URL containing an XML feed.
@@ -94,7 +101,7 @@ function getFeed(webFeedURL, convert ,callback) {
   });
 
   req.on("error", function(error) {
-    console.error(error);
+    //console.error(error);
   });
 
   req.end();
@@ -106,7 +113,7 @@ function getAllFeeds(db) {
 
   // Public events collection
   getFeed(publicEventsURL, true, function(json) {
-    console.log("Retrieved Public Events Data");
+    //console.log("Retrieved Public Events Data");
     puEvents = json["events"]["event"];
     for (var i = 0; i < puEvents.length; i++){
       var doc = puEvents[i];
@@ -116,12 +123,12 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Public Events");
+    //console.log("Inserted Public Events");
   });
 
   // Dining collection
   getFeed(diningURL, true, function(json) {
-    console.log("Retrieved Dining Data");
+    //console.log("Retrieved Dining Data");
     dining = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < dining.length; i++){
       var doc = dining[i];
@@ -131,12 +138,12 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Dining Info");
+    //console.log("Inserted Dining Info");
   });
 
   // Printer collection
   getFeed(compPrintURL, true, function(json) {
-    console.log("Retrieved Computing and Printing Data");
+    //console.log("Retrieved Computing and Printing Data");
     printers = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < printers.length; i++){
       var doc = printers[i];
@@ -146,12 +153,12 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Printers Info");
+    //console.log("Inserted Printers Info");
   });
 
   // Locations collection
   getFeed(locationsURL, true, function(json) {
-    console.log("Retrieved Locations Data");
+    //console.log("Retrieved Locations Data");
     locations = json["locations"]["location"];
     for (var i = 0; i < locations.length; i++){
       var doc = locations[i];
@@ -161,12 +168,12 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Locations Info");
+    //console.log("Inserted Locations Info");
   });
 
   // Places collection
   getFeed(placesURL, true, function(json) {
-    console.log("Retrieved Places Data")
+    //console.log("Retrieved Places Data")
     places = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < places.length; i++){
       var doc = places[i];
@@ -176,13 +183,13 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Places Info");
+    //console.log("Inserted Places Info");
   });
 
 
   // USG events collection
   getFeed(USGEventsURL, true, function(json) {
-    console.log("Retrieved USG Events Data");
+    //console.log("Retrieved USG Events Data");
     usgEvents = json["events"]["event"];
     for (var i = 0; i < usgEvents.length; i++){
       var doc = usgEvents[i];
@@ -192,12 +199,12 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted USG Events ");
+    //console.log("Inserted USG Events ");
   });
 
   // Laundry collection
   getFeed(laundryURL, true, function(json) {
-    console.log("Retrieved Laundry Data");
+    //console.log("Retrieved Laundry Data");
     laundry = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < laundry.length; i++){
       var doc = laundry[i];
@@ -207,11 +214,11 @@ function getAllFeeds(db) {
         assert.notEqual(result, []);
       });
     }
-    console.log("Inserted Laundry Info");
+    //console.log("Inserted Laundry Info");
   });
 }
 
-function getMenu(meal, callback) {
+function getMenus(db, meal, callback) {
   var key = ""
   var url = "https://tigermenus.herokuapp.com/" + meal + "0"
   getFeed(url, false, function(food) {
@@ -228,9 +235,10 @@ function getMenu(meal, callback) {
       // populate menu object
       var menu = new Object();
       menu['name'] = hall;
+      menu['meal'] = meal;
       for (var j = 0; j < paragraphs.length; j++) {
         var text = paragraphs[j].firstChild.nodeValue;
-        if (text == "Lunch" || text == "Dinner") {}
+        if (text.toLowerCase() == meal) {}
         else if (text.includes("--")) {
           key = trim(ReplaceAll(text, "--", ""));
           menu[key] = new Array()
@@ -238,28 +246,28 @@ function getMenu(meal, callback) {
         else if (key != "")
           menu[key].push(text);
       }
-      callback(menu)
+
+      // updates menus in DB
+      db.collection('menus').update(menu, menu, { upsert: true }, function(err, result) {
+        if (err) throw err
+        assert.notEqual(result, null);
+        assert.notEqual(result, []);
+      });
+
+      if (callback) callback(menu)
     }
+    //console.log("Updated " + capitalize(meal) + " Menus");
   });
 }
-
-/*
-var elements = $("<div>").html(data)[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
-          for(var i = 0; i < elements.length; i++) {
-               var theText = elements[i].firstChild.nodeValue;
-               // Do something here
-          }
-*/
 
 function updateDB() {
   MongoClient.connect(uri, function(err, db) {
     assert.equal(null, err);
-    console.log("Connected successfully to server");
-    getMenu("lunch", function (menu) {
-      console.log(menu)
-    });
+    //console.log("Connected successfully to server");
 
-    //getAllFeeds(db);
+    getAllFeeds(db);
+    getMenus(db, "lunch");
+    getMenus(db, "dinner");
     //db.close(function (err) {
     //  if (err) throw err;
     //});
@@ -269,7 +277,7 @@ function updateDB() {
 function clearDB() {
   MongoClient.connect(uri, function(err, db) {
     assert.equal(null, err);
-    console.log("Connected successfully to server");
+    //console.log("Connected successfully to server");
 
     db.collection('puEvents').remove({});
     db.collection('dining').remove({});
@@ -278,7 +286,7 @@ function clearDB() {
     db.collection('places').remove({});
     db.collection('usgEvents').remove({});
     db.collection('laundry').remove({});
-    console.log("Database Cleared");
+    //console.log("Database Cleared");
   });
 }
 
