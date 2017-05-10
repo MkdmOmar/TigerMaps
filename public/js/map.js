@@ -430,7 +430,6 @@ function findPath(lat, lng) {
 
 function drawInfoWindow(title, info, position) {
 
-    console.log("destination: " + JSON.stringify(position));
     // InfoWindow content
     var content = '<div id="iw-container">' +
         '<div class="iw-title">' + title + '</div>' +
