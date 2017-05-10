@@ -1,5 +1,3 @@
-
-
 /*window.onclick = function() {
     var targetPolygon = selectedPolygon;
     var lat = targetPolygon.center.lat();
@@ -22,20 +20,18 @@ function getPlace(name, lat, lng, callback) {
                 while (pick < results.length - 1 && results[pick].name == "Princeton") {
                     pick++;
                 }
-                
+
                 var place = {
                     placeId: results[pick].place_id
                 }
                 callback(place);
-            }
-            else {
+            } else {
                 var place = {
                     location: new google.maps.LatLng(lat, lng)
                 }
                 callback(place);
             }
-        }
-        else {
+        } else {
             var place = {
                 location: new google.maps.LatLng(lat, lng)
             }
@@ -45,10 +41,11 @@ function getPlace(name, lat, lng, callback) {
 }
 
 function drawPathToCoords(name, lat, lng) {
-    geolocateCallback(function(userLoc) {
+
+    if (userLocation != null) {
         getPlace(name, lat, lng, function(targetPlace) {
             directionsService.route({
-                origin: new google.maps.LatLng(userLoc.lat, userLoc.lng),
+                origin: new google.maps.LatLng(userLocation.lat, userLocation.lng),
                 destination: targetPlace,
                 travelMode: google.maps.TravelMode.WALKING
             }, function(response, status) {
@@ -60,7 +57,24 @@ function drawPathToCoords(name, lat, lng) {
                 }
             });
         });
-    });
+    } else {
+        geolocateCallback(function(userLoc) {
+            getPlace(name, lat, lng, function(targetPlace) {
+                directionsService.route({
+                    origin: new google.maps.LatLng(userLoc.lat, userLoc.lng),
+                    destination: targetPlace,
+                    travelMode: google.maps.TravelMode.WALKING
+                }, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setMap(map);
+                        directionsDisplay.setDirections(response);
+                    } else {
+                        console.log("Directions failed");
+                    }
+                });
+            });
+        });
+    }
 }
 
 function clearPath() {

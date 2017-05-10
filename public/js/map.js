@@ -16,6 +16,7 @@ var current_location = null;
 var directionsService = null;
 var directionsDisplay = null;
 var placesService = null;
+var userLocation = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -60,7 +61,8 @@ function setZoomPanBounds() {
     });
 }
 
-// Gets the location of the user, if possible.
+// Gets the location of the user,
+// if possible.
 // Execute the given callback on the location of the user.
 function geolocateCallback(callback) {
     infoWindow = new google.maps.InfoWindow;
@@ -72,8 +74,8 @@ function geolocateCallback(callback) {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
-
-            callback(pos);
+            userLocation = pos;
+            callback(userLocation);
         }, function() {
             // Geolocation failed
             console.log("Geolocation service supported but failed.");
@@ -99,6 +101,8 @@ function geolocate() {
             drawInfoWindow("Location Found", "You are here!", pos);
 
             map.panTo(pos);
+
+            userLocation = pos;
 
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
