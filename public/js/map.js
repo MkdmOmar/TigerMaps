@@ -420,11 +420,21 @@ function showPolygonInfo(event, polygon) {
 }
 
 
+function findPath(lat, lng) {
+    var destination = {
+        latitude: lat,
+        longitude: lng
+    };
+    console.log("finding path to " + JSON.stringify(destination));
+}
+
 function drawInfoWindow(title, info, position) {
 
+    console.log("destination: " + JSON.stringify(position));
     // InfoWindow content
     var content = '<div id="iw-container">' +
         '<div class="iw-title">' + title + '</div>' +
+        '<button type="button" class="walkMeButton" onclick="findPath(' + position.lat + ',' + position.lng + ')">Walk Me Here!</button> <br>' +
         '<div class="iw-content">' + info +
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +
