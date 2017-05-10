@@ -300,7 +300,7 @@ function dbEntryMatch(entry, bldgName, lat, lng) {
     }
 }
 
-// Ferch ALL info for a building specified by the URL query
+// Fetch ALL info for a building specified by the URL query
 app.get("/fetch/buildingInfo", function(req, res) {
     var queryBuildingName = req.query.buildingName;
     var queryLat = req.query.lat;
@@ -349,6 +349,42 @@ app.get("/fetch/buildingInfo", function(req, res) {
                     collections[i].find().toArray(processCollection(collectionName));
                 }
             }
+        }
+    });
+});
+
+// Fetch meal menu info for a given dining hall
+// Use it like this: http://localhost:8080/fetch/menuInfo?dhall=Rocky
+app.get("/fetch/menuInfo", function(req, res) {
+    var dhall = req.query.dhall;
+    if (dhall === "Wilson") {
+        dhall = "Butler"; // hackyness because why not
+    }
+    console.log("fetching dining hall: " + dhall);
+    var ignoreKeys = [ "_id", "name", "meal" ];
+    var response = {};
+
+    db.collection("menus").find().toArray(function(err, docs) {
+        if (err) {
+            handleError(res, err.message, "Failed to get menu information.");
+        } else {
+            var result = {
+                lunch: {},
+                dinner: {}
+            };
+            for (var i = 0; i < docs.length; i++) {
+                var commonWords = findCommonWords(docs[i].name, dhall);
+                if (commonWords.length > 0) {
+                    //console.log(commonWords[0]);
+                    for (var key in docs[i]) {
+                        if (docs[i].hasOwnProperty(key) && ignoreKeys.indexOf(key) === -1) {
+                            result[docs[i].meal][key] = docs[i][key];
+                        }
+                    }
+                }
+            }
+            console.log(result);
+            res.status(200).json(result);
         }
     });
 });
