@@ -13,11 +13,14 @@ function loggedIn() {
 }
 
 function inVertical() {
+    return false;
+    /*
     if ($('#vertical_container').css('display') == 'none') {
         return false;
     } else {
         return true;
     }
+    */
 }
 
 //xml_special_to_escaped_one_map , escaped_one_to_xml_special_map
@@ -107,11 +110,17 @@ function showEventInfo(entry) {
     //dataList options absed on slider values
     var proceed = false;
 
-    if (entry['startTime'] != null && entry['endTime'] != null) {
-        if (parseInt(entry['startTime'].substring(0, 2)) >= start) {
-            if (parseInt(entry['endTime'].substring(0, 2)) <= end) {
-                proceed = true;
-                //console.log('proceed');
+    if ('startTime' in entry && 'endTime' in entry && 'startDate' in entry && 'endDate' in entry) {
+        if (parseInt(entry['startTime'].substring(0, 2)) >= start_time) {
+            if (parseInt(entry['endTime'].substring(0, 2)) <= end_time) {
+                var startDate = new Date(entry['startDate']).getTime();
+                var endDate = new Date(entry['endDate']).getTime();
+                if (startDate >= dates[start_date].getTime()) {
+                    if (endDate <= dates[end_date].getTime()) {
+                        proceed = true;
+                        console.log('proceed');
+                    }
+                }
             }
         }
     } else {
@@ -175,7 +184,8 @@ function goProceed(entry) {
             });
 
             if (last_click == null) {
-                if ($('#info_div').css('display') != 'none') { //info div is shown
+                //if ($('#info_div').css('display') != 'none') { //info div is shown
+                if (false) {
                     // Center map adjusted
                     var pos = { lat: parseFloat(entry["latitude"]), lng: (parseFloat(entry["longitude"]) - 0.002) };
                     map.panTo(pos);
@@ -215,9 +225,15 @@ function timeRange() {
         do_once = false;
     }
     for (key in event_dict) {
-        if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
-            if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
-                dataList.append("<option value=" + key + ">");
+        if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
+            if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
+                var startDate = new Date(entry['startDate']).getTime();
+                var endDate = new Date(entry['endDate']).getTime();
+                if (startDate >= dates[start_date].getTime()) {
+                    if (endDate <= dates[end_date].getTime()) {
+                        dataList.append("<option value=" + key + ">");
+                    }
+                }
             }
         }
     }
@@ -342,13 +358,17 @@ function toggleSearch() {
 
             //console.log('complete');
 
-            //populate the dataList but restrict it based on time slider
+            //restrict dataList based on time slider
             for (key in event_dict) {
-                //console.log('key');
-                if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
-                    if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
-                        dataList.append("<option value=" + key + ">");
-                        //console.log('appended' + key);
+                if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
+                    if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
+                        var startDate = new Date(event_dict['startDate']).getTime();
+                        var endDate = new Date(event_dict['endDate']).getTime();
+                        if (startDate >= dates[start_date].getTime()) {
+                            if (endDate <= dates[end_date].getTime()) {
+                                dataList.append("<option value=" + key + ">");
+                            }
+                        }
                     }
                 }
             }
@@ -537,7 +557,7 @@ function showFoodPlaces() {
                         }
 
                     });
-    
+
                     //adjust boundaries of map
                     map.fitBounds(toggle_bounds);
                 }
@@ -788,7 +808,6 @@ function showEvents() {
                 puEventsList.forEach(function(entry) {
                     showEventInfo(entry);
                 });
-                
             }
         }
     } 
@@ -803,7 +822,7 @@ function showEvents() { //keeping this function seperate allows us to update eve
     }
 
     for (key_title in event_dict) {
-        console.log(key_title);
+        //console.log(key_title);
         showEventInfo(event_dict[key_title]);
     }
 
@@ -1022,8 +1041,6 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
 
                 // if (info["laundry"].length != 0)
                 //     content = content + "</p>";
-
-                console.log(content);
 
                 callback(content);
             }

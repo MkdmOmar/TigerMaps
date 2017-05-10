@@ -14,10 +14,14 @@ This is just for development purposes only.
 var MongoClient = require('mongodb').MongoClient
 const https = require("https");
 var assert = require("assert");
+var jsdom = require('node-jsdom').jsdom;
+var document = jsdom('<html></html>', {});
+var window = document.defaultView;
+var $ = require('jquery')(window);
+var toJson = require("./xml2json");
+
 // TODO unused
 //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
-var toJson = require("./xml2json");
 
 // datafeed URIs
 var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
@@ -55,16 +59,37 @@ var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.co
   };
 }*/
 
+function trim(str) {
+    return str.replace(/^\s+|\s+$/g,'');
+}
+
+function ReplaceAll(Source,stringToFind,stringToReplace){
+  var temp = Source;
+    var index = temp.indexOf(stringToFind);
+        while(index != -1){
+            temp = temp.replace(stringToFind,stringToReplace);
+            index = temp.indexOf(stringToFind);
+        }
+        return temp;
+}
+
+
 // Retrieves a JSON object from a URL containing an XML feed.
-function getFeed(webFeedURL, callback) {
+function getFeed(webFeedURL, convert ,callback) {
   const req = https.request(webFeedURL, function(response) {
     let str = ""
     response.on("data", function(data) {
       str += data;
     });
     response.on("end", function(data) {
-      var json = toJson.xml2json(str, "");
-      callback(json);
+      if (convert) {
+        var json = toJson.xml2json(str, "");
+        if (callback) callback(json);
+        return json;
+      } else {
+        if (callback) callback(str);
+        return str;
+      }
     });
   });
 
@@ -80,7 +105,7 @@ function getAllFeeds(db) {
   var puEvents, dining, printers, locations, places, usgEvents, laundry
 
   // Public events collection
-  getFeed(publicEventsURL, function(json) {
+  getFeed(publicEventsURL, true, function(json) {
     console.log("Retrieved Public Events Data");
     puEvents = json["events"]["event"];
     for (var i = 0; i < puEvents.length; i++){
@@ -95,7 +120,7 @@ function getAllFeeds(db) {
   });
 
   // Dining collection
-  getFeed(diningURL, function(json) {
+  getFeed(diningURL, true, function(json) {
     console.log("Retrieved Dining Data");
     dining = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < dining.length; i++){
@@ -110,7 +135,7 @@ function getAllFeeds(db) {
   });
 
   // Printer collection
-  getFeed(compPrintURL, function(json) {
+  getFeed(compPrintURL, true, function(json) {
     console.log("Retrieved Computing and Printing Data");
     printers = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < printers.length; i++){
@@ -125,7 +150,7 @@ function getAllFeeds(db) {
   });
 
   // Locations collection
-  getFeed(locationsURL, function(json) {
+  getFeed(locationsURL, true, function(json) {
     console.log("Retrieved Locations Data");
     locations = json["locations"]["location"];
     for (var i = 0; i < locations.length; i++){
@@ -140,7 +165,7 @@ function getAllFeeds(db) {
   });
 
   // Places collection
-  getFeed(placesURL, function(json) {
+  getFeed(placesURL, true, function(json) {
     console.log("Retrieved Places Data")
     places = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < places.length; i++){
@@ -156,7 +181,7 @@ function getAllFeeds(db) {
 
 
   // USG events collection
-  getFeed(USGEventsURL, function(json) {
+  getFeed(USGEventsURL, true, function(json) {
     console.log("Retrieved USG Events Data");
     usgEvents = json["events"]["event"];
     for (var i = 0; i < usgEvents.length; i++){
@@ -171,7 +196,7 @@ function getAllFeeds(db) {
   });
 
   // Laundry collection
-  getFeed(laundryURL, function(json) {
+  getFeed(laundryURL, true, function(json) {
     console.log("Retrieved Laundry Data");
     laundry = json["places"]["places"]["PLPlace"];
     for (var i = 0; i < laundry.length; i++){
@@ -186,12 +211,55 @@ function getAllFeeds(db) {
   });
 }
 
+function getMenu(meal, callback) {
+  var key = ""
+  var url = "https://tigermenus.herokuapp.com/" + meal + "0"
+  getFeed(url, false, function(food) {
+    // parse the HTML response to get menu items
+    var elements = $("<div>").html(food)[0].getElementsByClassName("container")[0].getElementsByClassName("row")[0].getElementsByClassName("col-sm-2");
+    for (var i = 0; i < elements.length; i++)
+    {
+      // all the elements with a <p> tag
+      paragraphs = elements[i].getElementsByTagName("p");
+      hall = elements[i].getElementsByTagName("h3")[0].firstChild.nodeValue
+      if (hall == "Ro / Ma") hall = "Rocky / Mathey"
+      else if (hall == "CJL" || hall == "Grad") continue;
+
+      // populate menu object
+      var menu = new Object();
+      menu['name'] = hall;
+      for (var j = 0; j < paragraphs.length; j++) {
+        var text = paragraphs[j].firstChild.nodeValue;
+        if (text == "Lunch" || text == "Dinner") {}
+        else if (text.includes("--")) {
+          key = trim(ReplaceAll(text, "--", ""));
+          menu[key] = new Array()
+        }
+        else if (key != "")
+          menu[key].push(text);
+      }
+      callback(menu)
+    }
+  });
+}
+
+/*
+var elements = $("<div>").html(data)[0].getElementsByTagName("ul")[0].getElementsByTagName("li");
+          for(var i = 0; i < elements.length; i++) {
+               var theText = elements[i].firstChild.nodeValue;
+               // Do something here
+          }
+*/
+
 function updateDB() {
   MongoClient.connect(uri, function(err, db) {
     assert.equal(null, err);
     console.log("Connected successfully to server");
+    getMenu("lunch", function (menu) {
+      console.log(menu)
+    });
 
-    getAllFeeds(db);
+    //getAllFeeds(db);
     //db.close(function (err) {
     //  if (err) throw err;
     //});
@@ -211,9 +279,6 @@ function clearDB() {
     db.collection('usgEvents').remove({});
     db.collection('laundry').remove({});
     console.log("Database Cleared");
-    db.close(function (err) {
-      if (err) throw err;
-    });
   });
 }
 
@@ -221,3 +286,5 @@ module.exports = {
   updateDB: updateDB,
   clearDB: clearDB
 };
+
+updateDB();

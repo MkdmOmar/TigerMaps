@@ -6,10 +6,17 @@ var previousHighlight = null;
 var previousHighlights = [];
 var polygons = [];
 var markers = [];
-var start = 8;
-var end = 22;
+var start_time = 0;
+var end_time = 23;
+var start_date = 0;
+var end_date = 6;
 var toggle_bounds = null;
 var current_location = null;
+// --- for path.js ---
+var directionsService = null;
+var directionsDisplay = null;
+var placesService = null;
+var userLocation = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -54,6 +61,30 @@ function setZoomPanBounds() {
     });
 }
 
+// Gets the location of the user,
+// if possible.
+// Execute the given callback on the location of the user.
+function geolocateCallback(callback) {
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            userLocation = pos;
+            callback(userLocation);
+        }, function() {
+            // Geolocation failed
+            console.log("Geolocation service supported but failed.");
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        console.log("Browser doesn't support geolocation.");
+    }
+}
 
 // Center map on location of user, if possible
 function geolocate() {
@@ -70,6 +101,8 @@ function geolocate() {
             drawInfoWindow("Location Found", "You are here!", pos);
 
             map.panTo(pos);
+
+            userLocation = pos;
 
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -156,7 +189,7 @@ function createSearchBox() {
                 previousHighlight = null;
             }
 
-            //highlight current searched place 
+            //highlight current searched place
             var champion = null;
             var minimum = Number.MAX_VALUE;
             var contender = Number.MAX_VALUE;
@@ -181,7 +214,8 @@ function createSearchBox() {
             //panTo its location
             console.log(place.geometry.location);
             var latitude = place.geometry.location.lat();
-            var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
+            var longitude = place.geometry.location.lng();
+            //var longitude = parseFloat(place.geometry.location.lng()) - parseFloat(0.002);
             map.panTo({ 'lat': latitude, 'lng': longitude });
         });
         //map.fitBounds(bounds);
@@ -197,6 +231,7 @@ function initMap(pos) {
             center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             streetViewControl: false,
+            zoomControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControlOptions: {
                 mapTypeIds: []
@@ -226,7 +261,14 @@ function initMap(pos) {
         // Create map search box
         createSearchBox();
 
-        //set toggle_bounds
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setOptions({
+            preserveViewport: true,
+            suppressMarkers: true
+        });
+        placesService = new google.maps.places.PlacesService(map);
+
         toggle_bounds = new google.maps.LatLngBounds();
     });
 }
@@ -285,7 +327,6 @@ function drawPolygons() {
         // Assign the polygon to the map
         myPolygon.setMap(map);
 
-
         /*
         MUST USE 'this' TO AVOID CLOSURE!!!!!
 
@@ -310,7 +351,7 @@ function drawPolygons() {
             var toggle = false;
             var _this = this;
 
-            //only unhighlight if not in toggle mode 
+            //only unhighlight if not in toggle mode
             previousHighlights.forEach(function(current) {
 
                 if (_this == current.polygon || _this === current.polygon) {
@@ -330,7 +371,7 @@ function drawPolygons() {
                     if (center_current.lng == polygon.center.lng) {
                         console.log('hmm');
                         toggle = true;
-                    }                  
+                    }
                 }
                 */
             });
@@ -349,37 +390,33 @@ function drawPolygons() {
 
 
 function showMarkerInfo(event, pMarker, info) {
-    if ($('#info_div').css('display') == 'none') { //info div is hidden so show info in infoWindow
 
-        // If !showAllInfoWindows, close previous infowindows
-        if (!showAllInfoWindows && infoWindows.length != 0) {
-            for (var i = 0; i < infoWindows.length; i++) {
-                infoWindows[i].close();
-            }
+    // If !showAllInfoWindows, close previous infowindows
+    if (!showAllInfoWindows && infoWindows.length != 0) {
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
         }
-
-        drawInfoWindow(pMarker.name, info, pMarker.position);
-
-    } else {
-
-        //info div is not hidden show info in info_div
-        if (typeof(info) === undefined) {
-            $('#info_div').html("You clicked on " + pMarker.name + "!");
-        } else {
-            $('#info_div').html(info);
-        }
-
     }
+    if (info == "") {
+        info = "<p>Nothing here!</p>";
+    }
+    $('#info_div').html(info);
+
+    drawInfoWindow(pMarker.name, info, pMarker.position);
+
+
 
     // Center map on info window location
-    //map.panTo(pMarker.position);
+    map.panTo(pMarker.position);
+
+    /*
     var latitude = pMarker.position.lat();
     var longitude = parseFloat(pMarker.position.lng()) - parseFloat(0.002);
     map.panTo({ 'lat': latitude, 'lng': longitude });
+    */
 }
 
 function showPolygonInfo(event, polygon) {
-
     if (last_click == null) {
         unhighlightAll();
 
@@ -389,23 +426,20 @@ function showPolygonInfo(event, polygon) {
                 infoWindows[i].close();
             }
         }
-
         getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
             function(info) {
-                if ($('#info_div').css('display') == 'none') { //info div is hidden 
 
-                    if (info == "") {
-                        info = "<p>Nothing here!</p>";
-                    }
-                    drawInfoWindow(polygon.name, info, polygon.center);
-
-                } else {
-                    $('#info_div').html(content);
+                if (info == "") {
+                    info = "<p>Nothing here!</p>";
                 }
+                drawInfoWindow(polygon.name, info, polygon.center);
+                $('#info_div').html(info);
+
             }
         );
 
-        if ($('#info_div').css('display') != 'none') { //info div is shown
+        //if ($('#info_div').css('display') != 'none') { //info div is shown
+        if (false) {
             // Center map adjusted
             var latitude = polygon.center.lat();
             var longitude = parseFloat(polygon.center.lng()) - parseFloat(0.002);
@@ -419,21 +453,25 @@ function showPolygonInfo(event, polygon) {
     }
 }
 
-
-function findPath(lat, lng) {
-    var destination = {
-        latitude: lat,
-        longitude: lng
-    };
-    console.log("finding path to " + JSON.stringify(destination));
-}
-
 function drawInfoWindow(title, info, position) {
+    clearPath();
+    var lat = position.lat;
+    var lng = position.lng;
+    //console.log("lat is of type " + typeof position.lat);
+    //console.log("lng is of type " + typeof position.lng);
+
+    if (typeof lat !== 'number' || typeof lng !== 'number') {
+        //console.log("converting lat and lng to number");
+        lat = position.lat();
+        lng = position.lng();
+    }
+    //console.log("position is: lat " + lat + '   lng ' + lng);
+
 
     // InfoWindow content
     var content = '<div id="iw-container">' +
         '<div class="iw-title">' + title + '</div>' +
-        '<button type="button" class="walkMeButton" onclick="findPath(' + position.lat + ',' + position.lng + ')">Walk Me Here!</button> <br>' +
+        '<button type="button" class="walkMeButton" onclick="drawPathToCoords(\'' + title + '\',' + lat + ',' + lng + ')">Walk Me Here!</button> <br>' +
         '<div class="iw-content">' + info +
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +
