@@ -1,0 +1,12 @@
+1937 Hall
+[
+new google.maps.LatLng(-74.655932,40.345919),
+new google.maps.LatLng(-74.656038,40.345867),
+new google.maps.LatLng(-74.656064,40.345901),
+new google.maps.LatLng(-74.656383,40.345747),
+new google.maps.LatLng(-74.656445,40.345832),
+new google.maps.LatLng(-74.656158,40.345963),
+new google.maps.LatLng(-74.656139,40.345940),
+new google.maps.LatLng(-74.655998,40.346004),
+new google.maps.LatLng(-74.655943,40.345926)
+]

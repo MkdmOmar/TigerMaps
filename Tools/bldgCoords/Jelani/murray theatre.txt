@@ -1,0 +1,19 @@
+Murray Theatre
+[
+new google.maps.LatLng(-74.657781,40.348059),
+new google.maps.LatLng(-74.657722,40.347908),
+new google.maps.LatLng(-74.657563,40.347953),
+new google.maps.LatLng(-74.657633,40.348102),
+new google.maps.LatLng(-74.657646,40.348139),
+new google.maps.LatLng(-74.657638,40.348171),
+new google.maps.LatLng(-74.657673,40.348190),
+new google.maps.LatLng(-74.657676,40.348202),
+new google.maps.LatLng(-74.657764,40.348182),
+new google.maps.LatLng(-74.657764,40.348163),
+new google.maps.LatLng(-74.657775,40.348145),
+new google.maps.LatLng(-74.657735,40.348114),
+new google.maps.LatLng(-74.657732,40.348098),
+new google.maps.LatLng(-74.657716,40.348098),
+new google.maps.LatLng(-74.657700,40.348087),
+new google.maps.LatLng(-74.657767,40.348067)
+]

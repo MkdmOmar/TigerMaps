@@ -1,0 +1,19 @@
+Woolworth Center For Musical Studies
+[
+new google.maps.LatLng(-74.656162,40.347266),
+new google.maps.LatLng(-74.655977,40.347128),
+new google.maps.LatLng(-74.655963,40.347139),
+new google.maps.LatLng(-74.655845,40.346997),
+new google.maps.LatLng(-74.655544,40.347138),
+new google.maps.LatLng(-74.655629,40.347250),
+new google.maps.LatLng(-74.655592,40.347262),
+new google.maps.LatLng(-74.655639,40.347305),
+new google.maps.LatLng(-74.655721,40.347470),
+new google.maps.LatLng(-74.655794,40.347437),
+new google.maps.LatLng(-74.655809,40.347472),
+new google.maps.LatLng(-74.656095,40.347405),
+new google.maps.LatLng(-74.656089,40.347391),
+new google.maps.LatLng(-74.656148,40.347381),
+new google.maps.LatLng(-74.656091,40.347280),
+new google.maps.LatLng(-74.656152,40.347269)
+]

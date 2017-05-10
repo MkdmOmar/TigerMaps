@@ -1,0 +1,18 @@
+Whig Hall
+[
+new google.maps.LatLng(-74.658757,40.347910),
+new google.maps.LatLng(-74.658738,40.347848),
+new google.maps.LatLng(-74.658776,40.347834),
+new google.maps.LatLng(-74.658709,40.347705),
+new google.maps.LatLng(-74.658572,40.347738),
+new google.maps.LatLng(-74.658572,40.347717),
+new google.maps.LatLng(-74.658553,40.347701),
+new google.maps.LatLng(-74.658532,40.347711),
+new google.maps.LatLng(-74.658523,40.347732),
+new google.maps.LatLng(-74.658542,40.347750),
+new google.maps.LatLng(-74.658486,40.347765),
+new google.maps.LatLng(-74.658542,40.347897),
+new google.maps.LatLng(-74.658593,40.347889),
+new google.maps.LatLng(-74.658617,40.347944),
+new google.maps.LatLng(-74.658733,40.347920)
+]
