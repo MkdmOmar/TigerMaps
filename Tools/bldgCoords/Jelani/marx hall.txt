@@ -1,0 +1,25 @@
+Marx Hall
+[
+new google.maps.LatLng(-74.655703,40.348248),
+new google.maps.LatLng(-74.655679,40.348179),
+new google.maps.LatLng(-74.655725,40.348162),
+new google.maps.LatLng(-74.655695,40.348119),
+new google.maps.LatLng(-74.655711,40.348111),
+new google.maps.LatLng(-74.655548,40.347897),
+new google.maps.LatLng(-74.655513,40.347908),
+new google.maps.LatLng(-74.655391,40.347751),
+new google.maps.LatLng(-74.655285,40.347803),
+new google.maps.LatLng(-74.655403,40.347955),
+new google.maps.LatLng(-74.655375,40.347972),
+new google.maps.LatLng(-74.655423,40.348036),
+new google.maps.LatLng(-74.655447,40.348048),
+new google.maps.LatLng(-74.655447,40.348059),
+new google.maps.LatLng(-74.655534,40.348177),
+new google.maps.LatLng(-74.655553,40.348170),
+new google.maps.LatLng(-74.655558,40.348176),
+new google.maps.LatLng(-74.655548,40.348189),
+new google.maps.LatLng(-74.655552,40.348216),
+new google.maps.LatLng(-74.655578,40.348221),
+new google.maps.LatLng(-74.655600,40.348270),
+new google.maps.LatLng(-74.655692,40.348251)
+]

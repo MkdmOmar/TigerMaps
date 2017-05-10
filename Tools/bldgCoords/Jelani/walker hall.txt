@@ -1,0 +1,18 @@
+Walker Hall
+[
+new google.maps.LatLng(-74.657194,40.345712),
+new google.maps.LatLng(-74.657106,40.345523),
+new google.maps.LatLng(-74.657012,40.345418),
+new google.maps.LatLng(-74.656586,40.345612),
+new google.maps.LatLng(-74.656608,40.345635),
+new google.maps.LatLng(-74.656567,40.345661),
+new google.maps.LatLng(-74.656603,40.345705),
+new google.maps.LatLng(-74.656905,40.345577),
+new google.maps.LatLng(-74.656902,40.345533),
+new google.maps.LatLng(-74.656946,40.345515),
+new google.maps.LatLng(-74.657017,40.345586),
+new google.maps.LatLng(-74.657070,40.345706),
+new google.maps.LatLng(-74.657102,40.345700),
+new google.maps.LatLng(-74.657119,40.345738),
+new google.maps.LatLng(-74.657188,40.345719)
+]

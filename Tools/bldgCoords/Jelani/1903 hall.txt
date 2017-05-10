@@ -1,0 +1,18 @@
+1903 Hall
+[
+new google.maps.LatLng(-74.657376,40.346101),
+new google.maps.LatLng(-74.657408,40.346213),
+new google.maps.LatLng(-74.657314,40.346235),
+new google.maps.LatLng(-74.657292,40.346215),
+new google.maps.LatLng(-74.656957,40.346299),
+new google.maps.LatLng(-74.656917,40.346217),
+new google.maps.LatLng(-74.656933,40.346209),
+new google.maps.LatLng(-74.656791,40.345900),
+new google.maps.LatLng(-74.657139,40.345802),
+new google.maps.LatLng(-74.657137,40.345775),
+new google.maps.LatLng(-74.657207,40.345757),
+new google.maps.LatLng(-74.657274,40.345870),
+new google.maps.LatLng(-74.656930,40.345962),
+new google.maps.LatLng(-74.657035,40.346193),
+new google.maps.LatLng(-74.657362,40.346107)
+]

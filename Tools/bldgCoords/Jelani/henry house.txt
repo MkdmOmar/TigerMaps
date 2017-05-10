@@ -1,0 +1,11 @@
+Henry House
+[
+new google.maps.LatLng(-74.659055,40.349461),
+new google.maps.LatLng(-74.658996,40.349312),
+new google.maps.LatLng(-74.658947,40.349244),
+new google.maps.LatLng(-74.658829,40.349271),
+new google.maps.LatLng(-74.658840,40.349294),
+new google.maps.LatLng(-74.658778,40.349314),
+new google.maps.LatLng(-74.658864,40.349508),
+new google.maps.LatLng(-74.659041,40.349463)
+]

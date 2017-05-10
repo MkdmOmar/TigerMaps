@@ -1,0 +1,23 @@
+Brown Hall
+[
+[
+new google.maps.LatLng(-74.658081,40.346466),
+new google.maps.LatLng(-74.657661,40.346573),
+new google.maps.LatLng(-74.657551,40.346310),
+new google.maps.LatLng(-74.657971,40.346203),
+new google.maps.LatLng(-74.658081,40.346460)
+
+],
+[
+new google.maps.LatLng(-74.657919,40.346425),
+new google.maps.LatLng(-74.657900,40.346384),
+new google.maps.LatLng(-74.657936,40.346378),
+new google.maps.LatLng(-74.657904,40.346305),
+new google.maps.LatLng(-74.657675,40.346364),
+new google.maps.LatLng(-74.657699,40.346419),
+new google.maps.LatLng(-74.657728,40.346427),
+new google.maps.LatLng(-74.657752,40.346465),
+new google.maps.LatLng(-74.657908,40.346430),
+
+]
+]
