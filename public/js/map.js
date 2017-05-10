@@ -399,9 +399,9 @@ function showMarkerInfo(event, pMarker, info) {
     }
     if (info == "") {
         info = "<p>Nothing here!</p>";
-        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+        $('#info_div').html("<b>" + pMarker.name + "</b>" + info);
     } else {
-        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+        $('#info_div').html("<b>" + pMarker.name + "</b>" + info);
     }
 
 
