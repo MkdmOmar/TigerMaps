@@ -230,7 +230,7 @@ function initMap(pos) {
             center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             streetViewControl: false,
-            zoomControl: false,
+            zoomControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControlOptions: {
                 mapTypeIds: []
