@@ -553,14 +553,61 @@ function showFoodPlaces() {
                     //find current toggle buildings
                     dining.forEach(function(dhall) {
                         var champion = getNearestPolygon(dhall["latitude"], dhall["longitude"], highlightPolygon);
+                        var dhall_name = dhall["name"].split(' ')[0];
 
                         //create content
                         var content = "";
+                        content = content + '<div class="iw-subTitle">' + dhall["name"] + "<br>" + dhall["building_name"] + '</div>' + "<p style=''>" + "";
+                        
+                        //fetch data synchronously
+                        var xreq;
+                        if (window.XMLHttpRequest) {
+                            xreq = new XMLHttpRequest();
+                        } else {
+                            // code for IE6, IE5
+                            xreq = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        //Uncomment below when developing
+                        var hostname = window.location.hostname;
+                        if (hostname.search('tigermaps') != -1) {
+                            xreq.open("GET", "https://tigermaps.herokuapp.com/fetch/menuInfo?dhall=" + dhall_name, false);
+                        } else { 
+                            xreq.open("GET", "http://localhost:8080/fetch/menuInfo?dhall=" + dhall_name, false);
+                        }
+
+                        xreq.onreadystatechange = handleChange;
+                        xreq.send(null);
+
+                        function handleChange() {
+                            if (xreq.readyState == 4) {
+                                if (xreq.status == 200) {
+                                    var menu = JSON.parse(xreq.response);
+                                    content = content + "<span style='text-align:center'> Lunch: </span>";
+                                    for (var descriptor in menu.lunch) {
+                                        content = content + "<br><br>" + descriptor + " : ";
+                                        menu.lunch[descriptor].forEach(function(item){
+                                        content = content + "<br>" + item;
+                                        });
+                                    }  
+                                    content = content + "<br><br><br><span style='text-align:center'> Dinner: </span>";
+                                    for (var descriptor in menu.dinner) {
+                                        content = content + "<br><br>" + descriptor + " : ";
+                                        menu.dinner[descriptor].forEach(function(item){
+                                        content = content + "<br>" + item;
+                                        });
+                                    }  
+                                }
+                            }
+                        }
+
+
+                        /*
                         var day = null;
                         var d = new Date();
                         if (d.getDay() == 0) { day = "Sunday"; } else if (d.getDay() == 1) { day = "Monday"; } else if (d.getDay() == 1) { day = "Tuesday"; } else if (d.getDay() == 1) { day = "Wednesday"; } else if (d.getDay() == 1) { day = "Thursday"; } else if (d.getDay() == 1) { day = "Friday"; } else { day = "Saturday"; }
+                        */
 
-                        content = content + '<div class="iw-subTitle">' + dhall["name"] + "<br>" + dhall["building_name"] + '</div>' + "<p style='text-align:center'>" + "<br><br>";
+                        /*
                         if (day != null) {
                             var days = dhall["times"]["day"];
                             var toAdd = "";
@@ -576,6 +623,9 @@ function showFoodPlaces() {
                             content = content + toAdd;
                         }
                         content = content + "<br><a target='_blank' href='https://campusdining.princeton.edu/dining/_foodpro/location.asp'>Check Out The Menu</a></p>";
+                        */
+
+                        content = content + "</p>";
 
                         //show the marker and add listener
                         if (champion != null) {
