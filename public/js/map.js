@@ -399,10 +399,16 @@ function showMarkerInfo(event, pMarker, info) {
     }
     if (info == "") {
         info = "<p>Nothing here!</p>";
+        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+    } else {
+        $('#info_div').html("<b>" + polygon.name + "</b>" + info);
     }
-    $('#info_div').html(info);
 
-    drawInfoWindow(pMarker.name, info, pMarker.position);
+
+    if ($('#left-panel-no-InfoWindow').css('display') == 'block') {
+        drawInfoWindow(pMarker.name, info, pMarker.position);
+    }
+
 
 
 
@@ -431,9 +437,14 @@ function showPolygonInfo(event, polygon) {
 
                 if (info == "") {
                     info = "<p>Nothing here!</p>";
+                    $('#info_div').html("<b>" + polygon.name + "</b>" + info);
+                } else {
+                    $('#info_div').html("<b>" + polygon.name + "</b>" + info);
                 }
-                drawInfoWindow(polygon.name, info, polygon.center);
-                $('#info_div').html(info);
+
+                if ($('#left-panel-no-InfoWindow').css('display') == 'block') {
+                    drawInfoWindow(polygon.name, info, polygon.center);
+                }
 
             }
         );
