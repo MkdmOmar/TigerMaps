@@ -21,22 +21,19 @@ function getPlace(name, lat, lng, callback) {
                     pick++;
                 }
 
-                var place = {
-                    placeId: results[pick].place_id
+                if (results[pick].name !== "Princeton") {
+                    var place = {
+                        placeId: results[pick].place_id
+                    }
+                    callback(place);
+                    return;
                 }
-                callback(place);
-            } else {
-                var place = {
-                    location: new google.maps.LatLng(lat, lng)
-                }
-                callback(place);
             }
-        } else {
-            var place = {
-                location: new google.maps.LatLng(lat, lng)
-            }
-            callback(place);
         }
+        var place = {
+            location: new google.maps.LatLng(lat, lng)
+        }
+        callback(place);
     });
 }
 
