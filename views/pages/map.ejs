@@ -140,6 +140,32 @@
             color: black;
         }
         
+        .removePathButton {
+            background-color: #405472;
+            color: white;
+            border: 2px solid #405472;
+            padding: 4px 4px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 4px 4px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+            position: absolute;
+            top: 0.25em;
+            right: 70%;
+            width: 5em;
+            height: auto;
+        }
+        
+        .removePathButton:hover {
+            background-color: white;
+            color: black;
+        }
+        
         .showInfoButton {
             background-color: #6d1725;
             color: white;
@@ -357,6 +383,8 @@
 
                     <!--<button type="button" class="walkMeButton" onclick="drawPathToCoords()">Walk Me Here!</button>-->
     </div>
+
+    <button type="button" id="removePathButton" class="removePathButton" onclick="clearPath()" style="display: none;">Remove Path</button>
 
     <input id="pac-input" class="controls" style="position:absolute; z-index:3;height:30px;width:40%;border-radius:5px;font-size:18px;border: 1px solid black; left: 30%; top: 0.5em;" type="text" placeholder="&nbsp Search For Places Here">
 
