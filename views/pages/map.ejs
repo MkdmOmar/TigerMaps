@@ -16,7 +16,7 @@
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-        
+
         #map {
             margin: 0;
             padding: 0;
@@ -24,23 +24,23 @@
             max-width: 100%;
         }
         /* Optional: Makes the sample page fill the window. */
-        
+
         html,
         body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        
+
         .checkboxes {
             background: white;
         }
-        
+
         .notLoggedIn,
         .loggedIn {
             background: white;
         }
-        
+
         .toggle-buttons {
             background-color: #fff;
             border: 2px solid #888;
@@ -52,7 +52,7 @@
             width: 100px;
             height: auto;
         }
-        
+
         .toggle-search {
             background-color: #fff;
             border: 2px solid #888;
@@ -64,11 +64,11 @@
             width: auto;
             height: auto;
         }
-        
+
         .toggle-search:hover {
             background-color: #ffb347;
         }
-        
+
         .toggle-texts {
             font-family: Roboto, Arial, sans-serif;
             color: black;
@@ -123,13 +123,23 @@
     </div>
 
     <div style="border: 3px solid blackl width: auto, height: auto">
-        <div id="slider-range" style="position:absolute; z-index:3;line-height:25px;height:15px;left:1em; top: 1em;width:60%;border:3px solid black">
+        <div id="time-slider" style="position:absolute; z-index:3;line-height:25px;height:15px;left:12em;top:1em;width:45%;border:3px solid black">
+        </div>
+    </div>
+
+    <div style="border: 3px solid blackl width: auto, height: auto">
+        <div id="date-slider" style="position:absolute; z-index:3;line-height:25px;height:15px;left:12em;top:4.7em;width:45%;border:3px solid black">
         </div>
     </div>
 
     <div id='time_range' style="position:absolute; z-index:3;line-height:20px;line-height:20px; top: 3em;left:1em;width:150px;background-color:white;border-radius:5px;border:2px solid black">
-        <label style="display:inline-block" for="amount">Time Range (Hours):</label>
-        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;display:inline-block">
+        <label style="display:inline-block" for="time-range">Time Range (Hours):</label>
+        <input type="text" id="time-range" readonly style="border:0; color:#f6931f; font-weight:bold;display:inline-block;width:80%">
+    </div>
+
+    <div id='date_range' style="position:absolute; z-index:3;line-height:20px;line-height:20px; top: 4em;left:1em;width:150px;background-color:white;border-radius:5px;border:2px solid black">
+        <label style="display:inline-block" for="date-range">Date Range (Dates):</label>
+        <input type="text" id="date-range" readonly style="border:0; color:#f6931f; font-weight:bold;display:inline-block;width:80%">
     </div>
 
     <!--
@@ -218,6 +228,7 @@
 <script src="js/toggle.js"></script>
 <script src="js/position.js"></script>
 <script src="js/slider.js"></script>
+<script src="js/path.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmXodltpMtvz-qW_EGFjh4PBDq83XIdxI&libraries=places&callback=initMap"></script>
 
 </html>

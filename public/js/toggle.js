@@ -27,11 +27,17 @@ function showEventInfo(entry) {
 
     var proceed = false;
 
-    if ('startTime' in entry && 'endTime' in entry) {
-        if (parseInt(entry['startTime'].substring(0, 2)) >= start) {
-            if (parseInt(entry['endTime'].substring(0, 2)) <= end) {
-                proceed = true;
-                console.log('proceed');
+    if ('startTime' in entry && 'endTime' in entry && 'startDate' in entry && 'endDate' in entry) {
+        if (parseInt(entry['startTime'].substring(0, 2)) >= start_time) {
+            if (parseInt(entry['endTime'].substring(0, 2)) <= end_time) {
+                var startDate = new Date(entry['startDate']).getTime();
+                var endDate = new Date(entry['endDate']).getTime();
+                if (startDate >= dates[start_date].getTime()) {
+                    if (endDate <= dates[end_date].getTime()) {
+                        proceed = true;
+                        console.log('proceed');
+                    }
+                }
             }
         }
     } else {
@@ -114,9 +120,15 @@ function timeRange() {
         toggleSearch();
     }
     for (key in event_dict) {
-        if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
-            if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
-                dataList.append("<option value=" + key + ">");
+        if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
+            if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
+                var startDate = new Date(entry['startDate']).getTime();
+                var endDate = new Date(entry['endDate']).getTime();
+                if (startDate >= dates[start_date].getTime()) {
+                    if (endDate <= dates[end_date].getTime()) {
+                        dataList.append("<option value=" + key + ">");
+                    }
+                }
             }
         }
     }
@@ -214,9 +226,15 @@ function toggleSearch() {
 
                         //restrict dataList based on time slider
                         for (key in event_dict) {
-                            if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start) {
-                                if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end) {
-                                    dataList.append("<option value=" + key + ">");
+                            if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
+                                if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
+                                    var startDate = new Date(entry['startDate']).getTime();
+                                    var endDate = new Date(entry['endDate']).getTime();
+                                    if (startDate >= dates[start_date].getTime()) {
+                                        if (endDate <= dates[end_date].getTime()) {
+                                            dataList.append("<option value=" + key + ">");
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -397,7 +415,7 @@ function showFoodPlaces() {
                         }
 
                     });
-    
+
                     //adjust boundaries of map
                     map.fitBounds(toggle_bounds);
                 }
@@ -643,7 +661,7 @@ function showEvents() {
                 puEventsList.forEach(function(entry) {
                     showEventInfo(entry);
                 });
-                
+
                 //adjust boundaries of map
                 map.fitBounds(toggle_bounds);
 
@@ -850,8 +868,6 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
 
                 // if (info["laundry"].length != 0)
                 //     content = content + "</p>";
-
-                console.log(content);
 
                 callback(content);
             }
