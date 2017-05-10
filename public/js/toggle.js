@@ -206,7 +206,7 @@ $('#new-input').on('input', function() {
     if (val == "") {
         unhighlightAll();
     } else {
-        console.log(val);
+        //console.log(val);
         if (val in event_dict) {
             last_click = null;
             console.log('showEventInfo');
@@ -224,16 +224,28 @@ function timeRange() {
         toggleSearch();
         do_once = false;
     }
+
+    //restrict dataList based on time slider
     for (key in event_dict) {
         if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
             if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
-                var startDate = new Date(entry['startDate']).getTime();
-                var endDate = new Date(entry['endDate']).getTime();
-                if (startDate >= dates[start_date].getTime()) {
-                    if (endDate <= dates[end_date].getTime()) {
-                        dataList.append("<option value=" + key + ">");
-                    }
+                //console.log('should be adding ' + key);
+                if ("startDate" in event_dict[key] && "endDate" in event_dict[key]) {
+                    var startDate = new Date(event_dict[key]['startDate']).getTime();
+                    var endDate = new Date(event_dict[key]['endDate']).getTime();
+                    if (startDate >= dates[start_date].getTime()) {
+                        if (endDate <= dates[end_date].getTime()) {
+                            //console.log('adding ' + key);
+                            //dataList.append("<option value=" + key + ">");
+                            dataList.append("<option>" + key + "</option>");
+                        }
+                    }                            
+                } else {
+                    //console.log('adding ' + key);
+                    //dataList.append("<option value=" + key + ">");
+                    dataList.append("<option>" + key + "</option>");
                 }
+
             }
         }
     }
@@ -291,10 +303,16 @@ function collectEvents(rule, collection) {
                         if ("description" in entry) {
                             toAdd["description"] = entry["description"]; 
                         }
+                        if ("startDate" in entry) {
+                            toAdd["startDate"] = entry["startDate"];
+                        }
+                        if ("endDate" in entry) {
+                            toAdd["endDate"] = entry["endDate"];
+                        }
                         if (entry['title'] != null) {
                             var title = decodeXml(entry['title'].replace(/\s/g, ''));
                             toAdd["title"] = decodeXml(entry["title"]);
-                            event_dict[title] = toAdd;
+                            event_dict[toAdd["title"]] = toAdd;
                         } else {
                             //Don't store any event that cannot be indexed by title
                         }
@@ -356,19 +374,30 @@ function toggleSearch() {
                 collectEvents(1, 'puEvents');
             }
 
-            //console.log('complete');
+            console.log('complete');
+
 
             //restrict dataList based on time slider
             for (key in event_dict) {
                 if (parseInt(event_dict[key]['startTime'].substring(0, 2)) >= start_time) {
                     if (parseInt(event_dict[key]['endTime'].substring(0, 2)) <= end_time) {
-                        var startDate = new Date(event_dict['startDate']).getTime();
-                        var endDate = new Date(event_dict['endDate']).getTime();
-                        if (startDate >= dates[start_date].getTime()) {
-                            if (endDate <= dates[end_date].getTime()) {
-                                dataList.append("<option value=" + key + ">");
-                            }
+                        //console.log('should be adding ' + key);
+                        if ("startDate" in event_dict[key] && "endDate" in event_dict[key]) {
+                            var startDate = new Date(event_dict[key]['startDate']).getTime();
+                            var endDate = new Date(event_dict[key]['endDate']).getTime();
+                            if (startDate >= dates[start_date].getTime()) {
+                                if (endDate <= dates[end_date].getTime()) {
+                                    //console.log('adding ' + key);
+                                    //dataList.append("<option value=" + key + ">");
+                                    dataList.append("<option>" + key + "</option>");
+                                }
+                            }                            
+                        } else {
+                            //console.log('adding ' + key);
+                            //dataList.append("<option value=" + key + ">");
+                            dataList.append("<option>" + key + "</option>");
                         }
+
                     }
                 }
             }

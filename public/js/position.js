@@ -131,12 +131,12 @@ function toggleInfo() {
     if (toggle_info == 0) {
         $('#left-panel-with-InfoWindow').css('display', 'initial');
         $('#left-panel-no-InfoWindow').css('display', 'none');
-        $('#info_hide').html('Hide Info');
+        //$('#info_hide').html('Hide Info');
         toggle_info = 1;
     } else {
         $('#left-panel-with-InfoWindow').css('display', 'none');
         $('#left-panel-no-InfoWindow').css('display', 'initial');
-        $('#info_hide').html('Show Info');
+        //$('#info_hide').html('Show Info');
         toggle_info = 0;
     }
 
