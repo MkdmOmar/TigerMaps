@@ -1,0 +1,16 @@
+Feinberg Hall
+[
+new google.maps.LatLng(-74.656616,40.345831),
+new google.maps.LatLng(-74.656572,40.345731),
+new google.maps.LatLng(-74.656521,40.345742),
+new google.maps.LatLng(-74.656519,40.345732),
+new google.maps.LatLng(-74.656485,40.345743),
+new google.maps.LatLng(-74.656489,40.345749),
+new google.maps.LatLng(-74.656443,40.345764),
+new google.maps.LatLng(-74.656481,40.345865),
+new google.maps.LatLng(-74.656521,40.345858),
+new google.maps.LatLng(-74.656543,40.345899),
+new google.maps.LatLng(-74.656598,40.345889),
+new google.maps.LatLng(-74.656578,40.345841),
+new google.maps.LatLng(-74.656608,40.345837)
+]

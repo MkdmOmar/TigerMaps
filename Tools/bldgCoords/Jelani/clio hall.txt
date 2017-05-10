@@ -1,0 +1,16 @@
+Clio Hall
+[
+new google.maps.LatLng(-74.659269,40.347783),
+new google.maps.LatLng(-74.659242,40.347715),
+new google.maps.LatLng(-74.659291,40.347699),
+new google.maps.LatLng(-74.659229,40.347560),
+new google.maps.LatLng(-74.659189,40.347574),
+new google.maps.LatLng(-74.659175,40.347538),
+new google.maps.LatLng(-74.659009,40.347572),
+new google.maps.LatLng(-74.659038,40.347613),
+new google.maps.LatLng(-74.658996,40.347626),
+new google.maps.LatLng(-74.659060,40.347760),
+new google.maps.LatLng(-74.659100,40.347750),
+new google.maps.LatLng(-74.659130,40.347818),
+new google.maps.LatLng(-74.659250,40.347787)
+]

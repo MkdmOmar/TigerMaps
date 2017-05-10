@@ -1,0 +1,14 @@
+Cuyler Hall
+[
+new google.maps.LatLng(-74.657609,40.346162),
+new google.maps.LatLng(-74.657488,40.345849),
+new google.maps.LatLng(-74.657502,40.345833),
+new google.maps.LatLng(-74.657472,40.345775),
+new google.maps.LatLng(-74.657453,40.345780),
+new google.maps.LatLng(-74.657443,40.345763),
+new google.maps.LatLng(-74.657416,40.345759),
+new google.maps.LatLng(-74.657397,40.345726),
+new google.maps.LatLng(-74.657298,40.345747),
+new google.maps.LatLng(-74.657477,40.346188),
+new google.maps.LatLng(-74.657590,40.346164)
+]

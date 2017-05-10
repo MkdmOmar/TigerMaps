@@ -12,6 +12,11 @@ var start_date = 0;
 var end_date = 6;
 var toggle_bounds = null;
 var current_location = null;
+// --- for path.js ---
+var selectedPolygon = null;
+var directionsService = null;
+var directionsDisplay = null;
+var placesService = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -56,6 +61,29 @@ function setZoomPanBounds() {
     });
 }
 
+// Gets the location of the user, if possible.
+// Execute the given callback on the location of the user.
+function geolocateCallback(callback) {
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            callback(pos);
+        }, function() {
+            // Geolocation failed
+            console.log("Geolocation service supported but failed.");
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        console.log("Browser doesn't support geolocation.");
+    }
+}
 
 // Center map on location of user, if possible
 function geolocate() {
@@ -199,6 +227,7 @@ function initMap(pos) {
             center: { lat: 40.34663, lng: -74.6565801 },
             zoom: 17,
             streetViewControl: false,
+            zoomControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControlOptions: {
                 mapTypeIds: []
@@ -228,8 +257,15 @@ function initMap(pos) {
         // Create map search box
         createSearchBox();
 
-        //set toggle_bounds
-        var toggle_bounds = new google.maps.LatLngBounds();
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+        directionsDisplay.setOptions({
+            preserveViewport: true,
+            suppressMarkers: true
+        });
+        placesService = new google.maps.places.PlacesService(map);
+        
+        toggle_bounds = new google.maps.LatLngBounds();
     });
 }
 
@@ -381,6 +417,7 @@ function showMarkerInfo(event, pMarker, info) {
 }
 
 function showPolygonInfo(event, polygon) {
+    selectedPolygon = polygon;
 
     if (last_click == null) {
         unhighlightAll();
@@ -422,11 +459,32 @@ function showPolygonInfo(event, polygon) {
 }
 
 
+function findPath(lat, lng) {
+    var destination = {
+        latitude: lat,
+        longitude: lng
+    };
+    console.log("finding path to " + JSON.stringify(destination));
+}
+
 function drawInfoWindow(title, info, position) {
+    lat = position.lat;
+    lng = position.lng;
+    console.log("lat is of type " + typeof position.lat);
+    console.log("lng is of type " + typeof position.lng);
+
+    if (typeof lat !== 'number' || typeof lng !== 'number') {
+        console.log("converting lat and lng to number");
+        lat = position.lat();
+        lng = position.lng();
+    }
+    console.log("position is: lat " + lat + '   lng ' + lng);
+
 
     // InfoWindow content
     var content = '<div id="iw-container">' +
         '<div class="iw-title">' + title + '</div>' +
+        '<button type="button" class="walkMeButton" onclick="findPath(' + lat + ',' + lng + ')">Walk Me Here!</button> <br>' +
         '<div class="iw-content">' + info +
         '</div>' +
         '<div class="iw-bottom-gradient"></div>' +

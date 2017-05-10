@@ -1,0 +1,16 @@
+Chapel
+[
+new google.maps.LatLng(-74.656981,40.348913),
+new google.maps.LatLng(-74.657429,40.348756),
+new google.maps.LatLng(-74.657359,40.348633),
+new google.maps.LatLng(-74.656911,40.348787),
+new google.maps.LatLng(-74.656874,40.348723),
+new google.maps.LatLng(-74.656716,40.348772),
+new google.maps.LatLng(-74.656751,40.348838),
+new google.maps.LatLng(-74.656525,40.348922),
+new google.maps.LatLng(-74.656595,40.349042),
+new google.maps.LatLng(-74.656820,40.348964),
+new google.maps.LatLng(-74.656861,40.349018),
+new google.maps.LatLng(-74.657021,40.348964),
+new google.maps.LatLng(-74.657000,40.348919)
+]

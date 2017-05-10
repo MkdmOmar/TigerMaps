@@ -1,0 +1,8 @@
+Jones Hall
+[
+new google.maps.LatLng(-74.655731,40.346622),
+new google.maps.LatLng(-74.656160,40.346426),
+new google.maps.LatLng(-74.656016,40.346233),
+new google.maps.LatLng(-74.655581,40.346442),
+new google.maps.LatLng(-74.655710,40.346601)
+]

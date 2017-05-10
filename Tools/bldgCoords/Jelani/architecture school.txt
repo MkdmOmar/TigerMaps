@@ -1,0 +1,16 @@
+Architecture School
+[
+new google.maps.LatLng(-74.656225,40.347761),
+new google.maps.LatLng(-74.656144,40.347543),
+new google.maps.LatLng(-74.655927,40.347593),
+new google.maps.LatLng(-74.656005,40.347812),
+new google.maps.LatLng(-74.656100,40.347799),
+new google.maps.LatLng(-74.656134,40.347882),
+new google.maps.LatLng(-74.655975,40.347918),
+new google.maps.LatLng(-74.656037,40.348076),
+new google.maps.LatLng(-74.656615,40.347948),
+new google.maps.LatLng(-74.656560,40.347793),
+new google.maps.LatLng(-74.656211,40.347867),
+new google.maps.LatLng(-74.656175,40.347774),
+new google.maps.LatLng(-74.656217,40.347766)
+]
