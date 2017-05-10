@@ -272,8 +272,36 @@ function findCommonWords(str1, str2) {
 }
 
 function dbEntryMatch(entry, bldgName, lat, lng) {
-    var DIST_THRESH = 10.; // meters
 
+    if (parseFloat(entry["latitude"]) == 0.0 || parseFloat(entry["longitude"]) == 0.0 || entry["latitude"] == null || entry['longitude'] == null) {
+        var words = null;
+        if (entry["locationName"] != null) { 
+            //search by locationName words
+            words = entry["locationName"].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+            words = words.split(' ');
+        } else if (entry["title"] != null) {
+             //search by title words
+            words = entry["title"].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+            words = words.split(' '); 
+        }
+
+        if (words != null) {
+            for (var i = 0; i < words.length; i++) {
+                words[i] = words[i].toLowerCase();
+                //console.log(words[i]);
+            }
+
+            var keyword = bldgName.split(' ')[0].toLowerCase();
+            //console.log(keyword);
+            for (var i = 0; i < words.length; i++) {
+                if (keyword == words[i]) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    var DIST_THRESH = 10.; // meters
     var dbBldgName = entry["building_name"];
     var dbLat = entry["latitude"];
     var dbLng = entry["longitude"];
@@ -281,23 +309,31 @@ function dbEntryMatch(entry, bldgName, lat, lng) {
     // We should either handle this here (which is messy, because that implies handling it
     // in every specific case where we need this information), or standardize layout of
     // at least simple fields like building name coordinates.
+    
+    if (false) {
+
+    }
+    /*
     if (dbBldgName === undefined) {
         dbBldgName = "";
     }
-    if (dbLat === undefined || dbLng === undefined) {
+    else if (dbLat === undefined || dbLng === undefined) {
         return false;
     }
-    if (dbBldgName === bldgName) {
+    else if (dbBldgName === bldgName) {
         return true;
-    }
+    }*/
     else {
         var dist = distanceBetween(dbLat, dbLng, lat, lng);
         // TODO this string matching can be improved
         //  (remove uninformative words like "Hall" or "Center")
         //var commonWords = findCommonWords(dbBldgName, bldgName);
-        if (dist < DIST_THRESH /*&& commonWords.length > 0*/)
+        if (dist < DIST_THRESH /*&& commonWords.length > 0*/) {
             return true;
+        }
     }
+    
+    return false;
 }
 
 // Fetch ALL info for a building specified by the URL query
