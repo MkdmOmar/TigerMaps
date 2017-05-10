@@ -129,11 +129,13 @@ var toggle_info = 0;
 
 function toggleInfo() {
     if (toggle_info == 0) {
-        $('#info_div').css('display', 'initial');
+        $('#left-panel-with-InfoWindow').css('display', 'initial');
+        $('#left-panel-no-InfoWindow').css('display', 'none');
         $('#info_hide').html('Hide Info');
         toggle_info = 1;
     } else {
-        $('#info_div').css('display', 'none');
+        $('#left-panel-with-InfoWindow').css('display', 'none');
+        $('#left-panel-no-InfoWindow').css('display', 'initial');
         $('#info_hide').html('Show Info');
         toggle_info = 0;
     }
