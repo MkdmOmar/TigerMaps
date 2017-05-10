@@ -389,27 +389,21 @@ function drawPolygons() {
 
 
 function showMarkerInfo(event, pMarker, info) {
-    if ($('#info_div').css('display') == 'none') { //info div is hidden so show info in infoWindow
 
-        // If !showAllInfoWindows, close previous infowindows
-        if (!showAllInfoWindows && infoWindows.length != 0) {
-            for (var i = 0; i < infoWindows.length; i++) {
-                infoWindows[i].close();
-            }
+    // If !showAllInfoWindows, close previous infowindows
+    if (!showAllInfoWindows && infoWindows.length != 0) {
+        for (var i = 0; i < infoWindows.length; i++) {
+            infoWindows[i].close();
         }
-
-        drawInfoWindow(pMarker.name, info, pMarker.position);
-
-    } else {
-
-        //info div is not hidden show info in info_div
-        if (typeof(info) === undefined) {
-            $('#info_div').html("You clicked on " + pMarker.name + "!");
-        } else {
-            $('#info_div').html(info);
-        }
-
     }
+    if (info == "") {
+        info = "<p>Nothing here!</p>";
+    }
+    $('#info_div').html(info);
+
+    drawInfoWindow(pMarker.name, info, pMarker.position);
+
+
 
     // Center map on info window location
     //map.panTo(pMarker.position);
@@ -428,19 +422,15 @@ function showPolygonInfo(event, polygon) {
                 infoWindows[i].close();
             }
         }
-
         getBuildingInfo(polygon.name, polygon.center.lat(), polygon.center.lng(),
             function(info) {
-                if ($('#info_div').css('display') == 'none') { //info div is hidden
 
-                    if (info == "") {
-                        info = "<p>Nothing here!</p>";
-                    }
-                    drawInfoWindow(polygon.name, info, polygon.center);
-
-                } else {
-                    $('#info_div').html(content);
+                if (info == "") {
+                    info = "<p>Nothing here!</p>";
                 }
+                drawInfoWindow(polygon.name, info, polygon.center);
+                $('#info_div').html(info);
+
             }
         );
 
