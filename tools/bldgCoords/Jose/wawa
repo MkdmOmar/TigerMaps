@@ -1,0 +1,27 @@
+Wawa
+var myCoordinates = [
+new google.maps.LatLng(40.342291,-74.658921),
+new google.maps.LatLng(40.342295,-74.658872),
+new google.maps.LatLng(40.342076,-74.658772),
+new google.maps.LatLng(40.341960,-74.658719),
+new google.maps.LatLng(40.341846,-74.658668),
+new google.maps.LatLng(40.341786,-74.658641),
+new google.maps.LatLng(40.341766,-74.658633),
+new google.maps.LatLng(40.341746,-74.658623),
+new google.maps.LatLng(40.341728,-74.658672),
+new google.maps.LatLng(40.341681,-74.658638),
+new google.maps.LatLng(40.341616,-74.658852),
+new google.maps.LatLng(40.341720,-74.658949),
+new google.maps.LatLng(40.341773,-74.658998),
+new google.maps.LatLng(40.341829,-74.659050),
+new google.maps.LatLng(40.341874,-74.659091),
+new google.maps.LatLng(40.341974,-74.658811),
+new google.maps.LatLng(40.342019,-74.658827),
+new google.maps.LatLng(40.342093,-74.658851),
+new google.maps.LatLng(40.342073,-74.658959),
+new google.maps.LatLng(40.342042,-74.659118),
+new google.maps.LatLng(40.342028,-74.659189),
+new google.maps.LatLng(40.342092,-74.659211),
+new google.maps.LatLng(40.342153,-74.658883),
+new google.maps.LatLng(40.342258,-74.658912)
+]

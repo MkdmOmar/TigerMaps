@@ -1,0 +1,23 @@
+Cogen Plant
+[
+new google.maps.LatLng(40.341620,-74.657757),
+new google.maps.LatLng(40.341643,-74.657674),
+new google.maps.LatLng(40.341708,-74.657704),
+new google.maps.LatLng(40.341806,-74.657333),
+new google.maps.LatLng(40.341743,-74.657304),
+new google.maps.LatLng(40.341946,-74.656536),
+new google.maps.LatLng(40.341964,-74.656544),
+new google.maps.LatLng(40.342026,-74.656315),
+new google.maps.LatLng(40.341780,-74.656203),
+new google.maps.LatLng(40.341719,-74.656434),
+new google.maps.LatLng(40.341786,-74.656466),
+new google.maps.LatLng(40.341718,-74.656721),
+new google.maps.LatLng(40.341617,-74.657101),
+new google.maps.LatLng(40.341457,-74.657029),
+new google.maps.LatLng(40.341326,-74.656968),
+new google.maps.LatLng(40.341226,-74.657347),
+new google.maps.LatLng(40.341403,-74.657428),
+new google.maps.LatLng(40.341420,-74.657368),
+new google.maps.LatLng(40.341627,-74.657462),
+new google.maps.LatLng(40.341557,-74.657728)
+]

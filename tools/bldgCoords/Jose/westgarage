@@ -1,0 +1,26 @@
+West Garage
+[
+new google.maps.LatLng(40.342346,-74.658289),
+new google.maps.LatLng(40.342366,-74.658213),
+new google.maps.LatLng(40.342323,-74.658194),
+new google.maps.LatLng(40.342328,-74.658179),
+new google.maps.LatLng(40.342277,-74.658155),
+new google.maps.LatLng(40.342270,-74.658180),
+new google.maps.LatLng(40.342139,-74.658119),
+new google.maps.LatLng(40.342029,-74.658069),
+new google.maps.LatLng(40.341890,-74.658006),
+new google.maps.LatLng(40.341734,-74.657935),
+new google.maps.LatLng(40.341538,-74.657846),
+new google.maps.LatLng(40.341382,-74.657774),
+new google.maps.LatLng(40.341280,-74.657728),
+new google.maps.LatLng(40.341135,-74.657663),
+new google.maps.LatLng(40.341033,-74.658043),
+new google.maps.LatLng(40.341234,-74.658135),
+new google.maps.LatLng(40.341374,-74.658199),
+new google.maps.LatLng(40.341565,-74.658286),
+new google.maps.LatLng(40.341741,-74.658366),
+new google.maps.LatLng(40.341957,-74.658464),
+new google.maps.LatLng(40.342142,-74.658549),
+new google.maps.LatLng(40.342228,-74.658588),
+new google.maps.LatLng(40.342311,-74.658274)
+]

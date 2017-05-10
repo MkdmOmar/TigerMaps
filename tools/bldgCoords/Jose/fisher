@@ -1,0 +1,7 @@
+Fisher Hall (Whitman)
+[
+new google.maps.LatLng(40.344672,-74.658498),
+new google.maps.LatLng(40.344780,-74.657980),
+new google.maps.LatLng(40.344669,-74.657939),
+new google.maps.LatLng(40.344560,-74.658457)
+]
