@@ -10,6 +10,11 @@ var start = 8;
 var end = 22;
 var toggle_bounds = null;
 var current_location = null;
+// --- for path.js ---
+var selectedPolygon = null;
+var directionsService = null;
+var directionsDisplay = null;
+var placesService = null;
 
 //console.log(JSON.stringify(previousHighlights));
 
@@ -54,6 +59,29 @@ function setZoomPanBounds() {
     });
 }
 
+// Gets the location of the user, if possible.
+// Execute the given callback on the location of the user.
+function geolocateCallback(callback) {
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            callback(pos);
+        }, function() {
+            // Geolocation failed
+            console.log("Geolocation service supported but failed.");
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        console.log("Browser doesn't support geolocation.");
+    }
+}
 
 // Center map on location of user, if possible
 function geolocate() {
@@ -228,6 +256,14 @@ function initMap(pos) {
 
         //set toggle_bounds
         var toggle_bounds = new google.maps.LatLngBounds();
+
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+        directionsDisplay.setOptions({
+            preserveViewport: true,
+            suppressMarkers: true
+        });
+        placesService = new google.maps.places.PlacesService(map);
     });
 }
 
@@ -379,6 +415,7 @@ function showMarkerInfo(event, pMarker, info) {
 }
 
 function showPolygonInfo(event, polygon) {
+    selectedPolygon = polygon;
 
     if (last_click == null) {
         unhighlightAll();

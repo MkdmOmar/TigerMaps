@@ -851,8 +851,6 @@ function getBuildingInfo(buildingName, lat, lng, callback) {
                 // if (info["laundry"].length != 0)
                 //     content = content + "</p>";
 
-                console.log(content);
-
                 callback(content);
             }
         }
