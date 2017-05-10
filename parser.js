@@ -279,6 +279,7 @@ function clearDB() {
     assert.equal(null, err);
     //console.log("Connected successfully to server");
 
+    db.collection('menus').remove({});
     db.collection('puEvents').remove({});
     db.collection('dining').remove({});
     db.collection('printers').remove({});
@@ -294,5 +295,3 @@ module.exports = {
   updateDB: updateDB,
   clearDB: clearDB
 };
-
-updateDB();
