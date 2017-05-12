@@ -394,12 +394,13 @@
     <div id="toggle_search" class="toggle-search" style="position:absolute; z-index:3;height:30px;width:80px;border-radius:5px;font-size:18px;border: 1px solid black; left: 71%; top: 0.5em;text-align: center;line-height:30px;" onclick="toggleSearch()">Toggle
         <!--<p style="line-height: 10px;">Events</p>-->
     </div>
+    <script>
+    </script>
 
-    <datalist id="titles" style="width:40px;">
+    <datalist id="titles">
+        <select id="subtitles" style="display:none;" onchange="if (this.selectedIndex) alert('hi');">
+        </select>
     </datalist>
-
-
-
 
 
     <!--<div style="border: 3px solid blackl width: auto, height: auto">
