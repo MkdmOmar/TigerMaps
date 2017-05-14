@@ -1015,8 +1015,14 @@ function parseEventInfo(event) {
     if ("locationName" in event) {
         content = content + event["locationName"] + "<br>";
     }
+    if ("startDate" in event) {
+        content = content + "<br>Start Date: " + event["startDate"] + "<br>";
+    }
     if ("startTime" in event) {
-        content = content + "<br>Start Time: " + event["startTime"] + "<br>";
+        content = content + "Start Time: " + event["startTime"] + "<br>";
+    }
+    if ("endDate" in event) {
+        content = content + "End Date: " + event["endDate"] + "<br>";
     }
     if ("endTime" in event) {
         content = content + "End Time: " + event["endTime"] + "<br>";
