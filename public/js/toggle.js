@@ -200,25 +200,51 @@ function goProceed(entry) {
     }
 }
 
+//CITP Lecture Series : David Parkes - Robust Methods to Elicit Informative Feedback
+//CITP Lecture Series : David Parkes - Robust Methods to Elicit Informative Feedback
+
+/*
+
+*/
+
 $('#new-input').on('input', function() {
     var val = $(this).val();
+    console.log('at least getting called');
     unhighlightAll();
     if (val == "") {
         unhighlightAll();
     } else {
-        //console.log(val);
+        /*
+        for (var key in event_dict) {
+            console.log(key);
+        }
+        */
+        
+        /*
+        var select = document.getElementById('subtitles');
+        console.log(select.options[select.selectedIndex].value);
+        */
+                
+        console.log(val);
         if (val in event_dict) {
             last_click = null;
             console.log('showEventInfo');
             showEventInfo(event_dict[val]);
         }
+
     }
     //var opt = $('option[value="'+$(this).val()+'"]');
     //alert(opt.length ? opt.attr('id') : 'NO OPTION');
 });
 
+function printSelect() {
+    var new_input = document.getElementById('new-input');
+    console.log(new_input.value);
+    //console.log($('#subtitles').val());
+}
+
 function timeRange() {
-    var dataList = $('#titles');
+    var dataList = $('#subtitles');
     dataList.empty();
     if (do_once) { //events haven't been collected yet
         toggleSearch();
@@ -237,18 +263,42 @@ function timeRange() {
                         if (endDate <= dates[end_date].getTime()) {
                             //console.log('adding ' + key);
                             //dataList.append("<option value=" + key + ">");
-                            dataList.append("<option>" + key + "</option>");
+                            dataList.append("<option >" + key + "</option>");
                         }
                     }                            
                 } else {
                     //console.log('adding ' + key);
                     //dataList.append("<option value=" + key + ">");
-                    dataList.append("<option>" + key + "</option>");
+                    dataList.append("<option >" + key + "</option>");
                 }
 
             }
         }
     }
+
+    //adapt search bar once datalist has been populated
+    adaptSearch();
+}
+
+function adaptSearch() {
+
+    //this function checks if the current browser supports datalist object
+    //if it does not, it uses a slightly suboptimal work-around
+    //function not written by our group, it is courtesy of Github contributor thgreasi
+    //located at https://github.com/thgreasi/datalist-polyfill
+
+    var nativedatalist = !!('list' in document.createElement('input')) && 
+        !!(document.createElement('datalist') && window.HTMLDataListElement);
+
+    if (!nativedatalist) {
+        $('input[list]').each(function () {
+            var availableTags = $('#' + $(this).attr("list")).find('option').map(function () {
+                return this.value;
+            }).get();
+            $(this).autocomplete({ source: availableTags });
+        });
+    }
+
 }
 
 function collectEvents(rule, collection) {
@@ -347,7 +397,7 @@ function toggleSearch() {
         toggled = false;
 
         //unpopulate dataList
-        var dataList = $('#titles');
+        var dataList = $('#subtitles');
         dataList.empty();
 
         //removes all child elements
@@ -362,7 +412,7 @@ function toggleSearch() {
             do_once = false;
 
             //clear dataList 
-            var dataList = $('#titles');
+            var dataList = $('#subtitles');
             dataList.empty();
 
             //clear event_dict (storage)
@@ -389,19 +439,22 @@ function toggleSearch() {
                                 if (endDate <= dates[end_date].getTime()) {
                                     //console.log('adding ' + key);
                                     //dataList.append("<option value=" + key + ">");
-                                    dataList.append("<option>" + key + "</option>");
+                                    dataList.append("<option >" + key + "</option>");
                                 }
                             }                            
                         } else {
                             //console.log('adding ' + key);
                             //dataList.append("<option value=" + key + ">");
-                            dataList.append("<option>" + key + "</option>");
+                            dataList.append("<option >" + key + "</option>");
                         }
 
                     }
                 }
             }
         } //do_once end
+
+        //adapt search bar once select options have been populated
+        adaptSearch();
     }
 }
 
@@ -465,7 +518,7 @@ function getNearestPolygon(lat, lng, callback) {
     var contender = Number.MAX_VALUE;
 
     for (var i = 0; i < polygons.length; i++) {
-        contender = Math.sqrt((polygons[i].center.lat() - lat) ** 2 + (polygons[i].center.lng() - lng) ** 2);
+        contender = Math.sqrt(Math.pow((polygons[i].center.lat() - lat),2) + Math.pow((polygons[i].center.lng() - lng), 2));
         if (contender < minimum) {
             champion = polygons[i];
             minimum = contender;
