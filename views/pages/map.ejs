@@ -183,8 +183,9 @@
             width: 90%;
             border-radius: 12px;
             position: absolute;
-            bottom: 11em;
-            left: 1em;
+            bottom: 12.5em;
+            left: 0.5em;
+            right: 0.5em;
             width: 80%;
             height: auto;
         }
@@ -250,11 +251,11 @@
 
         <!--This EJS logic will generate the logged In and not logged in divs based on the "loggedIn" parameter passed in from server.js-->
         <% if(loggedIn){ %>
-            <div id="notLoggedIn" class="notLoggedIn" style="padding: 2px; display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:1em; width: 80%;">
+            <div id="notLoggedIn" class="notLoggedIn" style="padding: 2px; display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:0.5em; right:0.5em; width: 80%;">
                 <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 20px; padding-left: 2px; padding-right: 2px;  ">Log In Here</a>
             </div>
 
-            <div id="loggedIn" class="loggedIn" style="padding: 2px;  display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:1em; width: 80%;">
+            <div id="loggedIn" class="loggedIn" style="padding: 2px;  display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:0.5em; right:0.5em; width: 80%;">
                 <p style=" margin-bottom:5px; margin-top:2px; font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px;  ">Hello,
                     <%= netID %>
                 </p>
@@ -262,11 +263,11 @@
 
             </div>
             <% } else{ %>
-                <div id="notLoggedIn" class="padding: 5px; notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left: 1em; width: 80%; height: auto;">
+                <div id="notLoggedIn" class="padding: 5px; notLoggedIn" style="display:block;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left: 0.5em; right:0.5em; width: 80%; height: auto;">
                     <a href="/login" style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; line-height: 20px; ">Log In Here</a>
                 </div>
 
-                <div id="loggedIn" class="padding: 2px; loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:1em; width: 80%;">
+                <div id="loggedIn" class="padding: 2px; loggedIn" style="display:none;z-index:3;border-radius:5px;border:1px solid black;position:absolute;top:0.5em;left:0.5em; right:0.5em; width: 80%;">
                     <p style="font-family: Roboto,Arial,sans-serif; color: black; text-decoration: none; font-size: 16px; padding-left: 2px; padding-right: 2px; ">Hello, </p>
                 </div>
                 <% } %>
