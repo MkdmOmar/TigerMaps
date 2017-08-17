@@ -11,7 +11,7 @@ This is just for development purposes only.
 */
 
 // pre-made Node.js modules
-var MongoClient = require('mongodb').MongoClient
+var MongoClient = require('mongodb').MongoClient;
 const https = require("https");
 var assert = require("assert");
 var jsdom = require('node-jsdom').jsdom;
@@ -24,16 +24,16 @@ var toJson = require("./tools/xml2json");
 //var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 // datafeed URIs
-var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/"
-var compPrintURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=5"
-var diningURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=20"
-var locationsURL = "https://etcweb.princeton.edu/webfeeds/map/"
-var placesURL = "https://etcweb.princeton.edu/webfeeds/places/"
-var USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/"
-var laundryURL = " https://etcweb.princeton.edu/webfeeds/places/?categoryID=14"
+var publicEventsURL = "https://etcweb.princeton.edu/webfeeds/events/";
+var compPrintURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=5";
+var diningURL = "https://etcweb.princeton.edu/webfeeds/places/?categoryID=20";
+var locationsURL = "https://etcweb.princeton.edu/webfeeds/map/";
+var placesURL = "https://etcweb.princeton.edu/webfeeds/places/";
+var USGEventsURL = "https://etcweb.princeton.edu/webfeeds/events/usg/";
+var laundryURL = " https://etcweb.princeton.edu/webfeeds/places/?categoryID=14";
 
 // MongoDB Conncetion URI
-var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9'
+var uri = 'mongodb://heroku_745dvgs9:7pfvvi77khfh3qfor2qt0rf090@ds159330.mlab.com:59330/heroku_745dvgs9';
 
 // TODO unused
 //  retrieves an XML string from url (OLD VERSION)
@@ -84,7 +84,7 @@ function capitalize(string) {
 // Retrieves a JSON object from a URL containing an XML feed.
 function getFeed(webFeedURL, convert, callback) {
     const req = https.request(webFeedURL, function(response) {
-        let str = ""
+        var str = "";
         response.on("data", function(data) {
             str += data;
         });
@@ -109,81 +109,106 @@ function getFeed(webFeedURL, convert, callback) {
 
 // Uodate all DB collections
 function getAllFeeds(db) {
-    var puEvents, dining, printers, locations, places, usgEvents, laundry
+    var puEvents, dining, printers, locations, places, usgEvents, laundry;
 
     // Public events collection
     getFeed(publicEventsURL, true, function(json) {
         //console.log("Retrieved Public Events Data");
         puEvents = json["events"]["event"];
-        for (var i = 0; i < puEvents.length; i++) {
-            var doc = puEvents[i];
-            db.collection('puEvents').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (puEvents == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < puEvents.length; i++) {
+                var doc = puEvents[i];
+                db.collection('puEvents').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Public Events");
         }
-        //console.log("Inserted Public Events");
     });
 
     // Dining collection
     getFeed(diningURL, true, function(json) {
         //console.log("Retrieved Dining Data");
         dining = json["places"]["places"]["PLPlace"];
-        for (var i = 0; i < dining.length; i++) {
-            var doc = dining[i];
-            db.collection('dining').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (dining == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < dining.length; i++) {
+                var doc = dining[i];
+                db.collection('dining').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Dining Info");
         }
-        //console.log("Inserted Dining Info");
     });
 
     // Printer collection
     getFeed(compPrintURL, true, function(json) {
         //console.log("Retrieved Computing and Printing Data");
         printers = json["places"]["places"]["PLPlace"];
-        for (var i = 0; i < printers.length; i++) {
-            var doc = printers[i];
-            db.collection('printers').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (printers == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < printers.length; i++) {
+                var doc = printers[i];
+                db.collection('printers').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Printers Info");
         }
-        //console.log("Inserted Printers Info");
     });
 
     // Locations collection
     getFeed(locationsURL, true, function(json) {
         //console.log("Retrieved Locations Data");
         locations = json["locations"]["location"];
-        for (var i = 0; i < locations.length; i++) {
-            var doc = locations[i];
-            db.collection('locations').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (locations == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < locations.length; i++) {
+                var doc = locations[i];
+                db.collection('locations').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Locations Info");
         }
-        //console.log("Inserted Locations Info");
     });
 
     // Places collection
     getFeed(placesURL, true, function(json) {
         //console.log("Retrieved Places Data")
         places = json["places"]["places"]["PLPlace"];
-        for (var i = 0; i < places.length; i++) {
-            var doc = places[i];
-            db.collection('places').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (places == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < places.length; i++) {
+                var doc = places[i];
+                db.collection('places').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Places Info");
         }
-        //console.log("Inserted Places Info");
     });
 
 
@@ -191,44 +216,60 @@ function getAllFeeds(db) {
     getFeed(USGEventsURL, true, function(json) {
         //console.log("Retrieved USG Events Data");
         usgEvents = json["events"]["event"];
-        for (var i = 0; i < usgEvents.length; i++) {
-            var doc = usgEvents[i];
-            db.collection('usgEvents').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (usgEvents == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < usgEvents.length; i++) {
+                var doc = usgEvents[i];
+                db.collection('usgEvents').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted USG Events ");
         }
-        //console.log("Inserted USG Events ");
     });
 
     // Laundry collection
     getFeed(laundryURL, true, function(json) {
         //console.log("Retrieved Laundry Data");
         laundry = json["places"]["places"]["PLPlace"];
-        for (var i = 0; i < laundry.length; i++) {
-            var doc = laundry[i];
-            db.collection('laundry').update(doc, doc, { upsert: true }, function(err, result) {
-                if (err) throw err
-                assert.notEqual(result, null);
-                assert.notEqual(result, []);
-            });
+        if (laundry == null) {
+            //do nothing, since there was no information in the http response
+            //to avoid entire app crashing
+        } else {
+            for (var i = 0; i < laundry.length; i++) {
+                var doc = laundry[i];
+                db.collection('laundry').update(doc, doc, {upsert: true}, function (err, result) {
+                    if (err) throw err;
+                    assert.notEqual(result, null);
+                    assert.notEqual(result, []);
+                });
+            }
+            //console.log("Inserted Laundry Info");
         }
-        //console.log("Inserted Laundry Info");
     });
 }
 
 function getMenus(db, meal, callback) {
-    var key = ""
-    var url = "https://tigermenus.herokuapp.com/" + meal + "0"
+    var key = "";
+    var url = "https://tigermenus.herokuapp.com/" + meal + "/0";
     getFeed(url, false, function(food) {
         // parse the HTML response to get menu items
         var elements = $("<div>").html(food)[0].getElementsByClassName("container")[0].getElementsByClassName("row")[0].getElementsByClassName("col-sm-2");
         for (var i = 0; i < elements.length; i++) {
+            //check if we encountered the outlier "Legend" element block from this html response
+            if (elements[i].getElementsByTagName("h3")[0] == null) continue;
+
+            //check if the element contains p tags at all
+            if (elements[i].getElementsByTagName("p")[0] == null) continue;
+
             // all the elements with a <p> tag
             paragraphs = elements[i].getElementsByTagName("p");
-            hall = elements[i].getElementsByTagName("h3")[0].firstChild.nodeValue
-            if (hall == "Ro / Ma") hall = "Rocky / Mathey"
+            hall = elements[i].getElementsByTagName("h3")[0].firstChild.nodeValue;
+            if (hall == "Ro / Ma") hall = "Rocky / Mathey";
             else if (hall == "CJL" || hall == "Grad") continue;
 
             // populate menu object
@@ -237,16 +278,21 @@ function getMenus(db, meal, callback) {
             menu['meal'] = meal;
             for (var j = 0; j < paragraphs.length; j++) {
                 var text = paragraphs[j].firstChild.nodeValue;
+                if (text == null) { //we encountered a <p><u></u><p> paragraph type, handle nested child
+                    text = paragraphs[j].firstChild.firstChild.nodeValue;
+                    if (text == null) { continue; } //avoid app crashing for this small detail
+                }
                 if (text.toLowerCase() == meal) {} else if (text.includes("--")) {
                     key = trim(ReplaceAll(text, "--", ""));
-                    menu[key] = new Array()
-                } else if (key != "")
+                    menu[key] = new Array();
+                } else if (key != "") {
                     menu[key].push(text);
+                }
             }
 
             // updates menus in DB
             db.collection('menus').update(menu, menu, { upsert: true }, function(err, result) {
-                if (err) throw err
+                if (err) throw err;
                 assert.notEqual(result, null);
                 assert.notEqual(result, []);
             });
